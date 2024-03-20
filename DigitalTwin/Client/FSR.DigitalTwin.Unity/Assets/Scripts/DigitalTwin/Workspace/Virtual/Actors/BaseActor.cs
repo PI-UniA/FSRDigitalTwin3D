@@ -8,6 +8,8 @@ public abstract class BaseActor : MonoBehaviour
 {
     [SerializeField] private VirtualWorkspace ws;
 
+    public VirtualWorkspace VirtualWorkspace => ws;
+
     private void Awake() {
         ws = ws ? ws : FindFirstObjectByType<VirtualWorkspace>();
     }
