@@ -1,7 +1,8 @@
 using System.Threading.Tasks;
-using FSR.DigitalTwin.Unity.Workspace.Digital;
 
-public interface IDigitalTwinComponent
+namespace FSR.DigitalTwin.Unity.Workspace.Digital.Interfaces {
+
+public interface IDigitalTwinActor
 {
     public DigitalWorkspace DigitalWorkspace { get; }
 
@@ -12,3 +13,5 @@ public interface IDigitalTwinComponent
     public int PushData();
 
 }
+
+} // END namespace FSR.DigitalTwin.Unity.Workspace.Digital.Interfaces
