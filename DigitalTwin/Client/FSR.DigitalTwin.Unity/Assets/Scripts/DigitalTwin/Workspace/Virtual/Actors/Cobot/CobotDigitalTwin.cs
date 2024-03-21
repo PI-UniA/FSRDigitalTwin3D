@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FSR.Aas.GRPC.Lib.V3;
 using FSR.Aas.GRPC.Lib.V3.Services;
 using FSR.Aas.GRPC.Lib.V3.Services.SubmodelRepository;
 using FSR.DigitalTwin.Unity.Workspace.Digital;
@@ -27,8 +28,8 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Actors {
             GetSubmodelByIdRpcRequest request = new() {
                 Id = operationalSubmodelId,
                 OutputModifier = new OutputModifier() {
-                    Limit = 1, Level = OutputLevel.Core, Content = OutputContent.Reference, 
-                    Extent = OutputExtent.WithoutBlobValue
+                    Level = OutputLevel.Core, Content = OutputContent.Reference, Cursor = "", 
+                    Extent = OutputExtent.WithoutBlobValue, Limit = 1
                 }
             };
             var response = await aasApi.SubmodelRepo.GetSubmodelByIdAsync(request);
@@ -59,8 +60,12 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Actors {
             throw new NotImplementedException();
         }
 
-        async void Start() {
-            await AssertOperationalSubmodelAsync();
+        void Start() {
+            var jointVariables = new SubmodelElementDTO() {
+                SubmodelElementCollection = new() {
+
+                }
+            };
         }
 
     }
