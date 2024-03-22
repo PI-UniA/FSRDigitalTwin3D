@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UniRx;
 using UniRx.Triggers;
+using UnityEngine;
 
 
 namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Sensors {
@@ -9,13 +11,17 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Sensors {
 public class RotationalJoint : JointSensorSource
 {
     public override EJointType JointType => EJointType.ROTATIONAL_JOINT;
+    public ReadOnlyReactiveProperty<float> Z => z;
 
+    private ReadOnlyReactiveProperty<float> z;
+    
     private void Awake() {
         sensorData = gameObject.UpdateAsObservable()
+            .DistinctUntilChanged()
             .Select(_ => new Hashtable { 
-                {"Z", transform.localRotation.z}
-            })
-            .DistinctUntilChanged();
+                {"Z", transform.localEulerAngles.z}
+            });
+        z = new ReadOnlyReactiveProperty<float>(sensorData.Select(x => (float) x["Z"]), transform.localEulerAngles.z);
     }
 }
 

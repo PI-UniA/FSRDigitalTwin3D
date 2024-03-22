@@ -17,6 +17,7 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Actors {
         [SerializeField] private List<JointSensorSource> joints;
 
         public DigitalWorkspace DigitalWorkspace => DigitalWorkspace.Instance;
+        public JointSensorSource[] Joints => joints.ToArray();
 
         public void SetJointRotation(int index, float z) {
             if (joints[index].JointType == EJointType.ROTATIONAL_JOINT) {
