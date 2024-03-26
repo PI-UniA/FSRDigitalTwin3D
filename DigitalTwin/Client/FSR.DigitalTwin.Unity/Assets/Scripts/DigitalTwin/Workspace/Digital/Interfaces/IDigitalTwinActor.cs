@@ -6,11 +6,11 @@ public interface IDigitalTwinActor
 {
     public DigitalWorkspace DigitalWorkspace { get; }
 
-    public Task<int> PullDataAndApplyAsync();
-    int PullDataAndApply();
+    public Task<int> OnSynchronizeDataAsync();
+    public int OnSynchronizeData();
 
-    public Task<int> PushDataAsync();
-    public int PushData();
+    public Task<int> OnPushDataAsync();
+    public int OnPushData();
 
 }
 

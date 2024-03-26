@@ -63,12 +63,12 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Actors {
             return jointPropertyCollection;
         }
 
-        public int PullDataAndApply()
+        public int OnSynchronizeData()
         {
             throw new NotImplementedException();
         }
 
-        public async Task<int> PullDataAndApplyAsync()
+        public async Task<int> OnSynchronizeDataAsync()
         {
             if (!await AssertOperationalSubmodelAsync()) {
                 Debug.LogError("[Client]: Missing Operational submodel!");
@@ -108,12 +108,12 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Actors {
             return 0;
         }
 
-        public int PushData()
+        public int OnPushData()
         {
             throw new NotImplementedException();
         }
 
-        public async Task<int> PushDataAsync()
+        public async Task<int> OnPushDataAsync()
         {
             if (!await AssertOperationalSubmodelAsync()) {
                 Debug.LogError("[Client]: Missing Operational submodel!");
@@ -147,12 +147,12 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Actors {
 
             if (IsListening) {
                 Observable.Timer(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1))
-                    .Subscribe(async _ => await PullDataAndApplyAsync())
+                    .Subscribe(async _ => await OnSynchronizeDataAsync())
                     .AddTo(this);
             }
             else {
                 Observable.Timer(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1))
-                    .Subscribe(async _ => await PushDataAsync())
+                    .Subscribe(async _ => await OnPushDataAsync())
                     .AddTo(this);
             }
 

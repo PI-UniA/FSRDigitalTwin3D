@@ -34,31 +34,15 @@
   </Target>
 
   <PropertyGroup>
-    <ProtocExec>$(SolutionDir)../../Tools/protoc/protoc</ProtocExec>
-    <ProtocCSharpPlugin>$(SolutionDir)../../Tools/protoc/grpc_csharp_plugin</ProtocCSharpPlugin>
-    <UnityOutputDir>$(SolutionDir)../Client/FSR.DigitalTwin.Unity/Assets/Scripts/DigitalTwin/FSR.DigitalTwin.Generated/</UnityOutputDir>
-    <Protoc>$(ProtocExec) --csharp_out=$(UnityOutputDir)/Message.Generated/ --grcp_out=$(UnityOutputDir)/GRPC.Generated/ --plugin=protoc-gen-grcp=$(ProtocCSharpPlugin)</Protoc>
+    <!-- Protos here -->
+    <Protos>"./Protos/AasModels.V3.proto,./Protos/AasApiModels.V3.proto,./Protos/DigitalTwinLayerModels.proto,./Protos/Services/AdminShellRepositoryService.proto,./Protos/Services/SubmodelRepositoryService.proto,./Protos/Services/AssetAdministrationShellService.proto,./Protos/Services/SubmodelService.proto,./Protos/Services/Operational/DigitalTwinLayerOperationalService.proto,./Protos/Services/Connection/DigitalTwinLayerConnectionService.proto"</Protos>
   </PropertyGroup>
 
   <Target Name="AttachToUnity" BeforeTargets="BeforeBuild" Condition=" '$(OS)' == 'UNIX' ">
-    <Exec Command="rm -rf $(ProjectDir)/Protos/" />
-    <Exec Command="rm -rf $(UnityOutputDir)Message.Generated/" />
-    <Exec Command="rm -rf $(UnityOutputDir)GRPC.Generated/" />
-    <Exec Command="mkdir $(ProjectDir)/Protos/" />
-    <Exec Command="mkdir $(UnityOutputDir)Message.Generated/" />
-    <Exec Command="mkdir $(UnityOutputDir)GRPC.Generated/" />
+    <Exec Command="mkdir -p $(ProjectDir)/Protos/" />
     <Exec Command="cp -r $(SolutionDir)src/FSR.Aas.GRPC.Lib.V3/Protos/* $(ProjectDir)/Protos/" />
     <Exec Command="cp -r $(SolutionDir)src/FSR.DigitalTwinLayer.GRPC.Lib/Protos/* $(ProjectDir)/Protos/" />
-    <!-- Protos here -->
-    <Exec Command="$(Protoc) ./Protos/AasModels.V3.proto" />
-    <Exec Command="$(Protoc) ./Protos/AasApiModels.V3.proto" />
-    <Exec Command="$(Protoc) ./Protos/DigitalTwinLayerModels.proto" />
-    <Exec Command="$(Protoc) ./Protos/Services/AdminShellRepositoryService.proto" />
-    <Exec Command="$(Protoc) ./Protos/Services/SubmodelRepositoryService.proto" />
-    <Exec Command="$(Protoc) ./Protos/Services/AssetAdministrationShellService.proto" />
-    <Exec Command="$(Protoc) ./Protos/Services/SubmodelService.proto" />
-    <Exec Command="$(Protoc) ./Protos/Services/Operational/DigitalTwinLayerOperationalService.proto" />
-    <Exec Command="$(Protoc) ./Protos/Services/Connection/DigitalTwinLayerConnectionService.proto" />
+    <Exec Command="./attach-proto-grpc.sh csharp --proto-tools $(SolutionDir)../../Tools/protoc/ --output $(SolutionDir)../Client/FSR.DigitalTwin.Unity/Assets/Scripts/DigitalTwin/FSR.DigitalTwin.Generated/ --protos $(Protos)" />
   </Target>
 
 </Project>
