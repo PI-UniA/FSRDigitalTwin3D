@@ -15,6 +15,8 @@ public class DigitalWorkspace : Workspace
 
     public DigitalWorkspaceBridge ApiBridge { get => digitalWorkspaceBridge; }
 
+    public override EKind Kind => EKind.DIGITAL;
+
     void Awake() {
         instance = this;
     }
