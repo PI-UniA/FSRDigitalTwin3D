@@ -33,6 +33,8 @@ using Newtonsoft.Json.Serialization;
 using FSR.DigitalTwin.App.Interfaces;
 using FSR.DigitalTwin.App.Services;
 using FSR.DigitalTwinLayer.GRPC.Lib.Common.Utils;
+using MongoDB.Driver;
+using FSR.DigitalTwin.Infra.Data;
 
 internal class Startup
 {
@@ -75,6 +77,12 @@ internal class Startup
                 });
         });
 
+        // Set MongoDB connection string
+        services.AddSingleton<IMongoClient, MongoClient>(sp =>
+        {
+            return new MongoClient("mongodb://localhost:27017/myapp");
+        });
+
         services.AddControllers();
         services.AddLazyResolution();
         services.AddSingleton<IAuthorizationHandler, AasSecurityAuthorizationHandler>();
@@ -103,6 +111,7 @@ internal class Startup
         services.AddTransient<IOperationReceiver, OperationReceiver>();
         
         FSR.DigitalTwinLayer.GRPC.Lib.Common.Utils.DependencyInjection.AddServices(services);
+        services.AddSingleton<IAdminShellDb, AdminShellDb>();
 
         // Add GraphQL services
         services
@@ -184,6 +193,10 @@ internal class Startup
         services.AddAutoMapper(RpcAssembly.GetAssembly());
         services.AddGrpc();
 
+        // For testing
+        var serviceProvider = services.BuildServiceProvider();
+        var dbService = serviceProvider.GetService<IAdminShellDb>();
+        dbService.PushToDb(new AasCore.Aas3_0.Environment([], [], []));
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

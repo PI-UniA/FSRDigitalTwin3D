@@ -1,5 +1,6 @@
 using AasCore.Aas3_0;
-using AasxServerStandardBib.Interfaces;
+using AutoMapper;
+using FSR.Aas.GRPC.Lib.V3;
 using FSR.DigitalTwin.App.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
@@ -8,16 +9,15 @@ namespace FSR.DigitalTwin.Infra.Data;
 
 public class AdminShellDb : IAdminShellDb
 {
-    private readonly IAdminShellPackageEnvironmentService _pkgEnvService;
     private readonly AdminShellDbContext _db;
+    private readonly IMapper _mapper;
     private readonly string _dbName = "AdminShellV3";
 
-    public AdminShellDb(IAdminShellPackageEnvironmentService pkgEnvService, IMongoClient client) {
-        _pkgEnvService = pkgEnvService;
-
+    public AdminShellDb(IMongoClient client, IMapper mapper) {
         var dbContextOptions =
             new DbContextOptionsBuilder<AdminShellDbContext>().UseMongoDB(client, _dbName);
         _db = new AdminShellDbContext(dbContextOptions.Options);
+        _mapper = mapper;
     }
 
     public IEnvironment LoadFromDb()
@@ -30,23 +30,15 @@ public class AdminShellDb : IAdminShellDb
         throw new NotImplementedException();
     }
 
-    public IEnvironment PushToDb()
+    public void PushToDb(IEnvironment environment)
     {
-        IEnvironment environment = new AasCore.Aas3_0.Environment() {
-            // TODO
-        };
-        _db.Add(environment);
+        _db.Add(_mapper.Map<EnvironmentDTO>(environment));
         _db.SaveChanges();
-        return environment;
     }
 
-    public async Task<IEnvironment> PushToDbAsync()
+    public async Task PushToDbAsync(IEnvironment environment)
     {
-        IEnvironment environment = new AasCore.Aas3_0.Environment() {
-            // TODO
-        };
-        _db.Add(environment);
+        _db.Add(_mapper.Map<EnvironmentDTO>(environment));
         await _db.SaveChangesAsync();
-        return environment;
     }
 }
