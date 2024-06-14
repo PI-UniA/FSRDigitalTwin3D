@@ -10,13 +10,13 @@ public class AdminShellDb : IAdminShellDb
 {
     private readonly IAdminShellPackageEnvironmentService _pkgEnvService;
     private readonly AdminShellDbContext _db;
+    private readonly string _dbName = "AdminShellV3";
 
-    public AdminShellDb(IAdminShellPackageEnvironmentService pkgEnvService) {
+    public AdminShellDb(IAdminShellPackageEnvironmentService pkgEnvService, IMongoClient client) {
         _pkgEnvService = pkgEnvService;
 
-        var mongoClient = new MongoClient("<Your MongoDB Connection URI>");
         var dbContextOptions =
-            new DbContextOptionsBuilder<AdminShellDbContext>().UseMongoDB(mongoClient, "<Database Name>");
+            new DbContextOptionsBuilder<AdminShellDbContext>().UseMongoDB(client, _dbName);
         _db = new AdminShellDbContext(dbContextOptions.Options);
     }
 
@@ -32,11 +32,21 @@ public class AdminShellDb : IAdminShellDb
 
     public IEnvironment PushToDb()
     {
-        throw new NotImplementedException();
+        IEnvironment environment = new AasCore.Aas3_0.Environment() {
+            // TODO
+        };
+        _db.Add(environment);
+        _db.SaveChanges();
+        return environment;
     }
 
-    public Task<IEnvironment> PushToDbAsync()
+    public async Task<IEnvironment> PushToDbAsync()
     {
-        throw new NotImplementedException();
+        IEnvironment environment = new AasCore.Aas3_0.Environment() {
+            // TODO
+        };
+        _db.Add(environment);
+        await _db.SaveChangesAsync();
+        return environment;
     }
 }
