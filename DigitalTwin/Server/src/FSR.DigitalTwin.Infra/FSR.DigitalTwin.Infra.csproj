@@ -12,4 +12,9 @@
     <ProjectReference Include="../FSR.DigitalTwinLayer.GRPC.Lib/FSR.DigitalTwinLayer.GRPC.Lib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="8.0.6" />
+    <PackageReference Include="MongoDB.EntityFrameworkCore" Version="8.0.1" />
+  </ItemGroup>
+
 </Project>
