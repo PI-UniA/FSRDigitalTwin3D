@@ -28,6 +28,7 @@ public class AssetAdministrationShellProfile : Profile {
     }
 
     private void CreateDomainMappings() {
+        CreateMap<IEnvironment, EnvironmentDTO>();
         CreateMap<IExtension, ExtensionDTO>();
         CreateMap<IAdministrativeInformation, AdministrativeInformationDTO>();
         CreateMap<IQualifier, QualifierDTO>();
@@ -59,6 +60,8 @@ public class AssetAdministrationShellProfile : Profile {
     }
 
     private void CreateModelMappings() {
+        CreateMap<EnvironmentDTO, Environment>()
+            .AfterMap((x, y) => Nullability.SetEmptyPropertiesToNull(y));
         CreateMap<ExtensionDTO, Extension>()
             .AfterMap((x, y) => Nullability.SetEmptyPropertiesToNull(y));
         CreateMap<AdministrativeInformationDTO, AdministrativeInformation>()

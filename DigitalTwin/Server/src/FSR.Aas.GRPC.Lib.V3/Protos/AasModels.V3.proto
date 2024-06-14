@@ -17,6 +17,12 @@ package FSR.Aas.GRPC.Lib.V3;
 
 /* AAS Models V3 */
 
+message EnvironmentDTO {
+  repeated AssetAdministrationShellDTO assetAdministrationShells = 1;
+  repeated SubmodelDTO submodels = 2;
+  repeated ConceptDescriptionDTO conceptDescriptions = 3;
+}
+
 message ExtensionDTO {
   ReferenceDTO semanticId = 1;
   repeated ReferenceDTO supplementalSemanticIds = 2;
