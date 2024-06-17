@@ -32,13 +32,29 @@ public class AdminShellDb : IAdminShellDb
 
     public void PushToDb(IEnvironment environment)
     {
-        _db.Add(_mapper.Map<EnvironmentDTO>(environment));
+        foreach (var aas in environment.AssetAdministrationShells ?? []) {
+            _db.Add(_mapper.Map<AssetAdministrationShellDTO>(aas));
+        }
+        // foreach (var sm in environment.Submodels ?? []) {
+        //     _db.Add(_mapper.Map<SubmodelDTO>(sm));
+        // }
+        foreach (var cd in environment.ConceptDescriptions ?? []) {
+            _db.Add(_mapper.Map<ConceptDescriptionDTO>(cd));
+        }
         _db.SaveChanges();
     }
 
     public async Task PushToDbAsync(IEnvironment environment)
     {
-        _db.Add(_mapper.Map<EnvironmentDTO>(environment));
+        foreach (var aas in environment.AssetAdministrationShells ?? []) {
+            _db.Add(_mapper.Map<AssetAdministrationShellDTO>(aas));
+        }
+        // foreach (var sm in environment.Submodels ?? []) {
+        //     _db.Add(_mapper.Map<SubmodelDTO>(sm));
+        // }
+        foreach (var cd in environment.ConceptDescriptions ?? []) {
+            _db.Add(_mapper.Map<ConceptDescriptionDTO>(cd));
+        }
         await _db.SaveChangesAsync();
     }
 }

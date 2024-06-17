@@ -5,7 +5,10 @@ using MongoDB.EntityFrameworkCore.Extensions;
 namespace FSR.DigitalTwin.Infra.Data;
 
 public class AdminShellDbContext : DbContext {
-    public DbSet<EnvironmentDTO> Environments { get; init; }
+    // TODO Either use custom models NOT the DTOs from gRPC.
+    public DbSet<AssetAdministrationShellDTO> AdminShells { get; init; }
+    // public DbSet<SubmodelDTO> Submodels { get; init; }
+    public DbSet<ConceptDescriptionDTO> ConceptDescriptions { get; init; }
 
     public AdminShellDbContext(DbContextOptions options)
         : base(options)
@@ -14,7 +17,9 @@ public class AdminShellDbContext : DbContext {
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<EnvironmentDTO>().ToCollection("environments");
+        modelBuilder.Entity<AssetAdministrationShellDTO>().ToCollection("adminShells");
+        // modelBuilder.Entity<SubmodelDTO>().ToCollection("submodels");
+        modelBuilder.Entity<ConceptDescriptionDTO>().ToCollection("conceptDescriptions");
     }
 
 }
