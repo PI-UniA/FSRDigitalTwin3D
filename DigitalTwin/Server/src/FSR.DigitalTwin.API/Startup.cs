@@ -194,9 +194,9 @@ internal class Startup
         services.AddGrpc();
 
         // For testing
-        var serviceProvider = services.BuildServiceProvider();
-        var dbService = serviceProvider.GetService<IAdminShellDb>();
-        dbService.PushToDb(new AasCore.Aas3_0.Environment([], [], []));
+        // var serviceProvider = services.BuildServiceProvider();
+        // var dbService = serviceProvider.GetService<IAdminShellDb>();
+        // dbService.PushToDb(new AasCore.Aas3_0.Environment([], [], []));
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
