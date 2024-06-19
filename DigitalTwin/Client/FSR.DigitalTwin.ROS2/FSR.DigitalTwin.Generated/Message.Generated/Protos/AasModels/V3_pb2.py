@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='FSR.Aas.GRPC.Lib.V3',
   syntax='proto3',
   serialized_options=_b('\252\002\023FSR.Aas.GRPC.Lib.V3'),
-  serialized_pb=_b('\n\x19Protos/AasModels.V3.proto\x12\x13\x46SR.Aas.GRPC.Lib.V3\"\x93\x02\n\x0c\x45xtensionDTO\x12\x35\n\nsemanticId\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x02 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x36\n\tvalueType\x18\x04 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\r\n\x05value\x18\x05 \x01(\t\x12\x33\n\x08refersTo\x18\x06 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xe0\x01\n\x1c\x41\x64ministrativeInformationDTO\x12U\n\x1a\x65mbeddedDataSpecifications\x18\x01 \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x10\n\x08revision\x18\x03 \x01(\t\x12\x32\n\x07\x63reator\x18\x04 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x12\n\ntemplateId\x18\x05 \x01(\t\"\xc4\x02\n\x0cQualifierDTO\x12\x35\n\nsemanticId\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x02 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x30\n\x04kind\x18\x03 \x01(\x0e\x32\".FSR.Aas.GRPC.Lib.V3.QualifierKind\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x36\n\tvalueType\x18\x05 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\r\n\x05value\x18\x06 \x01(\t\x12\x32\n\x07valueId\x18\x07 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xc9\x04\n\x1b\x41ssetAdministrationShellDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12I\n\x0e\x61\x64ministration\x18\x06 \x01(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.AdministrativeInformationDTO\x12\n\n\x02id\x18\x07 \x01(\t\x12U\n\x1a\x65mbeddedDataSpecifications\x18\x08 \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x36\n\x0b\x64\x65rivedFrom\x18\t \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x10\x61ssetInformation\x18\n \x01(\x0b\x32(.FSR.Aas.GRPC.Lib.V3.AssetInformationDTO\x12\x34\n\tsubmodels\x18\x0b \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xf1\x01\n\x13\x41ssetInformationDTO\x12\x31\n\tassetKind\x18\x01 \x01(\x0e\x32\x1e.FSR.Aas.GRPC.Lib.V3.AssetKind\x12\x15\n\rglobalAssetId\x18\x02 \x01(\t\x12\x41\n\x10specificAssetIds\x18\x03 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SpecificAssetIdDTO\x12\x11\n\tassetType\x18\x04 \x01(\t\x12:\n\x10\x64\x65\x66\x61ultThumbnail\x18\x05 \x01(\x0b\x32 .FSR.Aas.GRPC.Lib.V3.ResourceDTO\"0\n\x0bResourceDTO\x12\x0c\n\x04Path\x18\x01 \x01(\t\x12\x13\n\x0b\x43ontentType\x18\x02 \x01(\t\"\xea\x01\n\x12SpecificAssetIdDTO\x12\x35\n\nsemanticId\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x02 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05value\x18\x04 \x01(\t\x12<\n\x11\x65xternalSubjectId\x18\x05 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xae\x05\n\x0bSubmodelDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12I\n\x0e\x61\x64ministration\x18\x06 \x01(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.AdministrativeInformationDTO\x12\n\n\x02id\x18\x07 \x01(\t\x12\x30\n\x04kind\x18\x08 \x01(\x0e\x32\".FSR.Aas.GRPC.Lib.V3.ModellingKind\x12\x35\n\nsemanticId\x18\t \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\n \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x35\n\nqualifiers\x18\x0b \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.QualifierDTO\x12U\n\x1a\x65mbeddedDataSpecifications\x18\x0c \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x41\n\x10submodelElements\x18\r \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\"\x8c\r\n\x12SubmodelElementDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x35\n\nsemanticId\x18\x06 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x07 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x35\n\nqualifiers\x18\x08 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.QualifierDTO\x12U\n\x1a\x65mbeddedDataSpecifications\x18\t \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x45\n\x13submodelElementType\x18\n \x01(\x0e\x32(.FSR.Aas.GRPC.Lib.V3.SubmodelElementType\x12\x61\n\x1c\x61nnotatedRelationshipElement\x18\x0b \x01(\x0b\x32;.FSR.Aas.GRPC.Lib.V3.AnnotatedRelationshipElementPayloadDTO\x12K\n\x11\x62\x61sicEventElement\x18\x0c \x01(\x0b\x32\x30.FSR.Aas.GRPC.Lib.V3.BasicEventElementPayloadDTO\x12\x31\n\x04\x62lob\x18\r \x01(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.BlobPayloadDTO\x12=\n\ncapability\x18\x0e \x01(\x0b\x32).FSR.Aas.GRPC.Lib.V3.CapabilityPayloadDTO\x12?\n\x0b\x64\x61taElement\x18\x0f \x01(\x0b\x32*.FSR.Aas.GRPC.Lib.V3.DataElementPayloadDTO\x12\x35\n\x06\x65ntity\x18\x10 \x01(\x0b\x32%.FSR.Aas.GRPC.Lib.V3.EntityPayloadDTO\x12\x41\n\x0c\x65ventElement\x18\x11 \x01(\x0b\x32+.FSR.Aas.GRPC.Lib.V3.EventElementPayloadDTO\x12\x31\n\x04\x66ile\x18\x12 \x01(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.FilePayloadDTO\x12S\n\x15multiLanguageProperty\x18\x13 \x01(\x0b\x32\x34.FSR.Aas.GRPC.Lib.V3.MultiLanguagePropertyPayloadDTO\x12;\n\toperation\x18\x14 \x01(\x0b\x32(.FSR.Aas.GRPC.Lib.V3.OperationPayloadDTO\x12\x39\n\x08property\x18\x15 \x01(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.PropertyPayloadDTO\x12\x33\n\x05range\x18\x16 \x01(\x0b\x32$.FSR.Aas.GRPC.Lib.V3.RangePayloadDTO\x12I\n\x10referenceElement\x18\x17 \x01(\x0b\x32/.FSR.Aas.GRPC.Lib.V3.ReferenceElementPayloadDTO\x12O\n\x13relationshipElement\x18\x18 \x01(\x0b\x32\x32.FSR.Aas.GRPC.Lib.V3.RelationshipElementPayloadDTO\x12O\n\x13submodelElementList\x18\x19 \x01(\x0b\x32\x32.FSR.Aas.GRPC.Lib.V3.SubmodelElementListPayloadDTO\x12[\n\x19submodelElementCollection\x18\x1a \x01(\x0b\x32\x38.FSR.Aas.GRPC.Lib.V3.SubmodelElementCollectionPayloadDTO\"\x84\x01\n\x1dRelationshipElementPayloadDTO\x12\x30\n\x05\x66irst\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x31\n\x06second\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xbb\x02\n\x1dSubmodelElementListPayloadDTO\x12\x15\n\rorderRelevant\x18\x01 \x01(\x08\x12@\n\x15semanticIdListElement\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x46\n\x14typeValueListElement\x18\x03 \x01(\x0e\x32(.FSR.Aas.GRPC.Lib.V3.SubmodelElementType\x12\x41\n\x14valueTypeListElement\x18\x04 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\x36\n\x05value\x18\x05 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\"]\n#SubmodelElementCollectionPayloadDTO\x12\x36\n\x05value\x18\x01 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\"\x17\n\x15\x44\x61taElementPayloadDTO\"\xa2\x07\n\x0e\x44\x61taElementDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x35\n\nsemanticId\x18\x06 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x07 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x35\n\nqualifiers\x18\x08 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.QualifierDTO\x12U\n\x1a\x65mbeddedDataSpecifications\x18\t \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x45\n\x13submodelElementType\x18\n \x01(\x0e\x32(.FSR.Aas.GRPC.Lib.V3.SubmodelElementType\x12\x39\n\x08property\x18\x0b \x01(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.PropertyPayloadDTO\x12S\n\x15multiLanguageProperty\x18\x0c \x01(\x0b\x32\x34.FSR.Aas.GRPC.Lib.V3.MultiLanguagePropertyPayloadDTO\x12\x33\n\x05range\x18\r \x01(\x0b\x32$.FSR.Aas.GRPC.Lib.V3.RangePayloadDTO\x12I\n\x10referenceElement\x18\x0e \x01(\x0b\x32/.FSR.Aas.GRPC.Lib.V3.ReferenceElementPayloadDTO\x12\x31\n\x04\x62lob\x18\x0f \x01(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.BlobPayloadDTO\x12\x31\n\x04\x66ile\x18\x10 \x01(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.FilePayloadDTO\"\x8f\x01\n\x12PropertyPayloadDTO\x12\x36\n\tvalueType\x18\x01 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\r\n\x05value\x18\x02 \x01(\t\x12\x32\n\x07valueId\x18\x03 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\x88\x01\n\x1fMultiLanguagePropertyPayloadDTO\x12\x31\n\x05value\x18\x01 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x32\n\x07valueId\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"c\n\x0fRangePayloadDTO\x12\x36\n\tvalueType\x18\x01 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\x0b\n\x03min\x18\x02 \x01(\t\x12\x0b\n\x03max\x18\x03 \x01(\t\"N\n\x1aReferenceElementPayloadDTO\x12\x30\n\x05value\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"4\n\x0e\x42lobPayloadDTO\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x13\n\x0b\x63ontentType\x18\x02 \x01(\t\"4\n\x0e\x46ilePayloadDTO\x12\r\n\x05value\x18\x01 \x01(\t\x12\x13\n\x0b\x63ontentType\x18\x02 \x01(\t\"\xc7\x01\n&AnnotatedRelationshipElementPayloadDTO\x12\x30\n\x05\x66irst\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x31\n\x06second\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x38\n\x0b\x61nnotations\x18\x03 \x03(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.DataElementDTO\"\xde\x01\n\x10\x45ntityPayloadDTO\x12;\n\nstatements\x18\x01 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\x12\x33\n\nentityType\x18\x02 \x01(\x0e\x32\x1f.FSR.Aas.GRPC.Lib.V3.EntityType\x12\x15\n\rglobalAssetId\x18\x03 \x01(\t\x12\x41\n\x10specificAssetIds\x18\x04 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SpecificAssetIdDTO\"\xeb\x02\n\x0f\x45ventPayloadDTO\x12\x31\n\x06source\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12;\n\x10sourceSemanticId\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12>\n\x13observableReference\x18\x03 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12?\n\x14observableSemanticId\x18\x04 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\r\n\x05topic\x18\x05 \x01(\t\x12\x34\n\tsubjectId\x18\x06 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x11\n\ttimestamp\x18\x07 \x01(\t\x12\x0f\n\x07payload\x18\x08 \x01(\x0c\"\x18\n\x16\x45ventElementPayloadDTO\"\xc5\x02\n\x1b\x42\x61sicEventElementPayloadDTO\x12\x33\n\x08observed\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x31\n\tdirection\x18\x02 \x01(\x0e\x32\x1e.FSR.Aas.GRPC.Lib.V3.Direction\x12\x30\n\x05state\x18\x03 \x01(\x0e\x32!.FSR.Aas.GRPC.Lib.V3.StateOfEvent\x12\x14\n\x0cmessageTopic\x18\x04 \x01(\t\x12\x38\n\rmessageBroker\x18\x05 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x12\n\nlastUpdate\x18\x06 \x01(\t\x12\x13\n\x0bminInterval\x18\x07 \x01(\t\x12\x13\n\x0bmaxInterval\x18\x08 \x01(\t\"\xdf\x01\n\x13OperationPayloadDTO\x12\x41\n\x0einputVariables\x18\x01 \x03(\x0b\x32).FSR.Aas.GRPC.Lib.V3.OperationVariableDTO\x12\x42\n\x0foutputVariables\x18\x02 \x03(\x0b\x32).FSR.Aas.GRPC.Lib.V3.OperationVariableDTO\x12\x41\n\x0einoutVariables\x18\x03 \x03(\x0b\x32).FSR.Aas.GRPC.Lib.V3.OperationVariableDTO\"N\n\x14OperationVariableDTO\x12\x36\n\x05value\x18\x01 \x01(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\"\x16\n\x14\x43\x61pabilityPayloadDTO\"\xc6\x03\n\x15\x43onceptDescriptionDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12I\n\x0e\x61\x64ministration\x18\x06 \x01(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.AdministrativeInformationDTO\x12\n\n\x02id\x18\x07 \x01(\t\x12U\n\x1a\x65mbeddedDataSpecifications\x18\x08 \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x33\n\x08isCaseOf\x18\t \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xab\x01\n\x0cReferenceDTO\x12\x31\n\x04type\x18\x01 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.ReferenceTypes\x12=\n\x12ReferredSemanticId\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12)\n\x04keys\x18\x03 \x03(\x0b\x32\x1b.FSR.Aas.GRPC.Lib.V3.KeyDTO\"D\n\x06KeyDTO\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.FSR.Aas.GRPC.Lib.V3.KeyTypes\x12\r\n\x05Value\x18\x02 \x01(\t\"/\n\rLangStringDTO\x12\x10\n\x08language\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"\xb0\x01\n\x1c\x45mbeddedDataSpecificationDTO\x12<\n\x11\x64\x61taSpecification\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12R\n\x18\x64\x61taSpecificationContent\x18\x02 \x01(\x0b\x32\x30.FSR.Aas.GRPC.Lib.V3.DataSpecificationContentDTO\"B\n\x0cLevelTypeDTO\x12\x0b\n\x03min\x18\x01 \x01(\x08\x12\x0b\n\x03nom\x18\x02 \x01(\x08\x12\x0b\n\x03typ\x18\x03 \x01(\x08\x12\x0b\n\x03max\x18\x04 \x01(\x08\"Z\n\x15ValueReferencePairDTO\x12\r\n\x05value\x18\x01 \x01(\t\x12\x32\n\x07valueId\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"W\n\x0cValueListDTO\x12G\n\x13valueReferencePairs\x18\x01 \x03(\x0b\x32*.FSR.Aas.GRPC.Lib.V3.ValueReferencePairDTO\"\xe1\x03\n\x1b\x44\x61taSpecificationContentDTO\x12\x39\n\rpreferredName\x18\x01 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x35\n\tshortName\x18\x02 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x0c\n\x04unit\x18\x03 \x01(\t\x12\x31\n\x06unitId\x18\x04 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x0e\n\x06symbol\x18\x05 \x01(\t\x12\x37\n\x08\x64\x61taType\x18\x06 \x01(\x0e\x32%.FSR.Aas.GRPC.Lib.V3.DataTypeIec61360\x12\x36\n\ndefinition\x18\x07 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x13\n\x0bvalueFormat\x18\x08 \x01(\t\x12\x34\n\tvalueList\x18\t \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ValueListDTO\x12\r\n\x05value\x18\n \x01(\t\x12\x34\n\tlevelType\x18\x0b \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.LevelTypeDTO*I\n\rModellingKind\x12\x1b\n\x17MODELLING_KIND_TEMPLATE\x10\x00\x12\x1b\n\x17MODELLING_KIND_INSTANCE\x10\x01*\x80\x01\n\rQualifierKind\x12\"\n\x1eQUALIFIER_KIND_VALUE_QUALIFIER\x10\x00\x12$\n QUALIFIER_KIND_CONCEPT_QUALIFIER\x10\x01\x12%\n!QUALIFIER_KIND_TEMPLATE_QUALIFIER\x10\x02*X\n\tAssetKind\x12\x13\n\x0f\x41SSET_KIND_TYPE\x10\x00\x12\x17\n\x13\x41SSET_KIND_INSTANCE\x10\x01\x12\x1d\n\x19\x41SSET_KIND_NOT_APPLICABLE\x10\x02*\xe5\x05\n\x13SubmodelElementType\x12\x38\n4SUBMODEL_ELEMENT_TYPE_ANNOTATED_RELATIONSHIP_ELEMENT\x10\x00\x12-\n)SUBMODEL_ELEMENT_TYPE_BASIC_EVENT_ELEMENT\x10\x01\x12\x1e\n\x1aSUBMODEL_ELEMENT_TYPE_BLOB\x10\x02\x12$\n SUBMODEL_ELEMENT_TYPE_CAPABILITY\x10\x03\x12&\n\"SUBMODEL_ELEMENT_TYPE_DATA_ELEMENT\x10\x04\x12 \n\x1cSUBMODEL_ELEMENT_TYPE_ENTITY\x10\x05\x12\'\n#SUBMODEL_ELEMENT_TYPE_EVENT_ELEMENT\x10\x06\x12\x1e\n\x1aSUBMODEL_ELEMENT_TYPE_FILE\x10\x07\x12\x31\n-SUBMODEL_ELEMENT_TYPE_MULTI_LANGUAGE_PROPERTY\x10\x08\x12#\n\x1fSUBMODEL_ELEMENT_TYPE_OPERATION\x10\t\x12\"\n\x1eSUBMODEL_ELEMENT_TYPE_PROPERTY\x10\n\x12\x1f\n\x1bSUBMODEL_ELEMENT_TYPE_RANGE\x10\x0b\x12+\n\'SUBMODEL_ELEMENT_TYPE_REFERENCE_ELEMENT\x10\x0c\x12.\n*SUBMODEL_ELEMENT_TYPE_RELATIONSHIP_ELEMENT\x10\r\x12*\n&SUBMODEL_ELEMENT_TYPE_SUBMODEL_ELEMENT\x10\x0e\x12/\n+SUBMODEL_ELEMENT_TYPE_SUBMODEL_ELEMENT_LIST\x10\x0f\x12\x35\n1SUBMODEL_ELEMENT_TYPE_SUBMODEL_ELEMENT_COLLECTION\x10\x10*T\n\nEntityType\x12!\n\x1d\x45NTITY_TYPE_CO_MANAGED_ENTITY\x10\x00\x12#\n\x1f\x45NTITY_TYPE_SELF_MANAGED_ENTITY\x10\x01*6\n\tDirection\x12\x13\n\x0f\x44IRECTION_INPUT\x10\x00\x12\x14\n\x10\x44IRECTION_OUTPUT\x10\x01*=\n\x0cStateOfEvent\x12\x15\n\x11STATE_OF_EVENT_ON\x10\x00\x12\x16\n\x12STATE_OF_EVENT_OFF\x10\x01*[\n\x0eReferenceTypes\x12%\n!REFERENCE_TYPE_EXTERNAL_REFERENCE\x10\x00\x12\"\n\x1eREFERENCE_TYPE_MODEL_REFERENCE\x10\x01*\xea\x05\n\x08KeyTypes\x12,\n(KEY_TYPES_ANNOTATED_RELATIONSHIP_ELEMENT\x10\x00\x12(\n$KEY_TYPES_ASSET_ADMINISTRATION_SHELL\x10\x01\x12!\n\x1dKEY_TYPES_BASIC_EVENT_ELEMENT\x10\x02\x12\x12\n\x0eKEY_TYPES_BLOB\x10\x03\x12\x18\n\x14KEY_TYPES_CAPABILITY\x10\x04\x12!\n\x1dKEY_TYPES_CONCEPT_DESCRIPTION\x10\x05\x12\x1a\n\x16KEY_TYPES_DATA_ELEMENT\x10\x06\x12\x14\n\x10KEY_TYPES_ENTITY\x10\x07\x12\x1b\n\x17KEY_TYPES_EVENT_ELEMENT\x10\x08\x12\x12\n\x0eKEY_TYPES_FILE\x10\t\x12 \n\x1cKEY_TYPES_FRAGMENT_REFERENCE\x10\n\x12\x1e\n\x1aKEY_TYPES_GLOBAL_REFERENCE\x10\x0b\x12\x1a\n\x16KEY_TYPES_IDENTIFIABLE\x10\x0c\x12%\n!KEY_TYPES_MULTI_LANGUAGE_PROPERTY\x10\r\x12\x17\n\x13KEY_TYPES_OPERATION\x10\x0e\x12\x16\n\x12KEY_TYPES_PROPERTY\x10\x0f\x12\x13\n\x0fKEY_TYPES_RANGE\x10\x10\x12\x17\n\x13KEY_TYPES_REFERABLE\x10\x11\x12\x1f\n\x1bKEY_TYPES_REFERENCE_ELEMENT\x10\x12\x12\"\n\x1eKEY_TYPES_RELATIONSHIP_ELEMENT\x10\x13\x12\x16\n\x12KEY_TYPES_SUBMODEL\x10\x14\x12\x1e\n\x1aKEY_TYPES_SUBMODEL_ELEMENT\x10\x15\x12)\n%KEY_TYPES_SUBMODEL_ELEMENT_COLLECTION\x10\x16\x12#\n\x1fKEY_TYPES_SUBMODEL_ELEMENT_LIST\x10\x17*\xf2\x07\n\x0e\x44\x61taTypeDefXsd\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_ANY_URI\x10\x00\x12#\n\x1f\x44\x41TA_TYPE_DEF_XSD_BASE64_BINARY\x10\x01\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_BOOLEAN\x10\x02\x12\x1a\n\x16\x44\x41TA_TYPE_DEF_XSD_BYTE\x10\x03\x12\x1a\n\x16\x44\x41TA_TYPE_DEF_XSD_DATE\x10\x04\x12\x1f\n\x1b\x44\x41TA_TYPE_DEF_XSD_DATE_TIME\x10\x05\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_DECIMAL\x10\x06\x12\x1c\n\x18\x44\x41TA_TYPE_DEF_XSD_DOUBLE\x10\x07\x12\x1e\n\x1a\x44\x41TA_TYPE_DEF_XSD_DURATION\x10\x08\x12\x1b\n\x17\x44\x41TA_TYPE_DEF_XSD_FLOAT\x10\t\x12\x1b\n\x17\x44\x41TA_TYPE_DEF_XSD_G_DAY\x10\n\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_G_MONTH\x10\x0b\x12!\n\x1d\x44\x41TA_TYPE_DEF_XSD_G_MONTH_DAY\x10\x0c\x12\x1c\n\x18\x44\x41TA_TYPE_DEF_XSD_G_YEAR\x10\r\x12\"\n\x1e\x44\x41TA_TYPE_DEF_XSD_G_YEAR_MONTH\x10\x0e\x12 \n\x1c\x44\x41TA_TYPE_DEF_XSD_HEX_BINARY\x10\x0f\x12\x19\n\x15\x44\x41TA_TYPE_DEF_XSD_INT\x10\x10\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_INTEGER\x10\x11\x12\x1a\n\x16\x44\x41TA_TYPE_DEF_XSD_LONG\x10\x12\x12&\n\"DATA_TYPE_DEF_XSD_NEGATIVE_INTEGER\x10\x13\x12*\n&DATA_TYPE_DEF_XSD_NON_NEGATIVE_INTEGER\x10\x14\x12*\n&DATA_TYPE_DEF_XSD_NON_POSITIVE_INTEGER\x10\x15\x12&\n\"DATA_TYPE_DEF_XSD_POSITIVE_INTEGER\x10\x16\x12\x1b\n\x17\x44\x41TA_TYPE_DEF_XSD_SHORT\x10\x17\x12\x1c\n\x18\x44\x41TA_TYPE_DEF_XSD_STRING\x10\x18\x12\x1a\n\x16\x44\x41TA_TYPE_DEF_XSD_TIME\x10\x19\x12#\n\x1f\x44\x41TA_TYPE_DEF_XSD_UNSIGNED_BYTE\x10\x1a\x12\"\n\x1e\x44\x41TA_TYPE_DEF_XSD_UNSIGNED_INT\x10\x1b\x12#\n\x1f\x44\x41TA_TYPE_DEF_XSD_UNSIGNED_LONG\x10\x1c\x12$\n DATA_TYPE_DEF_XSD_UNSIGNED_SHORT\x10\x1d*\xab\x05\n\x10\x44\x61taTypeIec61360\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_DATE\x10\x00\x12\x1e\n\x1a\x44\x41TA_TYPE_IEC_61360_STRING\x10\x01\x12+\n\'DATA_TYPE_IEC_61360_STRING_TRANSLATABLE\x10\x02\x12\'\n#DATA_TYPE_IEC_61360_INTEGER_MEASURE\x10\x03\x12%\n!DATA_TYPE_IEC_61360_INTEGER_COUNT\x10\x04\x12(\n$DATA_TYPE_IEC_61360_INTEGER_CURRENCY\x10\x05\x12$\n DATA_TYPE_IEC_61360_REAL_MEASURE\x10\x06\x12\"\n\x1e\x44\x41TA_TYPE_IEC_61360_REAL_COUNT\x10\x07\x12%\n!DATA_TYPE_IEC_61360_REAL_CURRENCY\x10\x08\x12\x1f\n\x1b\x44\x41TA_TYPE_IEC_61360_BOOLEAN\x10\t\x12\x1b\n\x17\x44\x41TA_TYPE_IEC_61360_IRI\x10\n\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_IRDI\x10\x0b\x12 \n\x1c\x44\x41TA_TYPE_IEC_61360_RATIONAL\x10\x0c\x12(\n$DATA_TYPE_IEC_61360_RATIONAL_MEASURE\x10\r\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_TIME\x10\x0e\x12!\n\x1d\x44\x41TA_TYPE_IEC_61360_TIMESTAMP\x10\x0f\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_FILE\x10\x10\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_HTML\x10\x11\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_BLOB\x10\x12\x42\x16\xaa\x02\x13\x46SR.Aas.GRPC.Lib.V3b\x06proto3')
+  serialized_pb=_b('\n\x19Protos/AasModels.V3.proto\x12\x13\x46SR.Aas.GRPC.Lib.V3\"\xe3\x01\n\x0e\x45nvironmentDTO\x12S\n\x19\x61ssetAdministrationShells\x18\x01 \x03(\x0b\x32\x30.FSR.Aas.GRPC.Lib.V3.AssetAdministrationShellDTO\x12\x33\n\tsubmodels\x18\x02 \x03(\x0b\x32 .FSR.Aas.GRPC.Lib.V3.SubmodelDTO\x12G\n\x13\x63onceptDescriptions\x18\x03 \x03(\x0b\x32*.FSR.Aas.GRPC.Lib.V3.ConceptDescriptionDTO\"\x93\x02\n\x0c\x45xtensionDTO\x12\x35\n\nsemanticId\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x02 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x36\n\tvalueType\x18\x04 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\r\n\x05value\x18\x05 \x01(\t\x12\x33\n\x08refersTo\x18\x06 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xe0\x01\n\x1c\x41\x64ministrativeInformationDTO\x12U\n\x1a\x65mbeddedDataSpecifications\x18\x01 \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x10\n\x08revision\x18\x03 \x01(\t\x12\x32\n\x07\x63reator\x18\x04 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x12\n\ntemplateId\x18\x05 \x01(\t\"\xc4\x02\n\x0cQualifierDTO\x12\x35\n\nsemanticId\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x02 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x30\n\x04kind\x18\x03 \x01(\x0e\x32\".FSR.Aas.GRPC.Lib.V3.QualifierKind\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x36\n\tvalueType\x18\x05 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\r\n\x05value\x18\x06 \x01(\t\x12\x32\n\x07valueId\x18\x07 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xc9\x04\n\x1b\x41ssetAdministrationShellDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12I\n\x0e\x61\x64ministration\x18\x06 \x01(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.AdministrativeInformationDTO\x12\n\n\x02id\x18\x07 \x01(\t\x12U\n\x1a\x65mbeddedDataSpecifications\x18\x08 \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x36\n\x0b\x64\x65rivedFrom\x18\t \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x10\x61ssetInformation\x18\n \x01(\x0b\x32(.FSR.Aas.GRPC.Lib.V3.AssetInformationDTO\x12\x34\n\tsubmodels\x18\x0b \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xf1\x01\n\x13\x41ssetInformationDTO\x12\x31\n\tassetKind\x18\x01 \x01(\x0e\x32\x1e.FSR.Aas.GRPC.Lib.V3.AssetKind\x12\x15\n\rglobalAssetId\x18\x02 \x01(\t\x12\x41\n\x10specificAssetIds\x18\x03 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SpecificAssetIdDTO\x12\x11\n\tassetType\x18\x04 \x01(\t\x12:\n\x10\x64\x65\x66\x61ultThumbnail\x18\x05 \x01(\x0b\x32 .FSR.Aas.GRPC.Lib.V3.ResourceDTO\"0\n\x0bResourceDTO\x12\x0c\n\x04Path\x18\x01 \x01(\t\x12\x13\n\x0b\x43ontentType\x18\x02 \x01(\t\"\xea\x01\n\x12SpecificAssetIdDTO\x12\x35\n\nsemanticId\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x02 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05value\x18\x04 \x01(\t\x12<\n\x11\x65xternalSubjectId\x18\x05 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xae\x05\n\x0bSubmodelDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12I\n\x0e\x61\x64ministration\x18\x06 \x01(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.AdministrativeInformationDTO\x12\n\n\x02id\x18\x07 \x01(\t\x12\x30\n\x04kind\x18\x08 \x01(\x0e\x32\".FSR.Aas.GRPC.Lib.V3.ModellingKind\x12\x35\n\nsemanticId\x18\t \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\n \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x35\n\nqualifiers\x18\x0b \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.QualifierDTO\x12U\n\x1a\x65mbeddedDataSpecifications\x18\x0c \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x41\n\x10submodelElements\x18\r \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\"\x8c\r\n\x12SubmodelElementDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x35\n\nsemanticId\x18\x06 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x07 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x35\n\nqualifiers\x18\x08 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.QualifierDTO\x12U\n\x1a\x65mbeddedDataSpecifications\x18\t \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x45\n\x13submodelElementType\x18\n \x01(\x0e\x32(.FSR.Aas.GRPC.Lib.V3.SubmodelElementType\x12\x61\n\x1c\x61nnotatedRelationshipElement\x18\x0b \x01(\x0b\x32;.FSR.Aas.GRPC.Lib.V3.AnnotatedRelationshipElementPayloadDTO\x12K\n\x11\x62\x61sicEventElement\x18\x0c \x01(\x0b\x32\x30.FSR.Aas.GRPC.Lib.V3.BasicEventElementPayloadDTO\x12\x31\n\x04\x62lob\x18\r \x01(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.BlobPayloadDTO\x12=\n\ncapability\x18\x0e \x01(\x0b\x32).FSR.Aas.GRPC.Lib.V3.CapabilityPayloadDTO\x12?\n\x0b\x64\x61taElement\x18\x0f \x01(\x0b\x32*.FSR.Aas.GRPC.Lib.V3.DataElementPayloadDTO\x12\x35\n\x06\x65ntity\x18\x10 \x01(\x0b\x32%.FSR.Aas.GRPC.Lib.V3.EntityPayloadDTO\x12\x41\n\x0c\x65ventElement\x18\x11 \x01(\x0b\x32+.FSR.Aas.GRPC.Lib.V3.EventElementPayloadDTO\x12\x31\n\x04\x66ile\x18\x12 \x01(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.FilePayloadDTO\x12S\n\x15multiLanguageProperty\x18\x13 \x01(\x0b\x32\x34.FSR.Aas.GRPC.Lib.V3.MultiLanguagePropertyPayloadDTO\x12;\n\toperation\x18\x14 \x01(\x0b\x32(.FSR.Aas.GRPC.Lib.V3.OperationPayloadDTO\x12\x39\n\x08property\x18\x15 \x01(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.PropertyPayloadDTO\x12\x33\n\x05range\x18\x16 \x01(\x0b\x32$.FSR.Aas.GRPC.Lib.V3.RangePayloadDTO\x12I\n\x10referenceElement\x18\x17 \x01(\x0b\x32/.FSR.Aas.GRPC.Lib.V3.ReferenceElementPayloadDTO\x12O\n\x13relationshipElement\x18\x18 \x01(\x0b\x32\x32.FSR.Aas.GRPC.Lib.V3.RelationshipElementPayloadDTO\x12O\n\x13submodelElementList\x18\x19 \x01(\x0b\x32\x32.FSR.Aas.GRPC.Lib.V3.SubmodelElementListPayloadDTO\x12[\n\x19submodelElementCollection\x18\x1a \x01(\x0b\x32\x38.FSR.Aas.GRPC.Lib.V3.SubmodelElementCollectionPayloadDTO\"\x84\x01\n\x1dRelationshipElementPayloadDTO\x12\x30\n\x05\x66irst\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x31\n\x06second\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xbb\x02\n\x1dSubmodelElementListPayloadDTO\x12\x15\n\rorderRelevant\x18\x01 \x01(\x08\x12@\n\x15semanticIdListElement\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x46\n\x14typeValueListElement\x18\x03 \x01(\x0e\x32(.FSR.Aas.GRPC.Lib.V3.SubmodelElementType\x12\x41\n\x14valueTypeListElement\x18\x04 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\x36\n\x05value\x18\x05 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\"]\n#SubmodelElementCollectionPayloadDTO\x12\x36\n\x05value\x18\x01 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\"\x17\n\x15\x44\x61taElementPayloadDTO\"\xa2\x07\n\x0e\x44\x61taElementDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x35\n\nsemanticId\x18\x06 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x42\n\x17supplementalSemanticIds\x18\x07 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x35\n\nqualifiers\x18\x08 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.QualifierDTO\x12U\n\x1a\x65mbeddedDataSpecifications\x18\t \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x45\n\x13submodelElementType\x18\n \x01(\x0e\x32(.FSR.Aas.GRPC.Lib.V3.SubmodelElementType\x12\x39\n\x08property\x18\x0b \x01(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.PropertyPayloadDTO\x12S\n\x15multiLanguageProperty\x18\x0c \x01(\x0b\x32\x34.FSR.Aas.GRPC.Lib.V3.MultiLanguagePropertyPayloadDTO\x12\x33\n\x05range\x18\r \x01(\x0b\x32$.FSR.Aas.GRPC.Lib.V3.RangePayloadDTO\x12I\n\x10referenceElement\x18\x0e \x01(\x0b\x32/.FSR.Aas.GRPC.Lib.V3.ReferenceElementPayloadDTO\x12\x31\n\x04\x62lob\x18\x0f \x01(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.BlobPayloadDTO\x12\x31\n\x04\x66ile\x18\x10 \x01(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.FilePayloadDTO\"\x8f\x01\n\x12PropertyPayloadDTO\x12\x36\n\tvalueType\x18\x01 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\r\n\x05value\x18\x02 \x01(\t\x12\x32\n\x07valueId\x18\x03 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\x88\x01\n\x1fMultiLanguagePropertyPayloadDTO\x12\x31\n\x05value\x18\x01 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x32\n\x07valueId\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"c\n\x0fRangePayloadDTO\x12\x36\n\tvalueType\x18\x01 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.DataTypeDefXsd\x12\x0b\n\x03min\x18\x02 \x01(\t\x12\x0b\n\x03max\x18\x03 \x01(\t\"N\n\x1aReferenceElementPayloadDTO\x12\x30\n\x05value\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"4\n\x0e\x42lobPayloadDTO\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x13\n\x0b\x63ontentType\x18\x02 \x01(\t\"4\n\x0e\x46ilePayloadDTO\x12\r\n\x05value\x18\x01 \x01(\t\x12\x13\n\x0b\x63ontentType\x18\x02 \x01(\t\"\xc7\x01\n&AnnotatedRelationshipElementPayloadDTO\x12\x30\n\x05\x66irst\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x31\n\x06second\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x38\n\x0b\x61nnotations\x18\x03 \x03(\x0b\x32#.FSR.Aas.GRPC.Lib.V3.DataElementDTO\"\xde\x01\n\x10\x45ntityPayloadDTO\x12;\n\nstatements\x18\x01 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\x12\x33\n\nentityType\x18\x02 \x01(\x0e\x32\x1f.FSR.Aas.GRPC.Lib.V3.EntityType\x12\x15\n\rglobalAssetId\x18\x03 \x01(\t\x12\x41\n\x10specificAssetIds\x18\x04 \x03(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SpecificAssetIdDTO\"\xeb\x02\n\x0f\x45ventPayloadDTO\x12\x31\n\x06source\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12;\n\x10sourceSemanticId\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12>\n\x13observableReference\x18\x03 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12?\n\x14observableSemanticId\x18\x04 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\r\n\x05topic\x18\x05 \x01(\t\x12\x34\n\tsubjectId\x18\x06 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x11\n\ttimestamp\x18\x07 \x01(\t\x12\x0f\n\x07payload\x18\x08 \x01(\x0c\"\x18\n\x16\x45ventElementPayloadDTO\"\xc5\x02\n\x1b\x42\x61sicEventElementPayloadDTO\x12\x33\n\x08observed\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x31\n\tdirection\x18\x02 \x01(\x0e\x32\x1e.FSR.Aas.GRPC.Lib.V3.Direction\x12\x30\n\x05state\x18\x03 \x01(\x0e\x32!.FSR.Aas.GRPC.Lib.V3.StateOfEvent\x12\x14\n\x0cmessageTopic\x18\x04 \x01(\t\x12\x38\n\rmessageBroker\x18\x05 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x12\n\nlastUpdate\x18\x06 \x01(\t\x12\x13\n\x0bminInterval\x18\x07 \x01(\t\x12\x13\n\x0bmaxInterval\x18\x08 \x01(\t\"\xdf\x01\n\x13OperationPayloadDTO\x12\x41\n\x0einputVariables\x18\x01 \x03(\x0b\x32).FSR.Aas.GRPC.Lib.V3.OperationVariableDTO\x12\x42\n\x0foutputVariables\x18\x02 \x03(\x0b\x32).FSR.Aas.GRPC.Lib.V3.OperationVariableDTO\x12\x41\n\x0einoutVariables\x18\x03 \x03(\x0b\x32).FSR.Aas.GRPC.Lib.V3.OperationVariableDTO\"N\n\x14OperationVariableDTO\x12\x36\n\x05value\x18\x01 \x01(\x0b\x32\'.FSR.Aas.GRPC.Lib.V3.SubmodelElementDTO\"\x16\n\x14\x43\x61pabilityPayloadDTO\"\xc6\x03\n\x15\x43onceptDescriptionDTO\x12\x35\n\nextensions\x18\x01 \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ExtensionDTO\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0f\n\x07idShort\x18\x03 \x01(\t\x12\x37\n\x0b\x64isplayName\x18\x04 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x37\n\x0b\x64\x65scription\x18\x05 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12I\n\x0e\x61\x64ministration\x18\x06 \x01(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.AdministrativeInformationDTO\x12\n\n\x02id\x18\x07 \x01(\t\x12U\n\x1a\x65mbeddedDataSpecifications\x18\x08 \x03(\x0b\x32\x31.FSR.Aas.GRPC.Lib.V3.EmbeddedDataSpecificationDTO\x12\x33\n\x08isCaseOf\x18\t \x03(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"\xab\x01\n\x0cReferenceDTO\x12\x31\n\x04type\x18\x01 \x01(\x0e\x32#.FSR.Aas.GRPC.Lib.V3.ReferenceTypes\x12=\n\x12ReferredSemanticId\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12)\n\x04keys\x18\x03 \x03(\x0b\x32\x1b.FSR.Aas.GRPC.Lib.V3.KeyDTO\"D\n\x06KeyDTO\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.FSR.Aas.GRPC.Lib.V3.KeyTypes\x12\r\n\x05Value\x18\x02 \x01(\t\"/\n\rLangStringDTO\x12\x10\n\x08language\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"\xb0\x01\n\x1c\x45mbeddedDataSpecificationDTO\x12<\n\x11\x64\x61taSpecification\x18\x01 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12R\n\x18\x64\x61taSpecificationContent\x18\x02 \x01(\x0b\x32\x30.FSR.Aas.GRPC.Lib.V3.DataSpecificationContentDTO\"B\n\x0cLevelTypeDTO\x12\x0b\n\x03min\x18\x01 \x01(\x08\x12\x0b\n\x03nom\x18\x02 \x01(\x08\x12\x0b\n\x03typ\x18\x03 \x01(\x08\x12\x0b\n\x03max\x18\x04 \x01(\x08\"Z\n\x15ValueReferencePairDTO\x12\r\n\x05value\x18\x01 \x01(\t\x12\x32\n\x07valueId\x18\x02 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\"W\n\x0cValueListDTO\x12G\n\x13valueReferencePairs\x18\x01 \x03(\x0b\x32*.FSR.Aas.GRPC.Lib.V3.ValueReferencePairDTO\"\xe1\x03\n\x1b\x44\x61taSpecificationContentDTO\x12\x39\n\rpreferredName\x18\x01 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x35\n\tshortName\x18\x02 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x0c\n\x04unit\x18\x03 \x01(\t\x12\x31\n\x06unitId\x18\x04 \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ReferenceDTO\x12\x0e\n\x06symbol\x18\x05 \x01(\t\x12\x37\n\x08\x64\x61taType\x18\x06 \x01(\x0e\x32%.FSR.Aas.GRPC.Lib.V3.DataTypeIec61360\x12\x36\n\ndefinition\x18\x07 \x03(\x0b\x32\".FSR.Aas.GRPC.Lib.V3.LangStringDTO\x12\x13\n\x0bvalueFormat\x18\x08 \x01(\t\x12\x34\n\tvalueList\x18\t \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.ValueListDTO\x12\r\n\x05value\x18\n \x01(\t\x12\x34\n\tlevelType\x18\x0b \x01(\x0b\x32!.FSR.Aas.GRPC.Lib.V3.LevelTypeDTO*I\n\rModellingKind\x12\x1b\n\x17MODELLING_KIND_TEMPLATE\x10\x00\x12\x1b\n\x17MODELLING_KIND_INSTANCE\x10\x01*\x80\x01\n\rQualifierKind\x12\"\n\x1eQUALIFIER_KIND_VALUE_QUALIFIER\x10\x00\x12$\n QUALIFIER_KIND_CONCEPT_QUALIFIER\x10\x01\x12%\n!QUALIFIER_KIND_TEMPLATE_QUALIFIER\x10\x02*X\n\tAssetKind\x12\x13\n\x0f\x41SSET_KIND_TYPE\x10\x00\x12\x17\n\x13\x41SSET_KIND_INSTANCE\x10\x01\x12\x1d\n\x19\x41SSET_KIND_NOT_APPLICABLE\x10\x02*\xe5\x05\n\x13SubmodelElementType\x12\x38\n4SUBMODEL_ELEMENT_TYPE_ANNOTATED_RELATIONSHIP_ELEMENT\x10\x00\x12-\n)SUBMODEL_ELEMENT_TYPE_BASIC_EVENT_ELEMENT\x10\x01\x12\x1e\n\x1aSUBMODEL_ELEMENT_TYPE_BLOB\x10\x02\x12$\n SUBMODEL_ELEMENT_TYPE_CAPABILITY\x10\x03\x12&\n\"SUBMODEL_ELEMENT_TYPE_DATA_ELEMENT\x10\x04\x12 \n\x1cSUBMODEL_ELEMENT_TYPE_ENTITY\x10\x05\x12\'\n#SUBMODEL_ELEMENT_TYPE_EVENT_ELEMENT\x10\x06\x12\x1e\n\x1aSUBMODEL_ELEMENT_TYPE_FILE\x10\x07\x12\x31\n-SUBMODEL_ELEMENT_TYPE_MULTI_LANGUAGE_PROPERTY\x10\x08\x12#\n\x1fSUBMODEL_ELEMENT_TYPE_OPERATION\x10\t\x12\"\n\x1eSUBMODEL_ELEMENT_TYPE_PROPERTY\x10\n\x12\x1f\n\x1bSUBMODEL_ELEMENT_TYPE_RANGE\x10\x0b\x12+\n\'SUBMODEL_ELEMENT_TYPE_REFERENCE_ELEMENT\x10\x0c\x12.\n*SUBMODEL_ELEMENT_TYPE_RELATIONSHIP_ELEMENT\x10\r\x12*\n&SUBMODEL_ELEMENT_TYPE_SUBMODEL_ELEMENT\x10\x0e\x12/\n+SUBMODEL_ELEMENT_TYPE_SUBMODEL_ELEMENT_LIST\x10\x0f\x12\x35\n1SUBMODEL_ELEMENT_TYPE_SUBMODEL_ELEMENT_COLLECTION\x10\x10*T\n\nEntityType\x12!\n\x1d\x45NTITY_TYPE_CO_MANAGED_ENTITY\x10\x00\x12#\n\x1f\x45NTITY_TYPE_SELF_MANAGED_ENTITY\x10\x01*6\n\tDirection\x12\x13\n\x0f\x44IRECTION_INPUT\x10\x00\x12\x14\n\x10\x44IRECTION_OUTPUT\x10\x01*=\n\x0cStateOfEvent\x12\x15\n\x11STATE_OF_EVENT_ON\x10\x00\x12\x16\n\x12STATE_OF_EVENT_OFF\x10\x01*[\n\x0eReferenceTypes\x12%\n!REFERENCE_TYPE_EXTERNAL_REFERENCE\x10\x00\x12\"\n\x1eREFERENCE_TYPE_MODEL_REFERENCE\x10\x01*\xea\x05\n\x08KeyTypes\x12,\n(KEY_TYPES_ANNOTATED_RELATIONSHIP_ELEMENT\x10\x00\x12(\n$KEY_TYPES_ASSET_ADMINISTRATION_SHELL\x10\x01\x12!\n\x1dKEY_TYPES_BASIC_EVENT_ELEMENT\x10\x02\x12\x12\n\x0eKEY_TYPES_BLOB\x10\x03\x12\x18\n\x14KEY_TYPES_CAPABILITY\x10\x04\x12!\n\x1dKEY_TYPES_CONCEPT_DESCRIPTION\x10\x05\x12\x1a\n\x16KEY_TYPES_DATA_ELEMENT\x10\x06\x12\x14\n\x10KEY_TYPES_ENTITY\x10\x07\x12\x1b\n\x17KEY_TYPES_EVENT_ELEMENT\x10\x08\x12\x12\n\x0eKEY_TYPES_FILE\x10\t\x12 \n\x1cKEY_TYPES_FRAGMENT_REFERENCE\x10\n\x12\x1e\n\x1aKEY_TYPES_GLOBAL_REFERENCE\x10\x0b\x12\x1a\n\x16KEY_TYPES_IDENTIFIABLE\x10\x0c\x12%\n!KEY_TYPES_MULTI_LANGUAGE_PROPERTY\x10\r\x12\x17\n\x13KEY_TYPES_OPERATION\x10\x0e\x12\x16\n\x12KEY_TYPES_PROPERTY\x10\x0f\x12\x13\n\x0fKEY_TYPES_RANGE\x10\x10\x12\x17\n\x13KEY_TYPES_REFERABLE\x10\x11\x12\x1f\n\x1bKEY_TYPES_REFERENCE_ELEMENT\x10\x12\x12\"\n\x1eKEY_TYPES_RELATIONSHIP_ELEMENT\x10\x13\x12\x16\n\x12KEY_TYPES_SUBMODEL\x10\x14\x12\x1e\n\x1aKEY_TYPES_SUBMODEL_ELEMENT\x10\x15\x12)\n%KEY_TYPES_SUBMODEL_ELEMENT_COLLECTION\x10\x16\x12#\n\x1fKEY_TYPES_SUBMODEL_ELEMENT_LIST\x10\x17*\xf2\x07\n\x0e\x44\x61taTypeDefXsd\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_ANY_URI\x10\x00\x12#\n\x1f\x44\x41TA_TYPE_DEF_XSD_BASE64_BINARY\x10\x01\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_BOOLEAN\x10\x02\x12\x1a\n\x16\x44\x41TA_TYPE_DEF_XSD_BYTE\x10\x03\x12\x1a\n\x16\x44\x41TA_TYPE_DEF_XSD_DATE\x10\x04\x12\x1f\n\x1b\x44\x41TA_TYPE_DEF_XSD_DATE_TIME\x10\x05\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_DECIMAL\x10\x06\x12\x1c\n\x18\x44\x41TA_TYPE_DEF_XSD_DOUBLE\x10\x07\x12\x1e\n\x1a\x44\x41TA_TYPE_DEF_XSD_DURATION\x10\x08\x12\x1b\n\x17\x44\x41TA_TYPE_DEF_XSD_FLOAT\x10\t\x12\x1b\n\x17\x44\x41TA_TYPE_DEF_XSD_G_DAY\x10\n\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_G_MONTH\x10\x0b\x12!\n\x1d\x44\x41TA_TYPE_DEF_XSD_G_MONTH_DAY\x10\x0c\x12\x1c\n\x18\x44\x41TA_TYPE_DEF_XSD_G_YEAR\x10\r\x12\"\n\x1e\x44\x41TA_TYPE_DEF_XSD_G_YEAR_MONTH\x10\x0e\x12 \n\x1c\x44\x41TA_TYPE_DEF_XSD_HEX_BINARY\x10\x0f\x12\x19\n\x15\x44\x41TA_TYPE_DEF_XSD_INT\x10\x10\x12\x1d\n\x19\x44\x41TA_TYPE_DEF_XSD_INTEGER\x10\x11\x12\x1a\n\x16\x44\x41TA_TYPE_DEF_XSD_LONG\x10\x12\x12&\n\"DATA_TYPE_DEF_XSD_NEGATIVE_INTEGER\x10\x13\x12*\n&DATA_TYPE_DEF_XSD_NON_NEGATIVE_INTEGER\x10\x14\x12*\n&DATA_TYPE_DEF_XSD_NON_POSITIVE_INTEGER\x10\x15\x12&\n\"DATA_TYPE_DEF_XSD_POSITIVE_INTEGER\x10\x16\x12\x1b\n\x17\x44\x41TA_TYPE_DEF_XSD_SHORT\x10\x17\x12\x1c\n\x18\x44\x41TA_TYPE_DEF_XSD_STRING\x10\x18\x12\x1a\n\x16\x44\x41TA_TYPE_DEF_XSD_TIME\x10\x19\x12#\n\x1f\x44\x41TA_TYPE_DEF_XSD_UNSIGNED_BYTE\x10\x1a\x12\"\n\x1e\x44\x41TA_TYPE_DEF_XSD_UNSIGNED_INT\x10\x1b\x12#\n\x1f\x44\x41TA_TYPE_DEF_XSD_UNSIGNED_LONG\x10\x1c\x12$\n DATA_TYPE_DEF_XSD_UNSIGNED_SHORT\x10\x1d*\xab\x05\n\x10\x44\x61taTypeIec61360\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_DATE\x10\x00\x12\x1e\n\x1a\x44\x41TA_TYPE_IEC_61360_STRING\x10\x01\x12+\n\'DATA_TYPE_IEC_61360_STRING_TRANSLATABLE\x10\x02\x12\'\n#DATA_TYPE_IEC_61360_INTEGER_MEASURE\x10\x03\x12%\n!DATA_TYPE_IEC_61360_INTEGER_COUNT\x10\x04\x12(\n$DATA_TYPE_IEC_61360_INTEGER_CURRENCY\x10\x05\x12$\n DATA_TYPE_IEC_61360_REAL_MEASURE\x10\x06\x12\"\n\x1e\x44\x41TA_TYPE_IEC_61360_REAL_COUNT\x10\x07\x12%\n!DATA_TYPE_IEC_61360_REAL_CURRENCY\x10\x08\x12\x1f\n\x1b\x44\x41TA_TYPE_IEC_61360_BOOLEAN\x10\t\x12\x1b\n\x17\x44\x41TA_TYPE_IEC_61360_IRI\x10\n\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_IRDI\x10\x0b\x12 \n\x1c\x44\x41TA_TYPE_IEC_61360_RATIONAL\x10\x0c\x12(\n$DATA_TYPE_IEC_61360_RATIONAL_MEASURE\x10\r\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_TIME\x10\x0e\x12!\n\x1d\x44\x41TA_TYPE_IEC_61360_TIMESTAMP\x10\x0f\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_FILE\x10\x10\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_HTML\x10\x11\x12\x1c\n\x18\x44\x41TA_TYPE_IEC_61360_BLOB\x10\x12\x42\x16\xaa\x02\x13\x46SR.Aas.GRPC.Lib.V3b\x06proto3')
 )
 
 _MODELLINGKIND = _descriptor.EnumDescriptor(
@@ -41,8 +41,8 @@ _MODELLINGKIND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9588,
-  serialized_end=9661,
+  serialized_start=9818,
+  serialized_end=9891,
 )
 _sym_db.RegisterEnumDescriptor(_MODELLINGKIND)
 
@@ -68,8 +68,8 @@ _QUALIFIERKIND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9664,
-  serialized_end=9792,
+  serialized_start=9894,
+  serialized_end=10022,
 )
 _sym_db.RegisterEnumDescriptor(_QUALIFIERKIND)
 
@@ -95,8 +95,8 @@ _ASSETKIND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9794,
-  serialized_end=9882,
+  serialized_start=10024,
+  serialized_end=10112,
 )
 _sym_db.RegisterEnumDescriptor(_ASSETKIND)
 
@@ -178,8 +178,8 @@ _SUBMODELELEMENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9885,
-  serialized_end=10626,
+  serialized_start=10115,
+  serialized_end=10856,
 )
 _sym_db.RegisterEnumDescriptor(_SUBMODELELEMENTTYPE)
 
@@ -201,8 +201,8 @@ _ENTITYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10628,
-  serialized_end=10712,
+  serialized_start=10858,
+  serialized_end=10942,
 )
 _sym_db.RegisterEnumDescriptor(_ENTITYTYPE)
 
@@ -224,8 +224,8 @@ _DIRECTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10714,
-  serialized_end=10768,
+  serialized_start=10944,
+  serialized_end=10998,
 )
 _sym_db.RegisterEnumDescriptor(_DIRECTION)
 
@@ -247,8 +247,8 @@ _STATEOFEVENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10770,
-  serialized_end=10831,
+  serialized_start=11000,
+  serialized_end=11061,
 )
 _sym_db.RegisterEnumDescriptor(_STATEOFEVENT)
 
@@ -270,8 +270,8 @@ _REFERENCETYPES = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10833,
-  serialized_end=10924,
+  serialized_start=11063,
+  serialized_end=11154,
 )
 _sym_db.RegisterEnumDescriptor(_REFERENCETYPES)
 
@@ -381,8 +381,8 @@ _KEYTYPES = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10927,
-  serialized_end=11673,
+  serialized_start=11157,
+  serialized_end=11903,
 )
 _sym_db.RegisterEnumDescriptor(_KEYTYPES)
 
@@ -516,8 +516,8 @@ _DATATYPEDEFXSD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11676,
-  serialized_end=12686,
+  serialized_start=11906,
+  serialized_end=12916,
 )
 _sym_db.RegisterEnumDescriptor(_DATATYPEDEFXSD)
 
@@ -607,8 +607,8 @@ _DATATYPEIEC61360 = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=12689,
-  serialized_end=13372,
+  serialized_start=12919,
+  serialized_end=13602,
 )
 _sym_db.RegisterEnumDescriptor(_DATATYPEIEC61360)
 
@@ -722,6 +722,51 @@ DATA_TYPE_IEC_61360_BLOB = 18
 
 
 
+_ENVIRONMENTDTO = _descriptor.Descriptor(
+  name='EnvironmentDTO',
+  full_name='FSR.Aas.GRPC.Lib.V3.EnvironmentDTO',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='assetAdministrationShells', full_name='FSR.Aas.GRPC.Lib.V3.EnvironmentDTO.assetAdministrationShells', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='submodels', full_name='FSR.Aas.GRPC.Lib.V3.EnvironmentDTO.submodels', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='conceptDescriptions', full_name='FSR.Aas.GRPC.Lib.V3.EnvironmentDTO.conceptDescriptions', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=51,
+  serialized_end=278,
+)
+
+
 _EXTENSIONDTO = _descriptor.Descriptor(
   name='ExtensionDTO',
   full_name='FSR.Aas.GRPC.Lib.V3.ExtensionDTO',
@@ -783,8 +828,8 @@ _EXTENSIONDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=51,
-  serialized_end=326,
+  serialized_start=281,
+  serialized_end=556,
 )
 
 
@@ -842,8 +887,8 @@ _ADMINISTRATIVEINFORMATIONDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=553,
+  serialized_start=559,
+  serialized_end=783,
 )
 
 
@@ -915,8 +960,8 @@ _QUALIFIERDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=556,
-  serialized_end=880,
+  serialized_start=786,
+  serialized_end=1110,
 )
 
 
@@ -1016,8 +1061,8 @@ _ASSETADMINISTRATIONSHELLDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=883,
-  serialized_end=1468,
+  serialized_start=1113,
+  serialized_end=1698,
 )
 
 
@@ -1075,8 +1120,8 @@ _ASSETINFORMATIONDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1471,
-  serialized_end=1712,
+  serialized_start=1701,
+  serialized_end=1942,
 )
 
 
@@ -1113,8 +1158,8 @@ _RESOURCEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1714,
-  serialized_end=1762,
+  serialized_start=1944,
+  serialized_end=1992,
 )
 
 
@@ -1172,8 +1217,8 @@ _SPECIFICASSETIDDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1765,
-  serialized_end=1999,
+  serialized_start=1995,
+  serialized_end=2229,
 )
 
 
@@ -1287,8 +1332,8 @@ _SUBMODELDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2002,
-  serialized_end=2688,
+  serialized_start=2232,
+  serialized_end=2918,
 )
 
 
@@ -1493,8 +1538,8 @@ _SUBMODELELEMENTDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2691,
-  serialized_end=4367,
+  serialized_start=2921,
+  serialized_end=4597,
 )
 
 
@@ -1531,8 +1576,8 @@ _RELATIONSHIPELEMENTPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4370,
-  serialized_end=4502,
+  serialized_start=4600,
+  serialized_end=4732,
 )
 
 
@@ -1590,8 +1635,8 @@ _SUBMODELELEMENTLISTPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4505,
-  serialized_end=4820,
+  serialized_start=4735,
+  serialized_end=5050,
 )
 
 
@@ -1621,8 +1666,8 @@ _SUBMODELELEMENTCOLLECTIONPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4822,
-  serialized_end=4915,
+  serialized_start=5052,
+  serialized_end=5145,
 )
 
 
@@ -1645,8 +1690,8 @@ _DATAELEMENTPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4917,
-  serialized_end=4940,
+  serialized_start=5147,
+  serialized_end=5170,
 )
 
 
@@ -1781,8 +1826,8 @@ _DATAELEMENTDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4943,
-  serialized_end=5873,
+  serialized_start=5173,
+  serialized_end=6103,
 )
 
 
@@ -1826,8 +1871,8 @@ _PROPERTYPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5876,
-  serialized_end=6019,
+  serialized_start=6106,
+  serialized_end=6249,
 )
 
 
@@ -1864,8 +1909,8 @@ _MULTILANGUAGEPROPERTYPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6022,
-  serialized_end=6158,
+  serialized_start=6252,
+  serialized_end=6388,
 )
 
 
@@ -1909,8 +1954,8 @@ _RANGEPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6160,
-  serialized_end=6259,
+  serialized_start=6390,
+  serialized_end=6489,
 )
 
 
@@ -1940,8 +1985,8 @@ _REFERENCEELEMENTPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6261,
-  serialized_end=6339,
+  serialized_start=6491,
+  serialized_end=6569,
 )
 
 
@@ -1978,8 +2023,8 @@ _BLOBPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6341,
-  serialized_end=6393,
+  serialized_start=6571,
+  serialized_end=6623,
 )
 
 
@@ -2016,8 +2061,8 @@ _FILEPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6395,
-  serialized_end=6447,
+  serialized_start=6625,
+  serialized_end=6677,
 )
 
 
@@ -2061,8 +2106,8 @@ _ANNOTATEDRELATIONSHIPELEMENTPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6450,
-  serialized_end=6649,
+  serialized_start=6680,
+  serialized_end=6879,
 )
 
 
@@ -2113,8 +2158,8 @@ _ENTITYPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6652,
-  serialized_end=6874,
+  serialized_start=6882,
+  serialized_end=7104,
 )
 
 
@@ -2193,8 +2238,8 @@ _EVENTPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6877,
-  serialized_end=7240,
+  serialized_start=7107,
+  serialized_end=7470,
 )
 
 
@@ -2217,8 +2262,8 @@ _EVENTELEMENTPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7242,
-  serialized_end=7266,
+  serialized_start=7472,
+  serialized_end=7496,
 )
 
 
@@ -2297,8 +2342,8 @@ _BASICEVENTELEMENTPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7269,
-  serialized_end=7594,
+  serialized_start=7499,
+  serialized_end=7824,
 )
 
 
@@ -2342,8 +2387,8 @@ _OPERATIONPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7597,
-  serialized_end=7820,
+  serialized_start=7827,
+  serialized_end=8050,
 )
 
 
@@ -2373,8 +2418,8 @@ _OPERATIONVARIABLEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7822,
-  serialized_end=7900,
+  serialized_start=8052,
+  serialized_end=8130,
 )
 
 
@@ -2397,8 +2442,8 @@ _CAPABILITYPAYLOADDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7902,
-  serialized_end=7924,
+  serialized_start=8132,
+  serialized_end=8154,
 )
 
 
@@ -2484,8 +2529,8 @@ _CONCEPTDESCRIPTIONDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7927,
-  serialized_end=8381,
+  serialized_start=8157,
+  serialized_end=8611,
 )
 
 
@@ -2529,8 +2574,8 @@ _REFERENCEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8384,
-  serialized_end=8555,
+  serialized_start=8614,
+  serialized_end=8785,
 )
 
 
@@ -2567,8 +2612,8 @@ _KEYDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8557,
-  serialized_end=8625,
+  serialized_start=8787,
+  serialized_end=8855,
 )
 
 
@@ -2605,8 +2650,8 @@ _LANGSTRINGDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8627,
-  serialized_end=8674,
+  serialized_start=8857,
+  serialized_end=8904,
 )
 
 
@@ -2643,8 +2688,8 @@ _EMBEDDEDDATASPECIFICATIONDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8677,
-  serialized_end=8853,
+  serialized_start=8907,
+  serialized_end=9083,
 )
 
 
@@ -2695,8 +2740,8 @@ _LEVELTYPEDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8855,
-  serialized_end=8921,
+  serialized_start=9085,
+  serialized_end=9151,
 )
 
 
@@ -2733,8 +2778,8 @@ _VALUEREFERENCEPAIRDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8923,
-  serialized_end=9013,
+  serialized_start=9153,
+  serialized_end=9243,
 )
 
 
@@ -2764,8 +2809,8 @@ _VALUELISTDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9015,
-  serialized_end=9102,
+  serialized_start=9245,
+  serialized_end=9332,
 )
 
 
@@ -2865,10 +2910,13 @@ _DATASPECIFICATIONCONTENTDTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9105,
-  serialized_end=9586,
+  serialized_start=9335,
+  serialized_end=9816,
 )
 
+_ENVIRONMENTDTO.fields_by_name['assetAdministrationShells'].message_type = _ASSETADMINISTRATIONSHELLDTO
+_ENVIRONMENTDTO.fields_by_name['submodels'].message_type = _SUBMODELDTO
+_ENVIRONMENTDTO.fields_by_name['conceptDescriptions'].message_type = _CONCEPTDESCRIPTIONDTO
 _EXTENSIONDTO.fields_by_name['semanticId'].message_type = _REFERENCEDTO
 _EXTENSIONDTO.fields_by_name['supplementalSemanticIds'].message_type = _REFERENCEDTO
 _EXTENSIONDTO.fields_by_name['valueType'].enum_type = _DATATYPEDEFXSD
@@ -2995,6 +3043,7 @@ _DATASPECIFICATIONCONTENTDTO.fields_by_name['dataType'].enum_type = _DATATYPEIEC
 _DATASPECIFICATIONCONTENTDTO.fields_by_name['definition'].message_type = _LANGSTRINGDTO
 _DATASPECIFICATIONCONTENTDTO.fields_by_name['valueList'].message_type = _VALUELISTDTO
 _DATASPECIFICATIONCONTENTDTO.fields_by_name['levelType'].message_type = _LEVELTYPEDTO
+DESCRIPTOR.message_types_by_name['EnvironmentDTO'] = _ENVIRONMENTDTO
 DESCRIPTOR.message_types_by_name['ExtensionDTO'] = _EXTENSIONDTO
 DESCRIPTOR.message_types_by_name['AdministrativeInformationDTO'] = _ADMINISTRATIVEINFORMATIONDTO
 DESCRIPTOR.message_types_by_name['QualifierDTO'] = _QUALIFIERDTO
@@ -3044,6 +3093,13 @@ DESCRIPTOR.enum_types_by_name['KeyTypes'] = _KEYTYPES
 DESCRIPTOR.enum_types_by_name['DataTypeDefXsd'] = _DATATYPEDEFXSD
 DESCRIPTOR.enum_types_by_name['DataTypeIec61360'] = _DATATYPEIEC61360
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+EnvironmentDTO = _reflection.GeneratedProtocolMessageType('EnvironmentDTO', (_message.Message,), {
+  'DESCRIPTOR' : _ENVIRONMENTDTO,
+  '__module__' : 'Protos.AasModels.V3_pb2'
+  # @@protoc_insertion_point(class_scope:FSR.Aas.GRPC.Lib.V3.EnvironmentDTO)
+  })
+_sym_db.RegisterMessage(EnvironmentDTO)
 
 ExtensionDTO = _reflection.GeneratedProtocolMessageType('ExtensionDTO', (_message.Message,), {
   'DESCRIPTOR' : _EXTENSIONDTO,

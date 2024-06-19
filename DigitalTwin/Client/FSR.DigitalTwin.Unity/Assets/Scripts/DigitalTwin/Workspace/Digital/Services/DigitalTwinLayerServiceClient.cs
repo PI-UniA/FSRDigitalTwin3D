@@ -2,6 +2,7 @@ using Grpc.Core;
 
 using Operational = FSR.Aas.GRPC.Lib.V3.Services.Operational.DigitalTwinLayerOperationalService.DigitalTwinLayerOperationalServiceClient;
 using Connection = FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerConnectionService.DigitalTwinLayerConnectionServiceClient;
+using Streaming = FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingService.DigitalTwinLayerStreamingServiceClient;
 using System.Threading.Tasks;
 using UnityEngine;
 using FSR.Aas.GRPC.Lib.V3.Services.Operational;
@@ -17,10 +18,12 @@ public class DigitalTwinLayerServiceClient {
     
     public Operational Operational { get; }
     public Connection Connection { get; }
+    public Streaming Streaming { get; }
     
     public DigitalTwinLayerServiceClient (Channel channel) {
         Operational = new Operational(channel);
         Connection = new Connection(channel);
+        Streaming = new Streaming(channel);
     }
 
     public async Task RunOperational () {
