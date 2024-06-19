@@ -10,3 +10,7 @@ enum DigitalTwinLayerType {
     DT_LAYER_TYPE_VIRTUAL = 0;
     DT_LAYER_TYPE_PHYSICAL = 1;
 }
+
+message StreamItem {
+    bytes payload = 1;
+}
