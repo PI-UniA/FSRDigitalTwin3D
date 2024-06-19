@@ -25,13 +25,15 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNQcm90b3MvRGlnaXRhbFR3aW5MYXllck1vZGVscy5wcm90bxIdRlNSLkRp",
-            "Z2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIqTQoURGlnaXRhbFR3aW5MYXllclR5",
-            "cGUSGQoVRFRfTEFZRVJfVFlQRV9WSVJUVUFMEAASGgoWRFRfTEFZRVJfVFlQ",
-            "RV9QSFlTSUNBTBABQiCqAh1GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxp",
-            "YmIGcHJvdG8z"));
+            "Z2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIiHQoKU3RyZWFtSXRlbRIPCgdwYXls",
+            "b2FkGAEgASgMKk0KFERpZ2l0YWxUd2luTGF5ZXJUeXBlEhkKFURUX0xBWUVS",
+            "X1RZUEVfVklSVFVBTBAAEhoKFkRUX0xBWUVSX1RZUEVfUEhZU0lDQUwQAUIg",
+            "qgIdRlNSLkRpZ2l0YWxUd2luTGF5ZXIuR1JQQy5MaWJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerType), }, null));
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerType), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem), global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem.Parser, new[]{ "Payload" }, null, null, null)
+          }));
     }
     #endregion
 
@@ -40,6 +42,138 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
   public enum DigitalTwinLayerType {
     [pbr::OriginalName("DT_LAYER_TYPE_VIRTUAL")] DtLayerTypeVirtual = 0,
     [pbr::OriginalName("DT_LAYER_TYPE_PHYSICAL")] DtLayerTypePhysical = 1,
+  }
+
+  #endregion
+
+  #region Messages
+  public sealed partial class StreamItem : pb::IMessage<StreamItem> {
+    private static readonly pb::MessageParser<StreamItem> _parser = new pb::MessageParser<StreamItem>(() => new StreamItem());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<StreamItem> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerModelsReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StreamItem() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StreamItem(StreamItem other) : this() {
+      payload_ = other.payload_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StreamItem Clone() {
+      return new StreamItem(this);
+    }
+
+    /// <summary>Field number for the "payload" field.</summary>
+    public const int PayloadFieldNumber = 1;
+    private pb::ByteString payload_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Payload {
+      get { return payload_; }
+      set {
+        payload_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as StreamItem);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(StreamItem other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Payload != other.Payload) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Payload.Length != 0) hash ^= Payload.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Payload.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteBytes(Payload);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Payload.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Payload);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(StreamItem other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Payload.Length != 0) {
+        Payload = other.Payload;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Payload = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
   }
 
   #endregion
