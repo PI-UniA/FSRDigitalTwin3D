@@ -17,6 +17,7 @@
   <ItemGroup>
     <Protobuf Include="Protos/DigitalTwinLayerModels.proto" GrpcServices="Server" />
     <Protobuf Include="Protos/Services/Connection/DigitalTwinLayerConnectionService.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos/Services/Connection/DigitalTwinLayerStreamingService.proto" GrpcServices="Server" />
   </ItemGroup>
 
 </Project>

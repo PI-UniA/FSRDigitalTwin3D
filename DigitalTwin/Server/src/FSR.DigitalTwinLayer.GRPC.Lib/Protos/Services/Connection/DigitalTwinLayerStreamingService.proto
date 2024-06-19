@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option csharp_namespace = "FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection";
+
+package FSR.DigitalTwinLayer.GRPC.Lib;
+
+import "Protos/DigitalTwinLayerModels.proto";
+
+/* DT Layer Models */
+
+message CreatePropertyRequest {
+    string name = 1;
+}
+message CreatePropertyResponse {
+    bool success = 1;
+}
+
+message RemovePropertyRequest {
+    string name = 1;
+}
+message RemovePropertyResponse {
+    bool success = 1;
+}
+
+message SubscribeStreamRequest {
+    string name = 1;
+}
+
+message UpdateValueResponse {
+    bool success = 1;
+}
+
+service DigitalTwinLayerStreamingService {
+    rpc CreateProperty (CreatePropertyRequest) returns (CreatePropertyResponse);
+    rpc RemoveProperty (RemovePropertyRequest) returns (RemovePropertyResponse);
+    rpc SubscribeStream (SubscribeStreamRequest) returns (stream StreamItem);
+    rpc UpdateValue (StreamItem) returns (UpdateValueResponse);
+}
