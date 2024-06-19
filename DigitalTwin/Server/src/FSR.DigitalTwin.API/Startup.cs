@@ -111,7 +111,7 @@ internal class Startup
         services.AddTransient<IOperationReceiver, OperationReceiver>();
         
         FSR.DigitalTwinLayer.GRPC.Lib.Common.Utils.DependencyInjection.AddServices(services);
-        services.AddSingleton<IAdminShellDb, AdminShellDb>();
+        services.AddSingleton<IDigitalTwinDb, DigitalTwinDb>();
 
         // Add GraphQL services
         services
@@ -195,8 +195,7 @@ internal class Startup
 
         // For testing
         // var serviceProvider = services.BuildServiceProvider();
-        // var dbService = serviceProvider.GetService<IAdminShellDb>();
-        // dbService.PushToDb(new AasCore.Aas3_0.Environment([], [], []));
+        // var dbService = serviceProvider.GetService<IDigitalTwinDb>();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
