@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df02864112583dc62bdf28f0ffdfc2ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  submodelId: https://www.hs-emden-leer.de/ids/sm/6494_2162_5032_2813
+  submodelId: fsr/ids/sm/8571_2102_6042_1093
   digitalWorkspace: {fileID: 365743261}
   joints:
   - {fileID: 5955250382980222848}
@@ -1701,7 +1701,6 @@ MonoBehaviour:
   - {fileID: 1505145120}
   - {fileID: 1239668653}
   - {fileID: 733776892}
-  isListening: 1
 --- !u!114 &5955250382980222851
 MonoBehaviour:
   m_ObjectHideFlags: 0
