@@ -10,9 +10,18 @@ import "Protos/DigitalTwinLayerModels.proto";
 
 message CreatePropertyRequest {
     string name = 1;
+    bytes initialValue = 2;
 }
 message CreatePropertyResponse {
     bool success = 1;
+}
+
+message GetPropertyRequest {
+    string name = 1;
+}
+message GetPropertyResponse {
+    bool success = 1;
+    bytes value = 2;
 }
 
 message RemovePropertyRequest {
@@ -22,17 +31,22 @@ message RemovePropertyResponse {
     bool success = 1;
 }
 
-message SubscribeStreamRequest {
+message SubscribePropertyRequest {
     string name = 1;
 }
 
-message UpdateValueResponse {
+message UpdatePropertyRequest {
+    string name = 1;
+    bytes value = 2;
+}
+message UpdatePropertyResponse {
     bool success = 1;
 }
 
 service DigitalTwinLayerStreamingService {
     rpc CreateProperty (CreatePropertyRequest) returns (CreatePropertyResponse);
+    rpc GetProperty (GetPropertyRequest) returns (GetPropertyResponse);
     rpc RemoveProperty (RemovePropertyRequest) returns (RemovePropertyResponse);
-    rpc SubscribeStream (SubscribeStreamRequest) returns (stream StreamItem);
-    rpc UpdateValue (StreamItem) returns (UpdateValueResponse);
+    rpc SubscribeProperty (SubscribePropertyRequest) returns (stream StreamItem);
+    rpc UpdateProperty (UpdatePropertyRequest) returns (UpdatePropertyResponse);
 }

@@ -11,6 +11,7 @@ public class DependencyInjection
 {
     public static void AddServices(IServiceCollection services) {
         services.AddSingleton<IDigitalTwinLayerService, DigitalTwinLayerService>();
+        services.AddSingleton<IDataStreamingService, DataStreamingService>();
     }
 
 }
