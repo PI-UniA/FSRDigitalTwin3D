@@ -14,11 +14,14 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyRequest> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_CreatePropertyRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_CreatePropertyResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_GetPropertyRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_GetPropertyResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_RemovePropertyRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_RemovePropertyResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribeStreamRequest> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_SubscribeStreamRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribeStreamRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_SubscribePropertyRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_StreamItem = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_UpdateValueResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_UpdatePropertyRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_UpdatePropertyResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse.Parser.ParseFrom);
 
     static readonly grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse> __Method_CreateProperty = new grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse>(
         grpc::MethodType.Unary,
@@ -27,6 +30,13 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_CreatePropertyRequest,
         __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_CreatePropertyResponse);
 
+    static readonly grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse> __Method_GetProperty = new grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetProperty",
+        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_GetPropertyRequest,
+        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_GetPropertyResponse);
+
     static readonly grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse> __Method_RemoveProperty = new grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -34,19 +44,19 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_RemovePropertyRequest,
         __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_RemovePropertyResponse);
 
-    static readonly grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribeStreamRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem> __Method_SubscribeStream = new grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribeStreamRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem>(
+    static readonly grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem> __Method_SubscribeProperty = new grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
-        "SubscribeStream",
-        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_SubscribeStreamRequest,
+        "SubscribeProperty",
+        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_SubscribePropertyRequest,
         __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_StreamItem);
 
-    static readonly grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse> __Method_UpdateValue = new grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse>(
+    static readonly grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse> __Method_UpdateProperty = new grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "UpdateValue",
-        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_StreamItem,
-        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_UpdateValueResponse);
+        "UpdateProperty",
+        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_UpdatePropertyRequest,
+        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_UpdatePropertyResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -63,17 +73,22 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      public virtual global::System.Threading.Tasks.Task<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse> GetProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
       public virtual global::System.Threading.Tasks.Task<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse> RemoveProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task SubscribeStream(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribeStreamRequest request, grpc::IServerStreamWriter<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task SubscribeProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest request, grpc::IServerStreamWriter<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse> UpdateValue(global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse> UpdateProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -119,6 +134,22 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       {
         return CallInvoker.AsyncUnaryCall(__Method_CreateProperty, null, options, request);
       }
+      public virtual global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse GetProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetProperty(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse GetProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetProperty, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse> GetPropertyAsync(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetPropertyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse> GetPropertyAsync(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetProperty, null, options, request);
+      }
       public virtual global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse RemoveProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RemoveProperty(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -135,29 +166,29 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       {
         return CallInvoker.AsyncUnaryCall(__Method_RemoveProperty, null, options, request);
       }
-      public virtual grpc::AsyncServerStreamingCall<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem> SubscribeStream(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribeStreamRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncServerStreamingCall<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem> SubscribeProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return SubscribeStream(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return SubscribeProperty(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncServerStreamingCall<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem> SubscribeStream(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribeStreamRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncServerStreamingCall<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem> SubscribeProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncServerStreamingCall(__Method_SubscribeStream, null, options, request);
+        return CallInvoker.AsyncServerStreamingCall(__Method_SubscribeProperty, null, options, request);
       }
-      public virtual global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse UpdateValue(global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse UpdateProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return UpdateValue(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return UpdateProperty(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse UpdateValue(global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem request, grpc::CallOptions options)
+      public virtual global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse UpdateProperty(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_UpdateValue, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateProperty, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse> UpdateValueAsync(global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse> UpdatePropertyAsync(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return UpdateValueAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return UpdatePropertyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse> UpdateValueAsync(global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse> UpdatePropertyAsync(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_UpdateValue, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateProperty, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override DigitalTwinLayerStreamingServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -172,9 +203,10 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_CreateProperty, serviceImpl.CreateProperty)
+          .AddMethod(__Method_GetProperty, serviceImpl.GetProperty)
           .AddMethod(__Method_RemoveProperty, serviceImpl.RemoveProperty)
-          .AddMethod(__Method_SubscribeStream, serviceImpl.SubscribeStream)
-          .AddMethod(__Method_UpdateValue, serviceImpl.UpdateValue).Build();
+          .AddMethod(__Method_SubscribeProperty, serviceImpl.SubscribeProperty)
+          .AddMethod(__Method_UpdateProperty, serviceImpl.UpdateProperty).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -184,9 +216,10 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, DigitalTwinLayerStreamingServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_CreateProperty, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse>(serviceImpl.CreateProperty));
+      serviceBinder.AddMethod(__Method_GetProperty, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse>(serviceImpl.GetProperty));
       serviceBinder.AddMethod(__Method_RemoveProperty, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse>(serviceImpl.RemoveProperty));
-      serviceBinder.AddMethod(__Method_SubscribeStream, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribeStreamRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem>(serviceImpl.SubscribeStream));
-      serviceBinder.AddMethod(__Method_UpdateValue, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse>(serviceImpl.UpdateValue));
+      serviceBinder.AddMethod(__Method_SubscribeProperty, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem>(serviceImpl.SubscribeProperty));
+      serviceBinder.AddMethod(__Method_UpdateProperty, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse>(serviceImpl.UpdateProperty));
     }
 
   }
