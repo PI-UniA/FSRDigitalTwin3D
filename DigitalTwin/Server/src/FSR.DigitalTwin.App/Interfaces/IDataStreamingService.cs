@@ -6,9 +6,11 @@ namespace FSR.DigitalTwin.App.Interfaces;
 
 public interface IDataStreamingService 
 {
-    public bool CreateValue(string name);
-    public void SubscribeValue(string name, IAsyncStreamWriter<byte[]> stream);
+    public bool CreateProperty(string name);
+    public void SubscribeProperty(string name, IAsyncStreamWriter<byte[]> stream);
     public void UpdateValue(string name, byte[] value);
-    public bool RemoveValue(string name);
+    public byte[] GetValue(string name);
+    public bool HasProperty(string name);
+    public bool RemoveProperty(string name);
 
 }
