@@ -31,49 +31,51 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
             "aXRpYWxWYWx1ZRgCIAEoCzIpLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMu",
             "TGliLlN0cmVhbUl0ZW0iYwoWQ3JlYXRlUHJvcGVydHlSZXNwb25zZRIPCgdz",
             "dWNjZXNzGAEgASgIEjgKBXZhbHVlGAIgASgLMikuRlNSLkRpZ2l0YWxUd2lu",
-            "TGF5ZXIuR1JQQy5MaWIuU3RyZWFtSXRlbSIfCg9HZXRWYWx1ZVJlcXVlc3QS",
-            "DAoEbmFtZRgBIAEoCSJdChBHZXRWYWx1ZVJlc3BvbnNlEg8KB3N1Y2Nlc3MY",
-            "ASABKAgSOAoFdmFsdWUYAiABKAsyKS5GU1IuRGlnaXRhbFR3aW5MYXllci5H",
-            "UlBDLkxpYi5TdHJlYW1JdGVtInAKElVwZGF0ZVZhbHVlUmVxdWVzdBIMCgRu",
-            "YW1lGAEgASgJEjgKBXZhbHVlGAIgASgLMikuRlNSLkRpZ2l0YWxUd2luTGF5",
-            "ZXIuR1JQQy5MaWIuU3RyZWFtSXRlbRISCgp0ZXJtaW5hdGVkGAMgASgIImAK",
-            "E1VwZGF0ZVZhbHVlUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBI4CgV2YWx1",
-            "ZRgCIAEoCzIpLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLlN0cmVh",
-            "bUl0ZW0iJQoVUmVtb3ZlUHJvcGVydHlSZXF1ZXN0EgwKBG5hbWUYASABKAki",
-            "KQoWUmVtb3ZlUHJvcGVydHlSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIigK",
-            "GFN1YnNjcmliZVByb3BlcnR5UmVxdWVzdBIMCgRuYW1lGAEgASgJIikKE1N0",
-            "cmVhbVZhbHVlUmVzcG9uc2USEgoKdGVybWluYXRlZBgBIAEoCDL2BQogRGln",
-            "aXRhbFR3aW5MYXllclN0cmVhbWluZ1NlcnZpY2USfQoOQ3JlYXRlUHJvcGVy",
-            "dHkSNC5GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5DcmVhdGVQcm9w",
-            "ZXJ0eVJlcXVlc3QaNS5GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5D",
-            "cmVhdGVQcm9wZXJ0eVJlc3BvbnNlEmsKCEdldFZhbHVlEi4uRlNSLkRpZ2l0",
-            "YWxUd2luTGF5ZXIuR1JQQy5MaWIuR2V0VmFsdWVSZXF1ZXN0Gi8uRlNSLkRp",
-            "Z2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuR2V0VmFsdWVSZXNwb25zZRJ0CgtV",
-            "cGRhdGVWYWx1ZRIxLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLlVw",
-            "ZGF0ZVZhbHVlUmVxdWVzdBoyLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMu",
-            "TGliLlVwZGF0ZVZhbHVlUmVzcG9uc2USfQoOUmVtb3ZlUHJvcGVydHkSNC5G",
-            "U1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5SZW1vdmVQcm9wZXJ0eVJl",
-            "cXVlc3QaNS5GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5SZW1vdmVQ",
-            "cm9wZXJ0eVJlc3BvbnNlEnkKEVN1YnNjcmliZVByb3BlcnR5EjcuRlNSLkRp",
-            "Z2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuU3Vic2NyaWJlUHJvcGVydHlSZXF1",
-            "ZXN0GikuRlNSLkRpZ2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuU3RyZWFtSXRl",
-            "bTABEnYKC1N0cmVhbVZhbHVlEjEuRlNSLkRpZ2l0YWxUd2luTGF5ZXIuR1JQ",
-            "Qy5MaWIuVXBkYXRlVmFsdWVSZXF1ZXN0GjIuRlNSLkRpZ2l0YWxUd2luTGF5",
-            "ZXIuR1JQQy5MaWIuU3RyZWFtVmFsdWVSZXNwb25zZSgBQjSqAjFGU1IuRGln",
-            "aXRhbFR3aW5MYXllci5HUlBDLkxpYi5TZXJ2aWNlcy5Db25uZWN0aW9uYgZw",
-            "cm90bzM="));
+            "TGF5ZXIuR1JQQy5MaWIuU3RyZWFtSXRlbSJcCg9HZXRWYWx1ZVJlcXVlc3QS",
+            "DAoEbmFtZRgBIAEoCRI7CgR0eXBlGAIgASgOMi0uRlNSLkRpZ2l0YWxUd2lu",
+            "TGF5ZXIuR1JQQy5MaWIuU3RyZWFtSXRlbVR5cGUiXQoQR2V0VmFsdWVSZXNw",
+            "b25zZRIPCgdzdWNjZXNzGAEgASgIEjgKBXZhbHVlGAIgASgLMikuRlNSLkRp",
+            "Z2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuU3RyZWFtSXRlbSJwChJVcGRhdGVW",
+            "YWx1ZVJlcXVlc3QSDAoEbmFtZRgBIAEoCRI4CgV2YWx1ZRgCIAEoCzIpLkZT",
+            "Ui5EaWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLlN0cmVhbUl0ZW0SEgoKdGVy",
+            "bWluYXRlZBgDIAEoCCJgChNVcGRhdGVWYWx1ZVJlc3BvbnNlEg8KB3N1Y2Nl",
+            "c3MYASABKAgSOAoFdmFsdWUYAiABKAsyKS5GU1IuRGlnaXRhbFR3aW5MYXll",
+            "ci5HUlBDLkxpYi5TdHJlYW1JdGVtIiUKFVJlbW92ZVByb3BlcnR5UmVxdWVz",
+            "dBIMCgRuYW1lGAEgASgJIikKFlJlbW92ZVByb3BlcnR5UmVzcG9uc2USDwoH",
+            "c3VjY2VzcxgBIAEoCCJlChhTdWJzY3JpYmVQcm9wZXJ0eVJlcXVlc3QSDAoE",
+            "bmFtZRgBIAEoCRI7CgR0eXBlGAIgASgOMi0uRlNSLkRpZ2l0YWxUd2luTGF5",
+            "ZXIuR1JQQy5MaWIuU3RyZWFtSXRlbVR5cGUiKQoTU3RyZWFtVmFsdWVSZXNw",
+            "b25zZRISCgp0ZXJtaW5hdGVkGAEgASgIMvYFCiBEaWdpdGFsVHdpbkxheWVy",
+            "U3RyZWFtaW5nU2VydmljZRJ9Cg5DcmVhdGVQcm9wZXJ0eRI0LkZTUi5EaWdp",
+            "dGFsVHdpbkxheWVyLkdSUEMuTGliLkNyZWF0ZVByb3BlcnR5UmVxdWVzdBo1",
+            "LkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLkNyZWF0ZVByb3BlcnR5",
+            "UmVzcG9uc2USawoIR2V0VmFsdWUSLi5GU1IuRGlnaXRhbFR3aW5MYXllci5H",
+            "UlBDLkxpYi5HZXRWYWx1ZVJlcXVlc3QaLy5GU1IuRGlnaXRhbFR3aW5MYXll",
+            "ci5HUlBDLkxpYi5HZXRWYWx1ZVJlc3BvbnNlEnQKC1VwZGF0ZVZhbHVlEjEu",
+            "RlNSLkRpZ2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuVXBkYXRlVmFsdWVSZXF1",
+            "ZXN0GjIuRlNSLkRpZ2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuVXBkYXRlVmFs",
+            "dWVSZXNwb25zZRJ9Cg5SZW1vdmVQcm9wZXJ0eRI0LkZTUi5EaWdpdGFsVHdp",
+            "bkxheWVyLkdSUEMuTGliLlJlbW92ZVByb3BlcnR5UmVxdWVzdBo1LkZTUi5E",
+            "aWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLlJlbW92ZVByb3BlcnR5UmVzcG9u",
+            "c2USeQoRU3Vic2NyaWJlUHJvcGVydHkSNy5GU1IuRGlnaXRhbFR3aW5MYXll",
+            "ci5HUlBDLkxpYi5TdWJzY3JpYmVQcm9wZXJ0eVJlcXVlc3QaKS5GU1IuRGln",
+            "aXRhbFR3aW5MYXllci5HUlBDLkxpYi5TdHJlYW1JdGVtMAESdgoLU3RyZWFt",
+            "VmFsdWUSMS5GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5VcGRhdGVW",
+            "YWx1ZVJlcXVlc3QaMi5GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5T",
+            "dHJlYW1WYWx1ZVJlc3BvbnNlKAFCNKoCMUZTUi5EaWdpdGFsVHdpbkxheWVy",
+            "LkdSUEMuTGliLlNlcnZpY2VzLkNvbm5lY3Rpb25iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerModelsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyRequest.Parser, new[]{ "Name", "InitialValue" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse.Parser, new[]{ "Success", "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueRequest.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueRequest.Parser, new[]{ "Name", "Type" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueResponse.Parser, new[]{ "Success", "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueRequest.Parser, new[]{ "Name", "Value", "Terminated" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse.Parser, new[]{ "Success", "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest.Parser, new[]{ "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse.Parser, new[]{ "Success" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest.Parser, new[]{ "Name", "Type" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.StreamValueResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.StreamValueResponse.Parser, new[]{ "Terminated" }, null, null, null)
           }));
     }
@@ -433,6 +435,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetValueRequest(GetValueRequest other) : this() {
       name_ = other.name_;
+      type_ = other.type_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -452,6 +455,17 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       }
     }
 
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 2;
+    private global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType type_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetValueRequest);
@@ -466,6 +480,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         return true;
       }
       if (Name != other.Name) return false;
+      if (Type != other.Type) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -473,6 +488,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -490,6 +506,10 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (Type != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Type);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -500,6 +520,9 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -515,6 +538,9 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -528,6 +554,10 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
             break;
           case 10: {
             Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            Type = (global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType) input.ReadEnum();
             break;
           }
         }
@@ -1337,6 +1367,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SubscribePropertyRequest(SubscribePropertyRequest other) : this() {
       name_ = other.name_;
+      type_ = other.type_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1356,6 +1387,17 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       }
     }
 
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 2;
+    private global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType type_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SubscribePropertyRequest);
@@ -1370,6 +1412,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         return true;
       }
       if (Name != other.Name) return false;
+      if (Type != other.Type) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1377,6 +1420,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1394,6 +1438,10 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (Type != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Type);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1404,6 +1452,9 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1419,6 +1470,9 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1432,6 +1486,10 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
             break;
           case 10: {
             Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            Type = (global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType) input.ReadEnum();
             break;
           }
         }
