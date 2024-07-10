@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='FSR.DigitalTwinLayer.GRPC.Lib',
   syntax='proto3',
   serialized_options=_b('\252\0021FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection'),
-  serialized_pb=_b('\nAProtos/Services/Connection/DigitalTwinLayerStreamingService.proto\x12\x1d\x46SR.DigitalTwinLayer.GRPC.Lib\x1a#Protos/DigitalTwinLayerModels.proto\";\n\x15\x43reatePropertyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cinitialValue\x18\x02 \x01(\x0c\")\n\x16\x43reatePropertyResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\"\n\x12GetPropertyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"5\n\x13GetPropertyResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\r\n\x05value\x18\x02 \x01(\x0c\"%\n\x15RemovePropertyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\")\n\x16RemovePropertyResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"(\n\x18SubscribePropertyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"4\n\x15UpdatePropertyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\")\n\x16UpdatePropertyResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x32\x90\x05\n DigitalTwinLayerStreamingService\x12}\n\x0e\x43reateProperty\x12\x34.FSR.DigitalTwinLayer.GRPC.Lib.CreatePropertyRequest\x1a\x35.FSR.DigitalTwinLayer.GRPC.Lib.CreatePropertyResponse\x12t\n\x0bGetProperty\x12\x31.FSR.DigitalTwinLayer.GRPC.Lib.GetPropertyRequest\x1a\x32.FSR.DigitalTwinLayer.GRPC.Lib.GetPropertyResponse\x12}\n\x0eRemoveProperty\x12\x34.FSR.DigitalTwinLayer.GRPC.Lib.RemovePropertyRequest\x1a\x35.FSR.DigitalTwinLayer.GRPC.Lib.RemovePropertyResponse\x12y\n\x11SubscribeProperty\x12\x37.FSR.DigitalTwinLayer.GRPC.Lib.SubscribePropertyRequest\x1a).FSR.DigitalTwinLayer.GRPC.Lib.StreamItem0\x01\x12}\n\x0eUpdateProperty\x12\x34.FSR.DigitalTwinLayer.GRPC.Lib.UpdatePropertyRequest\x1a\x35.FSR.DigitalTwinLayer.GRPC.Lib.UpdatePropertyResponseB4\xaa\x02\x31\x46SR.DigitalTwinLayer.GRPC.Lib.Services.Connectionb\x06proto3')
+  serialized_pb=_b('\nAProtos/Services/Connection/DigitalTwinLayerStreamingService.proto\x12\x1d\x46SR.DigitalTwinLayer.GRPC.Lib\x1a#Protos/DigitalTwinLayerModels.proto\"f\n\x15\x43reatePropertyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12?\n\x0cinitialValue\x18\x02 \x01(\x0b\x32).FSR.DigitalTwinLayer.GRPC.Lib.StreamItem\"c\n\x16\x43reatePropertyResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x38\n\x05value\x18\x02 \x01(\x0b\x32).FSR.DigitalTwinLayer.GRPC.Lib.StreamItem\"\x1f\n\x0fGetValueRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"]\n\x10GetValueResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x38\n\x05value\x18\x02 \x01(\x0b\x32).FSR.DigitalTwinLayer.GRPC.Lib.StreamItem\"p\n\x12UpdateValueRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x38\n\x05value\x18\x02 \x01(\x0b\x32).FSR.DigitalTwinLayer.GRPC.Lib.StreamItem\x12\x12\n\nterminated\x18\x03 \x01(\x08\"`\n\x13UpdateValueResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x38\n\x05value\x18\x02 \x01(\x0b\x32).FSR.DigitalTwinLayer.GRPC.Lib.StreamItem\"%\n\x15RemovePropertyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\")\n\x16RemovePropertyResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"(\n\x18SubscribePropertyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\")\n\x13StreamValueResponse\x12\x12\n\nterminated\x18\x01 \x01(\x08\x32\xf6\x05\n DigitalTwinLayerStreamingService\x12}\n\x0e\x43reateProperty\x12\x34.FSR.DigitalTwinLayer.GRPC.Lib.CreatePropertyRequest\x1a\x35.FSR.DigitalTwinLayer.GRPC.Lib.CreatePropertyResponse\x12k\n\x08GetValue\x12..FSR.DigitalTwinLayer.GRPC.Lib.GetValueRequest\x1a/.FSR.DigitalTwinLayer.GRPC.Lib.GetValueResponse\x12t\n\x0bUpdateValue\x12\x31.FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueRequest\x1a\x32.FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueResponse\x12}\n\x0eRemoveProperty\x12\x34.FSR.DigitalTwinLayer.GRPC.Lib.RemovePropertyRequest\x1a\x35.FSR.DigitalTwinLayer.GRPC.Lib.RemovePropertyResponse\x12y\n\x11SubscribeProperty\x12\x37.FSR.DigitalTwinLayer.GRPC.Lib.SubscribePropertyRequest\x1a).FSR.DigitalTwinLayer.GRPC.Lib.StreamItem0\x01\x12v\n\x0bStreamValue\x12\x31.FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueRequest\x1a\x32.FSR.DigitalTwinLayer.GRPC.Lib.StreamValueResponse(\x01\x42\x34\xaa\x02\x31\x46SR.DigitalTwinLayer.GRPC.Lib.Services.Connectionb\x06proto3')
   ,
   dependencies=[Protos_dot_DigitalTwinLayerModels__pb2.DESCRIPTOR,])
 
@@ -44,8 +44,8 @@ _CREATEPROPERTYREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='initialValue', full_name='FSR.DigitalTwinLayer.GRPC.Lib.CreatePropertyRequest.initialValue', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -62,7 +62,7 @@ _CREATEPROPERTYREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=137,
-  serialized_end=196,
+  serialized_end=239,
 )
 
 
@@ -80,6 +80,13 @@ _CREATEPROPERTYRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='FSR.DigitalTwinLayer.GRPC.Lib.CreatePropertyResponse.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -92,20 +99,20 @@ _CREATEPROPERTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=198,
-  serialized_end=239,
+  serialized_start=241,
+  serialized_end=340,
 )
 
 
-_GETPROPERTYREQUEST = _descriptor.Descriptor(
-  name='GetPropertyRequest',
-  full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetPropertyRequest',
+_GETVALUEREQUEST = _descriptor.Descriptor(
+  name='GetValueRequest',
+  full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetValueRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetPropertyRequest.name', index=0,
+      name='name', full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetValueRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -123,29 +130,29 @@ _GETPROPERTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=241,
-  serialized_end=275,
+  serialized_start=342,
+  serialized_end=373,
 )
 
 
-_GETPROPERTYRESPONSE = _descriptor.Descriptor(
-  name='GetPropertyResponse',
-  full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetPropertyResponse',
+_GETVALUERESPONSE = _descriptor.Descriptor(
+  name='GetValueResponse',
+  full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetValueResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='success', full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetPropertyResponse.success', index=0,
+      name='success', full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetValueResponse.success', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetPropertyResponse.value', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      name='value', full_name='FSR.DigitalTwinLayer.GRPC.Lib.GetValueResponse.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -161,8 +168,91 @@ _GETPROPERTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=277,
-  serialized_end=330,
+  serialized_start=375,
+  serialized_end=468,
+)
+
+
+_UPDATEVALUEREQUEST = _descriptor.Descriptor(
+  name='UpdateValueRequest',
+  full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueRequest.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueRequest.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='terminated', full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueRequest.terminated', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=470,
+  serialized_end=582,
+)
+
+
+_UPDATEVALUERESPONSE = _descriptor.Descriptor(
+  name='UpdateValueResponse',
+  full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueResponse.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueResponse.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=584,
+  serialized_end=680,
 )
 
 
@@ -192,8 +282,8 @@ _REMOVEPROPERTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=332,
-  serialized_end=369,
+  serialized_start=682,
+  serialized_end=719,
 )
 
 
@@ -223,8 +313,8 @@ _REMOVEPROPERTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=371,
-  serialized_end=412,
+  serialized_start=721,
+  serialized_end=762,
 )
 
 
@@ -254,58 +344,20 @@ _SUBSCRIBEPROPERTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=414,
-  serialized_end=454,
+  serialized_start=764,
+  serialized_end=804,
 )
 
 
-_UPDATEPROPERTYREQUEST = _descriptor.Descriptor(
-  name='UpdatePropertyRequest',
-  full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdatePropertyRequest',
+_STREAMVALUERESPONSE = _descriptor.Descriptor(
+  name='StreamValueResponse',
+  full_name='FSR.DigitalTwinLayer.GRPC.Lib.StreamValueResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdatePropertyRequest.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdatePropertyRequest.value', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=456,
-  serialized_end=508,
-)
-
-
-_UPDATEPROPERTYRESPONSE = _descriptor.Descriptor(
-  name='UpdatePropertyResponse',
-  full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdatePropertyResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='success', full_name='FSR.DigitalTwinLayer.GRPC.Lib.UpdatePropertyResponse.success', index=0,
+      name='terminated', full_name='FSR.DigitalTwinLayer.GRPC.Lib.StreamValueResponse.terminated', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -323,19 +375,25 @@ _UPDATEPROPERTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=510,
-  serialized_end=551,
+  serialized_start=806,
+  serialized_end=847,
 )
 
+_CREATEPROPERTYREQUEST.fields_by_name['initialValue'].message_type = Protos_dot_DigitalTwinLayerModels__pb2._STREAMITEM
+_CREATEPROPERTYRESPONSE.fields_by_name['value'].message_type = Protos_dot_DigitalTwinLayerModels__pb2._STREAMITEM
+_GETVALUERESPONSE.fields_by_name['value'].message_type = Protos_dot_DigitalTwinLayerModels__pb2._STREAMITEM
+_UPDATEVALUEREQUEST.fields_by_name['value'].message_type = Protos_dot_DigitalTwinLayerModels__pb2._STREAMITEM
+_UPDATEVALUERESPONSE.fields_by_name['value'].message_type = Protos_dot_DigitalTwinLayerModels__pb2._STREAMITEM
 DESCRIPTOR.message_types_by_name['CreatePropertyRequest'] = _CREATEPROPERTYREQUEST
 DESCRIPTOR.message_types_by_name['CreatePropertyResponse'] = _CREATEPROPERTYRESPONSE
-DESCRIPTOR.message_types_by_name['GetPropertyRequest'] = _GETPROPERTYREQUEST
-DESCRIPTOR.message_types_by_name['GetPropertyResponse'] = _GETPROPERTYRESPONSE
+DESCRIPTOR.message_types_by_name['GetValueRequest'] = _GETVALUEREQUEST
+DESCRIPTOR.message_types_by_name['GetValueResponse'] = _GETVALUERESPONSE
+DESCRIPTOR.message_types_by_name['UpdateValueRequest'] = _UPDATEVALUEREQUEST
+DESCRIPTOR.message_types_by_name['UpdateValueResponse'] = _UPDATEVALUERESPONSE
 DESCRIPTOR.message_types_by_name['RemovePropertyRequest'] = _REMOVEPROPERTYREQUEST
 DESCRIPTOR.message_types_by_name['RemovePropertyResponse'] = _REMOVEPROPERTYRESPONSE
 DESCRIPTOR.message_types_by_name['SubscribePropertyRequest'] = _SUBSCRIBEPROPERTYREQUEST
-DESCRIPTOR.message_types_by_name['UpdatePropertyRequest'] = _UPDATEPROPERTYREQUEST
-DESCRIPTOR.message_types_by_name['UpdatePropertyResponse'] = _UPDATEPROPERTYRESPONSE
+DESCRIPTOR.message_types_by_name['StreamValueResponse'] = _STREAMVALUERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreatePropertyRequest = _reflection.GeneratedProtocolMessageType('CreatePropertyRequest', (_message.Message,), {
@@ -352,19 +410,33 @@ CreatePropertyResponse = _reflection.GeneratedProtocolMessageType('CreatePropert
   })
 _sym_db.RegisterMessage(CreatePropertyResponse)
 
-GetPropertyRequest = _reflection.GeneratedProtocolMessageType('GetPropertyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETPROPERTYREQUEST,
+GetValueRequest = _reflection.GeneratedProtocolMessageType('GetValueRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETVALUEREQUEST,
   '__module__' : 'Protos.Services.Connection.DigitalTwinLayerStreamingService_pb2'
-  # @@protoc_insertion_point(class_scope:FSR.DigitalTwinLayer.GRPC.Lib.GetPropertyRequest)
+  # @@protoc_insertion_point(class_scope:FSR.DigitalTwinLayer.GRPC.Lib.GetValueRequest)
   })
-_sym_db.RegisterMessage(GetPropertyRequest)
+_sym_db.RegisterMessage(GetValueRequest)
 
-GetPropertyResponse = _reflection.GeneratedProtocolMessageType('GetPropertyResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETPROPERTYRESPONSE,
+GetValueResponse = _reflection.GeneratedProtocolMessageType('GetValueResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETVALUERESPONSE,
   '__module__' : 'Protos.Services.Connection.DigitalTwinLayerStreamingService_pb2'
-  # @@protoc_insertion_point(class_scope:FSR.DigitalTwinLayer.GRPC.Lib.GetPropertyResponse)
+  # @@protoc_insertion_point(class_scope:FSR.DigitalTwinLayer.GRPC.Lib.GetValueResponse)
   })
-_sym_db.RegisterMessage(GetPropertyResponse)
+_sym_db.RegisterMessage(GetValueResponse)
+
+UpdateValueRequest = _reflection.GeneratedProtocolMessageType('UpdateValueRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEVALUEREQUEST,
+  '__module__' : 'Protos.Services.Connection.DigitalTwinLayerStreamingService_pb2'
+  # @@protoc_insertion_point(class_scope:FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueRequest)
+  })
+_sym_db.RegisterMessage(UpdateValueRequest)
+
+UpdateValueResponse = _reflection.GeneratedProtocolMessageType('UpdateValueResponse', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEVALUERESPONSE,
+  '__module__' : 'Protos.Services.Connection.DigitalTwinLayerStreamingService_pb2'
+  # @@protoc_insertion_point(class_scope:FSR.DigitalTwinLayer.GRPC.Lib.UpdateValueResponse)
+  })
+_sym_db.RegisterMessage(UpdateValueResponse)
 
 RemovePropertyRequest = _reflection.GeneratedProtocolMessageType('RemovePropertyRequest', (_message.Message,), {
   'DESCRIPTOR' : _REMOVEPROPERTYREQUEST,
@@ -387,19 +459,12 @@ SubscribePropertyRequest = _reflection.GeneratedProtocolMessageType('SubscribePr
   })
 _sym_db.RegisterMessage(SubscribePropertyRequest)
 
-UpdatePropertyRequest = _reflection.GeneratedProtocolMessageType('UpdatePropertyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEPROPERTYREQUEST,
+StreamValueResponse = _reflection.GeneratedProtocolMessageType('StreamValueResponse', (_message.Message,), {
+  'DESCRIPTOR' : _STREAMVALUERESPONSE,
   '__module__' : 'Protos.Services.Connection.DigitalTwinLayerStreamingService_pb2'
-  # @@protoc_insertion_point(class_scope:FSR.DigitalTwinLayer.GRPC.Lib.UpdatePropertyRequest)
+  # @@protoc_insertion_point(class_scope:FSR.DigitalTwinLayer.GRPC.Lib.StreamValueResponse)
   })
-_sym_db.RegisterMessage(UpdatePropertyRequest)
-
-UpdatePropertyResponse = _reflection.GeneratedProtocolMessageType('UpdatePropertyResponse', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEPROPERTYRESPONSE,
-  '__module__' : 'Protos.Services.Connection.DigitalTwinLayerStreamingService_pb2'
-  # @@protoc_insertion_point(class_scope:FSR.DigitalTwinLayer.GRPC.Lib.UpdatePropertyResponse)
-  })
-_sym_db.RegisterMessage(UpdatePropertyResponse)
+_sym_db.RegisterMessage(StreamValueResponse)
 
 
 DESCRIPTOR._options = None
@@ -410,8 +475,8 @@ _DIGITALTWINLAYERSTREAMINGSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=554,
-  serialized_end=1210,
+  serialized_start=850,
+  serialized_end=1608,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateProperty',
@@ -423,18 +488,27 @@ _DIGITALTWINLAYERSTREAMINGSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='GetProperty',
-    full_name='FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService.GetProperty',
+    name='GetValue',
+    full_name='FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService.GetValue',
     index=1,
     containing_service=None,
-    input_type=_GETPROPERTYREQUEST,
-    output_type=_GETPROPERTYRESPONSE,
+    input_type=_GETVALUEREQUEST,
+    output_type=_GETVALUERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateValue',
+    full_name='FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService.UpdateValue',
+    index=2,
+    containing_service=None,
+    input_type=_UPDATEVALUEREQUEST,
+    output_type=_UPDATEVALUERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='RemoveProperty',
     full_name='FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService.RemoveProperty',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_REMOVEPROPERTYREQUEST,
     output_type=_REMOVEPROPERTYRESPONSE,
@@ -443,19 +517,19 @@ _DIGITALTWINLAYERSTREAMINGSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SubscribeProperty',
     full_name='FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService.SubscribeProperty',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_SUBSCRIBEPROPERTYREQUEST,
     output_type=Protos_dot_DigitalTwinLayerModels__pb2._STREAMITEM,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='UpdateProperty',
-    full_name='FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService.UpdateProperty',
-    index=4,
+    name='StreamValue',
+    full_name='FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService.StreamValue',
+    index=5,
     containing_service=None,
-    input_type=_UPDATEPROPERTYREQUEST,
-    output_type=_UPDATEPROPERTYRESPONSE,
+    input_type=_UPDATEVALUEREQUEST,
+    output_type=_STREAMVALUERESPONSE,
     serialized_options=None,
   ),
 ])
