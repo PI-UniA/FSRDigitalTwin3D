@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='FSR.DigitalTwinLayer.GRPC.Lib',
   syntax='proto3',
   serialized_options=_b('\252\002\035FSR.DigitalTwinLayer.GRPC.Lib'),
-  serialized_pb=_b('\n#Protos/DigitalTwinLayerModels.proto\x12\x1d\x46SR.DigitalTwinLayer.GRPC.Lib\"\x1d\n\nStreamItem\x12\x0f\n\x07payload\x18\x01 \x01(\x0c*M\n\x14\x44igitalTwinLayerType\x12\x19\n\x15\x44T_LAYER_TYPE_VIRTUAL\x10\x00\x12\x1a\n\x16\x44T_LAYER_TYPE_PHYSICAL\x10\x01\x42 \xaa\x02\x1d\x46SR.DigitalTwinLayer.GRPC.Libb\x06proto3')
+  serialized_pb=_b('\n#Protos/DigitalTwinLayerModels.proto\x12\x1d\x46SR.DigitalTwinLayer.GRPC.Lib\"\x82\x01\n\nStreamItem\x12;\n\x04type\x18\x01 \x01(\x0e\x32-.FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\x12\x12\n\npayloadI32\x18\x03 \x03(\x05\x12\x12\n\npayloadF32\x18\x04 \x03(\x02*M\n\x14\x44igitalTwinLayerType\x12\x19\n\x15\x44T_LAYER_TYPE_VIRTUAL\x10\x00\x12\x1a\n\x16\x44T_LAYER_TYPE_PHYSICAL\x10\x01*\x80\x01\n\x0eStreamItemType\x12\x19\n\x15STREAM_ITEM_TYPE_NONE\x10\x00\x12\x19\n\x15STREAM_ITEM_TYPE_BYTE\x10\x01\x12\x1a\n\x16STREAM_ITEM_TYPE_INT32\x10\x02\x12\x1c\n\x18STREAM_ITEM_TYPE_FLOAT32\x10\x03\x42 \xaa\x02\x1d\x46SR.DigitalTwinLayer.GRPC.Libb\x06proto3')
 )
 
 _DIGITALTWINLAYERTYPE = _descriptor.EnumDescriptor(
@@ -41,14 +41,49 @@ _DIGITALTWINLAYERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=101,
-  serialized_end=178,
+  serialized_start=203,
+  serialized_end=280,
 )
 _sym_db.RegisterEnumDescriptor(_DIGITALTWINLAYERTYPE)
 
 DigitalTwinLayerType = enum_type_wrapper.EnumTypeWrapper(_DIGITALTWINLAYERTYPE)
+_STREAMITEMTYPE = _descriptor.EnumDescriptor(
+  name='StreamItemType',
+  full_name='FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='STREAM_ITEM_TYPE_NONE', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='STREAM_ITEM_TYPE_BYTE', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='STREAM_ITEM_TYPE_INT32', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='STREAM_ITEM_TYPE_FLOAT32', index=3, number=3,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=283,
+  serialized_end=411,
+)
+_sym_db.RegisterEnumDescriptor(_STREAMITEMTYPE)
+
+StreamItemType = enum_type_wrapper.EnumTypeWrapper(_STREAMITEMTYPE)
 DT_LAYER_TYPE_VIRTUAL = 0
 DT_LAYER_TYPE_PHYSICAL = 1
+STREAM_ITEM_TYPE_NONE = 0
+STREAM_ITEM_TYPE_BYTE = 1
+STREAM_ITEM_TYPE_INT32 = 2
+STREAM_ITEM_TYPE_FLOAT32 = 3
 
 
 
@@ -60,9 +95,30 @@ _STREAMITEM = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='payload', full_name='FSR.DigitalTwinLayer.GRPC.Lib.StreamItem.payload', index=0,
-      number=1, type=12, cpp_type=9, label=1,
+      name='type', full_name='FSR.DigitalTwinLayer.GRPC.Lib.StreamItem.type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='payload', full_name='FSR.DigitalTwinLayer.GRPC.Lib.StreamItem.payload', index=1,
+      number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='payloadI32', full_name='FSR.DigitalTwinLayer.GRPC.Lib.StreamItem.payloadI32', index=2,
+      number=3, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='payloadF32', full_name='FSR.DigitalTwinLayer.GRPC.Lib.StreamItem.payloadF32', index=3,
+      number=4, type=2, cpp_type=6, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -78,12 +134,14 @@ _STREAMITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=70,
-  serialized_end=99,
+  serialized_start=71,
+  serialized_end=201,
 )
 
+_STREAMITEM.fields_by_name['type'].enum_type = _STREAMITEMTYPE
 DESCRIPTOR.message_types_by_name['StreamItem'] = _STREAMITEM
 DESCRIPTOR.enum_types_by_name['DigitalTwinLayerType'] = _DIGITALTWINLAYERTYPE
+DESCRIPTOR.enum_types_by_name['StreamItemType'] = _STREAMITEMTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 StreamItem = _reflection.GeneratedProtocolMessageType('StreamItem', (_message.Message,), {
