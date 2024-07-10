@@ -19,6 +19,7 @@ message CreatePropertyResponse {
 
 message GetValueRequest {
     string name = 1;
+    StreamItemType type = 2;
 }
 message GetValueResponse {
     bool success = 1;
@@ -44,6 +45,7 @@ message RemovePropertyResponse {
 
 message SubscribePropertyRequest {
     string name = 1;
+    StreamItemType type = 2;
 }
 
 message StreamValueResponse {

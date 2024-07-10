@@ -11,6 +11,16 @@ enum DigitalTwinLayerType {
     DT_LAYER_TYPE_PHYSICAL = 1;
 }
 
+enum StreamItemType {
+    STREAM_ITEM_TYPE_NONE = 0;
+    STREAM_ITEM_TYPE_BYTE = 1;
+    STREAM_ITEM_TYPE_INT32 = 2;
+    STREAM_ITEM_TYPE_FLOAT32 = 3;
+}
+
 message StreamItem {
-    bytes payload = 1;
+    StreamItemType type = 1;
+    bytes payload = 2;
+    repeated int32 payloadI32 = 3;
+    repeated float payloadF32 = 4;
 }

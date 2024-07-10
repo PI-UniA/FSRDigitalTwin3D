@@ -17,9 +17,19 @@ public class DigitalTwinLayerStreamingRpcService : DigitalTwinLayerStreamingServ
 
     public override Task<CreatePropertyResponse> CreateProperty(CreatePropertyRequest request, ServerCallContext context)
     {
+        return request.InitialValue.Type switch
+        {
+            StreamItemType.Byte => CreateProperty<byte>(request, context),
+            StreamItemType.Int32 => CreateProperty<int>(request, context),
+            StreamItemType.Float32 => CreateProperty<float>(request, context),
+            _ => Task.FromResult(new CreatePropertyResponse() { Success = false }),
+        };
+    }
+
+    private Task<CreatePropertyResponse> CreateProperty<T>(CreatePropertyRequest request, ServerCallContext context) {
         var response = new CreatePropertyResponse() { Success = true, Value = request.InitialValue };
         var initialValue = request.InitialValue.Payload.Memory.ToArray();
-        if (!_dataStreamingService.CreateProperty<byte[]>(request.Name)) {
+        if (!_dataStreamingService.CreateProperty<T[]>(request.Name)) {
             response.Success = false;
         }
         else {
@@ -50,8 +60,20 @@ public class DigitalTwinLayerStreamingRpcService : DigitalTwinLayerStreamingServ
             response.Success = false;
             return Task.FromResult(response);
         }
-        var value = request.Value.Payload.Memory.ToArray();
-        _dataStreamingService.UpdateValue(request.Name, value);
+        switch (request.Value.Type) {
+            case StreamItemType.Byte: { 
+                var value = request.Value.Payload.Memory.ToArray();
+                _dataStreamingService.UpdateValue(request.Name, value);
+            } break;
+            case StreamItemType.Int32: { 
+                var value = request.Value.PayloadI32.ToArray();
+                _dataStreamingService.UpdateValue(request.Name, value);
+            } break;
+            case StreamItemType.Float32: { 
+                var value = request.Value.PayloadF32.ToArray();
+                _dataStreamingService.UpdateValue(request.Name, value);
+            } break;
+        }
         return Task.FromResult(response);
     }
 
@@ -61,8 +83,16 @@ public class DigitalTwinLayerStreamingRpcService : DigitalTwinLayerStreamingServ
         if (!_dataStreamingService.HasProperty(request.Name)) {
             return Task.FromResult(response);
         }
-        var value = _dataStreamingService.GetValue<byte[]>(request.Name);
-        response.Value = new StreamItem { Payload = ByteString.CopyFrom(value) };
+        StreamItem si = new() { Type = request.Type };
+        switch (request.Type) {
+            case StreamItemType.Byte: { si.Payload = ByteString.CopyFrom(_dataStreamingService.GetValue<byte[]>(request.Name)); }
+                break;
+            case StreamItemType.Int32: { si.PayloadI32.AddRange(_dataStreamingService.GetValue<int[]>(request.Name)); }
+                break;
+            case StreamItemType.Float32: { si.PayloadF32.AddRange(_dataStreamingService.GetValue<float[]>(request.Name)); }
+                break;
+        }
+        response.Value = si;
         response.Success = true;
         return Task.FromResult(response);
     }

@@ -25,14 +25,20 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNQcm90b3MvRGlnaXRhbFR3aW5MYXllck1vZGVscy5wcm90bxIdRlNSLkRp",
-            "Z2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIiHQoKU3RyZWFtSXRlbRIPCgdwYXls",
-            "b2FkGAEgASgMKk0KFERpZ2l0YWxUd2luTGF5ZXJUeXBlEhkKFURUX0xBWUVS",
-            "X1RZUEVfVklSVFVBTBAAEhoKFkRUX0xBWUVSX1RZUEVfUEhZU0lDQUwQAUIg",
-            "qgIdRlNSLkRpZ2l0YWxUd2luTGF5ZXIuR1JQQy5MaWJiBnByb3RvMw=="));
+            "Z2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIiggEKClN0cmVhbUl0ZW0SOwoEdHlw",
+            "ZRgBIAEoDjItLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLlN0cmVh",
+            "bUl0ZW1UeXBlEg8KB3BheWxvYWQYAiABKAwSEgoKcGF5bG9hZEkzMhgDIAMo",
+            "BRISCgpwYXlsb2FkRjMyGAQgAygCKk0KFERpZ2l0YWxUd2luTGF5ZXJUeXBl",
+            "EhkKFURUX0xBWUVSX1RZUEVfVklSVFVBTBAAEhoKFkRUX0xBWUVSX1RZUEVf",
+            "UEhZU0lDQUwQASqAAQoOU3RyZWFtSXRlbVR5cGUSGQoVU1RSRUFNX0lURU1f",
+            "VFlQRV9OT05FEAASGQoVU1RSRUFNX0lURU1fVFlQRV9CWVRFEAESGgoWU1RS",
+            "RUFNX0lURU1fVFlQRV9JTlQzMhACEhwKGFNUUkVBTV9JVEVNX1RZUEVfRkxP",
+            "QVQzMhADQiCqAh1GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYmIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem), global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem.Parser, new[]{ "Payload" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerType), typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem), global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem.Parser, new[]{ "Type", "Payload", "PayloadI32", "PayloadF32" }, null, null, null)
           }));
     }
     #endregion
@@ -42,6 +48,13 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
   public enum DigitalTwinLayerType {
     [pbr::OriginalName("DT_LAYER_TYPE_VIRTUAL")] DtLayerTypeVirtual = 0,
     [pbr::OriginalName("DT_LAYER_TYPE_PHYSICAL")] DtLayerTypePhysical = 1,
+  }
+
+  public enum StreamItemType {
+    [pbr::OriginalName("STREAM_ITEM_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("STREAM_ITEM_TYPE_BYTE")] Byte = 1,
+    [pbr::OriginalName("STREAM_ITEM_TYPE_INT32")] Int32 = 2,
+    [pbr::OriginalName("STREAM_ITEM_TYPE_FLOAT32")] Float32 = 3,
   }
 
   #endregion
@@ -72,7 +85,10 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StreamItem(StreamItem other) : this() {
+      type_ = other.type_;
       payload_ = other.payload_;
+      payloadI32_ = other.payloadI32_.Clone();
+      payloadF32_ = other.payloadF32_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -81,8 +97,19 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
       return new StreamItem(this);
     }
 
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 1;
+    private global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType type_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
     /// <summary>Field number for the "payload" field.</summary>
-    public const int PayloadFieldNumber = 1;
+    public const int PayloadFieldNumber = 2;
     private pb::ByteString payload_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Payload {
@@ -90,6 +117,26 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
       set {
         payload_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+
+    /// <summary>Field number for the "payloadI32" field.</summary>
+    public const int PayloadI32FieldNumber = 3;
+    private static readonly pb::FieldCodec<int> _repeated_payloadI32_codec
+        = pb::FieldCodec.ForInt32(26);
+    private readonly pbc::RepeatedField<int> payloadI32_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> PayloadI32 {
+      get { return payloadI32_; }
+    }
+
+    /// <summary>Field number for the "payloadF32" field.</summary>
+    public const int PayloadF32FieldNumber = 4;
+    private static readonly pb::FieldCodec<float> _repeated_payloadF32_codec
+        = pb::FieldCodec.ForFloat(34);
+    private readonly pbc::RepeatedField<float> payloadF32_ = new pbc::RepeatedField<float>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<float> PayloadF32 {
+      get { return payloadF32_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,14 +152,20 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Type != other.Type) return false;
       if (Payload != other.Payload) return false;
+      if(!payloadI32_.Equals(other.payloadI32_)) return false;
+      if(!payloadF32_.Equals(other.payloadF32_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Type != 0) hash ^= Type.GetHashCode();
       if (Payload.Length != 0) hash ^= Payload.GetHashCode();
+      hash ^= payloadI32_.GetHashCode();
+      hash ^= payloadF32_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -126,10 +179,16 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (Type != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Type);
+      }
       if (Payload.Length != 0) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteBytes(Payload);
       }
+      payloadI32_.WriteTo(output, _repeated_payloadI32_codec);
+      payloadF32_.WriteTo(output, _repeated_payloadF32_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -138,9 +197,14 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
       if (Payload.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Payload);
       }
+      size += payloadI32_.CalculateSize(_repeated_payloadI32_codec);
+      size += payloadF32_.CalculateSize(_repeated_payloadF32_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -152,9 +216,14 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
       if (other == null) {
         return;
       }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
       if (other.Payload.Length != 0) {
         Payload = other.Payload;
       }
+      payloadI32_.Add(other.payloadI32_);
+      payloadF32_.Add(other.payloadF32_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -166,8 +235,22 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 8: {
+            Type = (global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItemType) input.ReadEnum();
+            break;
+          }
+          case 18: {
             Payload = input.ReadBytes();
+            break;
+          }
+          case 26:
+          case 24: {
+            payloadI32_.AddEntriesFrom(input, _repeated_payloadI32_codec);
+            break;
+          }
+          case 34:
+          case 37: {
+            payloadF32_.AddEntriesFrom(input, _repeated_payloadF32_codec);
             break;
           }
         }
