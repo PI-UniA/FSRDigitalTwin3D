@@ -6,22 +6,33 @@ package FSR.DigitalTwinLayer.GRPC.Lib;
 
 import "Protos/DigitalTwinLayerModels.proto";
 
-/* DT Layer Models */
+/* DT Property Streaming Service */
 
 message CreatePropertyRequest {
     string name = 1;
-    bytes initialValue = 2;
+    StreamItem initialValue = 2;
 }
 message CreatePropertyResponse {
     bool success = 1;
+    StreamItem value = 2;
 }
 
-message GetPropertyRequest {
+message GetValueRequest {
     string name = 1;
 }
-message GetPropertyResponse {
+message GetValueResponse {
     bool success = 1;
-    bytes value = 2;
+    StreamItem value = 2;
+}
+
+message UpdateValueRequest {
+    string name = 1;
+    StreamItem value = 2;
+    bool terminated = 3;
+}
+message UpdateValueResponse {
+    bool success = 1;
+    StreamItem value = 2;
 }
 
 message RemovePropertyRequest {
@@ -35,18 +46,15 @@ message SubscribePropertyRequest {
     string name = 1;
 }
 
-message UpdatePropertyRequest {
-    string name = 1;
-    bytes value = 2;
-}
-message UpdatePropertyResponse {
-    bool success = 1;
+message StreamValueResponse {
+    bool terminated = 1;
 }
 
 service DigitalTwinLayerStreamingService {
     rpc CreateProperty (CreatePropertyRequest) returns (CreatePropertyResponse);
-    rpc GetProperty (GetPropertyRequest) returns (GetPropertyResponse);
+    rpc GetValue (GetValueRequest) returns (GetValueResponse);
+    rpc UpdateValue (UpdateValueRequest) returns (UpdateValueResponse);
     rpc RemoveProperty (RemovePropertyRequest) returns (RemovePropertyResponse);
     rpc SubscribeProperty (SubscribePropertyRequest) returns (stream StreamItem);
-    rpc UpdateProperty (UpdatePropertyRequest) returns (UpdatePropertyResponse);
+    rpc StreamValue (stream UpdateValueRequest) returns (StreamValueResponse);
 }

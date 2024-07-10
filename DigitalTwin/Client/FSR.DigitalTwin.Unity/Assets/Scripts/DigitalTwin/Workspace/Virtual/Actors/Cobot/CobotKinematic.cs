@@ -38,8 +38,8 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Actors {
                 return -1;
             }
             var data = GetJointData();
-            UpdatePropertyRequest request = new() { Name = _streamName, Value = data };
-            var response = await DigitalWorkspace.ApiBridge.Layer.Streaming.UpdatePropertyAsync(request);
+            UpdateValueRequest request = new() { Name = _streamName, Value = new DigitalTwinLayer.GRPC.Lib.StreamItem() { Payload = data } };
+            var response = await DigitalWorkspace.ApiBridge.Layer.Streaming.UpdateValueAsync(request);
             return response.Success ? 0 : -1;
         }
 
@@ -49,12 +49,12 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Actors {
                 Debug.LogError("[Client]: Missing SensorStream submodel!");
                 return -1;
             }
-            GetPropertyRequest request = new() { Name = _streamName };
-            var response = await DigitalWorkspace.ApiBridge.Layer.Streaming.GetPropertyAsync(request);
+            GetValueRequest request = new() { Name = _streamName };
+            var response = await DigitalWorkspace.ApiBridge.Layer.Streaming.GetValueAsync(request);
             if (!response.Success) {
                 return -1;
             }
-            byte[] data = response.Value.ToByteArray();
+            byte[] data = response.Value.Payload.ToByteArray();
             float[] jointRotations = new float[data.Length / 4];
             for (int i = 0; i < jointRotations.Length; i++) {
                 if (!BitConverter.IsLittleEndian) {
@@ -117,11 +117,11 @@ namespace FSR.DigitalTwin.Unity.Workspace.Virtual.Actors {
         void Start() {
             DigitalWorkspace.ApiBridge.ObserveConnected.Subscribe(async _ => {
                 _streamName = await GetStreamNameAsync();
-                var prop = await DigitalWorkspace.ApiBridge.Layer.Streaming.GetPropertyAsync(new GetPropertyRequest() { Name = _streamName });
+                var prop = await DigitalWorkspace.ApiBridge.Layer.Streaming.GetValueAsync(new GetValueRequest() { Name = _streamName });
                 if (!prop.Success) {
                     Debug.Log("[Client]: Opening stream for joint sensor data");
                     await DigitalWorkspace.ApiBridge.Layer.Streaming.CreatePropertyAsync(
-                        new CreatePropertyRequest() { Name = _streamName, InitialValue = GetJointData() });
+                        new CreatePropertyRequest() { Name = _streamName, InitialValue = new DigitalTwinLayer.GRPC.Lib.StreamItem { Payload = GetJointData() } });
                 }
                 else {
                     Debug.Log("[Client]: Found joint data!");

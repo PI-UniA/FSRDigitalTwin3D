@@ -27,44 +27,54 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
             "CkFQcm90b3MvU2VydmljZXMvQ29ubmVjdGlvbi9EaWdpdGFsVHdpbkxheWVy",
             "U3RyZWFtaW5nU2VydmljZS5wcm90bxIdRlNSLkRpZ2l0YWxUd2luTGF5ZXIu",
             "R1JQQy5MaWIaI1Byb3Rvcy9EaWdpdGFsVHdpbkxheWVyTW9kZWxzLnByb3Rv",
-            "IjsKFUNyZWF0ZVByb3BlcnR5UmVxdWVzdBIMCgRuYW1lGAEgASgJEhQKDGlu",
-            "aXRpYWxWYWx1ZRgCIAEoDCIpChZDcmVhdGVQcm9wZXJ0eVJlc3BvbnNlEg8K",
-            "B3N1Y2Nlc3MYASABKAgiIgoSR2V0UHJvcGVydHlSZXF1ZXN0EgwKBG5hbWUY",
-            "ASABKAkiNQoTR2V0UHJvcGVydHlSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgI",
-            "Eg0KBXZhbHVlGAIgASgMIiUKFVJlbW92ZVByb3BlcnR5UmVxdWVzdBIMCgRu",
-            "YW1lGAEgASgJIikKFlJlbW92ZVByb3BlcnR5UmVzcG9uc2USDwoHc3VjY2Vz",
-            "cxgBIAEoCCIoChhTdWJzY3JpYmVQcm9wZXJ0eVJlcXVlc3QSDAoEbmFtZRgB",
-            "IAEoCSI0ChVVcGRhdGVQcm9wZXJ0eVJlcXVlc3QSDAoEbmFtZRgBIAEoCRIN",
-            "CgV2YWx1ZRgCIAEoDCIpChZVcGRhdGVQcm9wZXJ0eVJlc3BvbnNlEg8KB3N1",
-            "Y2Nlc3MYASABKAgykAUKIERpZ2l0YWxUd2luTGF5ZXJTdHJlYW1pbmdTZXJ2",
-            "aWNlEn0KDkNyZWF0ZVByb3BlcnR5EjQuRlNSLkRpZ2l0YWxUd2luTGF5ZXIu",
-            "R1JQQy5MaWIuQ3JlYXRlUHJvcGVydHlSZXF1ZXN0GjUuRlNSLkRpZ2l0YWxU",
-            "d2luTGF5ZXIuR1JQQy5MaWIuQ3JlYXRlUHJvcGVydHlSZXNwb25zZRJ0CgtH",
-            "ZXRQcm9wZXJ0eRIxLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLkdl",
-            "dFByb3BlcnR5UmVxdWVzdBoyLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMu",
-            "TGliLkdldFByb3BlcnR5UmVzcG9uc2USfQoOUmVtb3ZlUHJvcGVydHkSNC5G",
+            "ImYKFUNyZWF0ZVByb3BlcnR5UmVxdWVzdBIMCgRuYW1lGAEgASgJEj8KDGlu",
+            "aXRpYWxWYWx1ZRgCIAEoCzIpLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMu",
+            "TGliLlN0cmVhbUl0ZW0iYwoWQ3JlYXRlUHJvcGVydHlSZXNwb25zZRIPCgdz",
+            "dWNjZXNzGAEgASgIEjgKBXZhbHVlGAIgASgLMikuRlNSLkRpZ2l0YWxUd2lu",
+            "TGF5ZXIuR1JQQy5MaWIuU3RyZWFtSXRlbSIfCg9HZXRWYWx1ZVJlcXVlc3QS",
+            "DAoEbmFtZRgBIAEoCSJdChBHZXRWYWx1ZVJlc3BvbnNlEg8KB3N1Y2Nlc3MY",
+            "ASABKAgSOAoFdmFsdWUYAiABKAsyKS5GU1IuRGlnaXRhbFR3aW5MYXllci5H",
+            "UlBDLkxpYi5TdHJlYW1JdGVtInAKElVwZGF0ZVZhbHVlUmVxdWVzdBIMCgRu",
+            "YW1lGAEgASgJEjgKBXZhbHVlGAIgASgLMikuRlNSLkRpZ2l0YWxUd2luTGF5",
+            "ZXIuR1JQQy5MaWIuU3RyZWFtSXRlbRISCgp0ZXJtaW5hdGVkGAMgASgIImAK",
+            "E1VwZGF0ZVZhbHVlUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBI4CgV2YWx1",
+            "ZRgCIAEoCzIpLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLlN0cmVh",
+            "bUl0ZW0iJQoVUmVtb3ZlUHJvcGVydHlSZXF1ZXN0EgwKBG5hbWUYASABKAki",
+            "KQoWUmVtb3ZlUHJvcGVydHlSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIigK",
+            "GFN1YnNjcmliZVByb3BlcnR5UmVxdWVzdBIMCgRuYW1lGAEgASgJIikKE1N0",
+            "cmVhbVZhbHVlUmVzcG9uc2USEgoKdGVybWluYXRlZBgBIAEoCDL2BQogRGln",
+            "aXRhbFR3aW5MYXllclN0cmVhbWluZ1NlcnZpY2USfQoOQ3JlYXRlUHJvcGVy",
+            "dHkSNC5GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5DcmVhdGVQcm9w",
+            "ZXJ0eVJlcXVlc3QaNS5GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5D",
+            "cmVhdGVQcm9wZXJ0eVJlc3BvbnNlEmsKCEdldFZhbHVlEi4uRlNSLkRpZ2l0",
+            "YWxUd2luTGF5ZXIuR1JQQy5MaWIuR2V0VmFsdWVSZXF1ZXN0Gi8uRlNSLkRp",
+            "Z2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuR2V0VmFsdWVSZXNwb25zZRJ0CgtV",
+            "cGRhdGVWYWx1ZRIxLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLlVw",
+            "ZGF0ZVZhbHVlUmVxdWVzdBoyLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMu",
+            "TGliLlVwZGF0ZVZhbHVlUmVzcG9uc2USfQoOUmVtb3ZlUHJvcGVydHkSNC5G",
             "U1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5SZW1vdmVQcm9wZXJ0eVJl",
             "cXVlc3QaNS5GU1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5SZW1vdmVQ",
             "cm9wZXJ0eVJlc3BvbnNlEnkKEVN1YnNjcmliZVByb3BlcnR5EjcuRlNSLkRp",
             "Z2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuU3Vic2NyaWJlUHJvcGVydHlSZXF1",
             "ZXN0GikuRlNSLkRpZ2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuU3RyZWFtSXRl",
-            "bTABEn0KDlVwZGF0ZVByb3BlcnR5EjQuRlNSLkRpZ2l0YWxUd2luTGF5ZXIu",
-            "R1JQQy5MaWIuVXBkYXRlUHJvcGVydHlSZXF1ZXN0GjUuRlNSLkRpZ2l0YWxU",
-            "d2luTGF5ZXIuR1JQQy5MaWIuVXBkYXRlUHJvcGVydHlSZXNwb25zZUI0qgIx",
-            "RlNSLkRpZ2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuU2VydmljZXMuQ29ubmVj",
-            "dGlvbmIGcHJvdG8z"));
+            "bTABEnYKC1N0cmVhbVZhbHVlEjEuRlNSLkRpZ2l0YWxUd2luTGF5ZXIuR1JQ",
+            "Qy5MaWIuVXBkYXRlVmFsdWVSZXF1ZXN0GjIuRlNSLkRpZ2l0YWxUd2luTGF5",
+            "ZXIuR1JQQy5MaWIuU3RyZWFtVmFsdWVSZXNwb25zZSgBQjSqAjFGU1IuRGln",
+            "aXRhbFR3aW5MYXllci5HUlBDLkxpYi5TZXJ2aWNlcy5Db25uZWN0aW9uYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerModelsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyRequest.Parser, new[]{ "Name", "InitialValue" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse.Parser, new[]{ "Success" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetPropertyResponse.Parser, new[]{ "Success", "Value" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.CreatePropertyResponse.Parser, new[]{ "Success", "Value" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueRequest.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.GetValueResponse.Parser, new[]{ "Success", "Value" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueRequest.Parser, new[]{ "Name", "Value", "Terminated" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdateValueResponse.Parser, new[]{ "Success", "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyRequest.Parser, new[]{ "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.RemovePropertyResponse.Parser, new[]{ "Success" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.SubscribePropertyRequest.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyRequest.Parser, new[]{ "Name", "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.UpdatePropertyResponse.Parser, new[]{ "Success" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.StreamValueResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.StreamValueResponse.Parser, new[]{ "Terminated" }, null, null, null)
           }));
     }
     #endregion
@@ -97,7 +107,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CreatePropertyRequest(CreatePropertyRequest other) : this() {
       name_ = other.name_;
-      initialValue_ = other.initialValue_;
+      initialValue_ = other.initialValue_ != null ? other.initialValue_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -119,12 +129,12 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     /// <summary>Field number for the "initialValue" field.</summary>
     public const int InitialValueFieldNumber = 2;
-    private pb::ByteString initialValue_ = pb::ByteString.Empty;
+    private global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem initialValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString InitialValue {
+    public global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem InitialValue {
       get { return initialValue_; }
       set {
-        initialValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        initialValue_ = value;
       }
     }
 
@@ -142,7 +152,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         return true;
       }
       if (Name != other.Name) return false;
-      if (InitialValue != other.InitialValue) return false;
+      if (!object.Equals(InitialValue, other.InitialValue)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,7 +160,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (InitialValue.Length != 0) hash ^= InitialValue.GetHashCode();
+      if (initialValue_ != null) hash ^= InitialValue.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -168,9 +178,9 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (InitialValue.Length != 0) {
+      if (initialValue_ != null) {
         output.WriteRawTag(18);
-        output.WriteBytes(InitialValue);
+        output.WriteMessage(InitialValue);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -183,8 +193,8 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (InitialValue.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(InitialValue);
+      if (initialValue_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InitialValue);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -200,8 +210,11 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.InitialValue.Length != 0) {
-        InitialValue = other.InitialValue;
+      if (other.initialValue_ != null) {
+        if (initialValue_ == null) {
+          InitialValue = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+        }
+        InitialValue.MergeFrom(other.InitialValue);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -219,7 +232,10 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
             break;
           }
           case 18: {
-            InitialValue = input.ReadBytes();
+            if (initialValue_ == null) {
+              InitialValue = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+            }
+            input.ReadMessage(InitialValue);
             break;
           }
         }
@@ -254,6 +270,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CreatePropertyResponse(CreatePropertyResponse other) : this() {
       success_ = other.success_;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -273,6 +290,17 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       }
     }
 
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CreatePropertyResponse);
@@ -287,6 +315,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         return true;
       }
       if (Success != other.Success) return false;
+      if (!object.Equals(Value, other.Value)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -294,6 +323,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -311,6 +341,10 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -321,6 +355,9 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       int size = 0;
       if (Success != false) {
         size += 1 + 1;
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -335,6 +372,12 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       }
       if (other.Success != false) {
         Success = other.Success;
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+        }
+        Value.MergeFrom(other.Value);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -351,17 +394,24 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
             Success = input.ReadBool();
             break;
           }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
         }
       }
     }
 
   }
 
-  public sealed partial class GetPropertyRequest : pb::IMessage<GetPropertyRequest> {
-    private static readonly pb::MessageParser<GetPropertyRequest> _parser = new pb::MessageParser<GetPropertyRequest>(() => new GetPropertyRequest());
+  public sealed partial class GetValueRequest : pb::IMessage<GetValueRequest> {
+    private static readonly pb::MessageParser<GetValueRequest> _parser = new pb::MessageParser<GetValueRequest>(() => new GetValueRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GetPropertyRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<GetValueRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -374,21 +424,21 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetPropertyRequest() {
+    public GetValueRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetPropertyRequest(GetPropertyRequest other) : this() {
+    public GetValueRequest(GetValueRequest other) : this() {
       name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetPropertyRequest Clone() {
-      return new GetPropertyRequest(this);
+    public GetValueRequest Clone() {
+      return new GetValueRequest(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
@@ -404,11 +454,11 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as GetPropertyRequest);
+      return Equals(other as GetValueRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GetPropertyRequest other) {
+    public bool Equals(GetValueRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -458,7 +508,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GetPropertyRequest other) {
+    public void MergeFrom(GetValueRequest other) {
       if (other == null) {
         return;
       }
@@ -486,11 +536,11 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
   }
 
-  public sealed partial class GetPropertyResponse : pb::IMessage<GetPropertyResponse> {
-    private static readonly pb::MessageParser<GetPropertyResponse> _parser = new pb::MessageParser<GetPropertyResponse>(() => new GetPropertyResponse());
+  public sealed partial class GetValueResponse : pb::IMessage<GetValueResponse> {
+    private static readonly pb::MessageParser<GetValueResponse> _parser = new pb::MessageParser<GetValueResponse>(() => new GetValueResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GetPropertyResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<GetValueResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -503,22 +553,22 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetPropertyResponse() {
+    public GetValueResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetPropertyResponse(GetPropertyResponse other) : this() {
+    public GetValueResponse(GetValueResponse other) : this() {
       success_ = other.success_;
-      value_ = other.value_;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetPropertyResponse Clone() {
-      return new GetPropertyResponse(this);
+    public GetValueResponse Clone() {
+      return new GetValueResponse(this);
     }
 
     /// <summary>Field number for the "success" field.</summary>
@@ -534,22 +584,22 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 2;
-    private pb::ByteString value_ = pb::ByteString.Empty;
+    private global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString Value {
+    public global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem Value {
       get { return value_; }
       set {
-        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        value_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as GetPropertyResponse);
+      return Equals(other as GetValueResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GetPropertyResponse other) {
+    public bool Equals(GetValueResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -557,7 +607,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         return true;
       }
       if (Success != other.Success) return false;
-      if (Value != other.Value) return false;
+      if (!object.Equals(Value, other.Value)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -565,7 +615,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
-      if (Value.Length != 0) hash ^= Value.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -583,9 +633,9 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
-      if (Value.Length != 0) {
+      if (value_ != null) {
         output.WriteRawTag(18);
-        output.WriteBytes(Value);
+        output.WriteMessage(Value);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -598,8 +648,8 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       if (Success != false) {
         size += 1 + 1;
       }
-      if (Value.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Value);
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -608,15 +658,18 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GetPropertyResponse other) {
+    public void MergeFrom(GetValueResponse other) {
       if (other == null) {
         return;
       }
       if (other.Success != false) {
         Success = other.Success;
       }
-      if (other.Value.Length != 0) {
-        Value = other.Value;
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+        }
+        Value.MergeFrom(other.Value);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -634,7 +687,364 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
             break;
           }
           case 18: {
-            Value = input.ReadBytes();
+            if (value_ == null) {
+              Value = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class UpdateValueRequest : pb::IMessage<UpdateValueRequest> {
+    private static readonly pb::MessageParser<UpdateValueRequest> _parser = new pb::MessageParser<UpdateValueRequest>(() => new UpdateValueRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UpdateValueRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateValueRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateValueRequest(UpdateValueRequest other) : this() {
+      name_ = other.name_;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      terminated_ = other.terminated_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateValueRequest Clone() {
+      return new UpdateValueRequest(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "terminated" field.</summary>
+    public const int TerminatedFieldNumber = 3;
+    private bool terminated_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Terminated {
+      get { return terminated_; }
+      set {
+        terminated_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateValueRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UpdateValueRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      if (Terminated != other.Terminated) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (Terminated != false) hash ^= Terminated.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (Terminated != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(Terminated);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (Terminated != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UpdateValueRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      if (other.Terminated != false) {
+        Terminated = other.Terminated;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+          case 24: {
+            Terminated = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class UpdateValueResponse : pb::IMessage<UpdateValueResponse> {
+    private static readonly pb::MessageParser<UpdateValueResponse> _parser = new pb::MessageParser<UpdateValueResponse>(() => new UpdateValueResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UpdateValueResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateValueResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateValueResponse(UpdateValueResponse other) : this() {
+      success_ = other.success_;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateValueResponse Clone() {
+      return new UpdateValueResponse(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateValueResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UpdateValueResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UpdateValueResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::FSR.DigitalTwinLayer.GRPC.Lib.StreamItem();
+            }
+            input.ReadMessage(Value);
             break;
           }
         }
@@ -651,7 +1061,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[4]; }
+      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -780,7 +1190,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[5]; }
+      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -909,7 +1319,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[6]; }
+      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1030,15 +1440,15 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
   }
 
-  public sealed partial class UpdatePropertyRequest : pb::IMessage<UpdatePropertyRequest> {
-    private static readonly pb::MessageParser<UpdatePropertyRequest> _parser = new pb::MessageParser<UpdatePropertyRequest>(() => new UpdatePropertyRequest());
+  public sealed partial class StreamValueResponse : pb::IMessage<StreamValueResponse> {
+    private static readonly pb::MessageParser<StreamValueResponse> _parser = new pb::MessageParser<StreamValueResponse>(() => new StreamValueResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<UpdatePropertyRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<StreamValueResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[7]; }
+      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1047,69 +1457,55 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdatePropertyRequest() {
+    public StreamValueResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdatePropertyRequest(UpdatePropertyRequest other) : this() {
-      name_ = other.name_;
-      value_ = other.value_;
+    public StreamValueResponse(StreamValueResponse other) : this() {
+      terminated_ = other.terminated_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdatePropertyRequest Clone() {
-      return new UpdatePropertyRequest(this);
+    public StreamValueResponse Clone() {
+      return new StreamValueResponse(this);
     }
 
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
+    /// <summary>Field number for the "terminated" field.</summary>
+    public const int TerminatedFieldNumber = 1;
+    private bool terminated_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
+    public bool Terminated {
+      get { return terminated_; }
       set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 2;
-    private pb::ByteString value_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString Value {
-      get { return value_; }
-      set {
-        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        terminated_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as UpdatePropertyRequest);
+      return Equals(other as StreamValueResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(UpdatePropertyRequest other) {
+    public bool Equals(StreamValueResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Name != other.Name) return false;
-      if (Value != other.Value) return false;
+      if (Terminated != other.Terminated) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Value.Length != 0) hash ^= Value.GetHashCode();
+      if (Terminated != false) hash ^= Terminated.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1123,152 +1519,9 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
-      }
-      if (Value.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteBytes(Value);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (Value.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Value);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(UpdatePropertyRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.Value.Length != 0) {
-        Value = other.Value;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Name = input.ReadString();
-            break;
-          }
-          case 18: {
-            Value = input.ReadBytes();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class UpdatePropertyResponse : pb::IMessage<UpdatePropertyResponse> {
-    private static readonly pb::MessageParser<UpdatePropertyResponse> _parser = new pb::MessageParser<UpdatePropertyResponse>(() => new UpdatePropertyResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<UpdatePropertyResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.DigitalTwinLayerStreamingServiceReflection.Descriptor.MessageTypes[8]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdatePropertyResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdatePropertyResponse(UpdatePropertyResponse other) : this() {
-      success_ = other.success_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UpdatePropertyResponse Clone() {
-      return new UpdatePropertyResponse(this);
-    }
-
-    /// <summary>Field number for the "success" field.</summary>
-    public const int SuccessFieldNumber = 1;
-    private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Success {
-      get { return success_; }
-      set {
-        success_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as UpdatePropertyResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(UpdatePropertyResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Success != other.Success) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Success != false) hash ^= Success.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Success != false) {
+      if (Terminated != false) {
         output.WriteRawTag(8);
-        output.WriteBool(Success);
+        output.WriteBool(Terminated);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1278,7 +1531,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Success != false) {
+      if (Terminated != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -1288,12 +1541,12 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(UpdatePropertyResponse other) {
+    public void MergeFrom(StreamValueResponse other) {
       if (other == null) {
         return;
       }
-      if (other.Success != false) {
-        Success = other.Success;
+      if (other.Terminated != false) {
+        Terminated = other.Terminated;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1307,7 +1560,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Success = input.ReadBool();
+            Terminated = input.ReadBool();
             break;
           }
         }
