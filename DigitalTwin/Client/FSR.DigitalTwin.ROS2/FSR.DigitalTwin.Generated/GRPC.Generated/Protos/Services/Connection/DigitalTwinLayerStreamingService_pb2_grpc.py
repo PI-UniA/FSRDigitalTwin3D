@@ -20,10 +20,15 @@ class DigitalTwinLayerStreamingServiceStub(object):
         request_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.CreatePropertyRequest.SerializeToString,
         response_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.CreatePropertyResponse.FromString,
         )
-    self.GetProperty = channel.unary_unary(
-        '/FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService/GetProperty',
-        request_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.GetPropertyRequest.SerializeToString,
-        response_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.GetPropertyResponse.FromString,
+    self.GetValue = channel.unary_unary(
+        '/FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService/GetValue',
+        request_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.GetValueRequest.SerializeToString,
+        response_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.GetValueResponse.FromString,
+        )
+    self.UpdateValue = channel.unary_unary(
+        '/FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService/UpdateValue',
+        request_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdateValueRequest.SerializeToString,
+        response_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdateValueResponse.FromString,
         )
     self.RemoveProperty = channel.unary_unary(
         '/FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService/RemoveProperty',
@@ -35,10 +40,10 @@ class DigitalTwinLayerStreamingServiceStub(object):
         request_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.SubscribePropertyRequest.SerializeToString,
         response_deserializer=Protos_dot_DigitalTwinLayerModels__pb2.StreamItem.FromString,
         )
-    self.UpdateProperty = channel.unary_unary(
-        '/FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService/UpdateProperty',
-        request_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdatePropertyRequest.SerializeToString,
-        response_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdatePropertyResponse.FromString,
+    self.StreamValue = channel.stream_unary(
+        '/FSR.DigitalTwinLayer.GRPC.Lib.DigitalTwinLayerStreamingService/StreamValue',
+        request_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdateValueRequest.SerializeToString,
+        response_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.StreamValueResponse.FromString,
         )
 
 
@@ -53,7 +58,14 @@ class DigitalTwinLayerStreamingServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetProperty(self, request, context):
+  def GetValue(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateValue(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -74,7 +86,7 @@ class DigitalTwinLayerStreamingServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdateProperty(self, request, context):
+  def StreamValue(self, request_iterator, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -89,10 +101,15 @@ def add_DigitalTwinLayerStreamingServiceServicer_to_server(servicer, server):
           request_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.CreatePropertyRequest.FromString,
           response_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.CreatePropertyResponse.SerializeToString,
       ),
-      'GetProperty': grpc.unary_unary_rpc_method_handler(
-          servicer.GetProperty,
-          request_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.GetPropertyRequest.FromString,
-          response_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.GetPropertyResponse.SerializeToString,
+      'GetValue': grpc.unary_unary_rpc_method_handler(
+          servicer.GetValue,
+          request_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.GetValueRequest.FromString,
+          response_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.GetValueResponse.SerializeToString,
+      ),
+      'UpdateValue': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateValue,
+          request_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdateValueRequest.FromString,
+          response_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdateValueResponse.SerializeToString,
       ),
       'RemoveProperty': grpc.unary_unary_rpc_method_handler(
           servicer.RemoveProperty,
@@ -104,10 +121,10 @@ def add_DigitalTwinLayerStreamingServiceServicer_to_server(servicer, server):
           request_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.SubscribePropertyRequest.FromString,
           response_serializer=Protos_dot_DigitalTwinLayerModels__pb2.StreamItem.SerializeToString,
       ),
-      'UpdateProperty': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateProperty,
-          request_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdatePropertyRequest.FromString,
-          response_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdatePropertyResponse.SerializeToString,
+      'StreamValue': grpc.stream_unary_rpc_method_handler(
+          servicer.StreamValue,
+          request_deserializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.UpdateValueRequest.FromString,
+          response_serializer=Protos_dot_Services_dot_Connection_dot_DigitalTwinLayerStreamingService__pb2.StreamValueResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

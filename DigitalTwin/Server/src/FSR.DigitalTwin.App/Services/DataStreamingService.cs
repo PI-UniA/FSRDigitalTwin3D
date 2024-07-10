@@ -9,22 +9,23 @@ public class DataStreamingService : IDataStreamingService
     private readonly Hashtable _streams = [];
     private readonly Hashtable _values = [];
 
-    public bool CreateProperty(string name)
+    public bool CreateProperty<T>(string name)
     {
         if (_values.ContainsKey(name)) {
             return false;
         }
-        _streams[name] = new List<IAsyncStreamWriter<byte[]>>();
+        _streams[name] = new List<IAsyncStreamWriter<T>>();
         _values[name] = null;
         return true;
     }
 
-    public byte[] GetValue(string name)
+    public T GetValue<T>(string name)
     {
-        return _values[name] as byte[] ?? [];
+        return (T)(_values[name] ?? throw new NullReferenceException());
     }
 
-    public bool HasProperty(string name) {
+    public bool HasProperty(string name)
+    {
         return _values.ContainsKey(name);
     }
 
@@ -38,15 +39,15 @@ public class DataStreamingService : IDataStreamingService
         return true;
     }
 
-    public void SubscribeProperty(string name, IAsyncStreamWriter<byte[]> stream)
+    public void SubscribeProperty<T>(string name, IAsyncStreamWriter<T> stream)
     {
-        (_streams[name] as List<IAsyncStreamWriter<byte[]>>)?.Add(stream);
+        (_streams[name] as List<IAsyncStreamWriter<T>>)?.Add(stream);
     }
 
-    public void UpdateValue(string name, byte[] value)
+    public void UpdateValue<T>(string name, T value)
     {
         _values[name] = value;
-        List<IAsyncStreamWriter<byte[]>> writers = (_streams[name] as List<IAsyncStreamWriter<byte[]>>) ?? [];
+        List<IAsyncStreamWriter<T>> writers = (_streams[name] as List<IAsyncStreamWriter<T>>) ?? [];
         foreach (var writer in writers) {
             writer.WriteAsync(value);
         }

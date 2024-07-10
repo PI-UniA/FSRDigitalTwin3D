@@ -7,7 +7,6 @@ using Grpc.Core;
 namespace FSR.DigitalTwinLayer.GRPC.Lib.Services;
 
 public class DigitalTwinLayerStreamingRpcService : DigitalTwinLayerStreamingService.DigitalTwinLayerStreamingServiceBase {
-
     private readonly IDataStreamingService _dataStreamingService;
     private readonly IMapper _mapper;
 
@@ -18,9 +17,9 @@ public class DigitalTwinLayerStreamingRpcService : DigitalTwinLayerStreamingServ
 
     public override Task<CreatePropertyResponse> CreateProperty(CreatePropertyRequest request, ServerCallContext context)
     {
-        var response = new CreatePropertyResponse() { Success = true };
-        var initialValue = request.InitialValue.Memory.ToArray();
-        if (!_dataStreamingService.CreateProperty(request.Name)) {
+        var response = new CreatePropertyResponse() { Success = true, Value = request.InitialValue };
+        var initialValue = request.InitialValue.Payload.Memory.ToArray();
+        if (!_dataStreamingService.CreateProperty<byte[]>(request.Name)) {
             response.Success = false;
         }
         else {
@@ -44,24 +43,39 @@ public class DigitalTwinLayerStreamingRpcService : DigitalTwinLayerStreamingServ
         return Task.CompletedTask;
     }
 
-    public override Task<UpdatePropertyResponse> UpdateProperty(UpdatePropertyRequest request, ServerCallContext context)
+    public override Task<UpdateValueResponse> UpdateValue(UpdateValueRequest request, ServerCallContext context)
     {
-        var response = new UpdatePropertyResponse() { Success = true };
-        var value = request.Value.Memory.ToArray();
-        _dataStreamingService.UpdateValue(request.Name, value);
-        return Task.FromResult(response);
-    }
-
-    public override Task<GetPropertyResponse> GetProperty(GetPropertyRequest request, ServerCallContext context)
-    {
-        var response = new GetPropertyResponse() { Success = true };
+        var response = new UpdateValueResponse() { Success = true, Value = request.Value };
         if (!_dataStreamingService.HasProperty(request.Name)) {
             response.Success = false;
             return Task.FromResult(response);
         }
-        var value = _dataStreamingService.GetValue(request.Name);
-        response.Value = ByteString.CopyFrom(value);
+        var value = request.Value.Payload.Memory.ToArray();
+        _dataStreamingService.UpdateValue(request.Name, value);
         return Task.FromResult(response);
     }
 
+    public override Task<GetValueResponse> GetValue(GetValueRequest request, ServerCallContext context)
+    {
+        GetValueResponse response = new() { Success = false };
+        if (!_dataStreamingService.HasProperty(request.Name)) {
+            return Task.FromResult(response);
+        }
+        var value = _dataStreamingService.GetValue<byte[]>(request.Name);
+        response.Value = new StreamItem { Payload = ByteString.CopyFrom(value) };
+        response.Success = true;
+        return Task.FromResult(response);
+    }
+
+    public override async Task<StreamValueResponse> StreamValue(IAsyncStreamReader<UpdateValueRequest> requestStream, ServerCallContext context)
+    {
+        while (await requestStream.MoveNext()) {
+            var request = requestStream.Current;
+            if (request.Terminated) {
+                return new StreamValueResponse { Terminated = true };
+            }
+            _dataStreamingService.UpdateValue(request.Name, request);
+        }
+        return new StreamValueResponse { Terminated = false };
+    }
 }
