@@ -12,7 +12,7 @@ using UnityEngine;
 namespace FSR.DigitalTwin.Unity.Workspace.Digital {
 
     /// <summary>
-    /// This interface represents an I4.0 asset, which is administrated via an administration shell
+    /// This class represents an I4.0 asset, which is administrated via an administration shell
     /// The asset consists of a set of asset components. An asset component cannot be another asset,
     /// but it can of course contain a submodel linking to another asset.
     /// </summary>

@@ -10,9 +10,8 @@ using UnityEngine;
 namespace FSR.DigitalTwin.Unity.Workspace.Digital {
 
     /// <summary>
-    /// This interface represents an I4.0 asset, which is administrated via an administration shell
-    /// The asset consists of a set of asset components. An asset component cannot be another asset,
-    /// but it can of course contain a submodel linking to another asset.
+    /// This class represents an I4.0 asset component. It is directly linked to a submodel from the AAS metamodel.
+    /// Its task is to receive and send data to the digital representation of the workspace.
     /// </summary>
     public abstract class DigitalTwinComponent : MonoBehaviour, IDigitalTwinComponent
     {
