@@ -27,30 +27,31 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
             "CkRQcm90b3MvU2VydmljZXMvT3BlcmF0aW9uYWwvRGlnaXRhbFR3aW5MYXll",
             "ck9wZXJhdGlvbmFsU2VydmljZS5wcm90bxIfRlNSLkFhcy5HUlBDLkxpYi5W",
             "My5PcGVyYXRpb25hbBoZUHJvdG9zL0Fhc01vZGVscy5WMy5wcm90bxocUHJv",
-            "dG9zL0Fhc0FwaU1vZGVscy5WMy5wcm90byLnAQoWT3BlcmF0aW9uSW52b2tl",
-            "UmVxdWVzdBIRCglyZXF1ZXN0SWQYASABKAkSQQoOaW5wdXRWYXJpYWJsZXMY",
-            "AiADKAsyKS5GU1IuQWFzLkdSUEMuTGliLlYzLk9wZXJhdGlvblZhcmlhYmxl",
-            "RFRPEkEKDmlub3V0VmFyaWFibGVzGAMgAygLMikuRlNSLkFhcy5HUlBDLkxp",
-            "Yi5WMy5PcGVyYXRpb25WYXJpYWJsZURUTxIRCgl0aW1lc3RhbXAYBCABKAMS",
-            "DwoHaXNBc3luYxgFIAEoCBIQCghoYW5kbGVJZBgGIAEoCSIlChBPcGVyYXRp",
-            "b25SZXF1ZXN0EhEKCXJlcXVlc3RJZBgBIAEoCSJhCg9PcGVyYXRpb25TdGF0",
-            "dXMSEQoJcmVxdWVzdElkGAEgASgJEjsKDmV4ZWN1dGlvblN0YXRlGAIgASgO",
-            "MiMuRlNSLkFhcy5HUlBDLkxpYi5WMy5FeGVjdXRpb25TdGF0ZTK1AwoiRGln",
-            "aXRhbFR3aW5MYXllck9wZXJhdGlvbmFsU2VydmljZRKOAQodT3Blbk9wZXJh",
-            "dGlvbkludm9jYXRpb25TdHJlYW0SMC5GU1IuQWFzLkdSUEMuTGliLlYzLk9w",
-            "ZXJhdGlvbmFsLk9wZXJhdGlvblN0YXR1cxo3LkZTUi5BYXMuR1JQQy5MaWIu",
-            "VjMuT3BlcmF0aW9uYWwuT3BlcmF0aW9uSW52b2tlUmVxdWVzdCgBMAESeAoZ",
-            "T3Blbk9wZXJhdGlvblJlc3VsdFN0cmVhbRIkLkZTUi5BYXMuR1JQQy5MaWIu",
-            "VjMuT3BlcmF0aW9uUmVzdWx0GjEuRlNSLkFhcy5HUlBDLkxpYi5WMy5PcGVy",
-            "YXRpb25hbC5PcGVyYXRpb25SZXF1ZXN0KAEwARKDAQoYT3BlbkV4ZWN1dGlv",
-            "blN0YXRlU3RyZWFtEjAuRlNSLkFhcy5HUlBDLkxpYi5WMy5PcGVyYXRpb25h",
-            "bC5PcGVyYXRpb25TdGF0dXMaMS5GU1IuQWFzLkdSUEMuTGliLlYzLk9wZXJh",
-            "dGlvbmFsLk9wZXJhdGlvblJlcXVlc3QoATABQiuqAihGU1IuQWFzLkdSUEMu",
-            "TGliLlYzLlNlcnZpY2VzLk9wZXJhdGlvbmFsYgZwcm90bzM="));
+            "dG9zL0Fhc0FwaU1vZGVscy5WMy5wcm90byKVAgoWT3BlcmF0aW9uSW52b2tl",
+            "UmVxdWVzdBIRCglyZXF1ZXN0SWQYASABKAkSEgoKc3VibW9kZWxJZBgCIAEo",
+            "CRIYChBvcGVyYXRpb25JZFNob3J0GAMgASgJEkEKDmlucHV0VmFyaWFibGVz",
+            "GAQgAygLMikuRlNSLkFhcy5HUlBDLkxpYi5WMy5PcGVyYXRpb25WYXJpYWJs",
+            "ZURUTxJBCg5pbm91dFZhcmlhYmxlcxgFIAMoCzIpLkZTUi5BYXMuR1JQQy5M",
+            "aWIuVjMuT3BlcmF0aW9uVmFyaWFibGVEVE8SEQoJdGltZXN0YW1wGAYgASgD",
+            "Eg8KB2lzQXN5bmMYByABKAgSEAoIaGFuZGxlSWQYCCABKAkiJQoQT3BlcmF0",
+            "aW9uUmVxdWVzdBIRCglyZXF1ZXN0SWQYASABKAkiYQoPT3BlcmF0aW9uU3Rh",
+            "dHVzEhEKCXJlcXVlc3RJZBgBIAEoCRI7Cg5leGVjdXRpb25TdGF0ZRgCIAEo",
+            "DjIjLkZTUi5BYXMuR1JQQy5MaWIuVjMuRXhlY3V0aW9uU3RhdGUytQMKIkRp",
+            "Z2l0YWxUd2luTGF5ZXJPcGVyYXRpb25hbFNlcnZpY2USjgEKHU9wZW5PcGVy",
+            "YXRpb25JbnZvY2F0aW9uU3RyZWFtEjAuRlNSLkFhcy5HUlBDLkxpYi5WMy5P",
+            "cGVyYXRpb25hbC5PcGVyYXRpb25TdGF0dXMaNy5GU1IuQWFzLkdSUEMuTGli",
+            "LlYzLk9wZXJhdGlvbmFsLk9wZXJhdGlvbkludm9rZVJlcXVlc3QoATABEngK",
+            "GU9wZW5PcGVyYXRpb25SZXN1bHRTdHJlYW0SJC5GU1IuQWFzLkdSUEMuTGli",
+            "LlYzLk9wZXJhdGlvblJlc3VsdBoxLkZTUi5BYXMuR1JQQy5MaWIuVjMuT3Bl",
+            "cmF0aW9uYWwuT3BlcmF0aW9uUmVxdWVzdCgBMAESgwEKGE9wZW5FeGVjdXRp",
+            "b25TdGF0ZVN0cmVhbRIwLkZTUi5BYXMuR1JQQy5MaWIuVjMuT3BlcmF0aW9u",
+            "YWwuT3BlcmF0aW9uU3RhdHVzGjEuRlNSLkFhcy5HUlBDLkxpYi5WMy5PcGVy",
+            "YXRpb25hbC5PcGVyYXRpb25SZXF1ZXN0KAEwAUIrqgIoRlNSLkFhcy5HUlBD",
+            "LkxpYi5WMy5TZXJ2aWNlcy5PcGVyYXRpb25hbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::FSR.Aas.GRPC.Lib.V3.AasModelsV3Reflection.Descriptor, global::FSR.Aas.GRPC.Lib.V3.Services.AasApiModelsV3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.Aas.GRPC.Lib.V3.Services.Operational.OperationInvokeRequest), global::FSR.Aas.GRPC.Lib.V3.Services.Operational.OperationInvokeRequest.Parser, new[]{ "RequestId", "InputVariables", "InoutVariables", "Timestamp", "IsAsync", "HandleId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.Aas.GRPC.Lib.V3.Services.Operational.OperationInvokeRequest), global::FSR.Aas.GRPC.Lib.V3.Services.Operational.OperationInvokeRequest.Parser, new[]{ "RequestId", "SubmodelId", "OperationIdShort", "InputVariables", "InoutVariables", "Timestamp", "IsAsync", "HandleId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.Aas.GRPC.Lib.V3.Services.Operational.OperationRequest), global::FSR.Aas.GRPC.Lib.V3.Services.Operational.OperationRequest.Parser, new[]{ "RequestId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.Aas.GRPC.Lib.V3.Services.Operational.OperationStatus), global::FSR.Aas.GRPC.Lib.V3.Services.Operational.OperationStatus.Parser, new[]{ "RequestId", "ExecutionState" }, null, null, null)
           }));
@@ -85,6 +86,8 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public OperationInvokeRequest(OperationInvokeRequest other) : this() {
       requestId_ = other.requestId_;
+      submodelId_ = other.submodelId_;
+      operationIdShort_ = other.operationIdShort_;
       inputVariables_ = other.inputVariables_.Clone();
       inoutVariables_ = other.inoutVariables_.Clone();
       timestamp_ = other.timestamp_;
@@ -109,10 +112,32 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
       }
     }
 
+    /// <summary>Field number for the "submodelId" field.</summary>
+    public const int SubmodelIdFieldNumber = 2;
+    private string submodelId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SubmodelId {
+      get { return submodelId_; }
+      set {
+        submodelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "operationIdShort" field.</summary>
+    public const int OperationIdShortFieldNumber = 3;
+    private string operationIdShort_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string OperationIdShort {
+      get { return operationIdShort_; }
+      set {
+        operationIdShort_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "inputVariables" field.</summary>
-    public const int InputVariablesFieldNumber = 2;
+    public const int InputVariablesFieldNumber = 4;
     private static readonly pb::FieldCodec<global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO> _repeated_inputVariables_codec
-        = pb::FieldCodec.ForMessage(18, global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO.Parser);
+        = pb::FieldCodec.ForMessage(34, global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO.Parser);
     private readonly pbc::RepeatedField<global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO> inputVariables_ = new pbc::RepeatedField<global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO> InputVariables {
@@ -120,9 +145,9 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
     }
 
     /// <summary>Field number for the "inoutVariables" field.</summary>
-    public const int InoutVariablesFieldNumber = 3;
+    public const int InoutVariablesFieldNumber = 5;
     private static readonly pb::FieldCodec<global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO> _repeated_inoutVariables_codec
-        = pb::FieldCodec.ForMessage(26, global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO.Parser);
+        = pb::FieldCodec.ForMessage(42, global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO.Parser);
     private readonly pbc::RepeatedField<global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO> inoutVariables_ = new pbc::RepeatedField<global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::FSR.Aas.GRPC.Lib.V3.OperationVariableDTO> InoutVariables {
@@ -130,7 +155,7 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
     }
 
     /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 4;
+    public const int TimestampFieldNumber = 6;
     private long timestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Timestamp {
@@ -141,7 +166,7 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
     }
 
     /// <summary>Field number for the "isAsync" field.</summary>
-    public const int IsAsyncFieldNumber = 5;
+    public const int IsAsyncFieldNumber = 7;
     private bool isAsync_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsAsync {
@@ -152,7 +177,7 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
     }
 
     /// <summary>Field number for the "handleId" field.</summary>
-    public const int HandleIdFieldNumber = 6;
+    public const int HandleIdFieldNumber = 8;
     private string handleId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string HandleId {
@@ -176,6 +201,8 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
         return true;
       }
       if (RequestId != other.RequestId) return false;
+      if (SubmodelId != other.SubmodelId) return false;
+      if (OperationIdShort != other.OperationIdShort) return false;
       if(!inputVariables_.Equals(other.inputVariables_)) return false;
       if(!inoutVariables_.Equals(other.inoutVariables_)) return false;
       if (Timestamp != other.Timestamp) return false;
@@ -188,6 +215,8 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
     public override int GetHashCode() {
       int hash = 1;
       if (RequestId.Length != 0) hash ^= RequestId.GetHashCode();
+      if (SubmodelId.Length != 0) hash ^= SubmodelId.GetHashCode();
+      if (OperationIdShort.Length != 0) hash ^= OperationIdShort.GetHashCode();
       hash ^= inputVariables_.GetHashCode();
       hash ^= inoutVariables_.GetHashCode();
       if (Timestamp != 0L) hash ^= Timestamp.GetHashCode();
@@ -210,18 +239,26 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
         output.WriteRawTag(10);
         output.WriteString(RequestId);
       }
+      if (SubmodelId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(SubmodelId);
+      }
+      if (OperationIdShort.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(OperationIdShort);
+      }
       inputVariables_.WriteTo(output, _repeated_inputVariables_codec);
       inoutVariables_.WriteTo(output, _repeated_inoutVariables_codec);
       if (Timestamp != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteInt64(Timestamp);
       }
       if (IsAsync != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(56);
         output.WriteBool(IsAsync);
       }
       if (HandleId.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteString(HandleId);
       }
       if (_unknownFields != null) {
@@ -234,6 +271,12 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
       int size = 0;
       if (RequestId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RequestId);
+      }
+      if (SubmodelId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SubmodelId);
+      }
+      if (OperationIdShort.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OperationIdShort);
       }
       size += inputVariables_.CalculateSize(_repeated_inputVariables_codec);
       size += inoutVariables_.CalculateSize(_repeated_inoutVariables_codec);
@@ -259,6 +302,12 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
       }
       if (other.RequestId.Length != 0) {
         RequestId = other.RequestId;
+      }
+      if (other.SubmodelId.Length != 0) {
+        SubmodelId = other.SubmodelId;
+      }
+      if (other.OperationIdShort.Length != 0) {
+        OperationIdShort = other.OperationIdShort;
       }
       inputVariables_.Add(other.inputVariables_);
       inoutVariables_.Add(other.inoutVariables_);
@@ -287,22 +336,30 @@ namespace FSR.Aas.GRPC.Lib.V3.Services.Operational {
             break;
           }
           case 18: {
-            inputVariables_.AddEntriesFrom(input, _repeated_inputVariables_codec);
+            SubmodelId = input.ReadString();
             break;
           }
           case 26: {
+            OperationIdShort = input.ReadString();
+            break;
+          }
+          case 34: {
+            inputVariables_.AddEntriesFrom(input, _repeated_inputVariables_codec);
+            break;
+          }
+          case 42: {
             inoutVariables_.AddEntriesFrom(input, _repeated_inoutVariables_codec);
             break;
           }
-          case 32: {
+          case 48: {
             Timestamp = input.ReadInt64();
             break;
           }
-          case 40: {
+          case 56: {
             IsAsync = input.ReadBool();
             break;
           }
-          case 50: {
+          case 66: {
             HandleId = input.ReadString();
             break;
           }

@@ -11,11 +11,13 @@ package FSR.Aas.GRPC.Lib.V3.Operational;
 
 message OperationInvokeRequest {
     string requestId = 1;
-    repeated OperationVariableDTO inputVariables = 2;
-    repeated OperationVariableDTO inoutVariables = 3;
-    int64 timestamp = 4;
-    bool isAsync = 5;
-    string handleId = 6;
+    string submodelId = 2;
+    string operationIdShort = 3;
+    repeated OperationVariableDTO inputVariables = 4;
+    repeated OperationVariableDTO inoutVariables = 5;
+    int64 timestamp = 6;
+    bool isAsync = 7;
+    string handleId = 8;
 }
 
 message OperationRequest {

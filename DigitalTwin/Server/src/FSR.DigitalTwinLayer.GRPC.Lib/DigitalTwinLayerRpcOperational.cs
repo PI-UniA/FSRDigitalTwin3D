@@ -60,10 +60,12 @@ public class DigitalTwinLayerRpcOperational : IDigitalTwinLayerOperational
         return result;
     }
 
-    public async Task<ExecutionState> InvokeAsync(IOperation operation, int? timestamp, string requestId, string? handleId = null)
+    public async Task<ExecutionState> InvokeAsync(IOperation operation, int? timestamp, string requestId, string submodelId, string? handleId = null)
     {
         OperationInvocation invocation = new OperationInvocation() {
             RequestId = requestId,
+            SubmodelId = submodelId,
+            OperationIdShort = operation.IdShort,
             InputVariables = operation.InputVariables,
             InoutputVariables = operation.InoutputVariables,
             Timestamp = timestamp,

@@ -14,16 +14,16 @@ public class OperationReceiver : IOperationReceiver
         _layerService = layerService ?? throw new NullReferenceException();
     }
 
-    public OperationResult OnOperationInvoke(IOperation operation, int? timestamp, string requestId)
+    public OperationResult OnOperationInvoke(IOperation operation, string submodelId, int? timestamp, string requestId)
     {
-        _layerService.Layer.Operational.InvokeAsync(operation, timestamp, requestId).GetAwaiter().GetResult();
+        _layerService.Layer.Operational.InvokeAsync(operation, timestamp, requestId, submodelId).GetAwaiter().GetResult();
         return _layerService.Layer.Operational.GetResultAsync(requestId).GetAwaiter().GetResult();
     }
 
-    public async Task<OperationResult> OnOperationInvokeAsync(string handleId, IOperation operation, int? timestamp, string requestId)
+    public async Task<OperationResult> OnOperationInvokeAsync(string handleId, IOperation operation, string submodelId, int? timestamp, string requestId)
     {
         OperationInvoker.UpdateExecutionState(handleId, ExecutionState.InitiatedEnum);
-        await _layerService.Layer.Operational.InvokeAsync(operation, timestamp, requestId, handleId);
+        await _layerService.Layer.Operational.InvokeAsync(operation, timestamp, requestId, submodelId, handleId);
 
         OperationInvoker.UpdateExecutionState(handleId, ExecutionState.RunningEnum);
         var result = await _layerService.Layer.Operational.GetResultAsync(requestId);
