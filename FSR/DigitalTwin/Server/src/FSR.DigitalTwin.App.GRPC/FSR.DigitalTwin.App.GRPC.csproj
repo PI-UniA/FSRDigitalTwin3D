@@ -6,4 +6,21 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../FSR.DigitalTwin.App/FSR.DigitalTwin.App.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos/DTO/AasModels.V3.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos/DTO/AasApiModels.V3.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos/Services/AdminShellRepositoryService.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos/Services/SubmodelRepositoryService.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos/Services/AssetAdministrationShellService.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos/Services/SubmodelService.proto" GrpcServices="Server" />
+  </ItemGroup>
+
 </Project>

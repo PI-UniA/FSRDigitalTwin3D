@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../FSR.DigitalTwin.Domain/FSR.DigitalTwin.Domain.csproj" />
     <ProjectReference Include="../FSR.DigitalTwin.App/FSR.DigitalTwin.App.csproj" />
+    <ProjectReference Include="../FSR.DigitalTwin.App.GRPC/FSR.DigitalTwin.App.GRPC.csproj" />
   </ItemGroup>
 
 </Project>
