@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="../FSR.DigitalTwin.Domain/FSR.DigitalTwin.Domain.csproj" />
+    <ProjectReference Include="../../modules/AasxServer/src/IO.Swagger.Lib.V3/IO.Swagger.Lib.V3.csproj" />
+    <ProjectReference Include="../../modules/AasxServer/src/IO.Swagger.Registry.Lib.V3/IO.Swagger.Registry.Lib.V3.csproj" />
   </ItemGroup>
 
 </Project>
