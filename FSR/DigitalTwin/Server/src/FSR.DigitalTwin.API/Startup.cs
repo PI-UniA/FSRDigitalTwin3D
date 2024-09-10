@@ -9,6 +9,7 @@ using AasxServerStandardBib.Interfaces;
 using AasxServerStandardBib.Logging;
 using AasxServerStandardBib.Services;
 using AdminShellNS;
+using FSR.DigitalTwin.App.GRPC.Common.Utils;
 using IO.Swagger.Controllers;
 using IO.Swagger.Lib.V3.Formatters;
 using IO.Swagger.Lib.V3.Interfaces;
@@ -93,6 +94,7 @@ internal class Startup
         services.AddTransient<IAasRegistryService, AasRegistryService>();
         services.AddTransient<IAasDescriptorPaginationService, AasDescriptorPaginationService>();
         services.AddTransient<IOperationReceiver, OperationReceiver>();
+        services.AddAppServices();
 
         // Add GraphQL services
         services
@@ -171,6 +173,7 @@ internal class Startup
             });
         });
 
+        services.AddAutoMapper(RpcAssembly.GetAssembly());
         services.AddGrpc();
 
         // For testing
@@ -213,6 +216,7 @@ internal class Startup
         {
             endpoints.MapControllers();
             endpoints.MapGet("/", () => "*** Welcome to FORSocialRobots Digital Twin Framework! ***");
+            endpoints.MapAppGrpcServices();
         });
 
 
