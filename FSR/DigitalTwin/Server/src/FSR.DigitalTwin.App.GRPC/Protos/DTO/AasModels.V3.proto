@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option csharp_namespace = "FSR.DigitalTwin.App.GRPC.Aas.Lib.V3";
 
-package FSR.Aas.GRPC.Lib.V3;
+package FSR.DigitalTwin.App.GRPC;
 
 /* Profbuf example */
 

@@ -2,33 +2,74 @@ syntax = "proto3";
 
 option csharp_namespace = "FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService";
 
-package FSR.DigitalTwin.GRPC.Lib;
+package FSR.DigitalTwin.App.GRPC;
 
 // import "Protos/DigitalTwinLayerModels.proto";
+import "Protos/DTO/AasModels.V3.proto";
+import "Protos/DTO/AasApiModels.V3.proto";
 
-/* DT Layer Models */
+/* DigitalTwinClientConnectionServices */
 
-message ConnectRequest {
+enum ClientNotificationType {
+    CLIENT_NOTIFICATION_TYPE_CONNECTED = 0;
+    CLIENT_NOTIFICATION_TYPE_ABORTED = 1;
+    CLIENT_NOTIFICATION_TYPE_INVOKE_OPERATION = 2;
+}
+
+message ConnectedClientNotification {
     string clientId = 1;
-    string info = 2;
+    bool success = 2;
 }
-message ConnectResponse {
-    bool success = 1;
-    string clientId = 2;
-    string message = 3;
+message AbortedClientNotification {
+    string clientId = 1;
+    bool success = 2;
+} 
+message InvokeOperationClientNotification {
+    string requestId = 1;
+    string submodelId = 2;
+    string operationIdShort = 3;
+    repeated OperationVariableDTO inputVariables = 4;
+    repeated OperationVariableDTO inoutVariables = 5;
+    int64 timestamp = 6;
+    bool isAsync = 7;
+    string handleId = 8;
+}
+message ClientNotification {
+    ClientNotificationType type = 1;
+    ConnectedClientNotification connected = 2;
+    AbortedClientNotification aborted = 3;
+    InvokeOperationClientNotification invokeOperation = 4;
 }
 
-message AbortConnectionRequest {
-    string clientId = 1;
-    string info = 2;
+enum ServerNotificationType {
+    SERVER_NOTIFICATION_TYPE_CONNECT = 0;
+    SERVER_NOTIFICATION_TYPE_ABORT = 1;
+    SERVER_NOTIFICATION_TYPE_OPERATION_STATE = 2;
+    SERVER_NOTIFICATION_TYPE_OPERATION_RESULT = 3;
 }
-message AbortConnectionResponse {
-    bool success = 1;
-    string clientId = 2;
-    string message = 3;
+
+message ConnectServerNotification {
+    string clientId = 1;
+}
+message AbortServerNotification {
+    string clientId = 1;
+}
+message OperationStateServerNotification {
+    string handleId = 1;
+    ExecutionState executionState = 2;
+}
+message OperationResultServerNotification {
+    string clientId = 1;
+    OperationResult result = 2;
+}
+message ServerNotification {
+    ServerNotificationType type = 1;
+    ConnectServerNotification connect = 2;
+    AbortServerNotification abort = 3;
+    OperationStateServerNotification operationState = 5;
+    OperationResultServerNotification operationResult = 6;
 }
 
 service DigitalTwinClientConnectionService {
-    rpc Connect (ConnectRequest) returns (ConnectResponse);
-    rpc AbortConnection (AbortConnectionRequest) returns (AbortConnectionResponse);
+    rpc Connect (stream ServerNotification) returns (stream ClientNotification);
 }

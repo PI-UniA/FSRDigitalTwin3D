@@ -15,7 +15,7 @@ using IO.Swagger.Models;
 using Microsoft.AspNetCore.Authorization;
 using PagedResultPagingMetadata = FSR.DigitalTwin.App.GRPC.Aas.Lib.V3.PagedResultPagingMetadata;
 
-namespace FSR.DigitalTwin.App.GRPC.Services;
+namespace FSR.DigitalTwin.App.GRPC.Services.RPC;
 
 public class SubmodelRepositoryRpcService : SubmodelRepositoryService.SubmodelRepositoryServiceBase {
 

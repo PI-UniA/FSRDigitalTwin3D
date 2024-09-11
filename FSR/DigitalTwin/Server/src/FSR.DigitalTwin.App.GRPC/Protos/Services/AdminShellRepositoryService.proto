@@ -5,7 +5,7 @@ option csharp_namespace = "FSR.DigitalTwin.App.GRPC.Aas.Lib.V3.Services.AssetAdm
 import "Protos/DTO/AasModels.V3.proto";
 import "Protos/DTO/AasApiModels.V3.proto";
 
-package FSR.Aas.GRPC.Lib.V3;
+package FSR.DigitalTwin.App.GRPC;
 
 /* AssetAdministrationShellRepositoryService */
 

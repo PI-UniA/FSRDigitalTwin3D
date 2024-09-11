@@ -20,7 +20,7 @@ using ExecutionState = FSR.DigitalTwin.App.GRPC.Aas.Lib.V3.ExecutionState;
 using OperationResult = FSR.DigitalTwin.App.GRPC.Aas.Lib.V3.OperationResult;
 using PagedResultPagingMetadata = FSR.DigitalTwin.App.GRPC.Aas.Lib.V3.PagedResultPagingMetadata;
 
-namespace FSR.DigitalTwin.App.GRPC.Services;
+namespace FSR.DigitalTwin.App.GRPC.Services.RPC;
 
 public class SubmodelRpcService : SubmodelService.SubmodelServiceBase {
 

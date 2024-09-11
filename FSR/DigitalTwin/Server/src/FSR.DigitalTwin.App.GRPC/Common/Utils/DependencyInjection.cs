@@ -1,4 +1,4 @@
-using FSR.DigitalTwin.App.GRPC.Services;
+using FSR.DigitalTwin.App.GRPC.Services.RPC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +11,7 @@ public static class GrpcService {
         endpoints.MapGrpcService<SubmodelRepositoryRpcService>();
         endpoints.MapGrpcService<AssetAdministrationShellRpcService>();
         endpoints.MapGrpcService<SubmodelRpcService>();
+        endpoints.MapGrpcService<DigitalTwinClientConnectionRpcService>();
     }
 
     public static void AddAppServices(this IServiceCollection services) {
