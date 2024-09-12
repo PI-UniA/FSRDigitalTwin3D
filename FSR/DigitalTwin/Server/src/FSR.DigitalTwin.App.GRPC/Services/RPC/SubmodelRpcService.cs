@@ -1,11 +1,11 @@
 using System.Net;
 using System.Security.Claims;
 using AasCore.Aas3_0;
-using AasOperationInvocation;
 using AasxServer;
 using AasxServerStandardBib.Exceptions;
 using AasxServerStandardBib.Interfaces;
 using AasxServerStandardBib.Logging;
+using AdminShellNS;
 using AdminShellNS.Exceptions;
 using AutoMapper;
 using FSR.DigitalTwin.App.GRPC.Aas.Lib.V3;
@@ -34,9 +34,10 @@ public class SubmodelRpcService : SubmodelService.SubmodelServiceBase {
     private readonly ILevelExtentModifierService _levelExtentModifierService;
     private readonly IPaginationService _paginationService;
     private readonly IAuthorizationService _authorizationService;
+    private readonly IOperationReceiver _operationReceiver;
     private readonly IMapper _mapper;
 
-    public SubmodelRpcService(IAppLogger<SubmodelRpcService> logger, IBase64UrlDecoderService decoderService, ISubmodelService submodelService, IReferenceModifierService referenceModifierService, IJsonQueryDeserializer jsonQueryDeserializer, IMappingService mappingService, IPathModifierService pathModifierService, ILevelExtentModifierService levelExtentModifierService, IPaginationService paginationService, IAuthorizationService authorizationService, IMapper mapper)
+    public SubmodelRpcService(IAppLogger<SubmodelRpcService> logger, IBase64UrlDecoderService decoderService, ISubmodelService submodelService, IReferenceModifierService referenceModifierService, IJsonQueryDeserializer jsonQueryDeserializer, IMappingService mappingService, IPathModifierService pathModifierService, ILevelExtentModifierService levelExtentModifierService, IPaginationService paginationService, IAuthorizationService authorizationService, IOperationReceiver operationReceiver, IMapper mapper)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _decoderService = decoderService ?? throw new ArgumentNullException(nameof(decoderService));
@@ -48,6 +49,7 @@ public class SubmodelRpcService : SubmodelService.SubmodelServiceBase {
         _levelExtentModifierService = levelExtentModifierService ?? throw new ArgumentNullException(nameof(pathModifierService));
         _paginationService = paginationService ?? throw new ArgumentNullException(nameof(pathModifierService));
         _authorizationService = authorizationService ?? throw new ArgumentNullException(nameof(authorizationService));
+        _operationReceiver = operationReceiver ?? throw new ArgumentNullException(nameof(operationReceiver));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
@@ -79,7 +81,7 @@ public class SubmodelRpcService : SubmodelService.SubmodelServiceBase {
         if (output is not ISubmodel) {
             throw new NullReferenceException("should not happen");
         }
-        ISubmodel result = (ISubmodel) output;
+        submodel = (ISubmodel) output;
 
         if (request.OutputModifier.Content == OutputContent.Normal) {
             response.Payload = _mapper.Map<SubmodelDTO>(submodel);
@@ -488,7 +490,7 @@ public class SubmodelRpcService : SubmodelService.SubmodelServiceBase {
         _logger.LogInformation($"Received request get status/result from invocation {request.HandleId}");
 
         GetOperationAsyncResultResponse response = new();
-        var result = OperationInvoker.GetAsyncResult(request.HandleId);
+        var result = _operationReceiver.GetResult(request.HandleId);
         response.StatusCode = (int) HttpStatusCode.OK;
         OperationResult operationResult = new() {
             RequestId = result.RequestId,
