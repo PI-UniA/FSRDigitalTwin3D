@@ -14,9 +14,9 @@ namespace FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces {
     /// - API callbacks and signals for assets, asset components, processes/operations etc.
     /// </summary>
     public interface IDigitalWorkspace {
-        IDigitalWorkspaceServerConnection Connection { get; init; }
-        IDigitalWorkspaceOperational Operational { get; init; }
-        IDigitalWorkspaceAssetApi AssetApi { get; init; }
+        IDigitalWorkspaceServerConnection Connection { get; }
+        IDigitalWorkspaceOperational Operational { get; }
+        IDigitalWorkspaceAssetApi AssetApi { get; }
     }
 
 }

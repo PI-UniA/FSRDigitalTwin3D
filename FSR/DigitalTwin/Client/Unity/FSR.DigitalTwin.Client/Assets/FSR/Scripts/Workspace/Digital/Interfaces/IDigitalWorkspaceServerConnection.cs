@@ -9,7 +9,7 @@ namespace FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces {
 
     public interface IDigitalWorkspaceServerConnection : IDisposable {
         ReadOnlyReactiveProperty<bool> IsConnected { get; }
-        Task Connect(string ip, int port, string[] connArgs = null);
+        Task<bool> Connect(string ip, int port, string[] connArgs = null);
         Task<bool> Disconnect();
     }
 
