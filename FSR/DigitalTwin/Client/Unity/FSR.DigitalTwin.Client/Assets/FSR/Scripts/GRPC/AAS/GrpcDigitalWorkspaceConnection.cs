@@ -8,11 +8,13 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
     public class GrpcDigitalWorkspaceConnection : IDigitalWorkspaceServerConnection
     {
         public ReadOnlyReactiveProperty<bool> IsConnected => throw new System.NotImplementedException();
+        public Channel RpcChannel { get; init; }
 
-        private Channel _rpcChannel = null;
-        public Channel RpcChannel => _rpcChannel;
+        public GrpcDigitalWorkspaceConnection(Channel rpcChannel) {
+            RpcChannel = rpcChannel;
+        }
 
-        public Task<bool> Connect(string ip, int port, string[] connArgs = null)
+        public Task<bool> Connect(string[] connArgs = null)
         {
             throw new System.NotImplementedException();
         }

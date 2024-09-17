@@ -1,18 +1,18 @@
 using System.Threading.Tasks;
 
 namespace FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces {
-    public interface IDigitalWorkspaceAssetApi {
-        bool HasAsset(string id);
-        Task<bool> HasAssetAsync(string id);
+    public interface IDigitalWorkspaceEntityApi {
+        bool HasEntity(string id);
+        Task<bool> HasEntityAsync(string id);
 
         bool HasComponent(string id);
         Task<bool> HasComponentAsync(string id);
 
-        string[] GetAssets();
-        Task<string[]> GetAssetsAsync();
+        string[] GetEntities();
+        Task<string[]> GetEntitesAsync();
 
-        string[] GetAssetComponents(string assetId);
-        Task<string[]> GetAssetComponentsAsync(string assetId);
+        string[] GetEntityComponents(string assetId);
+        Task<string[]> GetEntityAssetComponentsAsync(string assetId);
 
         bool SetComponentProperty<T>(string id, string prop, T value);
         Task<bool> SetComponentPropertyAsync<T>(string id, string prop, T value);

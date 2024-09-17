@@ -4,32 +4,12 @@ using Grpc.Core;
 
 namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
 
-    public class GrpcDigitalWorkspaceApiBridge : IDigitalWorkspaceAssetApi
+    public class GrpcDigitalWorkspaceApiBridge : IDigitalWorkspaceEntityApi
     {
         private readonly GrpcAdminShellApiServiceClient _client;
 
         public GrpcDigitalWorkspaceApiBridge(Channel channel) {
             _client = new(channel);
-        }
-
-        public string[] GetAssetComponents(string assetId)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<string[]> GetAssetComponentsAsync(string assetId)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public string[] GetAssets()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<string[]> GetAssetsAsync()
-        {
-            throw new System.NotImplementedException();
         }
 
         public T GetComponentProperty<T>(string id, string prop)
@@ -42,12 +22,22 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
             throw new System.NotImplementedException();
         }
 
-        public bool HasAsset(string id)
+        public Task<string[]> GetEntitesAsync()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<bool> HasAssetAsync(string id)
+        public string[] GetEntities()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<string[]> GetEntityAssetComponentsAsync(string assetId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string[] GetEntityComponents(string assetId)
         {
             throw new System.NotImplementedException();
         }
@@ -58,6 +48,16 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
         }
 
         public Task<bool> HasComponentAsync(string id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool HasEntity(string id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<bool> HasEntityAsync(string id)
         {
             throw new System.NotImplementedException();
         }

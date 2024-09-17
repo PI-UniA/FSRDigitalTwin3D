@@ -13,11 +13,11 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
 
         public IDigitalWorkspaceServerConnection Connection { get => _connection ?? throw new RpcException(Status.DefaultCancelled, "No connection established!"); }
         public IDigitalWorkspaceOperational Operational { get => _operational ?? throw new RpcException(Status.DefaultCancelled, "No connection established!"); }
-        public IDigitalWorkspaceAssetApi AssetApi { get => _assetApi ?? throw new RpcException(Status.DefaultCancelled, "No connection established!"); }
-    
+        public IDigitalWorkspaceEntityApi Entities { get => _entityApi ?? throw new RpcException(Status.DefaultCancelled, "No connection established!"); }
+
         private GrpcDigitalWorkspaceConnection _connection = null;
         private GrpcDigitalWorkspaceOperational _operational = null;
-        private GrpcDigitalWorkspaceApiBridge _assetApi = null;
+        private GrpcDigitalWorkspaceApiBridge _entityApi = null;
 
         private Channel _rpcChannel;
 
@@ -25,13 +25,12 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
             DigitalWorkspace.SetWorkspace(this);
         }
 
-        public async void Connect() {
-            _connection ??= new GrpcDigitalWorkspaceConnection();
-            if (await _connection.Connect(digitalWorkspaceAddr, digitalWorkspacePort)) {
-                _rpcChannel = _connection.RpcChannel;
-                _operational ??= new GrpcDigitalWorkspaceOperational(_rpcChannel);
-                _assetApi ??= new GrpcDigitalWorkspaceApiBridge(_rpcChannel);
-            }
+        public async void Connect(string[] connArgs = null) {
+            _rpcChannel = new Channel(digitalWorkspaceAddr, digitalWorkspacePort, ChannelCredentials.Insecure);
+            _connection ??= new GrpcDigitalWorkspaceConnection(_rpcChannel);
+            _operational ??= new GrpcDigitalWorkspaceOperational(_rpcChannel);
+            _entityApi ??= new GrpcDigitalWorkspaceApiBridge(_rpcChannel);
+            await _connection.Connect();
         }
 
     }

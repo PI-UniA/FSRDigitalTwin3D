@@ -16,7 +16,7 @@ namespace FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces {
     public interface IDigitalWorkspace {
         IDigitalWorkspaceServerConnection Connection { get; }
         IDigitalWorkspaceOperational Operational { get; }
-        IDigitalWorkspaceAssetApi AssetApi { get; }
+        IDigitalWorkspaceEntityApi Entities { get; }
     }
 
 }
