@@ -1,3 +1,6 @@
 [submodule "FSR/DigitalTwin/Server/modules/AasxServer"]
 	path = FSR/DigitalTwin/Server/modules/AasxServer
 	url = https://github.com/Neroware/AasxServer.git
+[submodule "FSR/DigitalTwin/Client/Unity/FSR.DigitalTwin.Client/Assets/Submodules/FSRDT3D-Models"]
+	path = FSR/DigitalTwin/Client/Unity/FSR.DigitalTwin.Client/Assets/Submodules/FSRDT3D-Models
+	url = https://github.com/Neroware/FSRDigitalTwin3D-Models.git
