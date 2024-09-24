@@ -2,8 +2,8 @@ using System.Threading.Tasks;
 
 namespace FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces {
 
-    public interface IDigitalTwinAssetComponent {
-        IDigitalTwinAsset IDigitalTwinAsset { get; init; }
+    public interface IDigitalTwinEntityComponent {
+        IDigitalTwinEntity DigitalTwinEntity { get; init; }
         string Id { get; init; }
         bool HasConnection { get; }
 
