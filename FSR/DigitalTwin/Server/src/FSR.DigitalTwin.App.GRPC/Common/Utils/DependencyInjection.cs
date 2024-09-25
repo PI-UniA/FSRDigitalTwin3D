@@ -13,8 +13,4 @@ public static class GrpcService {
         endpoints.MapGrpcService<SubmodelRpcService>();
         endpoints.MapGrpcService<DigitalTwinClientConnectionRpcService>();
     }
-
-    public static void AddAppServices(this IServiceCollection services) {
-        // TODO
-    }
 }

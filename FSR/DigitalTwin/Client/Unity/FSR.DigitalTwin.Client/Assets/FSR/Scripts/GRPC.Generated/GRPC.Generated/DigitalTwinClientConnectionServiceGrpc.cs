@@ -14,6 +14,7 @@ namespace FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService {
 
     static readonly grpc::Marshaller<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification> __Marshaller_FSR_DigitalTwin_App_GRPC_ServerNotification = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ClientNotification> __Marshaller_FSR_DigitalTwin_App_GRPC_ClientNotification = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ClientNotification.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage> __Marshaller_FSR_DigitalTwin_App_GRPC_TestMessage = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage.Parser.ParseFrom);
 
     static readonly grpc::Method<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification, global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ClientNotification> __Method_Connect = new grpc::Method<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification, global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ClientNotification>(
         grpc::MethodType.DuplexStreaming,
@@ -21,6 +22,13 @@ namespace FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService {
         "Connect",
         __Marshaller_FSR_DigitalTwin_App_GRPC_ServerNotification,
         __Marshaller_FSR_DigitalTwin_App_GRPC_ClientNotification);
+
+    static readonly grpc::Method<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage, global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage> __Method_GetTestMessage = new grpc::Method<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage, global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetTestMessage",
+        __Marshaller_FSR_DigitalTwin_App_GRPC_TestMessage,
+        __Marshaller_FSR_DigitalTwin_App_GRPC_TestMessage);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -33,6 +41,11 @@ namespace FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService {
     public abstract partial class DigitalTwinClientConnectionServiceBase
     {
       public virtual global::System.Threading.Tasks.Task Connect(grpc::IAsyncStreamReader<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification> requestStream, grpc::IServerStreamWriter<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ClientNotification> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage> GetTestMessage(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -70,6 +83,22 @@ namespace FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService {
       {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_Connect, null, options);
       }
+      public virtual global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage GetTestMessage(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetTestMessage(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage GetTestMessage(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetTestMessage, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage> GetTestMessageAsync(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetTestMessageAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage> GetTestMessageAsync(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetTestMessage, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override DigitalTwinClientConnectionServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -82,7 +111,8 @@ namespace FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService {
     public static grpc::ServerServiceDefinition BindService(DigitalTwinClientConnectionServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_Connect, serviceImpl.Connect).Build();
+          .AddMethod(__Method_Connect, serviceImpl.Connect)
+          .AddMethod(__Method_GetTestMessage, serviceImpl.GetTestMessage).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -92,6 +122,7 @@ namespace FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, DigitalTwinClientConnectionServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Connect, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification, global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ClientNotification>(serviceImpl.Connect));
+      serviceBinder.AddMethod(__Method_GetTestMessage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage, global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage>(serviceImpl.GetTestMessage));
     }
 
   }

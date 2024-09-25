@@ -59,7 +59,8 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
 
         public Task<bool> HasEntityAsync(string id)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+            return Task.FromResult(false);
         }
 
         public bool SetComponentProperty<T>(string id, string prop, T value)

@@ -33,7 +33,7 @@ public class DigitalTwinClientConnectionRpcService : DigitalTwinClientConnection
                 case ServerNotificationType.Connect:
                     response.Type = ClientNotificationType.Connected;
                     response.Connected = new() { ClientId = "", Success = false };
-                    if (clientId == null && _connectionService.AddBidirectionalConnectionStream(notification.Connect.ClientId, (StreamReader) requestStream, (StreamWriter) responseStream)) {
+                    if (clientId == null && _connectionService.AddBidirectionalConnectionStream(notification.Connect.ClientId, requestStream, responseStream)) {
                         clientId = notification.Connect.ClientId;
                         response.Connected.ClientId = clientId;
                         response.Connected.Success = true;
@@ -80,5 +80,10 @@ public class DigitalTwinClientConnectionRpcService : DigitalTwinClientConnection
             }
 
         }
+    }
+
+    public override Task<TestMessage> GetTestMessage(TestMessage request, ServerCallContext context)
+    {
+        return Task.FromResult(new TestMessage() { Info = "*** FSR Digital Twin Server Test Message ***"});
     }
 }

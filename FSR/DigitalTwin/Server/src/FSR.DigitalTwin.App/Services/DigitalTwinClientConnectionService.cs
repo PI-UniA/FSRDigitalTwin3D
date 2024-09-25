@@ -1,5 +1,5 @@
 using FSR.DigitalTwin.App.Interfaces.Services;
-using ConnectonPair = System.Tuple<System.IO.StreamReader, System.IO.StreamWriter>;
+using ConnectonPair = System.Tuple<object, object>;
 
 namespace FSR.DigitalTwin.App.Services;
 
@@ -7,7 +7,7 @@ public class DigitalTwinClientConnectionService : IDigitalTwinClientConnectionSe
 {
     private readonly Dictionary<string, ConnectonPair> _connectionState = [];
 
-    public bool AddBidirectionalConnectionStream(string id, StreamReader reader, StreamWriter writer)
+    public bool AddBidirectionalConnectionStream(string id, object reader, object writer)
     {
         if (_connectionState.ContainsKey(id)) {
             return false;

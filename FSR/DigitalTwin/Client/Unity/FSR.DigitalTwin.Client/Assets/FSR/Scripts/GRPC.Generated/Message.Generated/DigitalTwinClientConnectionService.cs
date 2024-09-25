@@ -59,20 +59,23 @@ namespace FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService {
             "Y2F0aW9uElIKDm9wZXJhdGlvblN0YXRlGAUgASgLMjouRlNSLkRpZ2l0YWxU",
             "d2luLkFwcC5HUlBDLk9wZXJhdGlvblN0YXRlU2VydmVyTm90aWZpY2F0aW9u",
             "ElQKD29wZXJhdGlvblJlc3VsdBgGIAEoCzI7LkZTUi5EaWdpdGFsVHdpbi5B",
-            "cHAuR1JQQy5PcGVyYXRpb25SZXN1bHRTZXJ2ZXJOb3RpZmljYXRpb24qlQEK",
-            "FkNsaWVudE5vdGlmaWNhdGlvblR5cGUSJgoiQ0xJRU5UX05PVElGSUNBVElP",
-            "Tl9UWVBFX0NPTk5FQ1RFRBAAEiQKIENMSUVOVF9OT1RJRklDQVRJT05fVFlQ",
-            "RV9BQk9SVEVEEAESLQopQ0xJRU5UX05PVElGSUNBVElPTl9UWVBFX0lOVk9L",
-            "RV9PUEVSQVRJT04QAiq/AQoWU2VydmVyTm90aWZpY2F0aW9uVHlwZRIkCiBT",
-            "RVJWRVJfTk9USUZJQ0FUSU9OX1RZUEVfQ09OTkVDVBAAEiIKHlNFUlZFUl9O",
-            "T1RJRklDQVRJT05fVFlQRV9BQk9SVBABEiwKKFNFUlZFUl9OT1RJRklDQVRJ",
-            "T05fVFlQRV9PUEVSQVRJT05fU1RBVEUQAhItCilTRVJWRVJfTk9USUZJQ0FU",
-            "SU9OX1RZUEVfT1BFUkFUSU9OX1JFU1VMVBADMo8BCiJEaWdpdGFsVHdpbkNs",
-            "aWVudENvbm5lY3Rpb25TZXJ2aWNlEmkKB0Nvbm5lY3QSLC5GU1IuRGlnaXRh",
-            "bFR3aW4uQXBwLkdSUEMuU2VydmVyTm90aWZpY2F0aW9uGiwuRlNSLkRpZ2l0",
-            "YWxUd2luLkFwcC5HUlBDLkNsaWVudE5vdGlmaWNhdGlvbigBMAFCR6oCREZT",
-            "Ui5EaWdpdGFsVHdpbi5BcHAuR1JQQy5TZXJ2aWNlcy5EaWdpdGFsVHdpbkNs",
-            "aWVudENvbm5lY3Rpb25TZXJ2aWNlYgZwcm90bzM="));
+            "cHAuR1JQQy5PcGVyYXRpb25SZXN1bHRTZXJ2ZXJOb3RpZmljYXRpb24iGwoL",
+            "VGVzdE1lc3NhZ2USDAoEaW5mbxgBIAEoCSqVAQoWQ2xpZW50Tm90aWZpY2F0",
+            "aW9uVHlwZRImCiJDTElFTlRfTk9USUZJQ0FUSU9OX1RZUEVfQ09OTkVDVEVE",
+            "EAASJAogQ0xJRU5UX05PVElGSUNBVElPTl9UWVBFX0FCT1JURUQQARItCilD",
+            "TElFTlRfTk9USUZJQ0FUSU9OX1RZUEVfSU5WT0tFX09QRVJBVElPThACKr8B",
+            "ChZTZXJ2ZXJOb3RpZmljYXRpb25UeXBlEiQKIFNFUlZFUl9OT1RJRklDQVRJ",
+            "T05fVFlQRV9DT05ORUNUEAASIgoeU0VSVkVSX05PVElGSUNBVElPTl9UWVBF",
+            "X0FCT1JUEAESLAooU0VSVkVSX05PVElGSUNBVElPTl9UWVBFX09QRVJBVElP",
+            "Tl9TVEFURRACEi0KKVNFUlZFUl9OT1RJRklDQVRJT05fVFlQRV9PUEVSQVRJ",
+            "T05fUkVTVUxUEAMy7wEKIkRpZ2l0YWxUd2luQ2xpZW50Q29ubmVjdGlvblNl",
+            "cnZpY2USaQoHQ29ubmVjdBIsLkZTUi5EaWdpdGFsVHdpbi5BcHAuR1JQQy5T",
+            "ZXJ2ZXJOb3RpZmljYXRpb24aLC5GU1IuRGlnaXRhbFR3aW4uQXBwLkdSUEMu",
+            "Q2xpZW50Tm90aWZpY2F0aW9uKAEwARJeCg5HZXRUZXN0TWVzc2FnZRIlLkZT",
+            "Ui5EaWdpdGFsVHdpbi5BcHAuR1JQQy5UZXN0TWVzc2FnZRolLkZTUi5EaWdp",
+            "dGFsVHdpbi5BcHAuR1JQQy5UZXN0TWVzc2FnZUJHqgJERlNSLkRpZ2l0YWxU",
+            "d2luLkFwcC5HUlBDLlNlcnZpY2VzLkRpZ2l0YWxUd2luQ2xpZW50Q29ubmVj",
+            "dGlvblNlcnZpY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::FSR.DigitalTwin.App.GRPC.Aas.Lib.V3.AasModelsV3Reflection.Descriptor, global::FSR.DigitalTwin.App.GRPC.Aas.Lib.V3.AasApiModelsV3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ClientNotificationType), typeof(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotificationType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +87,8 @@ namespace FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService {
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.AbortServerNotification), global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.AbortServerNotification.Parser, new[]{ "ClientId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.OperationStateServerNotification), global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.OperationStateServerNotification.Parser, new[]{ "HandleId", "ExecutionState" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.OperationResultServerNotification), global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.OperationResultServerNotification.Parser, new[]{ "ClientId", "Result" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification), global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification.Parser, new[]{ "Type", "Connect", "Abort", "OperationState", "OperationResult" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification), global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.ServerNotification.Parser, new[]{ "Type", "Connect", "Abort", "OperationState", "OperationResult" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage), global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.TestMessage.Parser, new[]{ "Info" }, null, null, null)
           }));
     }
     #endregion
@@ -1796,6 +1800,135 @@ namespace FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService {
               OperationResult = new global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.OperationResultServerNotification();
             }
             input.ReadMessage(OperationResult);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class TestMessage : pb::IMessage<TestMessage> {
+    private static readonly pb::MessageParser<TestMessage> _parser = new pb::MessageParser<TestMessage>(() => new TestMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TestMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::FSR.DigitalTwin.App.GRPC.Services.DigitalTwinClientConnectionService.DigitalTwinClientConnectionServiceReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TestMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TestMessage(TestMessage other) : this() {
+      info_ = other.info_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TestMessage Clone() {
+      return new TestMessage(this);
+    }
+
+    /// <summary>Field number for the "info" field.</summary>
+    public const int InfoFieldNumber = 1;
+    private string info_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Info {
+      get { return info_; }
+      set {
+        info_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TestMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TestMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Info != other.Info) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Info.Length != 0) hash ^= Info.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Info.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Info);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Info.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Info);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TestMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Info.Length != 0) {
+        Info = other.Info;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Info = input.ReadString();
             break;
           }
         }
