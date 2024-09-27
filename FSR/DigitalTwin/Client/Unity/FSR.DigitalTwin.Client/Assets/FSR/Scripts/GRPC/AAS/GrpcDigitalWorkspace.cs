@@ -29,9 +29,9 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
             _operational ??= new GrpcDigitalWorkspaceOperational(_connection.RpcChannel);
             _entityApi ??= new GrpcDigitalWorkspaceApiBridge(_connection.RpcChannel);
 
-            // foreach(string e in _entityApi.GetEntities()) {
-            //     Debug.Log(">>> " + e);
-            // }
+            var ur5e = "https://www.hs-emden-leer.de/ids/aas/2414_0152_5032_4364";
+            var ur5eOperationals = "https://www.hs-emden-leer.de/ids/sm/6494_2162_5032_2813";
+            Debug.Log(">>> " + _entityApi.CreateComponentProperty(ur5eOperationals, "Foobar", "Hello World!"));
         }
 
         async void OnDestroy() {

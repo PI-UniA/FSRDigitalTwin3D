@@ -67,7 +67,8 @@ public class AssetAdministrationShellProfile : Profile {
         CreateMap<ResourceDTO, Resource>();
         CreateMap<SpecificAssetIdDTO, SpecificAssetId>();
         CreateMap<SubmodelDTO, Submodel>();
-        CreateMap<SubmodelElementDTO, ISubmodelElement>();
+        CreateMap<SubmodelElementDTO, ISubmodelElement>()
+            .ConvertUsing((src, c, context) => SubmodelElementMapping.Map(src, context.Mapper) ?? c);
         CreateMap<DataElementDTO, IDataElement>().ConvertUsing((src, c, context) => {
             SubmodelElementDTO smModel = context.Mapper.Map<SubmodelElementDTO>(src);
             var sm = SubmodelElementMapping.Map(smModel, context.Mapper);

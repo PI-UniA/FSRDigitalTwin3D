@@ -12,7 +12,7 @@ namespace FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces {
         Task<string[]> GetEntitesAsync();
 
         string[] GetEntityComponents(string assetId);
-        Task<string[]> GetEntityAssetComponentsAsync(string assetId);
+        Task<string[]> GetEntityComponentsAsync(string assetId);
 
         bool CreateComponentProperty<T>(string id, string prop, T value);
         Task<bool> CreateComponentPropertyAsync<T>(string id, string prop, T value);
