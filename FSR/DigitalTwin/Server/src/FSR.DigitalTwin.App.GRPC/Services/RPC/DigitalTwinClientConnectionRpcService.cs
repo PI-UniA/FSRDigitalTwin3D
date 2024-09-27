@@ -25,7 +25,8 @@ public class DigitalTwinClientConnectionRpcService : DigitalTwinClientConnection
     public override async Task Connect(IAsyncStreamReader<ServerNotification> requestStream, IServerStreamWriter<ClientNotification> responseStream, ServerCallContext context)
     {
         string? clientId = null;
-        while (await requestStream.MoveNext()) {
+        bool abortRecieved = false;
+        while (!abortRecieved && await requestStream.MoveNext()) {
             ServerNotification notification = requestStream.Current;
             ClientNotification response = new();
 
@@ -47,6 +48,7 @@ public class DigitalTwinClientConnectionRpcService : DigitalTwinClientConnection
                     if (clientId == notification.Abort.ClientId && _connectionService.RemoveConnection(notification.Abort.ClientId)) {
                         response.Aborted.ClientId = clientId;
                         response.Aborted.Success = true;
+                        abortRecieved = true;
                         clientId = null;
                     }
                     await responseStream.WriteAsync(response);
@@ -74,11 +76,11 @@ public class DigitalTwinClientConnectionRpcService : DigitalTwinClientConnection
                     break;
             }
 
-            if (clientId != null) {
-                _connectionService.RemoveConnection(clientId);
-                _logger.LogWarning("The client with id '" + clientId + "' disconnected without connection abort!");
-            }
+        }
 
+        if (clientId != null) {
+            _connectionService.RemoveConnection(clientId);
+            _logger.LogWarning("The client with id '" + clientId + "' disconnected without connection abort!");
         }
     }
 

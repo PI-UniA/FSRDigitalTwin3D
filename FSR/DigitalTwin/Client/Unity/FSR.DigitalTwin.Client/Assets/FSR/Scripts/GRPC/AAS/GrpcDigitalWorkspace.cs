@@ -28,6 +28,16 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
         public void OnConnect() {
             _operational ??= new GrpcDigitalWorkspaceOperational(_connection.RpcChannel);
             _entityApi ??= new GrpcDigitalWorkspaceApiBridge(_connection.RpcChannel);
+
+            // foreach(string e in _entityApi.GetEntities()) {
+            //     Debug.Log(">>> " + e);
+            // }
+        }
+
+        async void OnDestroy() {
+            if (_connection.IsConnected.Value) {
+                await _connection.Disconnect();
+            }
         }
 
     }
