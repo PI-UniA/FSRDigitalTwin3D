@@ -46,14 +46,10 @@ public class AssetAdministrationShellRpcService : AssetAdministrationShellServic
     public override Task<GetAssetAdministrationShellRpcResponse> GetAssetAdministrationShell(GetAssetAdministrationShellRpcRequest request, ServerCallContext context)
     {
         _logger.LogInformation($"Received request to get the AAS with id {request.Id}.");
-
-        var decodedAasIdentifier = _decoderService.Decode("aasIdentifier", request.Id);
-
-        GetAssetAdministrationShellRpcResponse response = new();
-
+        GetAssetAdministrationShellRpcResponse response = new() { StatusCode = (int) HttpStatusCode.OK };
         try {
+            var decodedAasIdentifier = _decoderService.Decode("aasIdentifier", request.Id);
             var aas = _aasService.GetAssetAdministrationShellById(decodedAasIdentifier);
-            response.StatusCode = (int) HttpStatusCode.OK;
             if (request.OutputModifier.Content == OutputContent.Normal) {
                 response.Payload = _mapper.Map<AssetAdministrationShellDTO>(aas);
             }
@@ -65,9 +61,8 @@ public class AssetAdministrationShellRpcService : AssetAdministrationShellServic
                 response.StatusCode = (int) HttpStatusCode.BadRequest;
             }
         }
-        catch (NotFoundException) {
-            response.StatusCode = (int) HttpStatusCode.NotFound;
-        }
+        catch (NotFoundException) { response.StatusCode = (int) HttpStatusCode.NotFound; }
+        catch (Exception) { response.StatusCode = (int) HttpStatusCode.InternalServerError; }
         return Task.FromResult(response);
     }
 
