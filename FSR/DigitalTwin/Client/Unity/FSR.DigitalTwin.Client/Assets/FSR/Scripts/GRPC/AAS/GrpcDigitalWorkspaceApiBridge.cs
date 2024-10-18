@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FSR.DigitalTwin.App.GRPC.Aas.Lib.V3;
@@ -129,11 +130,36 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
 
         public bool CreateComponentProperty<T>(string id, string prop, T value)
         {
-            SubmodelElementDTO property = CreateProperty(value);
             string[] path = prop.Split('.');
-            property.IdShort = path.First();
-            PostSubmodelElementByPathRpcRequest request = new() { SubmodelId = Base64Converter.ToBase64(id), SubmodelElement = property };
-            foreach (string idShort in path) {
+            if (path.Length == 0) {
+                return false;
+            }
+            SubmodelElementDTO sme = CreateProperty(value);
+
+            int i = 0;
+            for (; i < path.Length - 1; i++) {
+                SubmodelElementDTO pathElem = GetSubmodelElementByPath(id, path[..(i + 1)]);
+                if (pathElem == null) {
+                    break;
+                }
+                if (pathElem.SubmodelElementType != SubmodelElementType.SubmodelElementList 
+                    && pathElem.SubmodelElementType != SubmodelElementType.SubmodelElementCollection) {
+                        return false;
+                }
+            }
+
+            string[] prefix = path[..i];
+            string[] postfix = path[i..];
+            for (int j = 0; j < postfix.Length; j++) {
+                sme.IdShort = postfix[postfix.Length - 1 - j];
+                if (j == postfix.Length - 1) {
+                    break;
+                }
+                sme = SubmodelElementFactory.Create(SubmodelElementType.SubmodelElementCollection, new List<SubmodelElementDTO>(){ sme });
+            }
+
+            PostSubmodelElementByPathRpcRequest request = new() { SubmodelId = Base64Converter.ToBase64(id), SubmodelElement = sme };
+            foreach (string idShort in prefix) {
                 request.Path.Add(new KeyDTO() { Type = KeyTypes.SubmodelElement, Value = idShort });
             }
             var response = _client.Submodel.PostSubmodelElementByPath(request);
@@ -142,47 +168,90 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
 
         public async Task<bool> CreateComponentPropertyAsync<T>(string id, string prop, T value)
         {
-            SubmodelElementDTO property = CreateProperty(value);
             string[] path = prop.Split('.');
-            property.IdShort = path.First();
-            PostSubmodelElementByPathRpcRequest request = new() { SubmodelId = Base64Converter.ToBase64(id), SubmodelElement = property };
-            foreach (string idShort in path) {
+            if (path.Length == 0) {
+                return false;
+            }
+            SubmodelElementDTO sme = CreateProperty(value);
+
+            int i = 0;
+            for (; i < path.Length - 1; i++) {
+                SubmodelElementDTO pathElem = await GetSubmodelElementByPathAsync(id, path[..(i + 1)]);
+                if (pathElem == null) {
+                    break;
+                }
+                if (pathElem.SubmodelElementType != SubmodelElementType.SubmodelElementList 
+                    && pathElem.SubmodelElementType != SubmodelElementType.SubmodelElementCollection) {
+                        return false;
+                }
+            }
+
+            string[] prefix = path[..i];
+            string[] postfix = path[i..];
+            for (int j = 0; j < postfix.Length; j++) {
+                sme.IdShort = postfix[postfix.Length - 1 - j];
+                if (j == postfix.Length - 1) {
+                    break;
+                }
+                sme = SubmodelElementFactory.Create(SubmodelElementType.SubmodelElementCollection, new List<SubmodelElementDTO>(){ sme });
+            }
+
+            PostSubmodelElementByPathRpcRequest request = new() { SubmodelId = Base64Converter.ToBase64(id), SubmodelElement = sme };
+            foreach (string idShort in prefix) {
                 request.Path.Add(new KeyDTO() { Type = KeyTypes.SubmodelElement, Value = idShort });
             }
             var response = await _client.Submodel.PostSubmodelElementByPathAsync(request);
             return response.StatusCode == 201;
         }
 
-        public bool HasComponentProperty(string id, string prop)
-        {
-            string[] idShortPath = prop.Split('.');
+        private SubmodelElementDTO GetSubmodelElementByPath(string id, string[] idShortPath) {
             if (idShortPath.Length == 1) {
                 GetAllSubmodelElementsRpcRequest allRequest = new() { SubmodelId = Base64Converter.ToBase64(id), OutputModifier = DefaultOutput };
                 var allResponse = _client.Submodel.GetAllSubmodelElements(allRequest);
-                return allResponse.Payload.Select(x => x.IdShort).Contains(prop);
+                if (allResponse.StatusCode != 200) {
+                    return null;
+                }
+                var result = allResponse.Payload.Where(sme => sme.IdShort == idShortPath.Last());
+                return result.Count() >= 1 ? result.First() : null;
             }
             GetSubmodelElementByPathRpcRequest request = new() { SubmodelId = Base64Converter.ToBase64(id), OutputModifier = DefaultOutput };
             foreach (string idShort in idShortPath) {
                 request.Path.Add(new KeyDTO() { Type = KeyTypes.SubmodelElement, Value = idShort });
             }
             var response = _client.Submodel.GetSubmodelElementByPath(request);
-            return response.StatusCode == 200 && response.Payload.SubmodelElementType == SubmodelElementType.Property;
+            return response.StatusCode == 200 ? response.Payload : null;
         }
 
-        public async Task<bool> HasComponentPropertyAsync(string id, string prop)
-        {
-            string[] idShortPath = prop.Split('.');
+        private async Task<SubmodelElementDTO> GetSubmodelElementByPathAsync(string id, string[] idShortPath) {
             if (idShortPath.Length == 1) {
                 GetAllSubmodelElementsRpcRequest allRequest = new() { SubmodelId = Base64Converter.ToBase64(id), OutputModifier = DefaultOutput };
                 var allResponse = await _client.Submodel.GetAllSubmodelElementsAsync(allRequest);
-                return allResponse.Payload.Select(x => x.IdShort).Contains(prop);
+                if (allResponse.StatusCode != 200) {
+                    return null;
+                }
+                var result = allResponse.Payload.Where(sme => sme.IdShort == idShortPath.Last());
+                return result.Count() >= 1 ? result.First() : null;
             }
             GetSubmodelElementByPathRpcRequest request = new() { SubmodelId = Base64Converter.ToBase64(id), OutputModifier = DefaultOutput };
             foreach (string idShort in idShortPath) {
                 request.Path.Add(new KeyDTO() { Type = KeyTypes.SubmodelElement, Value = idShort });
             }
             var response = await _client.Submodel.GetSubmodelElementByPathAsync(request);
-            return response.StatusCode == 201 && response.Payload.SubmodelElementType == SubmodelElementType.Property;
+            return response.StatusCode == 200 ? response.Payload : null;
+        }
+
+        public bool HasComponentProperty(string id, string prop)
+        {
+            string[] idShortPath = prop.Split('.');
+            var result = GetSubmodelElementByPath(id, idShortPath);
+            return result != null && result.SubmodelElementType == SubmodelElementType.Property;
+        }
+
+        public async Task<bool> HasComponentPropertyAsync(string id, string prop)
+        {
+            string[] idShortPath = prop.Split('.');
+            var result = await GetSubmodelElementByPathAsync(id, idShortPath);
+            return result != null && result.SubmodelElementType == SubmodelElementType.Property;
         }
 
         private T GetProperty<T>(PropertyPayloadDTO property) {

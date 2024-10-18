@@ -29,14 +29,18 @@ namespace FSR.DigitalTwin.Client.Unity.GRPC.AAS {
             _operational ??= new GrpcDigitalWorkspaceOperational(_connection.RpcChannel);
             _entityApi ??= new GrpcDigitalWorkspaceApiBridge(_connection.RpcChannel);
 
-            var ur5e = "https://www.hs-emden-leer.de/ids/aas/2414_0152_5032_4364";
-            var ur5eOperationals = "https://www.hs-emden-leer.de/ids/sm/6494_2162_5032_2813";
-            var ur5eNameplate = "https://www.hs-emden-leer.de/ids/sm/1225_9020_5022_1974";
-            Debug.Log("0>>> " + _entityApi.HasComponentProperty(ur5eNameplate, "ContactInformation.RoleOfContactPerson"));
-            Debug.Log("1>>> " + _entityApi.HasComponentProperty(ur5eNameplate, "ContactInformation"));
-            // Debug.Log("2>>> " + _entityApi.CreateComponentProperty(ur5eOperationals, "Foobar", "Hello World!"));
-            // Debug.Log("3>>> " + _entityApi.CreateComponentProperty(ur5eOperationals, "Foobar", "Hello World!"));
-            // Debug.Log("4>>> " + _entityApi.HasComponentProperty(ur5eOperationals, "Foobar"));
+            // For testing purposes...
+            // var ur5e = "https://www.hs-emden-leer.de/ids/aas/2414_0152_5032_4364";
+            // var ur5eOperationals = "https://www.hs-emden-leer.de/ids/sm/6494_2162_5032_2813";
+            // var ur5eNameplate = "https://www.hs-emden-leer.de/ids/sm/1225_9020_5022_1974";
+            // Debug.Log("0>>> " + _entityApi.HasComponentProperty(ur5eNameplate, "ContactInformation.RoleOfContactPerson"));
+            // Debug.Log("1>>> " + !_entityApi.HasComponentProperty(ur5eNameplate, "ContactInformation"));
+            // Debug.Log("2>>> " + _entityApi.CreateComponentProperty(ur5eOperationals, "Foo.Bar.Test", "Hello World!"));
+            // Debug.Log("3>>> " + _entityApi.HasComponentProperty(ur5eOperationals, "Foo.Bar.Test"));
+            // Debug.Log("4>>> " + _entityApi.CreateComponentProperty(ur5eOperationals, "Foo.Bar.Rofl.Copter.Test", 42));
+            // Debug.Log("5>>> " + _entityApi.HasComponentProperty(ur5eOperationals, "Foo.Bar.Rofl.Copter.Test"));
+            // Debug.Log("6>>> " + _entityApi.CreateComponentProperty(ur5eOperationals, "Foobar", 4.2f));
+            // Debug.Log("7>>> " + _entityApi.HasComponentProperty(ur5eOperationals, "Foobar"));
         }
 
         async void OnDestroy() {
