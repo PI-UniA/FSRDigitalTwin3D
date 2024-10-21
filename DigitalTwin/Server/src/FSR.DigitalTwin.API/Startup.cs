@@ -57,6 +57,10 @@ internal class Startup
         {
             options.AllowSynchronousIO = true;
             options.Limits.MaxRequestBodySize = int.MaxValue;
+            options.ConfigureEndpointDefaults(listenOptions =>
+            {
+                listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
+            });
         });
         services.Configure<FormOptions>(x =>
         {
@@ -112,6 +116,10 @@ internal class Startup
         
         FSR.DigitalTwinLayer.GRPC.Lib.Common.Utils.DependencyInjection.AddServices(services);
         services.AddSingleton<IDigitalTwinDb, DigitalTwinDb>();
+
+        services.AddHttpClient<INodeJsCommunicationService, NodeJsCommunicationService>();
+        services.AddTransient<IPoseTrackingService, PoseTrackingService>();
+        services.AddTransient<IFaceExpressionService, FaceExpressionService>();
 
         // Add GraphQL services
         services
@@ -215,6 +223,7 @@ internal class Startup
 
         app.UseStaticFiles();
         app.UseRouting();
+        
         //app.UseAuthentication();
         app.UseAuthorization();
 

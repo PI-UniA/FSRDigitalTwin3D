@@ -31,6 +31,7 @@ public class DigitalWorkspaceBridge : MonoBehaviour
     public Channel RpcChannel => rpcChannel;
     public AdminShellApiServiceClient AasApi => aasApiServiceClient;
     public DigitalTwinLayerServiceClient Layer => layerServiceClient;
+    public PoseStreamingClient poseStreamingClient;
 
     public bool IsConnected => rpcChannel != null && rpcChannel.State == ChannelState.Ready;
 

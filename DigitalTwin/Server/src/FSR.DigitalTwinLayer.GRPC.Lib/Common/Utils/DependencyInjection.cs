@@ -12,6 +12,8 @@ public class DependencyInjection
     public static void AddServices(IServiceCollection services) {
         services.AddSingleton<IDigitalTwinLayerService, DigitalTwinLayerService>();
         services.AddSingleton<IDataStreamingService, DataStreamingService>();
+        services.AddSingleton<IFaceExpressionService, FaceExpressionService>();
+        services.AddSingleton<IPoseTrackingService, PoseTrackingService>();
     }
 
 }
@@ -21,5 +23,7 @@ public static class GrpcService {
         endpoints.MapGrpcService<DigitalTwinLayerOperationalRpcService>();
         endpoints.MapGrpcService<DigitalTwinLayerConnectionRpcService>();
         endpoints.MapGrpcService<DigitalTwinLayerStreamingRpcService>();
+        endpoints.MapGrpcService<PoseStreamingRpcService>();
+        endpoints.MapGrpcService<PoseRpcService>();
     }
 }
