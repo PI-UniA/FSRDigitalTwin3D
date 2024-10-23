@@ -1,72 +1,66 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Grpc.Core; 
 using System;
-using FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection;
+using System.Threading.Tasks;
+using Grpc.Core;
+using UnityEngine;
+using FSR.DigitalTwin.App.GRPC.Services.Pose;
 
 public class PoseStreamingClient : MonoBehaviour
 {
+    private PoseStreamingService.PoseStreamingServiceClient streamingClient;
     private Channel channel;
-    private PoseStreaming.PoseStreamingClient poseClient;
-    private GameObject[] poseLandmarkCubes;
-
-    [SerializeField] private string serverAddress = "100.83.150.133";
-    [SerializeField] private int serverPort = 5001;
 
     void Start()
     {
-        channel = new Channel($"{serverAddress}:{serverPort}", ChannelCredentials.Insecure);
-        poseClient = new PoseStreaming.PoseStreamingClient(channel);
-
-        // Initialize game objects to visualize pose landmarks
-        poseLandmarkCubes = new GameObject[33]; 
-        for (int i = 0; i < poseLandmarkCubes.Length; i++)
-        {
-            poseLandmarkCubes[i] = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            poseLandmarkCubes[i].transform.position = new Vector3(0, 0, 0);  // Initial position
-        }
-
-        FetchPoseLandmarks();
+        InitializeGrpc();
+        StreamPoseData();
     }
 
-    async void FetchPoseLandmarks()
+    private void InitializeGrpc()
     {
-        var request = new GetPoseLandmarksRequest();
-        try
-        {
-            Debug.Log("Sending request for pose landmarks...");
-            var poseResponse = await poseClient.GetPoseLandmarksAsync(request);
-            UpdatePoseLandmarks(poseResponse);
-        }
-        catch (RpcException e)
-        {
-            Debug.LogError($"RPC Error: {e.Status.Detail} - Status Code: {e.StatusCode}");
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError($"Unexpected Error: {ex.Message}");
-        }
+        // Create a channel to connect to the gRPC server
+        channel = new Channel("localhost:5001", ChannelCredentials.Insecure);
+        streamingClient = new PoseStreamingService.PoseStreamingServiceClient(channel);
     }
 
-    void UpdatePoseLandmarks(GetPoseLandmarksResponse poseResponse)
+    private async void StreamPoseData()
     {
-        for (int i = 0; i < poseLandmarkCubes.Length; i++)
+        // Create a request to initiate streaming
+        var request = new StreamPoseRequest { ClientId = "UnityClient" };
+
+        using (var call = streamingClient.StreamPoseData(request))
         {
-            if (i < poseResponse.PoseLandmarks.Count)
+            try
             {
-                var landmark = poseResponse.PoseLandmarks[i];
-                poseLandmarkCubes[i].transform.position = new Vector3(landmark.X, landmark.Y, landmark.Z);
+                while (await call.ResponseStream.MoveNext())
+                {
+                    PoseData poseData = call.ResponseStream.Current;
+                    ProcessPoseData(poseData);
+                }
             }
-            else
+            catch (RpcException e)
             {
-                // Hide or reset the cube if there's no corresponding landmark
-                poseLandmarkCubes[i].transform.position = new Vector3(0, -10, 0); // Move it out of sight
+                Debug.LogError($"Error during gRPC streaming: {e.Status}");
             }
         }
     }
 
-    void OnDestroy()
+    private void ProcessPoseData(PoseData poseData)
+    {
+        // Process the received pose data
+        foreach (var landmark in poseData.Landmarks)
+        {
+            Debug.Log($"Landmark: X={landmark.X}, Y={landmark.Y}, Z={landmark.Z}");
+        }
+
+        foreach (var worldLandmark in poseData.WorldLandmarks)
+        {
+            Debug.Log($"World Landmark: X={worldLandmark.X}, Y={worldLandmark.Y}, Z={worldLandmark.Z}");
+        }
+
+        // TODO: update Unity scene with the new pose data
+    }
+
+    private void OnApplicationQuit()
     {
         channel.ShutdownAsync().Wait();
     }

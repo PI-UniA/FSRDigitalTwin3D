@@ -7,35 +7,35 @@
 
 using grpc = global::Grpc.Core;
 
-namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
+namespace FSR.DigitalTwin.App.GRPC.Services.Pose {
   /// <summary>
   /// Define the gRPC service
   /// </summary>
   public static partial class PoseService
   {
-    static readonly string __ServiceName = "FSR.DigitalTwinLayer.GRPC.Lib.PoseService";
+    static readonly string __ServiceName = "FSR.DigitalTwin.App.GRPC.PoseService";
 
-    static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_PoseData = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse> __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_PoseResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData> __Marshaller_FSR_DigitalTwin_App_GRPC_PoseData = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse> __Marshaller_FSR_DigitalTwin_App_GRPC_PoseResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse> __Method_SendPoseData = new grpc::Method<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse>(
+    static readonly grpc::Method<global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData, global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse> __Method_SendPoseData = new grpc::Method<global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData, global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SendPoseData",
-        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_PoseData,
-        __Marshaller_FSR_DigitalTwinLayer_GRPC_Lib_PoseResponse);
+        __Marshaller_FSR_DigitalTwin_App_GRPC_PoseData,
+        __Marshaller_FSR_DigitalTwin_App_GRPC_PoseResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseReflection.Descriptor.Services[0]; }
+      get { return global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of PoseService</summary>
     [grpc::BindServiceMethod(typeof(PoseService), "BindService")]
     public abstract partial class PoseServiceBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse> SendPoseData(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse> SendPoseData(global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -65,19 +65,19 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
       {
       }
 
-      public virtual global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse SendPoseData(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse SendPoseData(global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendPoseData(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse SendPoseData(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData request, grpc::CallOptions options)
+      public virtual global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse SendPoseData(global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SendPoseData, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse> SendPoseDataAsync(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse> SendPoseDataAsync(global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendPoseDataAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse> SendPoseDataAsync(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse> SendPoseDataAsync(global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SendPoseData, null, options, request);
       }
@@ -102,7 +102,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, PoseServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SendPoseData, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse>(serviceImpl.SendPoseData));
+      serviceBinder.AddMethod(__Method_SendPoseData, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData, global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse>(serviceImpl.SendPoseData));
     }
 
   }

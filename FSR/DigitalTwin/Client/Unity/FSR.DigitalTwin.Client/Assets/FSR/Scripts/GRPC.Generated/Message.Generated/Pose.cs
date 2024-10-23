@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
+namespace FSR.DigitalTwin.App.GRPC.Services.Pose {
 
   /// <summary>Holder for reflection information generated from Protos/DTO/Pose.proto</summary>
   public static partial class PoseReflection {
@@ -24,25 +24,24 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
     static PoseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVQcm90b3MvRFRPL1Bvc2UucHJvdG8SHUZTUi5EaWdpdGFsVHdpbkxheWVy",
-            "LkdSUEMuTGliIowBCghQb3NlRGF0YRI6CglsYW5kbWFya3MYASADKAsyJy5G",
-            "U1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5MYW5kbWFyaxJECg53b3Js",
-            "ZExhbmRtYXJrcxgCIAMoCzIsLkZTUi5EaWdpdGFsVHdpbkxheWVyLkdSUEMu",
-            "TGliLldvcmxkTGFuZG1hcmsiKwoITGFuZG1hcmsSCQoBeBgBIAEoAhIJCgF5",
-            "GAIgASgCEgkKAXoYAyABKAIiMAoNV29ybGRMYW5kbWFyaxIJCgF4GAEgASgC",
-            "EgkKAXkYAiABKAISCQoBehgDIAEoAiIfCgxQb3NlUmVzcG9uc2USDwoHbWVz",
-            "c2FnZRgBIAEoCTJzCgtQb3NlU2VydmljZRJkCgxTZW5kUG9zZURhdGESJy5G",
-            "U1IuRGlnaXRhbFR3aW5MYXllci5HUlBDLkxpYi5Qb3NlRGF0YRorLkZTUi5E",
-            "aWdpdGFsVHdpbkxheWVyLkdSUEMuTGliLlBvc2VSZXNwb25zZUI0qgIxRlNS",
-            "LkRpZ2l0YWxUd2luTGF5ZXIuR1JQQy5MaWIuU2VydmljZXMuQ29ubmVjdGlv",
-            "bmIGcHJvdG8z"));
+            "ChVQcm90b3MvRFRPL1Bvc2UucHJvdG8SGEZTUi5EaWdpdGFsVHdpbi5BcHAu",
+            "R1JQQyKCAQoIUG9zZURhdGESNQoJbGFuZG1hcmtzGAEgAygLMiIuRlNSLkRp",
+            "Z2l0YWxUd2luLkFwcC5HUlBDLkxhbmRtYXJrEj8KDndvcmxkTGFuZG1hcmtz",
+            "GAIgAygLMicuRlNSLkRpZ2l0YWxUd2luLkFwcC5HUlBDLldvcmxkTGFuZG1h",
+            "cmsiKwoITGFuZG1hcmsSCQoBeBgBIAEoAhIJCgF5GAIgASgCEgkKAXoYAyAB",
+            "KAIiMAoNV29ybGRMYW5kbWFyaxIJCgF4GAEgASgCEgkKAXkYAiABKAISCQoB",
+            "ehgDIAEoAiIfCgxQb3NlUmVzcG9uc2USDwoHbWVzc2FnZRgBIAEoCTJpCgtQ",
+            "b3NlU2VydmljZRJaCgxTZW5kUG9zZURhdGESIi5GU1IuRGlnaXRhbFR3aW4u",
+            "QXBwLkdSUEMuUG9zZURhdGEaJi5GU1IuRGlnaXRhbFR3aW4uQXBwLkdSUEMu",
+            "UG9zZVJlc3BvbnNlQimqAiZGU1IuRGlnaXRhbFR3aW4uQXBwLkdSUEMuU2Vy",
+            "dmljZXMuUG9zZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseData.Parser, new[]{ "Landmarks", "WorldLandmarks" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.Landmark), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.Landmark.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.WorldLandmark), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.WorldLandmark.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse), global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseResponse.Parser, new[]{ "Message" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData), global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseData.Parser, new[]{ "Landmarks", "WorldLandmarks" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.Pose.Landmark), global::FSR.DigitalTwin.App.GRPC.Services.Pose.Landmark.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.Pose.WorldLandmark), global::FSR.DigitalTwin.App.GRPC.Services.Pose.WorldLandmark.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse), global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseResponse.Parser, new[]{ "Message" }, null, null, null)
           }));
     }
     #endregion
@@ -57,7 +56,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseReflection.Descriptor.MessageTypes[0]; }
+      get { return global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -86,21 +85,21 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     /// <summary>Field number for the "landmarks" field.</summary>
     public const int LandmarksFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.Landmark> _repeated_landmarks_codec
-        = pb::FieldCodec.ForMessage(10, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.Landmark.Parser);
-    private readonly pbc::RepeatedField<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.Landmark> landmarks_ = new pbc::RepeatedField<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.Landmark>();
+    private static readonly pb::FieldCodec<global::FSR.DigitalTwin.App.GRPC.Services.Pose.Landmark> _repeated_landmarks_codec
+        = pb::FieldCodec.ForMessage(10, global::FSR.DigitalTwin.App.GRPC.Services.Pose.Landmark.Parser);
+    private readonly pbc::RepeatedField<global::FSR.DigitalTwin.App.GRPC.Services.Pose.Landmark> landmarks_ = new pbc::RepeatedField<global::FSR.DigitalTwin.App.GRPC.Services.Pose.Landmark>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.Landmark> Landmarks {
+    public pbc::RepeatedField<global::FSR.DigitalTwin.App.GRPC.Services.Pose.Landmark> Landmarks {
       get { return landmarks_; }
     }
 
     /// <summary>Field number for the "worldLandmarks" field.</summary>
     public const int WorldLandmarksFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.WorldLandmark> _repeated_worldLandmarks_codec
-        = pb::FieldCodec.ForMessage(18, global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.WorldLandmark.Parser);
-    private readonly pbc::RepeatedField<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.WorldLandmark> worldLandmarks_ = new pbc::RepeatedField<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.WorldLandmark>();
+    private static readonly pb::FieldCodec<global::FSR.DigitalTwin.App.GRPC.Services.Pose.WorldLandmark> _repeated_worldLandmarks_codec
+        = pb::FieldCodec.ForMessage(18, global::FSR.DigitalTwin.App.GRPC.Services.Pose.WorldLandmark.Parser);
+    private readonly pbc::RepeatedField<global::FSR.DigitalTwin.App.GRPC.Services.Pose.WorldLandmark> worldLandmarks_ = new pbc::RepeatedField<global::FSR.DigitalTwin.App.GRPC.Services.Pose.WorldLandmark>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.WorldLandmark> WorldLandmarks {
+    public pbc::RepeatedField<global::FSR.DigitalTwin.App.GRPC.Services.Pose.WorldLandmark> WorldLandmarks {
       get { return worldLandmarks_; }
     }
 
@@ -198,7 +197,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseReflection.Descriptor.MessageTypes[1]; }
+      get { return global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -383,7 +382,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseReflection.Descriptor.MessageTypes[2]; }
+      get { return global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -568,7 +567,7 @@ namespace FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::FSR.DigitalTwinLayer.GRPC.Lib.Services.Connection.PoseReflection.Descriptor.MessageTypes[3]; }
+      get { return global::FSR.DigitalTwin.App.GRPC.Services.Pose.PoseReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

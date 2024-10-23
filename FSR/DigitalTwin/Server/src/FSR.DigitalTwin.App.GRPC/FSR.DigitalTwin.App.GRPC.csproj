@@ -24,7 +24,8 @@
     <Protobuf Include="Protos/Services/AssetAdministrationShellService.proto" GrpcServices="Server" />
     <Protobuf Include="Protos/Services/SubmodelService.proto" GrpcServices="Server" />
     <Protobuf Include="Protos/Services/DigitalTwinClientConnectionService.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos/DTO/Pose.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos/Services/Pose.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos/DTO/PoseMessages.proto" GrpcServices="Server"/>    
     <Protobuf Include="Protos/Services/PoseStreamingService.proto" GrpcServices="Server" />
   </ItemGroup>
 

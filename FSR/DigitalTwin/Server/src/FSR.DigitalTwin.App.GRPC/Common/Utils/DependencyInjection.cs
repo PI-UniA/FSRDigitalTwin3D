@@ -2,7 +2,7 @@ using FSR.DigitalTwin.App.GRPC.Services.RPC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
-using FSR.DigitalTwinLayer.GRPC.Lib.Services;
+using FSR.DigitalTwin.App.GRPC.Services.Pose;
 
 namespace FSR.DigitalTwin.App.GRPC.Common.Utils;
 
@@ -14,5 +14,6 @@ public static class GrpcService {
         endpoints.MapGrpcService<SubmodelRpcService>();
         endpoints.MapGrpcService<DigitalTwinClientConnectionRpcService>();
         endpoints.MapGrpcService<PoseRpcService>();
+        endpoints.MapGrpcService<PoseStreamingRpcService>();
     }
 }

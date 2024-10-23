@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "FSR.DigitalTwin.App.GRPC.Services.Pose";
+
+package FSR.DigitalTwin.App.GRPC;
+
+message PoseData {
+    repeated Landmark landmarks = 1;         
+    repeated WorldLandmark worldLandmarks = 2;
+}
+  
+message Landmark {
+    float x = 1;           
+    float y = 2;           
+    float z = 3;           
+}
+  
+message WorldLandmark {
+    float x = 1;  
+    float y = 2;  
+    float z = 3;  
+}
