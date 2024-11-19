@@ -1,34 +1,30 @@
 using System.Threading.Tasks;
+using FSR.DigitalTwin.Client.Unity.Workspace.Digital.Core;
 using FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces;
+using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor;
+using UnityEngine;
 
 namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Component {
 
-    public abstract class DigitalTwinComponentBase : IDigitalTwinEntityComponent
+    public abstract class DigitalTwinComponentBase : MonoBehaviour, IDigitalTwinEntityComponent
     {
-        public IDigitalTwinEntity DigitalTwinEntity { get => throw new System.NotImplementedException(); init => throw new System.NotImplementedException(); }
-        public string Id { get => throw new System.NotImplementedException(); init => throw new System.NotImplementedException(); }
+        [SerializeField] private string _id = "mycomponent";
+        [SerializeField] private DigitalTwinActorBase _actor;
+        [SerializeField] private bool _enableOperationModeOverrride = false;
+        [SerializeField] private DigitalWorkspace.EOperationMode _operationModeOverride = DigitalWorkspace.EOperationMode.Sleep;
+        private bool _hasConnection = false;
 
-        public bool HasConnection => throw new System.NotImplementedException();
+        public IDigitalTwinEntity DigitalTwinEntity { get => _actor; init => _actor = null; }
 
-        public T GetProperty<T>(string prop)
-        {
-            throw new System.NotImplementedException();
-        }
+        public string Id { get => _id; init => _id = "mycomponent"; }
+        public bool HasConnection => _hasConnection;
 
-        public Task<T> GetPropertyAsync<T>(string prop)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool SetProperty<T>(string prop, T value)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> SetPropertyAsync<T>(string prop, T value)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract bool OnPull();
+        public abstract Task<bool> OnPullAsync();
+        public abstract bool OnPush();
+        public abstract Task<bool> OnPushAsync();
+        public abstract bool OnSynchronize();
+        public abstract Task<bool> OnSynchronizeAsync();
     }
 
 }

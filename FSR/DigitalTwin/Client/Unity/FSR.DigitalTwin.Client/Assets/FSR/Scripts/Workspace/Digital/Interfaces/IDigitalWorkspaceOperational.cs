@@ -1,14 +1,35 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using UniRx;
-using UnityEngine;
+using FSR.DigitalTwin.Client.Unity.Workspace.Digital.Notification;
 
 namespace FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces {
-
     public interface IDigitalWorkspaceOperational {
-        // TODO
+        IObservable<ProcessInvocation> ProcessInvoked { get; }
+        
+        bool RunProcess(string ownerId, string processId, IList<object> input, IList<object> inOut, IList<object> output);
+        Task<bool> RunProcessAsync(string ownerId, string processId, IList<object> input, IList<object> inOut, IList<object> output);
+
+        long LaunchProcess(string ownerId, string processId, IList<object> input, IList<object> inOut);
+        Task<long> LaunchProcessAsync(string ownerId, string processId, IList<object> input, IList<object> inOut);
+
+        bool GetResult(long requestId, IList<object> inOut, IList<object> output);
+        Task<bool> GetResultAsync(long requestId, IList<object> inOut, IList<object> output);
+
+        void SetResult(ProcessResult result);
+        Task SetResultAsync(ProcessResult result);
+
+        void SetExecutionProcessState(ProcessExecutionState executionState);
+        Task SetExecutionProcessStateAsync(ProcessExecutionState executionState);
+
+        bool IsRunning(string ownerId, string processId);
+        Task<bool> IsRunningAsync(string ownerId, string processId);
+
+        bool IsCompleted(string ownerId, string processId);
+        Task<bool> IsCompletedAsync(string ownerId, string processId);
+
+        public bool HasSucceeded(string ownerId, string processId);
+        public Task<bool> HasSucceededAsync(string ownerId, string processId);
     }
 
 }
