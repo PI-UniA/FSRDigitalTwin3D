@@ -71,7 +71,7 @@ The physical layer is the set of supported physical assets of a given use case c
 
 ## Contributing
 
-We are always happy about contributions! Feel free suggest improvements or highlight mistakes in GitHub's issues section.
+We are always happy about contributions! Feel free to suggest improvements or highlight mistakes in GitHub's issues section.
 
 **Note**: This project is maintained by the [Chair of Digital Manufacturing](https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/) of the University of Augsburg.
 
