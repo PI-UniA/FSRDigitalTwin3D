@@ -1,5 +1,5 @@
 # FSRDigitalTwin3D
-FSRDigitalTwin3D is a prototype for a simulation environment aimed at the virtual validation of robots, in particular robots with social-cognitive abilities, meaning it aims to simulate use cases with human-robot-interaction in production and healthcare. The design philosophy is the provide a "playground" for virtual robotics simulations while being as simplistic as possible and abiding to the standards for modern Industry 4.0 applications.
+FSRDigitalTwin3D is a prototype for a simulation environment aimed at the virtual validation of robots, in particular robots with social-cognitive abilities, meaning it aims to simulate use cases with human-robot-interaction in production and healthcare. The design philosophy is to provide a "playground" for virtual robotics simulations while being as simplistic as possible and abiding to the standards for modern Industry 4.0 applications.
 
 **Note:** This framework is developed as a sub-project for the research association FORSocialRobots, namely "Subproject 4: Simulation and validation of socially cognitive robots in the digital twin"
 
@@ -57,16 +57,16 @@ The internal architecture of the server follows the ["Clean Architecture"](https
 ### Virtual Layer
 The virtual layer acts as the use case's virtualization environment. It mirrors and visualizes the physical counterpart and provides a UI for user interaction. Up to this point, the virtual layer is implemented through a client using the Unity Engine as simulation environment.
 
-- *gRPC/AAS*: The gRPC/AAS-based digital workspace respresents the digital twin's representation of a given use case and implements the interface ```IDigitalWorkspace```. This class acts as a hub for bidirectional communication between the digital and virtual layer.
+- *gRPC/AAS*: The gRPC/AAS-based digital workspace provides a connection to the digital twin's semantic representation of a given use case and its entities and processes implementing the interface ```IDigitalWorkspace``` in the process. This interface acts as a hub for bidirectional communication between the digital and virtual layer.
 - *ROS2-TCP-Connector*: Provides an addititonal connection to the ROS2 workspace
 - *VR layer*: Allows a VR-Operator to interact with the virtual scene
-- *Virtual workspace*: Contains all actors, robots, behaviors, sensors, simulation models etc. within the simulation
+- *Virtual workspace*: Contains all actors, robots, behaviors, sensors, simulation models etc. within the simulation environment
 
 ### Physical Layer
 The physical layer is the set of supported physical assets of a given use case connected and digitized within the digital twin.
 
 - *UR5e*: The system supports a UR5e cobot, which is digitized in the digital layer and simulated in the virtual layer
-- *Human Operator*: The human operator is also part of the physical layer. Technically, she/he can also interact with the virtualization layer as a VR-Operator, but we are not fuzzy...
+- *Human Operator*: The human operator is also part of the physical layer. Technically, she/he can also interact with the virtualization layer as a VR-Operator, but we are not fussy...
 - *Physical Sensor*: The set of physical sensors sending data to the digital twin.
 
 ## Contributing
