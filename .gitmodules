@@ -4,3 +4,15 @@
 [submodule "FSR/DigitalTwin/Client/Unity/FSR.DigitalTwin.Client/Assets/Submodules/FSRDT3D-Models"]
 	path = FSR/DigitalTwin/Client/Unity/FSR.DigitalTwin.Client/Assets/Submodules/FSRDT3D-Models
 	url = https://github.com/Neroware/FSRDigitalTwin3D-Models.git
+[submodule "FSR/ROS/src/ros_tcp_endpoint"]
+	path = FSR/ROS/src/ros_tcp_endpoint
+	url = https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git
+[submodule "FSR/ROS/src/moveit_msgs"]
+	path = FSR/ROS/src/moveit_msgs
+	url = https://github.com/moveit/moveit_msgs.git
+[submodule "FSR/ROS/src/Universal_Robots_ROS2_Driver"]
+	path = FSR/ROS/src/Universal_Robots_ROS2_Driver
+	url = https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git
+[submodule "FSR/ROS/src/pymoveit2"]
+	path = FSR/ROS/src/pymoveit2
+	url = https://github.com/AndrejOrsula/pymoveit2.git
