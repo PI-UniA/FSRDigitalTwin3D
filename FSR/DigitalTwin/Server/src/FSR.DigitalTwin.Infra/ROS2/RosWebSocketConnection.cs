@@ -6,7 +6,7 @@ namespace FSR.DigitalTwin.Infra.ROS2;
 
 public class RosWebSocketConnection : IRosConnection
 {
-    private static readonly string uri = "ws://localhost:9090";
+    private static readonly string uri = "ws://localhost:9090"; // TODO Move this to API layer as it belongs there!
 
     public void RunRosBridgeTest()
     {

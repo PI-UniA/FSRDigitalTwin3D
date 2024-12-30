@@ -11,4 +11,10 @@
     <ProjectReference Include="../FSR.DigitalTwin.App.GRPC/FSR.DigitalTwin.App.GRPC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Siemens.RosSharp.MessageGeneration" Version="2.0.0" />
+    <PackageReference Include="Siemens.RosSharp.RosBridgeClient.ROS2" Version="2.0.0" />
+    <PackageReference Include="Siemens.RosSharp.Urdf" Version="2.0.0" />
+  </ItemGroup>
+
 </Project>

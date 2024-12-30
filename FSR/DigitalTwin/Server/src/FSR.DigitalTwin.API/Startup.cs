@@ -11,9 +11,7 @@ using AdminShellNS;
 using FSR.DigitalTwin.App;
 using FSR.DigitalTwin.App.Common.Utils;
 using FSR.DigitalTwin.App.GRPC.Common.Utils;
-using FSR.DigitalTwin.App.Interfaces.Services;
 using FSR.DigitalTwin.Infra.Common.Utils;
-using FSR.DigitalTwin.Infra.ROS2.Common.Utils;
 using IO.Swagger.Controllers;
 using IO.Swagger.Lib.V3.Formatters;
 using IO.Swagger.Lib.V3.Interfaces;
@@ -101,7 +99,6 @@ internal class Startup
         services.AddAppServices();
         services.AddAppGrpcServices();
         services.AddInfra();
-        services.AddInfraRos2();
 
         // Add GraphQL services
         services
