@@ -1,8 +1,10 @@
 using FSR.DigitalTwin.App.Interfaces;
 using FSR.DigitalTwin.App.Interfaces.Services;
 using FSR.DigitalTwin.App.Interfaces.Services.Dummy;
+using FSR.DigitalTwin.App.Interfaces.Services.Semantic;
 using FSR.DigitalTwin.App.Services;
 using FSR.DigitalTwin.App.Services.Dummy;
+using FSR.DigitalTwin.App.Services.Semantic;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FSR.DigitalTwin.App.Common.Utils;
@@ -14,5 +16,6 @@ public static class DependencyInjection {
         services.AddTransient<IDigitalTwinClientConnectionService, DigitalTwinClientConnectionService>();
         services.AddTransient<IDummyRosService, DummyRosService>();
         services.AddTransient<IDummySemanticDataService, DummySemanticDataService>();
+        services.AddTransient<IOwlOntologyService, OwlOntologyService>();
     }
 }

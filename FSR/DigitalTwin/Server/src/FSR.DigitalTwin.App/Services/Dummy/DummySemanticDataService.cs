@@ -1,6 +1,6 @@
 using FSR.DigitalTwin.App.Common.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Services.Dummy;
-using FSR.DigitalTwin.App.Queries.Semantic.Example;
+using FSR.DigitalTwin.App.Queries.Semantic.Base;
 using Microsoft.Extensions.Logging;
 using VDS.RDF;
 
@@ -21,12 +21,16 @@ public class DummySemanticDataService : IDummySemanticDataService
         await _semanticDataRepository.AddAsync(s, p, o);
     }
 
-    public async Task RunSubPredObjQuery()
+    public async Task RunExampleQueriesAsync()
     {
         GetAllTripletsQuery query = new(_semanticDataRepository);
         var result = await query.RunAsync();
-        foreach (Triple triple in result.Value) {
+        foreach (Triple triple in result.Value.Take(10)) {
             _logger.LogInformation("Found triple: {Triple}", triple);
         }
+
+        GetTripleCountQuery query1 = new(_semanticDataRepository);
+        var n = await query1.RunAsync();
+        _logger.LogInformation("Semantic repo triple count: {N}", n.Value);
     }
 }

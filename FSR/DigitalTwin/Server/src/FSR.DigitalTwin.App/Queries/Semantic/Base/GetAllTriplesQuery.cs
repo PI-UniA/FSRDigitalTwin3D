@@ -4,7 +4,7 @@ using FSR.DigitalTwin.App.Interfaces.Queries.Semantic;
 using FSR.DigitalTwin.Domain.SharedKernel;
 using VDS.RDF;
 
-namespace FSR.DigitalTwin.App.Queries.Semantic.Example;
+namespace FSR.DigitalTwin.App.Queries.Semantic.Base;
 
 public class GetAllTripletsQuery : ISparqlQuery<IEnumerable<Triple>>
 {
