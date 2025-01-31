@@ -19,3 +19,6 @@
 [submodule "FSR/DigitalTwin/Server/modules/Jena"]
 	path = FSR/DigitalTwin/Server/modules/Jena
 	url = https://github.com/apache/jena
+[submodule "FSR/DigitalTwin/Server/modules/SOHO"]
+	path = FSR/DigitalTwin/Server/modules/SOHO
+	url = https://github.com/pstlab/SOHO.git

@@ -1,7 +1,6 @@
 using FSR.DigitalTwin.App.Common.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Services.Semantic;
 using FSR.DigitalTwin.App.Queries.Semantic.Base;
-using FSR.DigitalTwin.Domain.SharedKernel;
 using Microsoft.Extensions.Logging;
 
 namespace FSR.DigitalTwin.App.Services.Semantic;
@@ -18,56 +17,50 @@ public class OwlOntologyService : IOwlOntologyService
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<Result<bool>> CreateOntologyAsync(CancellationToken cancellationToken = default)
+    public async Task<bool> CreateOntologyAsync(CancellationToken cancellationToken = default)
     {
         string projectDirectory = Directory.GetCurrentDirectory();
         string fullPath = Path.Combine(projectDirectory, "owl");
 
         if (!Directory.Exists(fullPath))
         {
-            return Result.Failure<bool>($"Directory not found: {fullPath}");
+            _logger.LogError("Directory not found: {FullPath}", fullPath);
+            return false;
         }
 
         foreach (var filePath in Directory.GetFiles(fullPath, "*.ttl"))
         {
-            try
-            {
-                await _tripletServer.LoadFileAsync(filePath, "text/turtle", cancellationToken);
-            }
-            catch (Exception ex)
-            {
-                return Result.Failure<bool>(ex.Message);
+            var result = await _tripletServer.LoadFileAsync(filePath, "text/turtle", cancellationToken);
+            if (result.IsFailure) {
+                _logger.LogError("Failed to load OWL file: {FilePath}", filePath);
+                return false;
             }
         }
 
         return true;
     }
 
-    public async Task<Result<bool>> CreateOntologyFromFileAsync(string filePath, string format = "text/turtle", CancellationToken cancellationToken = default)
+    public async Task<bool> CreateOntologyFromFileAsync(string filePath, string format = "text/turtle", CancellationToken cancellationToken = default)
     {
         if (!File.Exists(filePath))
         {
-            return Result.Failure<bool>($"File not found: {filePath}");
+            _logger.LogError("File not found: {FilePath}", filePath);
+            return false;
         }
-        try
-        {
-            await _tripletServer.LoadFileAsync(filePath, format, cancellationToken);
-        }
-        catch (Exception ex)
-        {
-            return Result.Failure<bool>(ex.Message);
-        }
-        return true;
+        var result = await _tripletServer.LoadFileAsync(filePath, format, cancellationToken);
+        return result.IsSuccess;
     }
 
-    public async Task<Result<bool>> IsEmptyAsync(CancellationToken cancellationToken = default)
+    public async Task<bool> IsEmptyAsync(CancellationToken cancellationToken = default)
     {
         GetTripleCountQuery tripleCountQuery = new(_sparqlServer);
         var tripleCountQueryResponse = await tripleCountQuery.RunAsync(cancellationToken); 
-        return tripleCountQueryResponse.Value == 0;
+        return tripleCountQueryResponse.IsFailure || tripleCountQueryResponse.Value == 0;
     }
 
-    public Result<bool> IsEmpty() {
-        return IsEmptyAsync().Result;
+    public bool IsEmpty() {
+        GetTripleCountQuery tripleCountQuery = new(_sparqlServer);
+        var tripleCountQueryResponse = tripleCountQuery.Run(); 
+        return tripleCountQueryResponse.IsFailure || tripleCountQueryResponse.Value == 0;
     }
 }

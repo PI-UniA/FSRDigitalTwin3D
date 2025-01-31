@@ -32,6 +32,9 @@ public class GetTripleCountQuery : ISparqlQuery<int>
     public async Task<Result<int>> RunAsync(CancellationToken cancellationToken = default)
     {
         var response = await SparqlServer.QueryAsync(this, cancellationToken);
+        if (response.IsFailure) {
+            return Result.Failure<int>(response.Error);
+        }
         var triple = response.Value.First();
         var literal = triple.Object as LiteralNode ?? throw new FormatException();
         return int.Parse(literal.Value);
@@ -40,6 +43,9 @@ public class GetTripleCountQuery : ISparqlQuery<int>
     public Result<int> Run()
     {
         var response = SparqlServer.Query(this);
+        if (response.IsFailure) {
+            return Result.Failure<int>(response.Error);
+        }
         var triple = response.Value.First();
         var literal = triple.Object as LiteralNode ?? throw new FormatException();
         return int.Parse(literal.Value);

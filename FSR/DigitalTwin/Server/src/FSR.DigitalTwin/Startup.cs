@@ -155,7 +155,7 @@ internal class Startup
                     c.CustomSchemaIds(type => type.FullName);
 
                     //string swaggerCommentedAssembly = typeof(AssetAdministrationShellEnvironmentAPIController).Assembly.GetName().Name;
-                    string swaggerCommentedAssembly = typeof(AssetAdministrationShellRepositoryAPIApiController).Assembly.GetName().Name;
+                    string swaggerCommentedAssembly = typeof(AssetAdministrationShellRepositoryAPIApiController).Assembly.GetName().Name ?? throw new NullReferenceException();
                     c.IncludeXmlComments($"{AppContext.BaseDirectory}{System.IO.Path.DirectorySeparatorChar}{swaggerCommentedAssembly}.xml");
 
                     // Include DataAnnotation attributes on Controller Action parameters as Swagger validation rules (e.g required, pattern, ..)
