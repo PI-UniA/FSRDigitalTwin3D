@@ -4,6 +4,6 @@ namespace FSR.DigitalTwin.App.Interfaces.Services.Semantic;
 
 public interface IOwlOntologyService {
     
-    Task<Result<bool>> CreateOntologyAsync();
+    Task<Result<bool>> CreateOntologyAsync(CancellationToken cancellationToken = default);
 
 }

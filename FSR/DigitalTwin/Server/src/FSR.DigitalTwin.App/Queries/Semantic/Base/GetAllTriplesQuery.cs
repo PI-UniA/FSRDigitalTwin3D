@@ -1,5 +1,6 @@
 using System.Text.Json;
 using FSR.DigitalTwin.App.Common.Semantic;
+using FSR.DigitalTwin.App.Common.Utils.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Queries.Semantic;
 using FSR.DigitalTwin.Domain.SharedKernel;
 using VDS.RDF;
@@ -26,13 +27,11 @@ public class GetAllTripletsQuery : ISparqlQuery<IEnumerable<Triple>>
             var triples = new List<Triple>();
             foreach (var binding in bindings.EnumerateArray())
             {
-                var subject = binding.GetProperty("s").GetProperty("value").GetString() ?? throw new FormatException();
-                var predicate = binding.GetProperty("p").GetProperty("value").GetString() ?? throw new FormatException();
-                var obj = binding.GetProperty("o").GetProperty("value").GetString() ?? throw new FormatException();
+                var subject = RdfNodeFactory.CreateFromJson(binding.GetProperty("s"));
+                var predicate = RdfNodeFactory.CreateFromJson(binding.GetProperty("p"));
+                var obj = RdfNodeFactory.CreateFromJson(binding.GetProperty("o"));
 
-                triples.Add(new Triple(new UriNode(new Uri(subject)), 
-                            new UriNode(new Uri(predicate)), 
-                            new UriNode(new Uri(obj))));
+                triples.Add(new Triple(subject, predicate, obj));
             }
 
             return triples;

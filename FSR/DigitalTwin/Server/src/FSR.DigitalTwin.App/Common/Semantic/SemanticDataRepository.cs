@@ -25,7 +25,3 @@ public interface ITripletServer
     Task<Result<bool>> LoadFileAsync(string filePath, string format = "TTL", CancellationToken cancellationToken = default);
     Result<bool> LoadFile(string filePath, string format = "TTL");
 }
-
-public interface ISemanticDataRepository : ISparqlServer, ISemanticGraphServer, ITripletServer {
-    // Intentionally left blank
-}

@@ -10,7 +10,7 @@ using VDS.RDF;
 
 namespace FSR.DigitalTwin.Infra.Jena;
 
-public class JenaSemanticDataRepository : ISemanticDataRepository
+public class JenaSemanticDataRepository : ITripletServer, ISparqlServer, ISemanticGraphServer
 {
     private readonly IJenaHttpClient _jenaHttpClient;
     private readonly ILogger<JenaSemanticDataRepository> _logger;

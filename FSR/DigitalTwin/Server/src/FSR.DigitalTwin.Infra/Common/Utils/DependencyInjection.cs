@@ -27,7 +27,6 @@ public static class DependencyInjection {
         services.AddTransient<ISparqlServer, JenaSemanticDataRepository>();
         services.AddTransient<ISemanticGraphServer, JenaSemanticDataRepository>();
         services.AddTransient<ITripletServer, JenaSemanticDataRepository>();
-        services.AddTransient<ISemanticDataRepository, JenaSemanticDataRepository>();
         services.AddHttpClient<IJenaHttpClient, JenaHttpClient>((ServiceProvider, httpClient) =>
         {
             var SemanticDataRepositoryOptions = ServiceProvider.GetRequiredService<IOptions<JenaSemanticDataRepositoryOptions>>().Value;
