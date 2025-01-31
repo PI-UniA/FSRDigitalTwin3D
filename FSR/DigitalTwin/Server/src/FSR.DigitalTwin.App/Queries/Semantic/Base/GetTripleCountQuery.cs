@@ -1,9 +1,7 @@
-using System.Diagnostics.Metrics;
 using System.Text.Json;
 using FSR.DigitalTwin.App.Common.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Queries.Semantic;
 using FSR.DigitalTwin.Domain.SharedKernel;
-using Namotion.Reflection;
 using VDS.RDF;
 
 namespace FSR.DigitalTwin.App.Queries.Semantic.Base;
@@ -33,7 +31,7 @@ public class GetTripleCountQuery : ISparqlQuery<int>
 
     public async Task<Result<int>> RunAsync(CancellationToken cancellationToken = default)
     {
-        var response = await SparqlServer.QueryAsync(this);
+        var response = await SparqlServer.QueryAsync(this, cancellationToken);
         var triple = response.Value.First();
         var literal = triple.Object as LiteralNode ?? throw new FormatException();
         return int.Parse(literal.Value);

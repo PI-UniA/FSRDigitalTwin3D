@@ -45,6 +45,6 @@ public class GetAllTripletsQuery : ISparqlQuery<IEnumerable<Triple>>
 
     public async Task<Result<IEnumerable<Triple>>> RunAsync(CancellationToken cancellationToken = default)
     {
-        return await SparqlServer.QueryAsync(this);
+        return await SparqlServer.QueryAsync(this, cancellationToken);
     }
 }

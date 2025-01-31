@@ -20,12 +20,6 @@ public class OwlOntologyService : IOwlOntologyService
 
     public async Task<Result<bool>> CreateOntologyAsync(CancellationToken cancellationToken = default)
     {
-        GetTripleCountQuery tripleCountQuery = new(_sparqlServer);
-        var tripleCountQueryResponse = await tripleCountQuery.RunAsync(cancellationToken); 
-        if (tripleCountQueryResponse.Value > 0) {
-            return false;
-        }
-
         string projectDirectory = Directory.GetCurrentDirectory();
         string fullPath = Path.Combine(projectDirectory, "owl");
 
@@ -38,7 +32,7 @@ public class OwlOntologyService : IOwlOntologyService
         {
             try
             {
-                await _tripletServer.LoadFileAsync(filePath);
+                await _tripletServer.LoadFileAsync(filePath, "text/turtle", cancellationToken);
             }
             catch (Exception ex)
             {
@@ -47,5 +41,33 @@ public class OwlOntologyService : IOwlOntologyService
         }
 
         return true;
+    }
+
+    public async Task<Result<bool>> CreateOntologyFromFileAsync(string filePath, string format = "text/turtle", CancellationToken cancellationToken = default)
+    {
+        if (!File.Exists(filePath))
+        {
+            return Result.Failure<bool>($"File not found: {filePath}");
+        }
+        try
+        {
+            await _tripletServer.LoadFileAsync(filePath, format, cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<bool>(ex.Message);
+        }
+        return true;
+    }
+
+    public async Task<Result<bool>> IsEmptyAsync(CancellationToken cancellationToken = default)
+    {
+        GetTripleCountQuery tripleCountQuery = new(_sparqlServer);
+        var tripleCountQueryResponse = await tripleCountQuery.RunAsync(cancellationToken); 
+        return tripleCountQueryResponse.Value == 0;
+    }
+
+    public Result<bool> IsEmpty() {
+        return IsEmptyAsync().Result;
     }
 }

@@ -90,18 +90,14 @@ public class JenaSemanticDataRepository : ITripletServer, ISparqlServer, ISemant
         throw new NotImplementedException();
     }
 
-    public Result<bool> LoadFile(string filePath, string format = "TTL")
+    public Result<bool> LoadFile(string filePath, string format = "text/turtle")
     {
         return LoadFileAsync(filePath, format, CancellationToken.None).Result;
         
     }
 
-    public async Task<Result<bool>> LoadFileAsync(string filePath, string format = "TTL", CancellationToken cancellationToken = default)
+    public async Task<Result<bool>> LoadFileAsync(string filePath, string format = "text/turtle", CancellationToken cancellationToken = default)
     {
-        if (format != "TTL") {
-            return Result.Failure<bool>("Currently only turtle format supported");
-        }
-
         string fusekiUrl = "http://localhost:3030/fsrtriples/data"; // TODO Adjust later to use config!
         if (!File.Exists(filePath))
         {
@@ -112,7 +108,7 @@ public class JenaSemanticDataRepository : ITripletServer, ISparqlServer, ISemant
         try
         {
             string turtleData = await File.ReadAllTextAsync(filePath, cancellationToken);
-            var content = new StringContent(turtleData, Encoding.UTF8, "text/turtle");
+            var content = new StringContent(turtleData, Encoding.UTF8, format);
             HttpResponseMessage response = await _jenaHttpClient.PostAsync(fusekiUrl, content);
 
             if (response.IsSuccessStatusCode)
