@@ -90,6 +90,49 @@ public class JenaSemanticDataRepository : ISemanticDataRepository
         throw new NotImplementedException();
     }
 
+    public Result<bool> LoadFile(string filePath, string format = "TTL")
+    {
+        return LoadFileAsync(filePath, format, CancellationToken.None).Result;
+        
+    }
+
+    public async Task<Result<bool>> LoadFileAsync(string filePath, string format = "TTL", CancellationToken cancellationToken = default)
+    {
+        if (format != "TTL") {
+            return Result.Failure<bool>("Currently only turtle format supported");
+        }
+
+        string fusekiUrl = "http://localhost:3030/fsrtriples/data"; // TODO Adjust later to use config!
+        if (!File.Exists(filePath))
+        {
+            _logger.LogError("Failed to find ontology at path {FilePath}", filePath);
+            return Result.Failure<bool>($"Failed to find ontology at path {filePath}");
+        }
+
+        try
+        {
+            string turtleData = await File.ReadAllTextAsync(filePath, cancellationToken);
+            var content = new StringContent(turtleData, Encoding.UTF8, "text/turtle");
+            HttpResponseMessage response = await _jenaHttpClient.PostAsync(fusekiUrl, content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                _logger.LogInformation("Uploaded ontology at path {FilePath}", filePath);
+                return true;
+            }
+            else
+            {
+                _logger.LogError("Failed to load ontology at path {FilePath}", filePath);
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to load ontology at path {FilePath}", filePath);
+            return false;
+        }
+    }
+
     public Result<IEnumerable<Triple>> Query(ISparqlQuery sparqlQuery)
     {
         return QueryAsync(sparqlQuery).Result;
