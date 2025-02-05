@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots"
+     versionIRI="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots/0.0.0">
+    <Prefix name="" IRI="http://www.semanticweb.org/zebiscra/ontologies/2025/1/untitled-ontology-18/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://pst.istc.cnr.it/ontologies/2019/01/soho/1.0.0</Import>
+    <Declaration>
+        <Class IRI="#AngryFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CognitiveSocialAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CognitiveSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConceptualSocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConcreteSocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CooperativeSocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DisgustedFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dislike"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmotionVector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmotionalState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExhibitiedSelfControlSocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExpressedEmpathySocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExtrinsicSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FearfulFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GainTrustSocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gaze"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GazedEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gesture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HappyFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanSocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Indifferent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntrinsicSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lighting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Like"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NeutralFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Noise"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NoiseVolume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysiologicalSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RobotSocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RobotSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SadFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorialSocialAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorialSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShownAssertivitySocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShownCompetenceSocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShownResponsibitlitySocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialAbility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialExperienceRating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SurprisedFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#HumanSocialAbility"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SocialAbility"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Human"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HumanSocialParameter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SocialParameter"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isPartOf"/>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Human"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RobotSocialAbility"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SocialAbility"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Cobot"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RobotSocialParameter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SocialParameter"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isPartOf"/>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Cobot"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SocialFunction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
+                <Class IRI="#SocialAbility"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AngryFacialExpression"/>
+        <Class IRI="#FacialExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CognitiveSocialAttribute"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CognitiveSocialParameter"/>
+        <Class IRI="#IntrinsicSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConceptualSocialAbility"/>
+        <Class IRI="#SocialAbility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConcreteSocialAbility"/>
+        <Class IRI="#SocialAbility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CooperativeSocialAbility"/>
+        <Class IRI="#ConceptualSocialAbility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DisgustedFacialExpression"/>
+        <Class IRI="#FacialExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dislike"/>
+        <Class IRI="#SocialExperienceRating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmotionVector"/>
+        <Class IRI="#CognitiveSocialAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmotionalState"/>
+        <Class IRI="#CognitiveSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExhibitiedSelfControlSocialAbility"/>
+        <Class IRI="#ConceptualSocialAbility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExpressedEmpathySocialAbility"/>
+        <Class IRI="#ConceptualSocialAbility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtrinsicSocialParameter"/>
+        <Class IRI="#SocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FacialExpression"/>
+        <Class IRI="#EmotionVector"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FearfulFacialExpression"/>
+        <Class IRI="#FacialExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GainTrustSocialAbility"/>
+        <Class IRI="#ConceptualSocialAbility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gaze"/>
+        <Class IRI="#SensorialSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GazedEntity"/>
+        <Class IRI="#SensorialSocialAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gesture"/>
+        <Class IRI="#PhysicalSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HappyFacialExpression"/>
+        <Class IRI="#FacialExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Indifferent"/>
+        <Class IRI="#SocialExperienceRating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntrinsicSocialParameter"/>
+        <Class IRI="#SocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lighting"/>
+        <Class IRI="#ExtrinsicSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Like"/>
+        <Class IRI="#SocialExperienceRating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NeutralFacialExpression"/>
+        <Class IRI="#FacialExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Noise"/>
+        <Class IRI="#ExtrinsicSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NoiseVolume"/>
+        <Class IRI="#SensorialSocialAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalSocialParameter"/>
+        <Class IRI="#IntrinsicSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysiologicalSocialParameter"/>
+        <Class IRI="#IntrinsicSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SadFacialExpression"/>
+        <Class IRI="#FacialExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorialSocialAttribute"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorialSocialParameter"/>
+        <Class IRI="#IntrinsicSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShownAssertivitySocialAbility"/>
+        <Class IRI="#ConceptualSocialAbility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShownCompetenceSocialAbility"/>
+        <Class IRI="#ConceptualSocialAbility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShownResponsibitlitySocialAbility"/>
+        <Class IRI="#ConceptualSocialAbility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialAbility"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Capability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialExperienceRating"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialParameter"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialParameter"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#classifies"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SurprisedFacialExpression"/>
+        <Class IRI="#FacialExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#ExtrinsicSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualSocialParameter"/>
+        <Class IRI="#IntrinsicSocialParameter"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AngryFacialExpression"/>
+        <Class IRI="#DisgustedFacialExpression"/>
+        <Class IRI="#FearfulFacialExpression"/>
+        <Class IRI="#HappyFacialExpression"/>
+        <Class IRI="#NeutralFacialExpression"/>
+        <Class IRI="#SadFacialExpression"/>
+        <Class IRI="#SurprisedFacialExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dislike"/>
+        <Class IRI="#Indifferent"/>
+        <Class IRI="#Like"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ExtrinsicSocialParameter"/>
+        <Class IRI="#IntrinsicSocialParameter"/>
+    </DisjointClasses>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EmotionVector</IRI>
+        <Literal>A class for the representation of emotions as a vector of scalar values.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FacialExpression</IRI>
+        <Literal>Disjoint facial expressions. If one is identified as the truth, the others do not comply!</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SocialAbility</IRI>
+        <Literal>Social abilites as part of an agent&apos;s capability. As of now, the ontology follows the seven social abilites identified by Heerink et al. (2006)</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
