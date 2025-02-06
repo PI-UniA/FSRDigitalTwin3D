@@ -7,7 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots"
      versionIRI="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots/0.0.0">
-    <Prefix name="" IRI="http://www.semanticweb.org/zebiscra/ontologies/2025/1/untitled-ontology-18/"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/raoul/ontologies/2025/1/untitled-ontology-33/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -45,10 +45,10 @@
         <Class IRI="#EmotionalState"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ExhibitiedSelfControlSocialAbility"/>
+        <Class IRI="#ExhibitSelfControlSocialAbility"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ExpressedEmpathySocialAbility"/>
+        <Class IRI="#ExpressEmpathySocialAbility"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ExtrinsicSocialParameter"/>
@@ -123,13 +123,13 @@
         <Class IRI="#SensorialSocialParameter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ShownAssertivitySocialAbility"/>
+        <Class IRI="#ShowAssertivitySocialAbility"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ShownCompetenceSocialAbility"/>
+        <Class IRI="#ShowCompetenceSocialAbility"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ShownResponsibitlitySocialAbility"/>
+        <Class IRI="#ShowResponsibitlitySocialAbility"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SocialAbility"/>
@@ -151,9 +151,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#VisualSocialParameter"/>
-    </Declaration>
-    <Declaration>
-        <Datatype abbreviatedIRI="xsd:date"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#HumanSocialAbility"/>
@@ -246,11 +243,11 @@
         <Class IRI="#CognitiveSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ExhibitiedSelfControlSocialAbility"/>
+        <Class IRI="#ExhibitSelfControlSocialAbility"/>
         <Class IRI="#ConceptualSocialAbility"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ExpressedEmpathySocialAbility"/>
+        <Class IRI="#ExpressEmpathySocialAbility"/>
         <Class IRI="#ConceptualSocialAbility"/>
     </SubClassOf>
     <SubClassOf>
@@ -334,15 +331,15 @@
         <Class IRI="#IntrinsicSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ShownAssertivitySocialAbility"/>
+        <Class IRI="#ShowAssertivitySocialAbility"/>
         <Class IRI="#ConceptualSocialAbility"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ShownCompetenceSocialAbility"/>
+        <Class IRI="#ShowCompetenceSocialAbility"/>
         <Class IRI="#ConceptualSocialAbility"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ShownResponsibitlitySocialAbility"/>
+        <Class IRI="#ShowResponsibitlitySocialAbility"/>
         <Class IRI="#ConceptualSocialAbility"/>
     </SubClassOf>
     <SubClassOf>
@@ -396,6 +393,11 @@
     </DisjointClasses>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConceptualSocialAbility</IRI>
+        <Literal>Conceptual social abilites as part of an agent&apos;s capability. As of now, the ontology follows the seven social abilites identified by Heerink et al. (2006)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#EmotionVector</IRI>
         <Literal>A class for the representation of emotions as a vector of scalar values.</Literal>
     </AnnotationAssertion>
@@ -407,7 +409,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SocialAbility</IRI>
-        <Literal>Social abilites as part of an agent&apos;s capability. As of now, the ontology follows the seven social abilites identified by Heerink et al. (2006)</Literal>
+        <Literal>Social abilites as part of an agent&apos;s capability.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
