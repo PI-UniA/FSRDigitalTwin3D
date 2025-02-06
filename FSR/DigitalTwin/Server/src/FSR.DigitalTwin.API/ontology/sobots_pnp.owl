@@ -180,6 +180,24 @@
         <NamedIndividual IRI="#box3"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#doAssembly"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#doAssemblyPart1Part2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#move-object-box3-worker"/>
     </Declaration>
     <Declaration>
@@ -503,6 +521,30 @@
         <NamedIndividual IRI="#box3"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ConjunctiveComplexTask"/>
+        <NamedIndividual IRI="#doAssembly"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#DisjunctiveComplexTask"/>
+        <NamedIndividual IRI="#doAssemblyPart1Part2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#MoveObject"/>
         <NamedIndividual IRI="#move-object-box3-worker"/>
     </ClassAssertion>
@@ -620,6 +662,86 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
         <NamedIndividual IRI="#assembled-product"/>
         <NamedIndividual IRI="#assembly-part3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doAssembly"/>
+        <NamedIndividual IRI="#doAssemblyPart1Part2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doAssembly"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doAssemblyPart1Part2"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doAssemblyPart1Part2"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doAssemblyPart1Part2"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot1"/>
+        <NamedIndividual IRI="#assemble1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot1"/>
+        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot1"/>
+        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot2"/>
+        <NamedIndividual IRI="#assemble1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot2"/>
+        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot2"/>
+        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot3"/>
+        <NamedIndividual IRI="#assemble1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot3"/>
+        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot3"/>
+        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
+        <NamedIndividual IRI="#assemble2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
+        <NamedIndividual IRI="#move-object-box3-worker"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
