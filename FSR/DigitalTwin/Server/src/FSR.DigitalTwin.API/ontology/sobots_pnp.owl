@@ -961,6 +961,11 @@
         <NamedIndividual IRI="#placement-spot1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#preferredPlacementSpot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
         <NamedIndividual IRI="#pickplace-box1-spot2"/>
         <NamedIndividual IRI="#ur5e-cobot"/>
@@ -991,6 +996,11 @@
         <NamedIndividual IRI="#placement-spot2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#preferredPlacementSpot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
         <NamedIndividual IRI="#pickplace-box1-spot3"/>
         <NamedIndividual IRI="#ur5e-cobot"/>
@@ -1019,6 +1029,11 @@
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
         <NamedIndividual IRI="#pickplace-box1-spot3"/>
         <NamedIndividual IRI="#placement-spot3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#preferredPlacementSpot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
