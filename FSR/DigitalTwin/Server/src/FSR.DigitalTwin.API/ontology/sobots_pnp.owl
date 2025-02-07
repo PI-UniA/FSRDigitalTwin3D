@@ -640,6 +640,10 @@
         <NamedIndividual IRI="#move-object-box3-worker"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
         <NamedIndividual IRI="#pickplace-box1-spot1"/>
     </ClassAssertion>
