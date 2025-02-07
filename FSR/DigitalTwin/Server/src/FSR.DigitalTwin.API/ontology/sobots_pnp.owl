@@ -135,6 +135,9 @@
         <Class IRI="#SocialAbility"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocialAgentBehavior"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SocialExperienceRating"/>
     </Declaration>
     <Declaration>
@@ -198,7 +201,13 @@
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#expressingEmpathyThroughComradelyTouch"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#move-object-box3-worker"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pet-the-robot"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#pickplace-box1-spot1"/>
@@ -232,6 +241,21 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#robotic-arm"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#socialBehaviorModel1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#socialBehaviorModel2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sociallyAwareObjectHandOver"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#thankRobot"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ur5e-cobot"/>
@@ -440,8 +464,40 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Capability"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SocialAbility"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+            <Class IRI="#SocialExperienceRating"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialAgentBehavior"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentBehavior"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialAgentBehavior"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <Class IRI="#SocialAbility"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialAgentBehavior"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+            <Class IRI="#SocialExperienceRating"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SocialExperienceRating"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Region"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialFunction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+            <Class IRI="#SocialExperienceRating"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialParameter"/>
@@ -545,6 +601,10 @@
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#ConcreteSocialAbility"/>
+        <NamedIndividual IRI="#expressingEmpathyThroughComradelyTouch"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#MoveObject"/>
         <NamedIndividual IRI="#move-object-box3-worker"/>
     </ClassAssertion>
@@ -591,6 +651,26 @@
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotInterface"/>
         <NamedIndividual IRI="#robotic-arm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SocialAgentBehavior"/>
+        <NamedIndividual IRI="#socialBehaviorModel1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SocialAgentBehavior"/>
+        <NamedIndividual IRI="#socialBehaviorModel2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ConcreteSocialAbility"/>
+        <NamedIndividual IRI="#sociallyAwareObjectHandOver"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ConcreteSocialAbility"/>
+        <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <NamedIndividual IRI="#thankRobot"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Cobot"/>
@@ -675,6 +755,11 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#doAssembly"/>
+        <NamedIndividual IRI="#thankRobot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
         <NamedIndividual IRI="#doAssemblyPart1Part2"/>
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot1"/>
     </ObjectPropertyAssertion>
@@ -754,6 +839,11 @@
         <NamedIndividual IRI="#ur5e-cobot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
+        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#sociallyAwareObjectHandOver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
         <NamedIndividual IRI="#move-object-box3-worker"/>
         <NamedIndividual IRI="#assembly-part3"/>
@@ -770,6 +860,26 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+        <NamedIndividual IRI="#worker"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+        <NamedIndividual IRI="#worker"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+        <NamedIndividual IRI="#expressingEmpathyThroughComradelyTouch"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+        <NamedIndividual IRI="#ur5e-cobot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
         <NamedIndividual IRI="#pickplace-box1-spot1"/>
         <NamedIndividual IRI="#ur5e-cobot"/>
     </ObjectPropertyAssertion>
@@ -777,6 +887,11 @@
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
         <NamedIndividual IRI="#pickplace-box1-spot1"/>
         <NamedIndividual IRI="#ur5e-cobot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
+        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
@@ -804,6 +919,11 @@
         <NamedIndividual IRI="#ur5e-cobot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
+        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
         <NamedIndividual IRI="#pickplace-box1-spot2"/>
         <NamedIndividual IRI="#assembly-part1"/>
@@ -827,6 +947,11 @@
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
         <NamedIndividual IRI="#pickplace-box1-spot3"/>
         <NamedIndividual IRI="#ur5e-cobot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
+        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
@@ -917,6 +1042,36 @@
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
         <NamedIndividual IRI="#pickplace-box2-spot3"/>
         <NamedIndividual IRI="#placement-spot3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#socialBehaviorModel1"/>
+        <NamedIndividual IRI="#sociallyAwareObjectHandOver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#socialBehaviorModel1"/>
+        <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+        <NamedIndividual IRI="#socialBehaviorModel1"/>
+        <NamedIndividual IRI="#ur5e-cobot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#socialBehaviorModel2"/>
+        <NamedIndividual IRI="#expressingEmpathyThroughComradelyTouch"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+        <NamedIndividual IRI="#socialBehaviorModel2"/>
+        <NamedIndividual IRI="#worker"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#thankRobot"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEmbodiment"/>
@@ -997,6 +1152,26 @@
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
         <NamedIndividual IRI="#move-object-box3-worker"/>
         <Literal>MoveObjectBox3Worker</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">3.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDurationUncertainty"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">100.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+        <Literal>ur5e-cobot</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+        <Literal>PetTheRobot</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
