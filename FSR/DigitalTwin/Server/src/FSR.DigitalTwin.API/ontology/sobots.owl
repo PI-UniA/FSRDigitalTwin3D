@@ -18,9 +18,6 @@
         <Class IRI="#AngryFacialExpression"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#CognitiveSocialAttribute"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#CognitiveSocialParameter"/>
     </Declaration>
     <Declaration>
@@ -66,7 +63,7 @@
         <Class IRI="#Gaze"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#GazedEntity"/>
+        <Class IRI="#GazedEntitySet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Gesture"/>
@@ -108,6 +105,9 @@
         <Class IRI="#PhysiologicalSocialParameter"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ReachableEntitySet"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#RobotSocialAbility"/>
     </Declaration>
     <Declaration>
@@ -117,7 +117,7 @@
         <Class IRI="#SadFacialExpression"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SensorialSocialAttribute"/>
+        <Class IRI="#SensedEntitySet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SensorialSocialParameter"/>
@@ -135,6 +135,12 @@
         <Class IRI="#SocialAbility"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocialAgentBehavior"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialEntitySet"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SocialExperienceRating"/>
     </Declaration>
     <Declaration>
@@ -148,6 +154,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TouchedEntitySet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#VisualSocialParameter"/>
@@ -207,10 +216,6 @@
         <Class IRI="#FacialExpression"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#CognitiveSocialAttribute"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#CognitiveSocialParameter"/>
         <Class IRI="#IntrinsicSocialParameter"/>
     </SubClassOf>
@@ -236,7 +241,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EmotionVector"/>
-        <Class IRI="#CognitiveSocialAttribute"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EmotionalState"/>
@@ -271,8 +276,8 @@
         <Class IRI="#SensorialSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GazedEntity"/>
-        <Class IRI="#SensorialSocialAttribute"/>
+        <Class IRI="#GazedEntitySet"/>
+        <Class IRI="#SocialEntitySet"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Gesture"/>
@@ -308,7 +313,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NoiseVolume"/>
-        <Class IRI="#SensorialSocialAttribute"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PhysicalSocialParameter"/>
@@ -319,12 +324,16 @@
         <Class IRI="#IntrinsicSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ReachableEntitySet"/>
+        <Class IRI="#SocialEntitySet"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SadFacialExpression"/>
         <Class IRI="#FacialExpression"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SensorialSocialAttribute"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+        <Class IRI="#SensedEntitySet"/>
+        <Class IRI="#SocialEntitySet"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SensorialSocialParameter"/>
@@ -347,8 +356,44 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Capability"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SocialExperienceRating"/>
+        <Class IRI="#SocialAbility"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+            <Class IRI="#SocialExperienceRating"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialAgentBehavior"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentBehavior"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialAgentBehavior"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <Class IRI="#SocialAbility"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialAgentBehavior"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+            <Class IRI="#SocialExperienceRating"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialEntitySet"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialExperienceRating"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Region"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialFunction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+            <Class IRI="#SocialExperienceRating"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialParameter"/>
@@ -368,6 +413,10 @@
     <SubClassOf>
         <Class IRI="#Temperature"/>
         <Class IRI="#ExtrinsicSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TouchedEntitySet"/>
+        <Class IRI="#SocialEntitySet"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#VisualSocialParameter"/>
@@ -410,6 +459,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SocialAbility</IRI>
         <Literal>Social abilites as part of an agent&apos;s capability.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SocialEntitySet</IRI>
+        <Literal>Represents statistical values over a collection of entities with some defined form of social relevancy</Literal>
     </AnnotationAssertion>
 </Ontology>
 

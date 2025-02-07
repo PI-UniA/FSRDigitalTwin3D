@@ -2,7 +2,7 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="Imports Wizard Entry" name="http://pst.istc.cnr.it/ontologies/2019/01/soho/1.0.0" uri="file:/D:/Users/Raoul/Documents/UNA/02_REPOS/FSR/FSR/DigitalTwin/Server/modules/SOHO/core/soho_core.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1738919057820" name="duplicate:https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots" uri="sobots.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1738919057820" name="duplicate:https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots" uri="sobots_pnp.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1738920861118" name="duplicate:https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots" uri="sobots.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1738920861118" name="duplicate:https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots" uri="sobots_pnp.owl"/>
     </group>
 </catalog>

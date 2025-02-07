@@ -150,9 +150,6 @@
         <Class IRI="#SocialParameter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SociallyRelevantEntitySet"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#SurprisedFacialExpression"/>
     </Declaration>
     <Declaration>
@@ -531,10 +528,6 @@
             <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#classifies"/>
             <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
         </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SociallyRelevantEntitySet"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SurprisedFacialExpression"/>
