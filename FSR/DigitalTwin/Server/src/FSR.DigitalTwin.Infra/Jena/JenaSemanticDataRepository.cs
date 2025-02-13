@@ -80,6 +80,30 @@ public class JenaSemanticDataRepository : ITripletServer, ISparqlServer, ISemant
         }
     }
 
+    public Result<bool> DeleteAll()
+    {
+        return DeleteAllAsync().Result;
+    }
+
+    public async Task<Result<bool>> DeleteAllAsync(CancellationToken cancellationToken = default)
+    {
+        try {
+            string sparqlUpdate = "CLEAR ALL";
+            var content = new StringContent($"update={sparqlUpdate}", Encoding.UTF8, "application/x-www-form-urlencoded");
+            HttpResponseMessage response = await _jenaHttpClient.PostAsync("fsrtriples/update", content);
+            if (!response.IsSuccessStatusCode)
+            {
+                return Result.Failure<bool>("Failed to drop database.");
+            }
+            return Result.Success(true);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while dropping the database.");
+            return Result.Failure<bool>(ex.Message);
+        }
+    }
+
     public Result<IGraph> GetModel(string graphUri)
     {
         throw new NotImplementedException();

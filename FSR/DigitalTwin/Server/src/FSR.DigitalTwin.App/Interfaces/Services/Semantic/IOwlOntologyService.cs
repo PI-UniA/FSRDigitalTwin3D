@@ -6,5 +6,6 @@ public interface IOwlOntologyService {
     bool IsEmpty();
     Task<bool> CreateOntologyAsync(CancellationToken cancellationToken = default);
     Task<bool> CreateOntologyFromFileAsync(string filePath, string format = "text/turtle", CancellationToken cancellationToken = default);
+    Task<bool> DeleteOntologyAsync(CancellationToken cancellationToken = default);
 
 }

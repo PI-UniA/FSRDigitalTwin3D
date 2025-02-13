@@ -63,4 +63,10 @@ public class OwlOntologyService : IOwlOntologyService
         var tripleCountQueryResponse = tripleCountQuery.Run(); 
         return tripleCountQueryResponse.IsFailure || tripleCountQueryResponse.Value == 0;
     }
+
+    public async Task<bool> DeleteOntologyAsync(CancellationToken cancellationToken = default)
+    {
+        var result = await _tripletServer.DeleteAllAsync(cancellationToken);
+        return result.IsSuccess;
+    }
 }

@@ -24,4 +24,6 @@ public interface ITripletServer
     Result<bool> AddAll(Tuple<string, string, string>[] rule);
     Task<Result<bool>> LoadFileAsync(string filePath, string format = "text/turtle", CancellationToken cancellationToken = default);
     Result<bool> LoadFile(string filePath, string format = "text/turtle");
+    Task<Result<bool>> DeleteAllAsync(CancellationToken cancellationToken = default);
+    Result<bool> DeleteAll();
 }
