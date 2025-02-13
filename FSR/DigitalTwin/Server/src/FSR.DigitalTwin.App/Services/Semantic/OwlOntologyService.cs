@@ -64,6 +64,18 @@ public class OwlOntologyService : IOwlOntologyService
         return tripleCountQueryResponse.IsFailure || tripleCountQueryResponse.Value == 0;
     }
 
+    public async Task<int> CountTriplesAsync(CancellationToken cancellationToken = default) {
+        GetTripleCountQuery tripleCountQuery = new(_sparqlServer);
+        var tripleCountQueryResponse = await tripleCountQuery.RunAsync(cancellationToken);
+        return tripleCountQueryResponse.IsFailure ? -1 : tripleCountQueryResponse.Value;
+    }
+
+    public int CountTriples() {
+        GetTripleCountQuery tripleCountQuery = new(_sparqlServer);
+        var tripleCountQueryResponse = tripleCountQuery.Run();
+        return tripleCountQueryResponse.IsFailure ? -1 : tripleCountQueryResponse.Value;
+    }
+
     public async Task<bool> DeleteOntologyAsync(CancellationToken cancellationToken = default)
     {
         var result = await _tripletServer.DeleteAllAsync(cancellationToken);

@@ -255,6 +255,9 @@
         <NamedIndividual IRI="#product-assembly-goal"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#product-assembly-plan"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#robotic-arm"/>
     </Declaration>
     <Declaration>
@@ -688,6 +691,10 @@
         <NamedIndividual IRI="#product-assembly-goal"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionPlan"/>
+        <NamedIndividual IRI="#product-assembly-plan"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotInterface"/>
         <NamedIndividual IRI="#robotic-arm"/>
     </ClassAssertion>
@@ -1106,6 +1113,21 @@
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
         <NamedIndividual IRI="#pickplace-box2-spot3"/>
         <NamedIndividual IRI="#placement-spot3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#product-assembly-goal"/>
+        <NamedIndividual IRI="#doAssembly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+        <NamedIndividual IRI="#product-assembly-plan"/>
+        <NamedIndividual IRI="#product-assembly-goal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+        <NamedIndividual IRI="#product-assembly-plan"/>
+        <NamedIndividual IRI="#doAssembly"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>

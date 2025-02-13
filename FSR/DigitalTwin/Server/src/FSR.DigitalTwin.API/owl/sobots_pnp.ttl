@@ -592,7 +592,15 @@
 
 ###  https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots#product-assembly-goal
 :product-assembly-goal rdf:type owl:NamedIndividual ,
-                                <http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionGoal> .
+                                <http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionGoal> ;
+                       <http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent> :doAssembly .
+
+
+###  https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots#product-assembly-plan
+:product-assembly-plan rdf:type owl:NamedIndividual ,
+                                <http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionPlan> ;
+                       <http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent> :product-assembly-goal ;
+                       <http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy> :doAssembly .
 
 
 ###  https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots#robotic-arm
