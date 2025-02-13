@@ -1,0 +1,6 @@
+# Jena Fuseki run directories
+/backups/
+/databases/
+/logs/
+/system_files/
+/templates/
