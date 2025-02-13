@@ -474,6 +474,7 @@
                <http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy> :worker ;
                <http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn> :expressingEmpathyThroughComradelyTouch ;
                <http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget> :ur5e-cobot ;
+               <http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion> :robotEmotionVector ;
                <http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration> "3.0"^^xsd:float ;
                <http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDurationUncertainty> "100.0"^^xsd:float ;
                <http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal> "ur5e-cobot" ;
@@ -601,6 +602,17 @@
                                 <http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionPlan> ;
                        <http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent> :product-assembly-goal ;
                        <http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy> :doAssembly .
+
+
+###  https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots#robotEmotion
+:robotEmotion rdf:type owl:NamedIndividual ,
+                       :EmotionalState ;
+              <http://www.loa-cnr.it/ontologies/DUL.owl#classifies> :robotEmotionVector .
+
+
+###  https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots#robotEmotionVector
+:robotEmotionVector rdf:type owl:NamedIndividual ,
+                             :EmotionVector .
 
 
 ###  https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots#robotic-arm

@@ -258,6 +258,12 @@
         <NamedIndividual IRI="#product-assembly-plan"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#robotEmotion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#robotEmotionVector"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#robotic-arm"/>
     </Declaration>
     <Declaration>
@@ -695,6 +701,14 @@
         <NamedIndividual IRI="#product-assembly-plan"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#EmotionalState"/>
+        <NamedIndividual IRI="#robotEmotion"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EmotionVector"/>
+        <NamedIndividual IRI="#robotEmotionVector"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotInterface"/>
         <NamedIndividual IRI="#robotic-arm"/>
     </ClassAssertion>
@@ -935,6 +949,11 @@
         <NamedIndividual IRI="#ur5e-cobot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
+        <NamedIndividual IRI="#pet-the-robot"/>
+        <NamedIndividual IRI="#robotEmotionVector"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
         <NamedIndividual IRI="#pickplace-box1-spot1"/>
         <NamedIndividual IRI="#ur5e-cobot"/>
@@ -1128,6 +1147,11 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
         <NamedIndividual IRI="#product-assembly-plan"/>
         <NamedIndividual IRI="#doAssembly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#classifies"/>
+        <NamedIndividual IRI="#robotEmotion"/>
+        <NamedIndividual IRI="#robotEmotionVector"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
