@@ -6,7 +6,7 @@ public abstract class SocialAbility : Entity {
     public string? Name { init; get; }
 }
 
-// A social ability that represents a cooperative task
+// A social ability that represents the ability to conduct a cooperative task with peers working towards the same goal
 public abstract class CooperativeSocialAbility : SocialAbility {
     public required SocialAgent Owner { init; get; }
     public List<SocialAgent> Peers { init; get; } = [];
