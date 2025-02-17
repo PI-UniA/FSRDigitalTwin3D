@@ -1,14 +1,11 @@
+using FSR.DigitalTwin.Domain.Model.HRI.Social.Attribute;
+
 namespace FSR.DigitalTwin.Domain.Model.HRI.Social.Parameter;
 
+public class EmotionalState<T> : SocialParameter<Dictionary<T, float>> where T : Enum {
 
-public enum MediaPipe2025_FacialExpressionDimensions {
-    Neutral, Angry, Disgusted, Fearful, Happy, Sad, Surprised
 }
 
-public class DimensionalEmotionMeasurement<T> : SocialParameter<Dictionary<T, float>> where T : Enum {
-    
-}
+public class MediaPipe2025_FacialExpression : EmotionalState<MediaPipe2025_FacialExpressionDimensions> {
 
-public class MediaPipe2025_FacialExpression : DimensionalEmotionMeasurement<MediaPipe2025_FacialExpressionDimensions> {
-    
 }

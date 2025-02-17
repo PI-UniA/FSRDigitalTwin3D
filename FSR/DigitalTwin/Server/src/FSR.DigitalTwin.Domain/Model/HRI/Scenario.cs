@@ -7,6 +7,7 @@ namespace FSR.DigitalTwin.Domain.Model.HRI;
 public class Scenario : Entity {
 
     public List<Agent> Agents { init; get; } = [];
+    public List<Workpiece> Workpieces { init; get; } = [];
     public List<Goal> Goals { init; get; } = [];
     public List<Plan> Plans { init; get; } = [];
 
