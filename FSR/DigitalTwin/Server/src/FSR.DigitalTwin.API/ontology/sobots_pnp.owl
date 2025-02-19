@@ -36,10 +36,10 @@
         <Class IRI="#Dislike"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#EmotionVector"/>
+        <Class IRI="#Emotion"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#EmotionalState"/>
+        <Class IRI="#EmotionVector"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ExhibitSelfControlSocialAbility"/>
@@ -63,13 +63,16 @@
         <Class IRI="#Gaze"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Gazed"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#GazedEntitySet"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Gesture"/>
+        <Class IRI="#HappyFacialExpression"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#HappyFacialExpression"/>
+        <Class IRI="#Health"/>
     </Declaration>
     <Declaration>
         <Class IRI="#HumanSocialAbility"/>
@@ -84,10 +87,19 @@
         <Class IRI="#IntrinsicSocialParameter"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#LevelOfDetail"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Lighting"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#LightingCondition"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Like"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Model3D"/>
     </Declaration>
     <Declaration>
         <Class IRI="#NeutralFacialExpression"/>
@@ -96,13 +108,19 @@
         <Class IRI="#Noise"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#NoiseVolume"/>
+        <Class IRI="#NoiseLevel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PhysicalSocialParameter"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PhysiologicalSocialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reachable"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ReachableEntitySet"/>
@@ -115,6 +133,12 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SadFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensed"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SensedEntitySet"/>
@@ -138,9 +162,6 @@
         <Class IRI="#SocialAgentBehavior"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SocialEntitySet"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#SocialExperienceRating"/>
     </Declaration>
     <Declaration>
@@ -156,10 +177,16 @@
         <Class IRI="#Temperature"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#TemperatureLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Touched"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#TouchedEntitySet"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#VisualSocialParameter"/>
+        <Class IRI="#VisualizationSocialParameter"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#assemble1"/>
@@ -372,11 +399,11 @@
         <Class IRI="#SocialExperienceRating"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#EmotionVector"/>
+        <Class IRI="#Emotion"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#EmotionalState"/>
+        <Class IRI="#EmotionVector"/>
         <Class IRI="#CognitiveSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
@@ -393,7 +420,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FacialExpression"/>
-        <Class IRI="#EmotionVector"/>
+        <Class IRI="#Emotion"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FearfulFacialExpression"/>
@@ -408,16 +435,16 @@
         <Class IRI="#SensorialSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GazedEntitySet"/>
-        <Class IRI="#SocialEntitySet"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Gesture"/>
-        <Class IRI="#PhysicalSocialParameter"/>
+        <Class IRI="#Gazed"/>
+        <Class IRI="#Sensation"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HappyFacialExpression"/>
         <Class IRI="#FacialExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Health"/>
+        <Class IRI="#PhysiologicalSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Indifferent"/>
@@ -428,12 +455,24 @@
         <Class IRI="#SocialParameter"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#LevelOfDetail"/>
+        <Class IRI="#VisualizationSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Lighting"/>
         <Class IRI="#ExtrinsicSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#LightingCondition"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Like"/>
         <Class IRI="#SocialExperienceRating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Model3D"/>
+        <Class IRI="#VisualizationSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NeutralFacialExpression"/>
@@ -444,7 +483,7 @@
         <Class IRI="#ExtrinsicSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#NoiseVolume"/>
+        <Class IRI="#NoiseLevel"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
@@ -456,16 +495,24 @@
         <Class IRI="#IntrinsicSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ReachableEntitySet"/>
-        <Class IRI="#SocialEntitySet"/>
+        <Class IRI="#Pose"/>
+        <Class IRI="#PhysicalSocialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reachable"/>
+        <Class IRI="#Sensation"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SadFacialExpression"/>
         <Class IRI="#FacialExpression"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SensedEntitySet"/>
-        <Class IRI="#SocialEntitySet"/>
+        <Class IRI="#Sensation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensed"/>
+        <Class IRI="#Sensation"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SensorialSocialParameter"/>
@@ -513,10 +560,6 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SocialEntitySet"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#SocialExperienceRating"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Region"/>
     </SubClassOf>
@@ -547,11 +590,15 @@
         <Class IRI="#ExtrinsicSocialParameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TouchedEntitySet"/>
-        <Class IRI="#SocialEntitySet"/>
+        <Class IRI="#TemperatureLevel"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#VisualSocialParameter"/>
+        <Class IRI="#Touched"/>
+        <Class IRI="#Sensation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualizationSocialParameter"/>
         <Class IRI="#IntrinsicSocialParameter"/>
     </SubClassOf>
     <DisjointClasses>
@@ -641,7 +688,7 @@
         <NamedIndividual IRI="#humanGaze"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#PhysicalSocialParameter"/>
+        <Class IRI="#Pose"/>
         <NamedIndividual IRI="#humanPose"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -689,7 +736,7 @@
         <NamedIndividual IRI="#placement-spot3"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#SocialEntitySet"/>
+        <Class IRI="#Sensation"/>
         <NamedIndividual IRI="#preferredPlacementSpot"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -701,7 +748,7 @@
         <NamedIndividual IRI="#product-assembly-plan"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#EmotionalState"/>
+        <Class IRI="#Emotion"/>
         <NamedIndividual IRI="#robotEmotion"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -951,7 +998,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
         <NamedIndividual IRI="#pet-the-robot"/>
-        <NamedIndividual IRI="#robotEmotionVector"/>
+        <NamedIndividual IRI="#robotEmotion"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
@@ -1150,8 +1197,8 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#classifies"/>
-        <NamedIndividual IRI="#robotEmotion"/>
         <NamedIndividual IRI="#robotEmotionVector"/>
+        <NamedIndividual IRI="#robotEmotion"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
@@ -1420,13 +1467,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SocialAbility</IRI>
-        <Literal>Social abilites as part of an agent&apos;s capability.</Literal>
+        <IRI>#Sensation</IRI>
+        <Literal>A sensation attribute of any kind. This is not a sensation a social object experiences, more an impression of the social object of any kind, e.g. a social object can be preferable to work with, then the sensation would be &apos;preferred social object to work with&apos;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SocialEntitySet</IRI>
-        <Literal>Represents statistical values over a collection of entities with some defined form of social relevancy</Literal>
+        <IRI>#SocialAbility</IRI>
+        <Literal>Social abilites as part of an agent&apos;s capability.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
