@@ -195,16 +195,7 @@
         <NamedIndividual IRI="#assemble2"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#assembled-product"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#assembly-part1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#assembly-part2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#assembly-part3"/>
+        <NamedIndividual IRI="#assembledProduct"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#box1"/>
@@ -234,6 +225,9 @@
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#goal"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#humanEmotionVector"/>
     </Declaration>
     <Declaration>
@@ -246,55 +240,67 @@
         <NamedIndividual IRI="#humanPose"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#part1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#part2"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#part3"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#placement-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#placement-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#placement-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#placementSpot1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#placementSpot2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#placementSpot3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#plan"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#preferredPlacementSpot"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#product-assembly-goal"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#product-assembly-plan"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#requestFeedback"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#robotic-arm"/>
+        <NamedIndividual IRI="#roboticArm"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#showFeedbackPrompt"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#socialBehaviorModel1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#socialRobot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#socialWorker"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#sociallyAwareFeedbackRequest"/>
@@ -306,7 +312,7 @@
         <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#ur5e"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#workdesk"/>
@@ -315,10 +321,7 @@
         <NamedIndividual IRI="#worker"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#worker-body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#worker-social"/>
+        <NamedIndividual IRI="#workerBody"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#HumanSocialAbility"/>
@@ -636,19 +639,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#CompoundWorkPiece"/>
-        <NamedIndividual IRI="#assembled-product"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
-        <NamedIndividual IRI="#assembly-part1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
-        <NamedIndividual IRI="#assembly-part2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
-        <NamedIndividual IRI="#assembly-part3"/>
+        <NamedIndividual IRI="#assembledProduct"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
@@ -687,6 +678,10 @@
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionGoal"/>
+        <NamedIndividual IRI="#goal"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#EmotionVector"/>
         <NamedIndividual IRI="#humanEmotionVector"/>
     </ClassAssertion>
@@ -704,55 +699,63 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#MoveObject"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+        <NamedIndividual IRI="#part1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+        <NamedIndividual IRI="#part2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+        <NamedIndividual IRI="#part3"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObject"/>
-        <NamedIndividual IRI="#placement-spot1"/>
+        <NamedIndividual IRI="#placementSpot1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObject"/>
-        <NamedIndividual IRI="#placement-spot2"/>
+        <NamedIndividual IRI="#placementSpot2"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObject"/>
-        <NamedIndividual IRI="#placement-spot3"/>
+        <NamedIndividual IRI="#placementSpot3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionPlan"/>
+        <NamedIndividual IRI="#plan"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Preferred"/>
         <NamedIndividual IRI="#preferredPlacementSpot"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionGoal"/>
-        <NamedIndividual IRI="#product-assembly-goal"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionPlan"/>
-        <NamedIndividual IRI="#product-assembly-plan"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleTask"/>
@@ -760,7 +763,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotInterface"/>
-        <NamedIndividual IRI="#robotic-arm"/>
+        <NamedIndividual IRI="#roboticArm"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
@@ -769,6 +772,14 @@
     <ClassAssertion>
         <Class IRI="#SocialAgentBehavior"/>
         <NamedIndividual IRI="#socialBehaviorModel1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialAgent"/>
+        <NamedIndividual IRI="#socialRobot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialAgent"/>
+        <NamedIndividual IRI="#socialWorker"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#ConcreteSocialAbility"/>
@@ -784,7 +795,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Cobot"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#CompoundWorkPiece"/>
@@ -796,11 +807,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#WorkerBodyPart"/>
-        <NamedIndividual IRI="#worker-body"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialAgent"/>
-        <NamedIndividual IRI="#worker-social"/>
+        <NamedIndividual IRI="#workerBody"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
@@ -815,12 +822,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
         <NamedIndividual IRI="#assemble1"/>
-        <NamedIndividual IRI="#assembly-part1"/>
+        <NamedIndividual IRI="#part1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
         <NamedIndividual IRI="#assemble1"/>
-        <NamedIndividual IRI="#assembly-part2"/>
+        <NamedIndividual IRI="#part2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
@@ -835,27 +842,27 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
         <NamedIndividual IRI="#assemble2"/>
-        <NamedIndividual IRI="#assembly-part1"/>
+        <NamedIndividual IRI="#part1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
         <NamedIndividual IRI="#assemble2"/>
-        <NamedIndividual IRI="#assembly-part3"/>
+        <NamedIndividual IRI="#part3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
-        <NamedIndividual IRI="#assembled-product"/>
-        <NamedIndividual IRI="#assembly-part1"/>
+        <NamedIndividual IRI="#assembledProduct"/>
+        <NamedIndividual IRI="#part1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
-        <NamedIndividual IRI="#assembled-product"/>
-        <NamedIndividual IRI="#assembly-part2"/>
+        <NamedIndividual IRI="#assembledProduct"/>
+        <NamedIndividual IRI="#part2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
-        <NamedIndividual IRI="#assembled-product"/>
-        <NamedIndividual IRI="#assembly-part3"/>
+        <NamedIndividual IRI="#assembledProduct"/>
+        <NamedIndividual IRI="#part3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
@@ -895,12 +902,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot1"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot1"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
@@ -910,12 +917,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot2"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot2"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
@@ -925,12 +932,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot3"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part2Spot3"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
@@ -940,7 +947,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
         <NamedIndividual IRI="#doCollaborativeAssemblyPart1Part3"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#goal"/>
+        <NamedIndividual IRI="#doAssembly"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#classifies"/>
@@ -959,227 +971,222 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
         <NamedIndividual IRI="#sociallyAwareObjectHandOver"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
-        <NamedIndividual IRI="#assembly-part3"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
+        <NamedIndividual IRI="#part3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
         <NamedIndividual IRI="#box3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
         <NamedIndividual IRI="#worker"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
         <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
-        <NamedIndividual IRI="#assembly-part1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
+        <NamedIndividual IRI="#part1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
         <NamedIndividual IRI="#box1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
-        <NamedIndividual IRI="#placement-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
+        <NamedIndividual IRI="#placementSpot1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
         <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
-        <NamedIndividual IRI="#assembly-part1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
+        <NamedIndividual IRI="#part1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
         <NamedIndividual IRI="#box1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
-        <NamedIndividual IRI="#placement-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
+        <NamedIndividual IRI="#placementSpot2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
         <NamedIndividual IRI="#sociallyAwareObjectPlacement"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
-        <NamedIndividual IRI="#assembly-part1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
+        <NamedIndividual IRI="#part1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
         <NamedIndividual IRI="#box1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
-        <NamedIndividual IRI="#placement-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
+        <NamedIndividual IRI="#placementSpot3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
         <NamedIndividual IRI="#worker"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
         <NamedIndividual IRI="#worker"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
-        <NamedIndividual IRI="#assembly-part2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
+        <NamedIndividual IRI="#part2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
         <NamedIndividual IRI="#box2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
-        <NamedIndividual IRI="#placement-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
+        <NamedIndividual IRI="#placementSpot1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
         <NamedIndividual IRI="#worker"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
         <NamedIndividual IRI="#worker"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
-        <NamedIndividual IRI="#assembly-part2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
+        <NamedIndividual IRI="#part2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
         <NamedIndividual IRI="#box2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
-        <NamedIndividual IRI="#placement-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
+        <NamedIndividual IRI="#placementSpot2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
         <NamedIndividual IRI="#worker"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
         <NamedIndividual IRI="#worker"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
-        <NamedIndividual IRI="#assembly-part2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
+        <NamedIndividual IRI="#part2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
         <NamedIndividual IRI="#box2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
-        <NamedIndividual IRI="#placement-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
+        <NamedIndividual IRI="#placementSpot3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
-        <NamedIndividual IRI="#placement-spot1"/>
+        <NamedIndividual IRI="#placementSpot1"/>
         <NamedIndividual IRI="#preferredPlacementSpot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
-        <NamedIndividual IRI="#placement-spot2"/>
+        <NamedIndividual IRI="#placementSpot2"/>
         <NamedIndividual IRI="#preferredPlacementSpot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
-        <NamedIndividual IRI="#placement-spot3"/>
+        <NamedIndividual IRI="#placementSpot3"/>
         <NamedIndividual IRI="#preferredPlacementSpot"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
-        <NamedIndividual IRI="#product-assembly-goal"/>
-        <NamedIndividual IRI="#doAssembly"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
-        <NamedIndividual IRI="#product-assembly-plan"/>
-        <NamedIndividual IRI="#product-assembly-goal"/>
+        <NamedIndividual IRI="#plan"/>
+        <NamedIndividual IRI="#goal"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
-        <NamedIndividual IRI="#product-assembly-plan"/>
+        <NamedIndividual IRI="#plan"/>
         <NamedIndividual IRI="#doAssembly"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -1190,12 +1197,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBeAssignedTo"/>
         <NamedIndividual IRI="#showFeedbackPrompt"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#canBePerformedBy"/>
         <NamedIndividual IRI="#showFeedbackPrompt"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
+        <NamedIndividual IRI="#ur5e"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEffectOn"/>
@@ -1225,37 +1232,42 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
         <NamedIndividual IRI="#socialBehaviorModel1"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEmbodiment"/>
-        <NamedIndividual IRI="#ur5e-cobot"/>
-        <NamedIndividual IRI="#robotic-arm"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
-        <NamedIndividual IRI="#workdesk"/>
-        <NamedIndividual IRI="#placement-spot1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
-        <NamedIndividual IRI="#workdesk"/>
-        <NamedIndividual IRI="#placement-spot2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
-        <NamedIndividual IRI="#workdesk"/>
-        <NamedIndividual IRI="#placement-spot3"/>
+        <NamedIndividual IRI="#socialRobot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#actsThrough"/>
-        <NamedIndividual IRI="#worker-social"/>
+        <NamedIndividual IRI="#socialRobot"/>
+        <NamedIndividual IRI="#ur5e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#actsThrough"/>
+        <NamedIndividual IRI="#socialWorker"/>
         <NamedIndividual IRI="#worker"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegion"/>
-        <NamedIndividual IRI="#worker-social"/>
+        <NamedIndividual IRI="#socialWorker"/>
         <NamedIndividual IRI="#humanFacialExpression"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEmbodiment"/>
+        <NamedIndividual IRI="#ur5e"/>
+        <NamedIndividual IRI="#roboticArm"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#workdesk"/>
+        <NamedIndividual IRI="#placementSpot1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#workdesk"/>
+        <NamedIndividual IRI="#placementSpot2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+        <NamedIndividual IRI="#workdesk"/>
+        <NamedIndividual IRI="#placementSpot3"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
@@ -1270,7 +1282,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
         <NamedIndividual IRI="#assemble1"/>
-        <Literal>assembly-part1</Literal>
+        <Literal>part1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
@@ -1290,7 +1302,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
         <NamedIndividual IRI="#assemble2"/>
-        <Literal>assembly-part1</Literal>
+        <Literal>part1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
@@ -1299,142 +1311,142 @@
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">10.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDurationUncertainty"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">10.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
         <Literal>worker</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
-        <NamedIndividual IRI="#move-object-box3-worker"/>
+        <NamedIndividual IRI="#moveObjectBox3Worker"/>
         <Literal>MoveObjectBox3Worker</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">10.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDurationUncertainty"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
-        <Literal>placement-spot1</Literal>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
+        <Literal>placementSpot1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
-        <NamedIndividual IRI="#pickplace-box1-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot1"/>
         <Literal>PickPlaceBox1Spot1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">10.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDurationUncertainty"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
-        <Literal>placement-spot2</Literal>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
+        <Literal>placementSpot2</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
-        <NamedIndividual IRI="#pickplace-box1-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot2"/>
         <Literal>PickPlaceBox1Spot2</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">10.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDurationUncertainty"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
-        <Literal>placement-spot3</Literal>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
+        <Literal>placementSpot3</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
-        <NamedIndividual IRI="#pickplace-box1-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox1Spot3"/>
         <Literal>PickPlaceBox1Spot3</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDurationUncertainty"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">20.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
-        <Literal>placement-spot1</Literal>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
+        <Literal>placementSpot1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
-        <NamedIndividual IRI="#pickplace-box2-spot1"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot1"/>
         <Literal>PickPlaceBox2Spot1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDurationUncertainty"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">20.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
-        <Literal>placement-spot2</Literal>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
+        <Literal>placementSpot2</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
-        <NamedIndividual IRI="#pickplace-box2-spot2"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot2"/>
         <Literal>PickPlaceBox2Spot2</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDuration"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasDurationUncertainty"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">20.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasGoal"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
-        <Literal>placement-spot3</Literal>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
+        <Literal>placementSpot3</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasProcedureName"/>
-        <NamedIndividual IRI="#pickplace-box2-spot3"/>
+        <NamedIndividual IRI="#pickplaceBox2Spot3"/>
         <Literal>PickPlaceBox2Spot3</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
