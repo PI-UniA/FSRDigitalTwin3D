@@ -943,17 +943,17 @@
         <NamedIndividual IRI="#doAssembly"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#classifies"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#parametrizes"/>
         <NamedIndividual IRI="#humanEmotionVector"/>
         <NamedIndividual IRI="#humanFacialExpression"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#classifies"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#parametrizes"/>
         <NamedIndividual IRI="#humanGaze"/>
         <NamedIndividual IRI="#preferredPlacementSpot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#classifies"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#parametrizes"/>
         <NamedIndividual IRI="#humanPose"/>
         <NamedIndividual IRI="#preferredPlacementSpot"/>
     </ObjectPropertyAssertion>
@@ -1201,6 +1201,11 @@
         <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasTarget"/>
         <NamedIndividual IRI="#showFeedbackPrompt"/>
         <NamedIndividual IRI="#worker"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
+        <NamedIndividual IRI="#showFeedbackPrompt"/>
+        <NamedIndividual IRI="#humanFacialExpression"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
