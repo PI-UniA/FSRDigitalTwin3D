@@ -63,9 +63,6 @@
         <Class IRI="#Gaze"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#GazedEntitySet"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#HappyFacialExpression"/>
     </Declaration>
     <Declaration>
@@ -126,9 +123,6 @@
         <Class IRI="#Reachable"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ReachableEntitySet"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#RobotSocialAbility"/>
     </Declaration>
     <Declaration>
@@ -139,9 +133,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Sensed"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SensedEntitySet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SensorialSocialParameter"/>
@@ -181,9 +172,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#TemperatureLevel"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TouchedEntitySet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#VisualizationSocialParameter"/>
