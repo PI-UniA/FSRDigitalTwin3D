@@ -7,7 +7,7 @@ FSRDigitalTwin3D is a prototype for a simulation environment aimed at the virtua
 This project has OS support for Linux and Windows.
 
 - .NET 8.*
-- Unity 2022.3.11f1
+- Unity 2022.3.8f1
 
 ## Installation
 ### Unity Client (Virtual Layer)
