@@ -26,6 +26,8 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
+// Adapted from https://github.com/eclipse-aaspe/server/blob/main/src/AasxServerAspNetCore/Startup.cs 
+// The AASX Server is licensed under the Apache License 2.0
 internal class Startup
 {
     IConfigurationRoot Configuration { get; }
@@ -35,7 +37,7 @@ internal class Startup
     {
         var builder = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json");
-
+            
         Configuration = builder.Build();
     }
 
@@ -162,7 +164,6 @@ internal class Startup
                     c.OperationFilter<IO.Swagger.Filters.GeneratePathParamsValidationFilter>();
                 });
 
-
         services.AddAuthentication("AasSecurityAuth")
                 .AddScheme<AasSecurityAuthenticationOptions, AasSecurityAuthenticationHandler>("AasSecurityAuth", null);
         services.AddAuthorization(c =>
@@ -177,9 +178,6 @@ internal class Startup
         services.AddAutoMapper(RpcAssembly.GetAssembly());
         services.AddGrpc();
     }
-
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        IApiAdapter.CreateDefaultAdapter().Configure(app, env);
-    }
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env) => IApiAdapter.CreateDefaultAdapter().Configure(app, env);
 }
+// END adapted

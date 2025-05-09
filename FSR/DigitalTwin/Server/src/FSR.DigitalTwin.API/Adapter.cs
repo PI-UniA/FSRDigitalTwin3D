@@ -19,10 +19,8 @@ internal class DefaultApiAdapter : IApiAdapter
         if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
         else app.UseExceptionHandler("/Error");
         app.UseMiddleware<ExceptionMiddleware>();
-        // app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
-        //app.UseAuthentication();
         app.UseAuthorization();
         app.UseCors(CORS_POLICY_NAME);
         app.UseSwagger();
