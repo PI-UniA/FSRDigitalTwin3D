@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachProtoGrpc", "tools\At
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaunchJenaFuseki", "tools\LaunchJenaFuseki\LaunchJenaFuseki.csproj", "{B324CAC8-FD81-43C7-BAEB-FD02C8F1D7B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSR.DigitalTwin", "src\FSR.DigitalTwin\FSR.DigitalTwin.csproj", "{F9267762-5270-49A5-B893-5A3CDB267BE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +127,10 @@ Global
 		{B324CAC8-FD81-43C7-BAEB-FD02C8F1D7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B324CAC8-FD81-43C7-BAEB-FD02C8F1D7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B324CAC8-FD81-43C7-BAEB-FD02C8F1D7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9267762-5270-49A5-B893-5A3CDB267BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9267762-5270-49A5-B893-5A3CDB267BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9267762-5270-49A5-B893-5A3CDB267BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9267762-5270-49A5-B893-5A3CDB267BE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,6 +155,7 @@ Global
 		{CB801FBC-F808-419D-9695-0E615727BDA0} = {1996A4D4-8A4C-44AD-87DB-70F852032E2A}
 		{5964573F-BB7C-421C-818C-F7654871E2F1} = {457FFD7A-C9A5-4648-98CE-A8F31DA196E9}
 		{B324CAC8-FD81-43C7-BAEB-FD02C8F1D7B8} = {457FFD7A-C9A5-4648-98CE-A8F31DA196E9}
+		{F9267762-5270-49A5-B893-5A3CDB267BE9} = {1996A4D4-8A4C-44AD-87DB-70F852032E2A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E94AF69-AE7C-4ADD-BB5A-86E918B74C10}

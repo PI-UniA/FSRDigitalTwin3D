@@ -8,16 +8,6 @@
     }
   },
   "profiles": {
-    "http": {
-      "commandName": "Project",
-      "commandLineArgs": "--no-security --aasx-in-memory 1000 --data-path \"./aasxs/\" --edit --external-blazor http://localhost:5001",
-      "dotnetRunMessages": true,
-      "launchBrowser": false,
-      "applicationUrl": "http://localhost:5001",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
     "https": {
       "commandName": "Project",
       "commandLineArgs": "--no-security --aasx-in-memory 1000 --data-path \"./aasxs/\" --edit --external-blazor http://localhost:5001",

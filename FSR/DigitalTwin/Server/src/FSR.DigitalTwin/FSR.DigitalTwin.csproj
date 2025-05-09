@@ -1,10 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  <PropertyGroup>
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+	</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="HotChocolate.AspNetCore" Version="13.5.1" />
@@ -13,7 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../FSR.DigitalTwin.API/FSR.DigitalTwin.API.csproj" />
     <ProjectReference Include="../FSR.DigitalTwin.Infra/FSR.DigitalTwin.Infra.csproj" />
+    <ProjectReference Include="../FSR.DigitalTwin.App/FSR.DigitalTwin.App.csproj" />
+    <ProjectReference Include="../FSR.DigitalTwin.App.GRPC/FSR.DigitalTwin.App.GRPC.csproj" />
   </ItemGroup>
 
 </Project>

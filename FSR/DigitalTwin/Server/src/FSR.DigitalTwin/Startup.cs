@@ -1,6 +1,3 @@
-//var builder = WebApplication.CreateBuilder(args);
-//var app = builder.Build();
-
 using AasSecurity;
 using AasxServer;
 using AasxServerStandardBib.Extensions;
@@ -8,6 +5,7 @@ using AasxServerStandardBib.Interfaces;
 using AasxServerStandardBib.Logging;
 using AasxServerStandardBib.Services;
 using AdminShellNS;
+using FSR.DigitalTwin.API;
 using FSR.DigitalTwin.App;
 using FSR.DigitalTwin.App.Common.Utils;
 using FSR.DigitalTwin.App.GRPC.Common.Utils;
@@ -15,7 +13,6 @@ using FSR.DigitalTwin.Infra.Common.Utils;
 using IO.Swagger.Controllers;
 using IO.Swagger.Lib.V3.Formatters;
 using IO.Swagger.Lib.V3.Interfaces;
-using IO.Swagger.Lib.V3.Middleware;
 using IO.Swagger.Lib.V3.SerializationModifiers.Mappers;
 using IO.Swagger.Lib.V3.SerializationModifiers.Mappers.ValueMappers;
 using IO.Swagger.Lib.V3.Services;
@@ -183,42 +180,6 @@ internal class Startup
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-        if (env.IsDevelopment())
-        {
-            app.UseDeveloperExceptionPage();
-        }
-        else
-        {
-            app.UseExceptionHandler("/Error");
-        }
-
-        app.UseMiddleware<ExceptionMiddleware>();
-
-        // app.UseHttpsRedirection();
-
-        app.UseStaticFiles();
-        app.UseRouting();
-        //app.UseAuthentication();
-        app.UseAuthorization();
-
-        app.UseCors(_corsPolicyName);
-
-        // Enable middleware to serve generated Swagger as a JSON endpoint.
-        app.UseSwagger();
-        // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-        // specifying the Swagger JSON endpoint.
-        app.UseSwaggerUI(c =>
-        {
-            c.SwaggerEndpoint("Final-Draft/swagger.json", "DotAAS Part 2 | HTTP/REST | Asset Administration Shell Repository");
-        });
-
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllers();
-            endpoints.MapGet("/", () => "*** Welcome to FORSocialRobots Digital Twin Framework! ***");
-            endpoints.MapAppGrpcServices();
-        });
-
-
+        IApiAdapter.CreateDefaultAdapter().Configure(app, env);
     }
 }
