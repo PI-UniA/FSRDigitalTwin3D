@@ -11,18 +11,13 @@ AasxServer.Program.Main(args);
 SecurityHelper.SecurityInit();
 
 #if ENABLE_ONTOLOGY // Enable OWL ontology
-const int OWL_ONTOLOGY_TRIPLE_COUNT = 644;
 var serviceProvider = host.Services;
-var ontology = serviceProvider.GetService<IOwlOntologyService>()
+var ontoModel = serviceProvider.GetService<IOntologyModelService>()
     ?? throw new NullReferenceException("should not happen");
-// await ontology.DeleteOntologyAsync();
-if (ontology.Count == OWL_ONTOLOGY_TRIPLE_COUNT) {
-    await ontology.CreateOntologyAsync();
-    // We also want to load the SOHO ontology for human-robot-collaboration if present
-    string sohoOntologyPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "../../modules/SOHO/core/soho_core.owl");
-    if (File.Exists(sohoOntologyPath)) {
-        await ontology.CreateOntologyFromFileAsync(sohoOntologyPath, "application/rdf+xml");
-    }
+string sohoOntologyPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "../../modules/SOHO/core/soho_core.owl");
+await ontoModel.DeleteOntologyModelAsync();
+if (File.Exists(sohoOntologyPath)) {
+    await ontoModel.LoadOntologyModelAsync(sohoOntologyPath, OntologyModelFileFormat.RDF_XML);
 }
 #endif
 

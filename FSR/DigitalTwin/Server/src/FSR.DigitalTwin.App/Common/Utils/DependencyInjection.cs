@@ -16,6 +16,6 @@ public static class DependencyInjection {
         services.AddTransient<IDigitalTwinClientConnectionService, DigitalTwinClientConnectionService>();
         services.AddTransient<IDummyRosService, DummyRosService>();
         services.AddTransient<IDummySemanticDataService, DummySemanticDataService>();
-        services.AddTransient<IOwlOntologyService, OwlOntologyService>();
+        services.AddTransient<IOntologyModelService, OntologyModelService>();
     }
 }
