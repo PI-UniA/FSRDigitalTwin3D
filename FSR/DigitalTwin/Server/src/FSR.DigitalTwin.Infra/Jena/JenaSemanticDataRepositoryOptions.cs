@@ -13,4 +13,5 @@ public class JenaSemanticDataRepositoryOptions
     [Required] public string BaseUrl { get; set; } = "";
     public string AccessToken { get; set; } = "";
     public string UserAgent { get; set; } = "";
+    public string[] ModelFiles { get; set; } = [];
 }

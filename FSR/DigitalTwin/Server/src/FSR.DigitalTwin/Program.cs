@@ -1,8 +1,10 @@
 // Comment out definitions if unwanted
-#define ENABLE_ONTOLOGY
+#define ENABLE_ONTOLOGY_MODEL
 
 using AasSecurity;
 using FSR.DigitalTwin.App.Interfaces.Services.Semantic;
+using FSR.DigitalTwin.Infra.Jena;
+using Microsoft.Extensions.Options;
 
 Console.WriteLine("AASX Server Core starting....");
 var host = CreateHostBuilder(args).Build();
@@ -10,14 +12,16 @@ var host = CreateHostBuilder(args).Build();
 AasxServer.Program.Main(args);
 SecurityHelper.SecurityInit();
 
-#if ENABLE_ONTOLOGY // Enable OWL ontology
-var serviceProvider = host.Services;
-var ontoModel = serviceProvider.GetService<IOntologyModelService>()
+#if ENABLE_ONTOLOGY_MODEL // Enable OWL ontology model
+var ontoModel = host.Services.GetService<IOntologyModelService>()
     ?? throw new NullReferenceException("should not happen");
-string sohoOntologyPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "../../modules/SOHO/core/soho_core.owl");
+var ontoOptions = host.Services.GetRequiredService<IOptions<JenaSemanticDataRepositoryOptions>>().Value;
 await ontoModel.DeleteOntologyModelAsync();
-if (File.Exists(sohoOntologyPath)) {
-    await ontoModel.LoadOntologyModelAsync(sohoOntologyPath, OntologyModelFileFormat.RDF_XML);
+foreach (string modelFile in ontoOptions.ModelFiles) {
+    string ontoModelPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), modelFile);
+    if (!File.Exists(ontoModelPath))
+        continue;
+    await ontoModel.LoadOntologyModelAsync(ontoModelPath, OntologyModelFileFormat.RDF_XML);
 }
 #endif
 
