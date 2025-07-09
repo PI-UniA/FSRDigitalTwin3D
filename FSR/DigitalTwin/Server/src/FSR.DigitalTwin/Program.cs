@@ -15,6 +15,7 @@ SecurityHelper.SecurityInit();
 #if ENABLE_ONTOLOGY_MODEL // Enable OWL ontology model
 var ontoModel = host.Services.GetService<IOntologyModelService>()
     ?? throw new NullReferenceException("should not happen");
+var tripleCount = ontoModel.Count;
 var ontoOptions = host.Services.GetRequiredService<IOptions<JenaSemanticDataRepositoryOptions>>().Value;
 await ontoModel.DeleteOntologyModelAsync();
 foreach (string modelFile in ontoOptions.ModelFiles) {
@@ -23,6 +24,7 @@ foreach (string modelFile in ontoOptions.ModelFiles) {
         continue;
     await ontoModel.LoadOntologyModelAsync(ontoModelPath, OntologyModelFileFormat.RDF_XML);
 }
+Console.WriteLine("Number of triples loaded in semantic database: " + tripleCount);
 #endif
 
 // Run file
