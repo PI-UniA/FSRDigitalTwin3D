@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Robot.Component {
 
-    public class UrdfRobotKinematic : DigitalTwinComponentBase
+    public class RobotKinematic : DigitalTwinComponentBase
     {
         [SerializeField] private List<UrdfJointSensor> _joints;
         [SerializeField] private RosSourceDestinationPublisherBase _rosSourceDestinationPublisher;
