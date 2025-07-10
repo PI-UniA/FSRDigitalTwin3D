@@ -6,7 +6,7 @@ using Unity.Robotics.ROSTCPConnector.ROSGeometry;
 using Unity.Robotics.UrdfImporter;
 using UnityEngine;
 
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor.Robot.UR5e {
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.ROS.Robot.UR5e {
 
     public class RosSourceDestinationPublisher : RosSourceDestinationPublisherBase
     {

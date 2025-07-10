@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using FSR.DigitalTwin.Client.Unity.Workspace.Digital.Core;
 using FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces;
-using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Component;
 using UniRx;
 using UnityEngine;
 
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor {
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual {
     public abstract class DigitalTwinActorBase : MonoBehaviour, IDigitalTwinEntity
     {
         [SerializeField] private string _id = "myactor";

@@ -1,4 +1,4 @@
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces.Actor.Tool {
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces.Robot {
 
     public interface IGripperTool {
 

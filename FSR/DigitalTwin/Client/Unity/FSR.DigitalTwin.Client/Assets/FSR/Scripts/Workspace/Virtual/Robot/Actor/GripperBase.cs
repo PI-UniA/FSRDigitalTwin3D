@@ -1,7 +1,7 @@
-using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces.Actor.Tool;
+using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces.Robot;
 using UnityEngine;
 
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor.Tool.EE {
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Robot.Actor {
 
     public class GripperBase : DigitalTwinActorBase, IGripperTool
     {

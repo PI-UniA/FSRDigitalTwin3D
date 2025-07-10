@@ -1,4 +1,4 @@
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Sensor.Robot.Urdf.Joints {
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Sensor.Urdf {
 
     public class UrdfRevoluteJointSensor : UrdfJointSensor {
 

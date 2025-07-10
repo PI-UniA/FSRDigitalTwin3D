@@ -1,9 +1,9 @@
 using System.Linq;
-using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces;
+using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces.Sensor;
 using UniRx;
 using UnityEngine;
 
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Sensor.Robot.Urdf {
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Sensor.Urdf {
 
     public abstract class UrdfJointSensor : MonoBehaviour, ISensorSource<float[]>
     {

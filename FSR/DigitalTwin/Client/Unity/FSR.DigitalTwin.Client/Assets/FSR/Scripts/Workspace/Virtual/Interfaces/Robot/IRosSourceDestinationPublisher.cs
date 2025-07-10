@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor.Robot     {
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces.Robot     {
 
     public interface IRosSourceDestinationPublisher {
 

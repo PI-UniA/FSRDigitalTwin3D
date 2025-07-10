@@ -2,11 +2,10 @@ using System;
 using System.Threading.Tasks;
 using FSR.DigitalTwin.Client.Unity.Workspace.Digital.Core;
 using FSR.DigitalTwin.Client.Unity.Workspace.Digital.Interfaces;
-using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor;
 using UniRx;
 using UnityEngine;
 
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Component {
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual {
 
     public abstract class DigitalTwinComponentBase : MonoBehaviour, IDigitalTwinEntityComponent
     {

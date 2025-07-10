@@ -1,14 +1,14 @@
 using System;
 using System.Collections;
 using System.Linq;
-using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor.Tool.EE;
+using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Robot.Actor;
 using RosMessageTypes.Geometry;
 using RosMessageTypes.Ur5eMoveit;
 using Unity.Robotics.ROSTCPConnector;
 using Unity.Robotics.ROSTCPConnector.ROSGeometry;
 using UnityEngine;
 
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor.Robot.UR5e {
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.ROS.Robot.UR5e {
 
     public class RosTrajectoryPlanner : MonoBehaviour
     {

@@ -1,6 +1,8 @@
 using UnityEngine;
 
-namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor.Robot {
+using FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces.Robot;
+
+namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.ROS.Robot {
 
     public abstract class RosSourceDestinationPublisherBase : MonoBehaviour, IRosSourceDestinationPublisher
     {
