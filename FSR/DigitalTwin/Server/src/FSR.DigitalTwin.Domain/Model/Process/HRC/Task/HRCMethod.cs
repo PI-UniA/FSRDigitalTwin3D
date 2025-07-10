@@ -3,7 +3,7 @@ using VDS.RDF.Ontology;
 namespace FSR.DigitalTwin.Domain.Model.Process.HRC.Task;
 
 public enum HRCMethodComplexTaskType {
-    NONE,
+    TASK,
     COLLECTION,
     CONJECTION,
     DISJUCTION
