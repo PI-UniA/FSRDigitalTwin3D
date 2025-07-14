@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45124727, g: 0.5009517, b: 0.5734845, a: 1}
+  m_IndirectSpecularColor: {r: 0.45124692, g: 0.5009513, b: 0.573484, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ad498610bad734980a18df59369cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/aas/assets/ur5e#FWKinematics
+  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots#SM_UR5e_FWKinematics
   _actor: {fileID: 5955250382980222833}
   _enableOperationModeOverride: 0
   _operationModeOverride: 0
@@ -2234,7 +2234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff5cf8f9c5cdbe49ac219d68234b25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/aas/assets/ur5e#UR5e
+  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots#AAS_UR5e
   _components:
   - {fileID: 579219119}
 --- !u!114 &5955250382980222834
