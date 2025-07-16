@@ -1,5 +1,4 @@
 using System.Text.Json;
-using Namotion.Reflection;
 using VDS.RDF;
 
 namespace FSR.DigitalTwin.App.Common.Utils.Semantic;

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces.Robot
@@ -18,8 +19,19 @@ namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Interfaces.Robot
         public void Plan();
         public bool ValidatePlan();
         public void RunPlan();
+        public void PlanAndRunIfValid();
         public bool Interrupt();
         public void ForceInterrupt();
+    }
+
+    public interface IRobotAsyncController : IRobotController
+    {
+        public Task PlanAsync();
+        public Task<bool> ValidatePlanAsync();
+        public Task RunPlanAsync();
+        public Task PlanAndRunIfValidAsync();
+        public Task<bool> InterruptAsync();
+        public Task ForceInterruptAsync();
     }
 
 }

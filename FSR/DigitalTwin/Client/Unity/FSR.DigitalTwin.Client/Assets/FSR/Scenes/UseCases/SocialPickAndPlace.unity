@@ -1165,23 +1165,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54657057}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &60059176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603320903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624c16583311c00458d44188eca7b85e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RosServiceName: ur5e_moveit
-  m_UR5e: {fileID: 1603320903}
-  m_Target: {fileID: 285295942}
-  m_TargetPlacement: {fileID: 1840283142}
-  m_gripper: {fileID: 156031520}
 --- !u!1 &62197227
 GameObject:
   m_ObjectHideFlags: 0
@@ -22208,6 +22191,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734504551}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1741056423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603320903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6c8f723e4eff0458e787277febaba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots#SM_UR5e_Controller
+  _actor: {fileID: 5955250382980222833}
+  _enableOperationModeOverride: 0
+  _operationModeOverride: 0
+  numRobotJoints: 6
+  jointAssignmentWait: 0.1
+  poseAssignmentWait: 0.5
+  rosServiceName: ur5e_moveit
+  linkNames:
+  - world/base_link/shoulder_link
+  - /upper_arm_link
+  - /forearm_link
+  - /wrist_1_link
+  - /wrist_2_link
+  - /wrist_3_link
+  robot: {fileID: 1603320903}
+  target: {fileID: 285295942}
+  targetPlacement: {fileID: 1840283142}
+  pickOrientation: {x: -1, y: 0, z: 0, w: -0.00000004371139}
+  pickPoseOffset: {x: 0, y: 0.2, z: 0}
+  gripper: {fileID: 156031520}
 --- !u!1 &1751417383
 GameObject:
   m_ObjectHideFlags: 0
@@ -27795,18 +27811,18 @@ PrefabInstance:
     - target: {fileID: 1494301493237945089, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 60059176}
+      objectReference: {fileID: 1741056423}
     - target: {fileID: 1494301493237945089, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1494301493237945089, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PublishJoints
+      value: PlanAndRunIfValid
       objectReference: {fileID: 0}
     - target: {fileID: 1494301493237945089, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Actor.Robot.UR5e.RosTrajectoryPlanner,
+      value: FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Robot.Component.Controller.RosMoveitController,
         Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1494301493237945089, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
@@ -28295,10 +28311,10 @@ PrefabInstance:
       addedObject: {fileID: 579219119}
     - targetCorrespondingSourceObject: {fileID: 472273861288168908, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 230070}
+      addedObject: {fileID: 1741056423}
     - targetCorrespondingSourceObject: {fileID: 472273861288168908, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 60059176}
+      addedObject: {fileID: 230070}
     - targetCorrespondingSourceObject: {fileID: 8272980315594807359, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5955250382980222834}

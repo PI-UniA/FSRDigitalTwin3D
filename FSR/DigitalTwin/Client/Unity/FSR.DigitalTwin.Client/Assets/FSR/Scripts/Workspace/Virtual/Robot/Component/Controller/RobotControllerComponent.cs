@@ -49,6 +49,7 @@ namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Robot.Component.Control
         }
 
         public abstract void Plan();
+        public abstract void PlanAndRunIfValid();
         public abstract void RunPlan();
         public abstract bool ValidatePlan();
     }

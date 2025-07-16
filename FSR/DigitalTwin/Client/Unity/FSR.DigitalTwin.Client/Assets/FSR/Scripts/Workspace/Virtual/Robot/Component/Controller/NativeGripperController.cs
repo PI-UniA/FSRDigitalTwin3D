@@ -32,6 +32,11 @@ namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Robot.Component.Control
             throw new System.NotImplementedException();
         }
 
+        public override void PlanAndRunIfValid()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public override void RunPlan()
         {
             throw new System.NotImplementedException();
