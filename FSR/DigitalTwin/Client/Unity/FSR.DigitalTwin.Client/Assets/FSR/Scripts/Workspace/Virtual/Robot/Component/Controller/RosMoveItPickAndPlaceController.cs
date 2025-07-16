@@ -12,7 +12,7 @@ namespace FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Robot.Component.Control
     /// <summary>
     /// A robot controller that uses the MoveIt service running in a ROS2 workspace for planning.
     /// </summary>
-    public class RosMoveitController : RobotControllerComponent
+    public class RosMoveitPickAndPlaceController : RobotControllerComponent
     {
 
         // MoveIt variables
