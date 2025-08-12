@@ -4,9 +4,9 @@ using FSR.DigitalTwin.App.Common.Utils.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Queries.Semantic;
 using FSR.DigitalTwin.Domain.Model.Process.HRC.Agent;
 using FSR.DigitalTwin.Domain.SharedKernel;
+using Namotion.Reflection;
 using VDS.RDF;
 using VDS.RDF.Ontology;
-using VDS.RDF.Query;
 
 namespace FSR.DigitalTwin.App.Queries.Semantic.Process.HRC;
 
@@ -48,21 +48,36 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
                 triples.Add(new Triple(robot, label, name));
             }
 
-            Graph graph = new();
-            OntologyGraph foo = new(new Uri("foo:bar"));
-            
-
             return triples;
         }
     }
 
     public Result<IEnumerable<Cobot>> Run()
     {
-        return null;
+        var response = SparqlServer.Query(this);
+        if (response.IsFailure)
+        {
+            return Result.Failure<IEnumerable<Cobot>>(response.Error);
+        }
+        OntologyGraph graph = new();
+        foreach (Triple triple in response.Value)
+        {
+            graph.Assert(triple);
+        }
+        var individuals = graph.Triples
+            .Select(t => t.Subject)
+            .Distinct()
+            .Select(x => new Individual(x, graph));
+        var names = individuals
+            .Select(x => x.GetResourceProperty(KnownPrefix.RDFS + "label"))
+            .First();
+        // var embodidments = individuals
+        //     .Select(x => x.GetResourceProperty(KnownPrefix.SOHO + "hasEmbodiment"));
+        return Result.Failure<IEnumerable<Cobot>>("Work in progress...");
     }
 
-    public async Task<Result<IEnumerable<Cobot>>> RunAsync(CancellationToken cancellationToken = default)
+    public Task<Result<IEnumerable<Cobot>>> RunAsync(CancellationToken cancellationToken = default)
     {
-        return null;
+        throw new NotImplementedException();
     }
 }
