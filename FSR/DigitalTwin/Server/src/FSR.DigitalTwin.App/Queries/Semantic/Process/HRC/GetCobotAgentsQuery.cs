@@ -4,7 +4,6 @@ using FSR.DigitalTwin.App.Common.Utils.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Queries.Semantic;
 using FSR.DigitalTwin.Domain.Model.Process.HRC.Agent;
 using FSR.DigitalTwin.Domain.SharedKernel;
-using Namotion.Reflection;
 using VDS.RDF;
 using VDS.RDF.Ontology;
 
@@ -14,20 +13,26 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
 {
     public string Query => KnownPrefix.GetSparql() +
         @"
-        SELECT ?robot ?name ?embodidment
+        SELECT DISTINCT ?robot ?name ?embodidment
         WHERE {
-            ?robot rdf:type soho:Human .
-            OPTIONAL { ?robot soho:hasEmbodiment ?embodidment . }
-            OPTIONAL { ?robot rdf:label ?name . } 
+            ?robot rdf:type soho:Cobot .
+            OPTIONAL { 
+                ?robot soho:hasEmbodiment ?embodidment . 
+                ?embodidment rdf:type soho:ProductionObject . 
+            }
+            OPTIONAL { ?robot rdfs:label ?name . }
         }
         ";
 
     public ISparqlResponseParser Parser => new ResponseParser();
-    public ISparqlServer SparqlServer { get; init; }
+    public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }
+    private readonly ISparqlServer? _sparqlServer;
 
-    public GetCobotAgentsQuery(ISparqlServer sparqlServer) {
-        SparqlServer = sparqlServer;
-    }
+    private static readonly INode _hasEmbodiement = new UriNode(new Uri(KnownPrefix.SOHO + "hasEmbodiment"));
+    private static readonly INode _label = new UriNode(new Uri(KnownPrefix.RDFS + "label"));
+    private static readonly INode _type = new UriNode(new Uri(KnownPrefix.RDF + "type"));
+    private static readonly INode _cobot = new UriNode(new Uri(KnownPrefix.SOHO + "Cobot"));
+    private static readonly INode _productionObject = new UriNode(new Uri(KnownPrefix.SOHO + "ProductionObject"));
 
     private class ResponseParser : ISparqlResponseParser
     {
@@ -42,10 +47,10 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
                 var robot = RdfNodeFactory.CreateFromJson(binding.GetProperty("robot"));
                 var name = RdfNodeFactory.CreateFromJson(binding.GetProperty("name"));
                 var embodiment = RdfNodeFactory.CreateFromJson(binding.GetProperty("embodiment"));
-                var hasEmbodiment = new UriNode(new Uri(KnownPrefix.SOHO + "hasEmbodiment"));
-                var label = new UriNode(new Uri(KnownPrefix.RDFS + "label"));
-                triples.Add(new Triple(robot, hasEmbodiment, embodiment));
-                triples.Add(new Triple(robot, label, name));
+                triples.Add(new Triple(robot, _hasEmbodiement, embodiment));
+                triples.Add(new Triple(robot, _label, name));
+                triples.Add(new Triple(robot, _type, _cobot));
+                triples.Add(new Triple(embodiment, _type, _productionObject));
             }
 
             return triples;
@@ -64,20 +69,53 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
         {
             graph.Assert(triple);
         }
-        var individuals = graph.Triples
-            .Select(t => t.Subject)
+
+        var cobots = graph.Triples
+            .Where(t => t.Predicate == _type && t.Object == _cobot)
             .Distinct()
-            .Select(x => new Individual(x, graph));
-        var names = individuals
-            .Select(x => x.GetResourceProperty(KnownPrefix.RDFS + "label"))
-            .First();
-        // var embodidments = individuals
-        //     .Select(x => x.GetResourceProperty(KnownPrefix.SOHO + "hasEmbodiment"));
-        return Result.Failure<IEnumerable<Cobot>>("Work in progress...");
+            .Select(x =>
+            {
+                var resource = new Individual(x.Subject, graph);
+                // var name = cobot.GetResourceProperty(KnownPrefix.RDFS + "label").First().ToSafeString();
+                var embodiments = graph.Triples
+                    .Where(t => t.Subject == x.Subject && t.Predicate == _hasEmbodiement)
+                    .Select(t => new Individual(t.Object, graph));
+                var cobot = new Cobot(resource) { Resource = resource };
+                cobot.Embodyments.AddRange(embodiments);
+                return cobot;
+            });
+
+        return Result.Success(cobots);
     }
 
-    public Task<Result<IEnumerable<Cobot>>> RunAsync(CancellationToken cancellationToken = default)
+    public async Task<Result<IEnumerable<Cobot>>> RunAsync(CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        var response = await SparqlServer.QueryAsync(this);
+        if (response.IsFailure)
+        {
+            return Result.Failure<IEnumerable<Cobot>>(response.Error);
+        }
+        OntologyGraph graph = new();
+        foreach (Triple triple in response.Value)
+        {
+            graph.Assert(triple);
+        }
+
+        var cobots = graph.Triples
+            .Where(t => t.Predicate == _type && t.Object == _cobot)
+            .Distinct()
+            .Select(x =>
+            {
+                var resource = new Individual(x.Subject, graph);
+                // var name = cobot.GetResourceProperty(KnownPrefix.RDFS + "label").First().ToSafeString();
+                var embodiments = graph.Triples
+                    .Where(t => t.Subject == x.Subject && t.Predicate == _hasEmbodiement)
+                    .Select(t => new Individual(t.Object, graph));
+                var cobot = new Cobot(resource) { Resource = resource };
+                cobot.Embodyments.AddRange(embodiments);
+                return cobot;
+            });
+
+        return Result.Success(cobots);
     }
 }

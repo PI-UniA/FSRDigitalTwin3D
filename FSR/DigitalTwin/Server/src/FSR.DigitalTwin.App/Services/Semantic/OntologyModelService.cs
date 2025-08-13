@@ -1,7 +1,10 @@
 using FSR.DigitalTwin.App.Common.Semantic;
+using FSR.DigitalTwin.App.Interfaces.Queries.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Services.Semantic;
 using FSR.DigitalTwin.App.Queries.Semantic.Base;
+using FSR.DigitalTwin.Domain.SharedKernel;
 using Microsoft.Extensions.Logging;
+using VDS.RDF.Query;
 
 namespace FSR.DigitalTwin.App.Services.Semantic;
 
@@ -11,7 +14,8 @@ public class OntologyModelService : IOntologyModelService
     private readonly ISparqlServer _sparqlServer;
     private readonly ILogger<OntologyModelService> _logger;
 
-    public OntologyModelService(ITripletServer tripletServer, ISparqlServer sparqlServer, ILogger<OntologyModelService> logger) {
+    public OntologyModelService(ITripletServer tripletServer, ISparqlServer sparqlServer, ILogger<OntologyModelService> logger)
+    {
         _tripletServer = tripletServer ?? throw new ArgumentNullException(nameof(tripletServer));
         _sparqlServer = sparqlServer ?? throw new ArgumentNullException(nameof(sparqlServer));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -40,14 +44,14 @@ public class OntologyModelService : IOntologyModelService
     public bool IsEmpty()
     {
         GetTripleCountQuery tripleCountQuery = new(_sparqlServer);
-        var tripleCountQueryResponse = tripleCountQuery.Run(); 
+        var tripleCountQueryResponse = tripleCountQuery.Run();
         return tripleCountQueryResponse.IsFailure || tripleCountQueryResponse.Value == 0;
     }
 
     public async Task<bool> IsEmptyAsync(CancellationToken cancellationToken = default)
     {
         GetTripleCountQuery tripleCountQuery = new(_sparqlServer);
-        var tripleCountQueryResponse = await tripleCountQuery.RunAsync(cancellationToken); 
+        var tripleCountQueryResponse = await tripleCountQuery.RunAsync(cancellationToken);
         return tripleCountQueryResponse.IsFailure || tripleCountQueryResponse.Value == 0;
     }
 
@@ -64,9 +68,21 @@ public class OntologyModelService : IOntologyModelService
     }
 
     private static string GetFormatString(OntologyModelFileFormat format) => format switch
-        {
-            OntologyModelFileFormat.DEFAULT or OntologyModelFileFormat.TURTLE => "text/turtle",
-            OntologyModelFileFormat.RDF_XML => "application/rdf+xml",
-            _ => GetFormatString(OntologyModelFileFormat.TURTLE)
-        };
+    {
+        OntologyModelFileFormat.DEFAULT or OntologyModelFileFormat.TURTLE => "text/turtle",
+        OntologyModelFileFormat.RDF_XML => "application/rdf+xml",
+        _ => GetFormatString(OntologyModelFileFormat.TURTLE)
+    };
+
+    public async Task<Result<ResultT>> RunSparqlQueryAsync<QueryT, ResultT>(CancellationToken cancellationToken = default) where QueryT : ISparqlQuery<ResultT>, new()
+    {
+        ISparqlQuery<ResultT> query = new QueryT() { SparqlServer = _sparqlServer };
+        return await query.RunAsync(cancellationToken);
+    }
+    public Result<ResultT> RunSparqlQuery<QueryT, ResultT>() where QueryT : ISparqlQuery<ResultT>, new()
+    {
+        ISparqlQuery<ResultT> query = new QueryT() { SparqlServer = _sparqlServer };
+        return query.Run();
+    }
+    
 }
