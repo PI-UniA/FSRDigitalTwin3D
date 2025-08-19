@@ -22,7 +22,7 @@ public static class KnownPrefix
             SO, EX, RDF, RDFS, DUL, SSN, SOHO, SOBOTS
         ];
         string[] ns = [
-            "so", "rdf", "rdfs", "DUL", "ssn", "soho", "sobots"
+            "so", "ex", "rdf", "rdfs", "DUL", "ssn", "soho", "sobots"
         ];
         for (int i = 0; i < prefixes.Length; i++)
         {

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Text.Json;
 using FSR.DigitalTwin.App.Common.Semantic;
 using FSR.DigitalTwin.App.Common.Utils.Semantic;
@@ -13,12 +14,12 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
 {
     public string Query => KnownPrefix.GetSparql() +
         @"
-        SELECT DISTINCT ?robot ?name ?embodidment
+        SELECT DISTINCT ?robot ?name ?embodiment
         WHERE {
             ?robot rdf:type soho:Cobot .
             OPTIONAL { 
-                ?robot soho:hasEmbodiment ?embodidment . 
-                ?embodidment rdf:type soho:ProductionObject . 
+                ?robot soho:hasEmbodiment ?embodiment . 
+                ?embodiment rdf:type soho:ProductionObject . 
             }
             OPTIONAL { ?robot rdfs:label ?name . }
         }
@@ -28,11 +29,11 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
     public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }
     private readonly ISparqlServer? _sparqlServer;
 
-    private static readonly INode _hasEmbodiement = new UriNode(new Uri(KnownPrefix.SOHO + "hasEmbodiment"));
-    private static readonly INode _label = new UriNode(new Uri(KnownPrefix.RDFS + "label"));
-    private static readonly INode _type = new UriNode(new Uri(KnownPrefix.RDF + "type"));
-    private static readonly INode _cobot = new UriNode(new Uri(KnownPrefix.SOHO + "Cobot"));
-    private static readonly INode _productionObject = new UriNode(new Uri(KnownPrefix.SOHO + "ProductionObject"));
+    private static readonly BaseNode _hasEmbodiement = new UriNode(new Uri(KnownPrefix.SOHO + "hasEmbodiment"));
+    private static readonly BaseNode _label = new UriNode(new Uri(KnownPrefix.RDFS + "label"));
+    private static readonly BaseNode _type = new UriNode(new Uri(KnownPrefix.RDF + "type"));
+    private static readonly BaseNode _cobot = new UriNode(new Uri(KnownPrefix.SOHO + "Cobot"));
+    private static readonly BaseNode _productionObject = new UriNode(new Uri(KnownPrefix.SOHO + "ProductionObject"));
 
     private class ResponseParser : ISparqlResponseParser
     {
@@ -44,15 +45,22 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
             var triples = new List<Triple>();
             foreach (var binding in bindings.EnumerateArray())
             {
-                var robot = RdfNodeFactory.CreateFromJson(binding.GetProperty("robot"));
-                var name = RdfNodeFactory.CreateFromJson(binding.GetProperty("name"));
-                var embodiment = RdfNodeFactory.CreateFromJson(binding.GetProperty("embodiment"));
-                triples.Add(new Triple(robot, _hasEmbodiement, embodiment));
-                triples.Add(new Triple(robot, _label, name));
+                if (!binding.TryGetProperty("robot", out JsonElement robot_))
+                    continue;
+                var robot = RdfNodeFactory.CreateFromJson(robot_);
                 triples.Add(new Triple(robot, _type, _cobot));
-                triples.Add(new Triple(embodiment, _type, _productionObject));
+                if (binding.TryGetProperty("name", out JsonElement name_))
+                {
+                    var name = RdfNodeFactory.CreateFromJson(name_);
+                    triples.Add(new Triple(robot, _label, name));
+                }
+                if (binding.TryGetProperty("embodiment", out JsonElement embodiment_))
+                {
+                    var embodiment = RdfNodeFactory.CreateFromJson(embodiment_);
+                    triples.Add(new Triple(robot, _type, _cobot));
+                    triples.Add(new Triple(embodiment, _type, _productionObject));
+                }
             }
-
             return triples;
         }
     }
@@ -71,14 +79,13 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
         }
 
         var cobots = graph.Triples
-            .Where(t => t.Predicate == _type && t.Object == _cobot)
+            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _cobot)
             .Distinct()
             .Select(x =>
             {
                 var resource = new Individual(x.Subject, graph);
-                // var name = cobot.GetResourceProperty(KnownPrefix.RDFS + "label").First().ToSafeString();
                 var embodiments = graph.Triples
-                    .Where(t => t.Subject == x.Subject && t.Predicate == _hasEmbodiement)
+                    .Where(t => t.Subject == x.Subject && t.Predicate as BaseNode == _hasEmbodiement)
                     .Select(t => new Individual(t.Object, graph));
                 var cobot = new Cobot(resource) { Resource = resource };
                 cobot.Embodyments.AddRange(embodiments);
@@ -102,14 +109,13 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
         }
 
         var cobots = graph.Triples
-            .Where(t => t.Predicate == _type && t.Object == _cobot)
+            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _cobot)
             .Distinct()
             .Select(x =>
             {
                 var resource = new Individual(x.Subject, graph);
-                // var name = cobot.GetResourceProperty(KnownPrefix.RDFS + "label").First().ToSafeString();
                 var embodiments = graph.Triples
-                    .Where(t => t.Subject == x.Subject && t.Predicate == _hasEmbodiement)
+                    .Where(t => t.Subject == x.Subject && t.Predicate as BaseNode == _hasEmbodiement)
                     .Select(t => new Individual(t.Object, graph));
                 var cobot = new Cobot(resource) { Resource = resource };
                 cobot.Embodyments.AddRange(embodiments);

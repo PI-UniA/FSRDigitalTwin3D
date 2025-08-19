@@ -28,6 +28,13 @@ foreach (string modelFile in ontoOptions.ModelFiles)
     await ontoModel.LoadOntologyModelAsync(ontoModelPath, OntologyModelFileFormat.RDF_XML);
 }
 var cobots = await ontoModel.RunSparqlQueryAsync<GetCobotAgentsQuery, IEnumerable<Cobot>>();
+if (cobots.IsSuccess)
+{
+    foreach (Cobot cobot in cobots.Value)
+    {
+        Console.WriteLine("Got Cobot: " + cobot.Resource);
+    }
+}
 Console.WriteLine("Number of triples loaded in semantic database: " + tripleCount);
 #endif
 
