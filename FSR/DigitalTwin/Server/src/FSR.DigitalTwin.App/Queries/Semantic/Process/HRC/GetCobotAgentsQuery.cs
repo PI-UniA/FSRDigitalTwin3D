@@ -85,7 +85,7 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
             {
                 var resource = new Individual(x.Subject, graph);
                 var embodiments = graph.Triples
-                    .Where(t => t.Subject == x.Subject && t.Predicate as BaseNode == _hasEmbodiement)
+                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
                     .Select(t => new Individual(t.Object, graph));
                 var cobot = new Cobot(resource) { Resource = resource };
                 cobot.Embodyments.AddRange(embodiments);
@@ -115,7 +115,7 @@ public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
             {
                 var resource = new Individual(x.Subject, graph);
                 var embodiments = graph.Triples
-                    .Where(t => t.Subject == x.Subject && t.Predicate as BaseNode == _hasEmbodiement)
+                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
                     .Select(t => new Individual(t.Object, graph));
                 var cobot = new Cobot(resource) { Resource = resource };
                 cobot.Embodyments.AddRange(embodiments);
