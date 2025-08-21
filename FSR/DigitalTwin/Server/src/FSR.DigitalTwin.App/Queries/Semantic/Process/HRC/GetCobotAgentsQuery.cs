@@ -13,17 +13,17 @@ namespace FSR.DigitalTwin.App.Queries.Semantic.Process.HRC;
 public class GetCobotAgentsQuery : ISparqlQuery<IEnumerable<Cobot>>
 {
     public string Query => KnownPrefix.GetSparql() +
-        @"
-        SELECT DISTINCT ?robot ?name ?embodiment
-        WHERE {
-            ?robot rdf:type soho:Cobot .
-            OPTIONAL { 
-                ?robot soho:hasEmbodiment ?embodiment . 
-                ?embodiment rdf:type soho:ProductionObject . 
-            }
-            OPTIONAL { ?robot rdfs:label ?name . }
-        }
-        ";
+@"
+SELECT DISTINCT ?robot ?name ?embodiment
+WHERE {
+    ?robot rdf:type soho:Cobot .
+    OPTIONAL { 
+        ?robot soho:hasEmbodiment ?embodiment . 
+        ?embodiment rdf:type soho:ProductionObject . 
+    }
+    OPTIONAL { ?robot rdfs:label ?name . }
+}
+";
 
     public ISparqlResponseParser Parser => new ResponseParser();
     public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }

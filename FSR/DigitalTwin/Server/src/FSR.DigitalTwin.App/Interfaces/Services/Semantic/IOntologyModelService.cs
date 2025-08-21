@@ -1,3 +1,4 @@
+using FSR.DigitalTwin.App.Common.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Queries.Semantic;
 using FSR.DigitalTwin.Domain.SharedKernel;
 
@@ -18,8 +19,8 @@ public interface IOntologyModelService
     Task<bool> LoadOntologyModelAsync(string ontoFile, OntologyModelFileFormat ontoFormat = OntologyModelFileFormat.DEFAULT, CancellationToken cancellationToken = default);
     Task<bool> DeleteOntologyModelAsync(CancellationToken cancellationToken = default);
 
-    Task<Result<ResultT>> RunSparqlQueryAsync<QueryT, ResultT>(CancellationToken cancellationToken = default) where QueryT : ISparqlQuery<ResultT>, new();
-    Result<ResultT> RunSparqlQuery<QueryT, ResultT>() where QueryT : ISparqlQuery<ResultT>, new();
+    Result<T> RunSparqlQuery<T>(Func<ISparqlServer, ISparqlQuery<T>> queryFactory);
+    Task<Result<T>> RunSparqlQueryAsync<T>(Func<ISparqlServer, ISparqlQuery<T>> queryFactory, CancellationToken cancellationToken = default);
 }
 
 public enum OntologyModelFileFormat {

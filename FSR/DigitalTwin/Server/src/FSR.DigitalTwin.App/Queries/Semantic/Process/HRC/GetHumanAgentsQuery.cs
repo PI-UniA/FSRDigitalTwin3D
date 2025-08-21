@@ -12,27 +12,27 @@ namespace FSR.DigitalTwin.App.Queries.Semantic.Process.HRC;
 public class GetHumanAgentsQuery : ISparqlQuery<IEnumerable<Human>>
 {
     public string Query => KnownPrefix.GetSparql() +
-        @"
-        SELECT DISTINCT ?human ?name ?embodidment
-        WHERE {
-            ?human rdf:type soho:Human .
-            OPTIONAL { 
-                ?human soho:hasEmbodiment ?embodidment . 
-                ?embodidment rdf:type soho:ProductionObject . 
-            }
-            OPTIONAL { ?human rdfs:label ?name . }
-        }
-        ";
+@"
+SELECT DISTINCT ?human ?name ?embodidment
+WHERE {
+    ?human rdf:type soho:Human .
+    OPTIONAL { 
+        ?human soho:hasEmbodiment ?embodidment . 
+        ?embodidment rdf:type soho:ProductionObject . 
+    }
+    OPTIONAL { ?human rdfs:label ?name . }
+}
+";
 
     public ISparqlResponseParser Parser => new ResponseParser();
     public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }
     private readonly ISparqlServer? _sparqlServer;
 
-    private static readonly INode _hasEmbodiement = new UriNode(new Uri(KnownPrefix.SOHO + "hasEmbodiment"));
-    private static readonly INode _label = new UriNode(new Uri(KnownPrefix.RDFS + "label"));
-    private static readonly INode _type = new UriNode(new Uri(KnownPrefix.RDF + "type"));
-    private static readonly INode _human = new UriNode(new Uri(KnownPrefix.SOHO + "Human"));
-    private static readonly INode _productionObject = new UriNode(new Uri(KnownPrefix.SOHO + "ProductionObject"));
+    private static readonly BaseNode _hasEmbodiement = new UriNode(new Uri(KnownPrefix.SOHO + "hasEmbodiment"));
+    private static readonly BaseNode _label = new UriNode(new Uri(KnownPrefix.RDFS + "label"));
+    private static readonly BaseNode _type = new UriNode(new Uri(KnownPrefix.RDF + "type"));
+    private static readonly BaseNode _human = new UriNode(new Uri(KnownPrefix.SOHO + "Human"));
+    private static readonly BaseNode _productionObject = new UriNode(new Uri(KnownPrefix.SOHO + "ProductionObject"));
 
     private class ResponseParser : ISparqlResponseParser
     {
@@ -44,13 +44,21 @@ public class GetHumanAgentsQuery : ISparqlQuery<IEnumerable<Human>>
             var triples = new List<Triple>();
             foreach (var binding in bindings.EnumerateArray())
             {
-                var human = RdfNodeFactory.CreateFromJson(binding.GetProperty("human"));
-                var name = RdfNodeFactory.CreateFromJson(binding.GetProperty("name"));
-                var embodiment = RdfNodeFactory.CreateFromJson(binding.GetProperty("embodiment"));
-                triples.Add(new Triple(human, _hasEmbodiement, embodiment));
-                triples.Add(new Triple(human, _label, name));
+                if (!binding.TryGetProperty("human", out JsonElement human_))
+                    continue;
+                var human = RdfNodeFactory.CreateFromJson(human_);
                 triples.Add(new Triple(human, _type, _human));
-                triples.Add(new Triple(embodiment, _type, _productionObject));
+                if (binding.TryGetProperty("name", out JsonElement name_))
+                {
+                    var name = RdfNodeFactory.CreateFromJson(name_);
+                    triples.Add(new Triple(human, _label, name));
+                }
+                if (binding.TryGetProperty("embodiment", out JsonElement embodiment_))
+                {
+                    var embodiment = RdfNodeFactory.CreateFromJson(embodiment_);
+                    triples.Add(new Triple(human, _type, _human));
+                    triples.Add(new Triple(embodiment, _type, _productionObject));
+                }
             }
 
             return triples;
@@ -71,14 +79,14 @@ public class GetHumanAgentsQuery : ISparqlQuery<IEnumerable<Human>>
         }
 
         var humans = graph.Triples
-            .Where(t => t.Predicate == _type && t.Object == _human)
+            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _human)
             .Distinct()
             .Select(x =>
             {
                 var resource = new Individual(x.Subject, graph);
                 // var name = human.GetResourceProperty(KnownPrefix.RDFS + "label").First().ToSafeString();
                 var embodiments = graph.Triples
-                    .Where(t => t.Subject == x.Subject && t.Predicate == _hasEmbodiement)
+                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
                     .Select(t => new Individual(t.Object, graph));
                 var human = new Human(resource) { Resource = resource };
                 human.Embodyments.AddRange(embodiments);
@@ -102,14 +110,14 @@ public class GetHumanAgentsQuery : ISparqlQuery<IEnumerable<Human>>
         }
 
         var humans = graph.Triples
-            .Where(t => t.Predicate == _type && t.Object == _human)
+            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _human)
             .Distinct()
             .Select(x =>
             {
                 var resource = new Individual(x.Subject, graph);
                 // var name = human.GetResourceProperty(KnownPrefix.RDFS + "label").First().ToSafeString();
                 var embodiments = graph.Triples
-                    .Where(t => t.Subject == x.Subject && t.Predicate == _hasEmbodiement)
+                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
                     .Select(t => new Individual(t.Object, graph));
                 var human = new Human(resource) { Resource = resource };
                 human.Embodyments.AddRange(embodiments);

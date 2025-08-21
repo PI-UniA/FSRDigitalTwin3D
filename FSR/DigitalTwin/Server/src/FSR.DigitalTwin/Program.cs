@@ -27,7 +27,7 @@ foreach (string modelFile in ontoOptions.ModelFiles)
         continue;
     await ontoModel.LoadOntologyModelAsync(ontoModelPath, OntologyModelFileFormat.RDF_XML);
 }
-var cobots = await ontoModel.RunSparqlQueryAsync<GetCobotAgentsQuery, IEnumerable<Cobot>>();
+var cobots = await ontoModel.RunSparqlQueryAsync((server) => new GetCobotAgentsQuery() { SparqlServer = server });
 if (cobots.IsSuccess)
 {
     foreach (Cobot cobot in cobots.Value)

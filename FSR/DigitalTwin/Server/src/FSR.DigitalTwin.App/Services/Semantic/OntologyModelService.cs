@@ -4,7 +4,6 @@ using FSR.DigitalTwin.App.Interfaces.Services.Semantic;
 using FSR.DigitalTwin.App.Queries.Semantic.Base;
 using FSR.DigitalTwin.Domain.SharedKernel;
 using Microsoft.Extensions.Logging;
-using VDS.RDF.Query;
 
 namespace FSR.DigitalTwin.App.Services.Semantic;
 
@@ -73,16 +72,17 @@ public class OntologyModelService : IOntologyModelService
         OntologyModelFileFormat.RDF_XML => "application/rdf+xml",
         _ => GetFormatString(OntologyModelFileFormat.TURTLE)
     };
-
-    public async Task<Result<ResultT>> RunSparqlQueryAsync<QueryT, ResultT>(CancellationToken cancellationToken = default) where QueryT : ISparqlQuery<ResultT>, new()
+    
+    public Result<T> RunSparqlQuery<T>(Func<ISparqlServer, ISparqlQuery<T>> queryFactory)
     {
-        ISparqlQuery<ResultT> query = new QueryT() { SparqlServer = _sparqlServer };
-        return await query.RunAsync(cancellationToken);
-    }
-    public Result<ResultT> RunSparqlQuery<QueryT, ResultT>() where QueryT : ISparqlQuery<ResultT>, new()
-    {
-        ISparqlQuery<ResultT> query = new QueryT() { SparqlServer = _sparqlServer };
+        ISparqlQuery<T> query = queryFactory(_sparqlServer);
         return query.Run();
+    }
+
+    public Task<Result<T>> RunSparqlQueryAsync<T>(Func<ISparqlServer, ISparqlQuery<T>> queryFactory, CancellationToken cancellationToken = default)
+    {
+        ISparqlQuery<T> query = queryFactory(_sparqlServer);
+        return query.RunAsync(cancellationToken);
     }
     
 }
