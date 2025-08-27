@@ -1,5 +1,4 @@
 using FSR.DigitalTwin.Domain.Model.Process.HRC.Task;
-using VDS.RDF;
 using VDS.RDF.Ontology;
 
 namespace FSR.DigitalTwin.Domain.Model.Process.HRC;
@@ -14,7 +13,8 @@ public class HRCModel {
     public IList<HRCTask> RobotTasks => [.. _robotTasks.Values];
     public IList<HRCTask> HumanTasks => [.. _humanTasks.Values];
 
-    public HRCModel(long horizon) {
+    public HRCModel(long horizon)
+    {
         _horizon = horizon;
     }
 

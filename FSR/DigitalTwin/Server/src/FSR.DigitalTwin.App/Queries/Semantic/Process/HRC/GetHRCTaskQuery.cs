@@ -126,7 +126,7 @@ WHERE {{
             .Select(p => graph.CreateIndividual(p));
         var hasCobot = performedBy.Where(p => p.Types.Contains(_cobot)).Any();
         var hasHuman = performedBy.Where(p => p.Types.Contains(_human)).Any();
-        string agent = hasCobot && hasHuman ? "any" : hasCobot ? "cobot" : "human";
+        string agent = hasCobot && hasHuman ? "any" : hasCobot ? "robot" : "human";
         return new HRCTask(function) { Type = type, Target = target, Goal = goal, Agent = agent,
             AverageDuration = duration, DurationUncertainty = durationUncertainty };
     }

@@ -1,5 +1,4 @@
 using VDS.RDF;
-using VDS.RDF.Nodes;
 using VDS.RDF.Ontology;
 
 namespace FSR.DigitalTwin.Domain.Model.Process.HRC.Task;

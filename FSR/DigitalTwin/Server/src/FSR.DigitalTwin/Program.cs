@@ -39,6 +39,10 @@ var hrcTask = await ontoModel.RunSparqlQueryAsync((server) => new GetHRCTaskQuer
 if (hrcTask.IsSuccess)
 {
     Console.WriteLine("Got Task: " + hrcTask.Value.Name);
+    foreach (var t in hrcTask.Value.Resource.Triples)
+    {
+        Console.WriteLine(">> " + t);
+    }
 }
 Console.WriteLine("Number of triples loaded in semantic database: " + tripleCount);
 #endif
