@@ -65,6 +65,23 @@ WHERE {
         }
     }
 
+    private static IEnumerable<Human> GetHumans(OntologyGraph graph)
+    {
+        return graph.Triples
+            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _human)
+            .Distinct()
+            .Select(x =>
+            {
+                var resource = graph.CreateIndividual(x.Subject);
+                var embodiments = graph.Triples
+                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
+                    .Select(t => graph.CreateIndividual(t.Object));
+                var human = new Human(resource) { Resource = resource };
+                human.Embodyments.AddRange(embodiments);
+                return human;
+            });
+    }
+
     public Result<IEnumerable<Human>> Run()
     {
         var response = SparqlServer.Query(this);
@@ -77,23 +94,7 @@ WHERE {
         {
             graph.Assert(triple);
         }
-
-        var humans = graph.Triples
-            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _human)
-            .Distinct()
-            .Select(x =>
-            {
-                var resource = new Individual(x.Subject, graph);
-                // var name = human.GetResourceProperty(KnownPrefix.RDFS + "label").First().ToSafeString();
-                var embodiments = graph.Triples
-                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
-                    .Select(t => new Individual(t.Object, graph));
-                var human = new Human(resource) { Resource = resource };
-                human.Embodyments.AddRange(embodiments);
-                return human;
-            });
-
-        return Result.Success(humans);
+        return Result.Success(GetHumans(graph));
     }
 
     public async Task<Result<IEnumerable<Human>>> RunAsync(CancellationToken cancellationToken = default)
@@ -108,22 +109,6 @@ WHERE {
         {
             graph.Assert(triple);
         }
-
-        var humans = graph.Triples
-            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _human)
-            .Distinct()
-            .Select(x =>
-            {
-                var resource = new Individual(x.Subject, graph);
-                // var name = human.GetResourceProperty(KnownPrefix.RDFS + "label").First().ToSafeString();
-                var embodiments = graph.Triples
-                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
-                    .Select(t => new Individual(t.Object, graph));
-                var human = new Human(resource) { Resource = resource };
-                human.Embodyments.AddRange(embodiments);
-                return human;
-            });
-
-        return Result.Success(humans);
+        return Result.Success(GetHumans(graph));
     }
 }

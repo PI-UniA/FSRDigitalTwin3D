@@ -65,6 +65,23 @@ WHERE {
         }
     }
 
+    private static IEnumerable<Cobot> CreateCobots(OntologyGraph graph)
+    {
+        return graph.Triples
+            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _cobot)
+            .Distinct()
+            .Select(x =>
+            {
+                var resource = graph.CreateIndividual(x.Subject);
+                var embodiments = graph.Triples
+                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
+                    .Select(t => graph.CreateIndividual(t.Object));
+                var cobot = new Cobot(resource) { Resource = resource };
+                cobot.Embodyments.AddRange(embodiments);
+                return cobot;
+            });
+    }
+
     public Result<IEnumerable<Cobot>> Run()
     {
         var response = SparqlServer.Query(this);
@@ -77,22 +94,7 @@ WHERE {
         {
             graph.Assert(triple);
         }
-
-        var cobots = graph.Triples
-            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _cobot)
-            .Distinct()
-            .Select(x =>
-            {
-                var resource = new Individual(x.Subject, graph);
-                var embodiments = graph.Triples
-                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
-                    .Select(t => new Individual(t.Object, graph));
-                var cobot = new Cobot(resource) { Resource = resource };
-                cobot.Embodyments.AddRange(embodiments);
-                return cobot;
-            });
-
-        return Result.Success(cobots);
+        return Result.Success(CreateCobots(graph));
     }
 
     public async Task<Result<IEnumerable<Cobot>>> RunAsync(CancellationToken cancellationToken = default)
@@ -107,21 +109,6 @@ WHERE {
         {
             graph.Assert(triple);
         }
-
-        var cobots = graph.Triples
-            .Where(t => t.Predicate as BaseNode == _type && t.Object as BaseNode == _cobot)
-            .Distinct()
-            .Select(x =>
-            {
-                var resource = new Individual(x.Subject, graph);
-                var embodiments = graph.Triples
-                    .Where(t => t.Subject as BaseNode == x.Subject as BaseNode && t.Predicate as BaseNode == _hasEmbodiement)
-                    .Select(t => new Individual(t.Object, graph));
-                var cobot = new Cobot(resource) { Resource = resource };
-                cobot.Embodyments.AddRange(embodiments);
-                return cobot;
-            });
-
-        return Result.Success(cobots);
+        return Result.Success(CreateCobots(graph));
     }
 }

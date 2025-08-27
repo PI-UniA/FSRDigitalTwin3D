@@ -1,4 +1,5 @@
 using VDS.RDF;
+using VDS.RDF.Nodes;
 using VDS.RDF.Ontology;
 
 namespace FSR.DigitalTwin.Domain.Model.Process.HRC.Task;
@@ -16,20 +17,20 @@ public class HRCTask
     public string? Start { set; get; }
     public string Agent { set; get; } = "any";
     public Tuple<long, long> Duration => new(
-        Math.Max(1, AverageDuration - Uncertainty),
-        Math.Min(AverageDuration + Uncertainty, _horizon)
+        Math.Max(1, AverageDuration - DurationUncertainty),
+        Math.Min(AverageDuration + DurationUncertainty, _horizon)
     );
     public long AverageDuration { set; get; } = 1;
-    public long Uncertainty { set; get; }
+    public long DurationUncertainty { set; get; }
     public double SuccessRate { set; get; } = 0.99;
 
-    public HRCTask(OntologyResource function, long horizon)
+    public HRCTask(OntologyResource function, long horizon = long.MaxValue)
     {
         Name = function.Resource.NodeType == NodeType.Blank ? ((IBlankNode)function.Resource).InternalID
-            : function.Label.Where(x => x.Language == "").First().Value;
+            : function.Label.Where(x => x.Language == "").First().ToString().Split("^^").First();
         Description = Name;
         Resource = function;
-        Uncertainty = horizon;
+        DurationUncertainty = horizon;
         _horizon = horizon;
     }
 

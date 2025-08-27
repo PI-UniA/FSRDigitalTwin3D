@@ -14,15 +14,16 @@ public static class KnownPrefix
     public const string SSN = "http://purl.oclc.org/NET/ssnx/ssn#";
     public const string SOHO = "http://pst.istc.cnr.it/ontologies/2019/01/soho#";
     public const string SOBOTS = "https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots#";
+    public const string XSD = "http://www.w3.org/2001/XMLSchema";
 
     public static string GetSparql()
     {
         StringBuilder sb = new();
         string[] prefixes = [
-            SO, EX, RDF, RDFS, DUL, SSN, SOHO, SOBOTS
+            SO, EX, RDF, RDFS, DUL, SSN, SOHO, SOBOTS, XSD
         ];
         string[] ns = [
-            "so", "ex", "rdf", "rdfs", "DUL", "ssn", "soho", "sobots"
+            "so", "ex", "rdf", "rdfs", "DUL", "ssn", "soho", "sobots", "xds"
         ];
         for (int i = 0; i < prefixes.Length; i++)
         {

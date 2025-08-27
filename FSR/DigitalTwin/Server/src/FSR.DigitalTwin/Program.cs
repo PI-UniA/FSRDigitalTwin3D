@@ -35,6 +35,11 @@ if (cobots.IsSuccess)
         Console.WriteLine("Got Cobot: " + cobot.Resource);
     }
 }
+var hrcTask = await ontoModel.RunSparqlQueryAsync((server) => new GetHRCTaskQuery("http://pst.istc.cnr.it/ontologies/2019/01/soho#screw-hole1") { SparqlServer = server });
+if (hrcTask.IsSuccess)
+{
+    Console.WriteLine("Got Task: " + hrcTask.Value.Name);
+}
 Console.WriteLine("Number of triples loaded in semantic database: " + tripleCount);
 #endif
 

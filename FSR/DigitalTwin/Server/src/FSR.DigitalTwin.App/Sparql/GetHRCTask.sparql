@@ -13,7 +13,12 @@ WHERE {
 	?task a ?taskType .
   	?taskType rdfs:subClassOf+ soho:ProductionTask .
     NOT EXISTS { ?task a ?otherType . ?otherType rdfs:subClassOf ?taskType . }
-  	OPTIONAL { ?task soho:hasTarget ?target . }
+  	OPTIONAL { 
+  		?task soho:hasTarget ?target .
+  		?target a ?targetType .
+  		?targetType rdfs:subClassOf+ soho:ProductionObject .
+  		NOT EXISTS { ?target a ?otherType . ?otherType rdfs:subClassOf ?targetType . }
+	}
     OPTIONAL { ?task soho:hasProcedureName ?name . }
   	OPTIONAL { ?task soho:hasGoal ?goal . }
     OPTIONAL { ?task soho:canBePerformedBy ?human . ?human rdf:type soho:Human . }
