@@ -1,3 +1,5 @@
+using VDS.RDF;
+
 namespace FSR.DigitalTwin.App.Common.Utils.Semantic;
 
 public class UriPrefix
@@ -10,7 +12,7 @@ public class UriPrefix
     public static readonly UriPrefix SSN = new("http://purl.oclc.org/NET/ssnx/ssn#");
     public static readonly UriPrefix SOHO = new("http://pst.istc.cnr.it/ontologies/2019/01/soho#");
     public static readonly UriPrefix SOBOTS = new("https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots#");
-    public static readonly UriPrefix XSD = new("http://www.w3.org/2001/XMLSchema");
+    public static readonly UriPrefix XSD = new("http://www.w3.org/2001/XMLSchema#");
     public static readonly UriPrefix PI = new("https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#");
 
     private readonly Uri _prefix;
@@ -27,4 +29,7 @@ public class UriPrefix
     }
 
     public static Uri operator +(UriPrefix prefix, Uri postfix) => new("" + prefix.Prefix + postfix);
+    public static Uri operator +(UriPrefix prefix, string postfix) => new(prefix.Prefix + postfix);
+    public static UriNode operator |(UriPrefix prefix, Uri postfix) => new(prefix + postfix);
+    public static UriNode operator |(UriPrefix prefix, string postfix) => new(prefix + postfix);
 }

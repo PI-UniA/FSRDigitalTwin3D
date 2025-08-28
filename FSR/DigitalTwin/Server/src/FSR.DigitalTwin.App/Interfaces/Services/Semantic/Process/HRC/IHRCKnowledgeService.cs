@@ -5,12 +5,12 @@ namespace FSR.DigitalTwin.App.Interfaces.Services.Semantic.Process.HRC;
 
 public interface IHRCKnowledgeService
 {
-    IEnumerable<INode> GetInstances(INode classINode);
-    IEnumerable<INode> GetIndividuals(INode classINode);
-    bool HasProperty(INode INode);
-    bool HasResource(INode INode);
-    bool HasResourceType(INode INode, INode classINode);
-    bool HasIndividual(INode INode);
+    IEnumerable<INode> GetInstances(INode classRes);
+    IEnumerable<INode> GetIndividuals(INode classRes);
+    bool HasProperty(INode property);
+    bool HasResource(INode resource);
+    bool HasResourceType(INode resource, INode classRes);
+    bool HasIndividual(INode resource);
     IDictionary<INode, ISet<INode>> RetrieveResourceStructure(INode resource);
     IEnumerable<INode> GetProductionGoals();
     IEnumerable<INode> GetAgents();
@@ -23,6 +23,6 @@ public interface IHRCKnowledgeService
     IEnumerable<IEnumerable<INode>> GetProductionHierarchy(INode pGoal);
     INode GetResourceType(INode resource);
     INode GetFunctionTarget(INode function);
-    IEnumerable<FunctionData> GetFunctionDataProperties(INode func);
-    IEnumerable<FunctionObjectData> GetFunctionObjectProperties(INode func);
+    IEnumerable<FunctionData> GetFunctionDataProperties(INode function);
+    IEnumerable<FunctionObjectData> GetFunctionObjectProperties(INode function);
 }

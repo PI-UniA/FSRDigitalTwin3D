@@ -2,7 +2,9 @@
 #define ENABLE_ONTOLOGY_MODEL
 
 using AasSecurity;
+using FSR.DigitalTwin.App.Common.Utils.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Services.Semantic;
+using FSR.DigitalTwin.App.Queries.Semantic.Base;
 using FSR.DigitalTwin.Infra.Jena;
 using Microsoft.Extensions.Options;
 
@@ -25,23 +27,14 @@ foreach (string modelFile in ontoOptions.ModelFiles)
         continue;
     await ontoModel.LoadOntologyModelAsync(ontoModelPath, OntologyModelFileFormat.RDF_XML);
 }
-// var cobots = await ontoModel.RunSparqlQueryAsync((server) => new GetCobotAgentsQuery() { SparqlServer = server });
-// if (cobots.IsSuccess)
-// {
-//     foreach (Cobot cobot in cobots.Value)
-//     {
-//         Console.WriteLine("Got Cobot: " + cobot.Resource);
-//     }
-// }
-// var hrcTask = await ontoModel.RunSparqlQueryAsync((server) => new GetHRCTaskQuery("http://pst.istc.cnr.it/ontologies/2019/01/soho#screw-hole1") { SparqlServer = server });
-// if (hrcTask.IsSuccess)
-// {
-//     Console.WriteLine("Got Task: " + hrcTask.Value.Name);
-//     foreach (var t in hrcTask.Value.Resource.Triples)
-//     {
-//         Console.WriteLine(">> " + t);
-//     }
-// }
+var cobots = await ontoModel.RunSparqlQueryAsync((server) => new GetIndividualsQuery(UriPrefix.SOHO + "Cobot") { SparqlServer = server });
+if (cobots.IsSuccess)
+{
+    foreach (var cobot in cobots.Value)
+    {
+        Console.WriteLine("Got Cobot: " + cobot);
+    }
+}
 Console.WriteLine("Number of triples loaded in semantic database: " + tripleCount);
 #endif
 
