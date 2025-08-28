@@ -1,14 +1,13 @@
 using VDS.RDF;
-using VDS.RDF.Ontology;
 
 namespace FSR.DigitalTwin.Domain.Model.Process.HRC.Task;
 
 public class HRCTask
 {
     private readonly long _horizon;
-    public OntologyResource Resource { get; }
-    public required OntologyResource Type { get; init; }
-    public OntologyResource? Target { set; get; }
+    public INode Resource { get; }
+    public INode Type { get; }
+    public INode? Target { set; get; }
 
     public string Name { set; get; }
     public string? Description { set; get; }
@@ -23,12 +22,13 @@ public class HRCTask
     public long DurationUncertainty { set; get; }
     public double SuccessRate { set; get; } = 0.99;
 
-    public HRCTask(OntologyResource function, long horizon = long.MaxValue)
+    public HRCTask(INode function, INode type, long horizon)
     {
-        Name = function.Resource.NodeType == NodeType.Blank ? ((IBlankNode)function.Resource).InternalID
-            : function.Label.Where(x => x.Language == "").First().ToString().Split("^^").First();
+        Name = function.NodeType == NodeType.Blank ? ((IBlankNode)function).InternalID
+            : function.ToSafeString();
         Description = Name;
         Resource = function;
+        Type = type;
         DurationUncertainty = horizon;
         _horizon = horizon;
     }
@@ -36,7 +36,7 @@ public class HRCTask
     public override string ToString()
     {
         return "RobotFunction{" +
-                "function=" + (Resource.Resource.NodeType == NodeType.Blank ? ((BlankNode) Resource.Resource).InternalID : ((UriNode) Resource.Resource).Uri) +
+                "function=" + (Resource.NodeType == NodeType.Blank ? ((BlankNode) Resource).InternalID : ((UriNode) Resource).Uri) +
                 '}';
     }
 }
