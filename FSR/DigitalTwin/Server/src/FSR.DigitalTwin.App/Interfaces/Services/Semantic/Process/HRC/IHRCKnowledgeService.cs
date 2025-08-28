@@ -1,27 +1,28 @@
+using FSR.DigitalTwin.Domain.Model.Process.HRC.Task;
+using VDS.RDF;
+
 namespace FSR.DigitalTwin.App.Interfaces.Services.Semantic.Process.HRC;
 
 public interface IHRCKnowledgeService
 {
-    IEnumerable<Uri> GetInstances(Uri classUri);
-    IEnumerable<Uri> GetIndividuals(Uri classUri);
-    bool HasProperty(Uri uri);
-    bool HasResource(Uri uri);
-    bool HasResourceType(Uri uri, Uri classUri);
-    bool HasIndividual(Uri uri);
-    IDictionary<Uri, ISet<Uri>> RetrieveResourceStructure(Uri resource);
-    IEnumerable<Uri> GetProductionGoals();
-    IEnumerable<Uri> GetAgents();
-    IEnumerable<Uri> GetHumans();
-    IEnumerable<Uri> GetCobots();
-    IEnumerable<Uri> GetFunctions();
-    IEnumerable<Uri> GetFunctionsByAgent(Uri agent);
-    IEnumerable<IDictionary<Uri, IEnumerable<ISet<Uri>>>> GetDecompositionGraph(Uri pGoal);
-    IDictionary<Uri, ISet<Uri>> GetDependencyGraph(Uri resource);
-    IEnumerable<IEnumerable<Uri>> GetProductionHierarchy(Uri pGoal);
-    Uri GetResourceType(Uri resource);
-    Uri GetFunctionTarget(Uri function);
-
-    // TODO Define in domain and remove old models for agents, cobots and humans
-    // IEnumerable<FunctionData> GetFunctionDataProperties(Uri func);
-    // IEnumerable<ObjectData> GetFunctionObjectProperties(Uri func);
+    IEnumerable<INode> GetInstances(INode classINode);
+    IEnumerable<INode> GetIndividuals(INode classINode);
+    bool HasProperty(INode INode);
+    bool HasResource(INode INode);
+    bool HasResourceType(INode INode, INode classINode);
+    bool HasIndividual(INode INode);
+    IDictionary<INode, ISet<INode>> RetrieveResourceStructure(INode resource);
+    IEnumerable<INode> GetProductionGoals();
+    IEnumerable<INode> GetAgents();
+    IEnumerable<INode> GetHumans();
+    IEnumerable<INode> GetCobots();
+    IEnumerable<INode> GetFunctions();
+    IEnumerable<INode> GetFunctionsByAgent(INode agent);
+    IEnumerable<IDictionary<INode, IEnumerable<ISet<INode>>>> GetDecompositionGraph(INode pGoal);
+    IDictionary<INode, ISet<INode>> GetDependencyGraph(INode resource);
+    IEnumerable<IEnumerable<INode>> GetProductionHierarchy(INode pGoal);
+    INode GetResourceType(INode resource);
+    INode GetFunctionTarget(INode function);
+    IEnumerable<FunctionData> GetFunctionDataProperties(INode func);
+    IEnumerable<FunctionObjectData> GetFunctionObjectProperties(INode func);
 }
