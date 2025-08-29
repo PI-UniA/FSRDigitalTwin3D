@@ -5,24 +5,26 @@ namespace FSR.DigitalTwin.App.Interfaces.Services.Semantic.Process.HRC;
 
 public interface IHRCKnowledgeService
 {
-    IEnumerable<INode> GetInstances(INode classRes);
-    IEnumerable<INode> GetIndividuals(INode classRes);
-    bool HasProperty(INode property);
-    bool HasResource(INode resource);
-    bool HasResourceType(INode resource, INode classRes);
-    bool HasIndividual(INode resource);
-    IDictionary<INode, ISet<INode>> RetrieveResourceStructure(INode resource);
+    IEnumerable<INode> GetInstances(Uri classRes);
+    IEnumerable<INode> GetIndividuals(Uri classRes);
+    IEnumerable<INode> GetProperty(Uri individual, Uri property);
+    bool HasResourceType(Uri resource, Uri type);
+    IDictionary<INode, ISet<INode>> RetrieveResourceStructure(Uri resource);
     IEnumerable<INode> GetProductionGoals();
+    IEnumerable<INode> GetCompoundGoals();
+    IEnumerable<INode> GetProductionSubgoals();
+    IEnumerable<INode> GetBinaryResources();
     IEnumerable<INode> GetAgents();
+    IEnumerable<INode> GetWorkerOperators();
     IEnumerable<INode> GetHumans();
     IEnumerable<INode> GetCobots();
     IEnumerable<INode> GetFunctions();
-    IEnumerable<INode> GetFunctionsByAgent(INode agent);
-    IEnumerable<IDictionary<INode, IEnumerable<ISet<INode>>>> GetDecompositionGraph(INode pGoal);
-    IDictionary<INode, ISet<INode>> GetDependencyGraph(INode resource);
-    IEnumerable<IEnumerable<INode>> GetProductionHierarchy(INode pGoal);
-    INode GetResourceType(INode resource);
-    INode GetFunctionTarget(INode function);
-    FunctionPropertyData GetFunctionDataProperties(INode function);
-    FunctionObjectData GetFunctionObjectProperties(INode function);
+    IEnumerable<INode> GetFunctionsByAgent(Uri agent);
+    IEnumerable<IDictionary<INode, IEnumerable<ISet<INode>>>> GetDecompositionGraph(Uri pGoal);
+    IDictionary<INode, ISet<INode>> GetDependencyGraph(Uri resource);
+    IEnumerable<IEnumerable<INode>> GetProductionHierarchy(Uri pGoal);
+    INode GetResourceType(Uri resource);
+    INode GetFunctionTarget(Uri function);
+    FunctionPropertyData GetFunctionDataProperties(Uri function);
+    FunctionObjectData GetFunctionObjectProperties(Uri function);
 }
