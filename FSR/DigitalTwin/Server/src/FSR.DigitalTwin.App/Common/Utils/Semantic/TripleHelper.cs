@@ -1,0 +1,18 @@
+using System.Text.Json;
+using VDS.RDF;
+
+namespace FSR.DigitalTwin.App.Common.Utils.Semantic;
+
+public static class TripleHelper
+{
+    public static void AddOptionalTriple(JsonElement binding, List<Triple> triples, INode subject, INode predicate, string propertyName, INode? objectType = null)
+    {
+        if (binding.TryGetProperty(propertyName, out JsonElement element))
+        {
+            var node = RdfNodeFactory.CreateFromJson(element);
+            if (objectType != null)
+                triples.Add(new Triple(node, UriPrefix.RDF | "type", objectType));
+            triples.Add(new Triple(subject, predicate, node));
+        }
+    }
+}

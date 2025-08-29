@@ -1,10 +1,10 @@
-using AngleSharp.Dom;
+using VDS.RDF;
 
 namespace FSR.DigitalTwin.Domain.Model.Process.HRC.Task;
 
-public record FunctionData
+public record FunctionPropertyData
 {
-    public required INode Function { init; get; }
+    public required UriNode Function { init; get; }
     public string? ProcedureName { init; get; }
     public string? ProcedureDescription { init; get; }
     public string? ProcedureId { init; get; }
@@ -14,9 +14,9 @@ public record FunctionData
 
 public record FunctionObjectData
 {
-    public required INode Function { init; get; }
-    public INode? Target { init; get; }
-    public INode? StartLocation { init; get; }
-    public INode? EndLocation { init; get; }
-    public INode? Location { init; get; }
+    public required UriNode Function { init; get; }
+    public HashSet<INode> Target { init; get; } = [];
+    public HashSet<INode> StartLocation { init; get; } = [];
+    public HashSet<INode> EndLocation { init; get; } = [];
+    public HashSet<INode> Location { init; get; } = [];
 }

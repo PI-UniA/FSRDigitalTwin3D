@@ -5,8 +5,10 @@ using AasSecurity;
 using FSR.DigitalTwin.App.Common.Utils.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Services.Semantic;
 using FSR.DigitalTwin.App.Queries.Semantic.Base;
+using FSR.DigitalTwin.App.Queries.Semantic.Process.HRC;
 using FSR.DigitalTwin.Infra.Jena;
 using Microsoft.Extensions.Options;
+using VDS.RDF;
 
 Console.WriteLine("AASX Server Core starting....");
 var host = CreateHostBuilder(args).Build();
@@ -27,14 +29,7 @@ foreach (string modelFile in ontoOptions.ModelFiles)
         continue;
     await ontoModel.LoadOntologyModelAsync(ontoModelPath, OntologyModelFileFormat.RDF_XML);
 }
-var cobots = await ontoModel.RunSparqlQueryAsync((server) => new GetIndividualsQuery(UriPrefix.SOHO + "Cobot") { SparqlServer = server });
-if (cobots.IsSuccess)
-{
-    foreach (var cobot in cobots.Value)
-    {
-        Console.WriteLine("Got Cobot: " + cobot);
-    }
-}
+await RunOntologyDemoQueriesAsync(ontoModel);
 Console.WriteLine("Number of triples loaded in semantic database: " + tripleCount);
 #endif
 
@@ -48,3 +43,27 @@ static IHostBuilder CreateHostBuilder(string[] args) =>
         {
             webBuilder.UseStartup<Startup>();
         });
+
+static async Task RunOntologyDemoQueriesAsync(IOntologyModelService ontoModel)
+{
+    var cobots = await ontoModel.RunSparqlQueryAsync((server) => new GetIndividualsQuery(UriPrefix.SOHO + "Cobot") { SparqlServer = server });
+    if (cobots.IsSuccess)
+    {
+        foreach (var cobot in cobots.Value)
+        {
+            Console.WriteLine("Got Cobot: " + cobot);
+        }
+    }
+    var pickPlaceTasks = await ontoModel.RunSparqlQueryAsync((server) => new GetIndividualsQuery(UriPrefix.SOHO + "PickPlace") { SparqlServer = server });
+    if (pickPlaceTasks.IsSuccess)
+    {
+        foreach (UriNode pp in pickPlaceTasks.Value.Where(n => n.NodeType == VDS.RDF.NodeType.Uri).Cast<UriNode>())
+        {
+            var functionData = await ontoModel.RunSparqlQueryAsync((server) => new GetFunctionPropertyDataQuery(pp.Uri) { SparqlServer = server });
+            var functionObjects = await ontoModel.RunSparqlQueryAsync((server) => new GetFunctionObjectDataQuery(pp.Uri) { SparqlServer = server });
+            if (functionData.IsFailure || functionObjects.IsFailure)
+                continue;
+            Console.WriteLine($"Got PickPlace: {functionData.Value.Function.Uri}, Traget: {functionObjects.Value.Target.FirstOrDefault()}, Duration: {functionData.Value.Duration}");
+        }
+    }
+}

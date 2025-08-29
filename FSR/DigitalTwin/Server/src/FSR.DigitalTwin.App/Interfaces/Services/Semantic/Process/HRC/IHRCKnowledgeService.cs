@@ -23,6 +23,6 @@ public interface IHRCKnowledgeService
     IEnumerable<IEnumerable<INode>> GetProductionHierarchy(INode pGoal);
     INode GetResourceType(INode resource);
     INode GetFunctionTarget(INode function);
-    IEnumerable<FunctionData> GetFunctionDataProperties(INode function);
-    IEnumerable<FunctionObjectData> GetFunctionObjectProperties(INode function);
+    FunctionPropertyData GetFunctionDataProperties(INode function);
+    FunctionObjectData GetFunctionObjectProperties(INode function);
 }

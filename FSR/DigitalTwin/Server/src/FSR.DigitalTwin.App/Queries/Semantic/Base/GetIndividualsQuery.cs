@@ -52,7 +52,7 @@ public class GetIndividualsQuery : ISparqlQuery<IEnumerable<INode>>
         {
             return Result.Failure<IEnumerable<INode>>(response.Error);
         }
-        return Result.Success(response.Value.Select(t => t.Object).Distinct());
+        return Result.Success(response.Value.Select(t => t.Subject).Distinct());
     }
 
     public Result<IEnumerable<INode>> Run()
@@ -62,6 +62,6 @@ public class GetIndividualsQuery : ISparqlQuery<IEnumerable<INode>>
         {
             return Result.Failure<IEnumerable<INode>>(response.Error);
         }
-        return Result.Success(response.Value.Select(t => t.Object).Distinct());
+        return Result.Success(response.Value.Select(t => t.Subject).Distinct());
     }
 }
