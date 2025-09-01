@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/zebiscra/ontologies/2025/8/untitled-ontology-20/"
+     xml:base="http://www.semanticweb.org/zebiscra/ontologies/2025/8/untitled-ontology-20/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:DUL="http://www.loa-cnr.it/ontologies/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:soho="http://pst.istc.cnr.it/ontologies/2019/01/soho#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi">
+        <owl:versionIRI rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/1.0.0"/>
+        <owl:imports rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho/1.0.0"/>
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/ssn"/>
+        <owl:imports rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl"/>
+        <owl:imports rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots/sobots/1.0.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#bolts -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#bolts">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH1">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole1"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH2">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole2"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH3">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole3"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH4 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH4">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole4"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH5 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH5">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole5"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH6 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH6">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole6"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH7 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH7">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole7"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH8 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH8">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimultaneousHRCTask"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole8"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doRotaryTable -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doRotaryTable">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#ConjunctiveComplexTask"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH1"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH2"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH3"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH4"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH5"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH6"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH7"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doCollaborativeScrewH8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-1">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-2">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-3">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-4 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-4">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-5 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-5">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-6 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-6">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-7 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-7">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-8 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-8">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleWorkpiece"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole1">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-1"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">10</soho:hasDuration>
+        <soho:hasGoal>hole1</soho:hasGoal>
+        <soho:hasProcedureName>PickPlaceH1</soho:hasProcedureName>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole2">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-2"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">10</soho:hasDuration>
+        <soho:hasGoal>hole2</soho:hasGoal>
+        <soho:hasProcedureName>PickPlaceH2</soho:hasProcedureName>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole3">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-3"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">10</soho:hasDuration>
+        <soho:hasGoal>hole3</soho:hasGoal>
+        <soho:hasProcedureName>PickPlaceH3</soho:hasProcedureName>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole4 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole4">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-4"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">10</soho:hasDuration>
+        <soho:hasGoal>hole4</soho:hasGoal>
+        <soho:hasProcedureName>PickPlaceH4</soho:hasProcedureName>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole5 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole5">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-5"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">10</soho:hasDuration>
+        <soho:hasGoal>hole5</soho:hasGoal>
+        <soho:hasProcedureName>PickPlaceH5</soho:hasProcedureName>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole6 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole6">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-6"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">10</soho:hasDuration>
+        <soho:hasGoal>hole6</soho:hasGoal>
+        <soho:hasProcedureName>PickPlaceH6</soho:hasProcedureName>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole7 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole7">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-7"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">10</soho:hasDuration>
+        <soho:hasGoal>hole7</soho:hasGoal>
+        <soho:hasProcedureName>PickPlaceH7</soho:hasProcedureName>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole8 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#pickplace-hole8">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-8"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">10</soho:hasDuration>
+        <soho:hasGoal>hole8</soho:hasGoal>
+        <soho:hasProcedureName>PickPlaceH8</soho:hasProcedureName>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Cobot"/>
+        <soho:hasEmbodiment rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robotic-arm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robotic-arm -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robotic-arm">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotInterface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole1">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Join"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-1"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20</soho:hasDuration>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+        <soho:hasGoal>hole1</soho:hasGoal>
+        <soho:hasProcedureName>ScrewH1</soho:hasProcedureName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole2">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Join"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-2"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20</soho:hasDuration>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+        <soho:hasGoal>hole2</soho:hasGoal>
+        <soho:hasProcedureName>ScrewH2</soho:hasProcedureName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole3">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Join"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-3"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20</soho:hasDuration>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+        <soho:hasGoal>hole3</soho:hasGoal>
+        <soho:hasProcedureName>ScrewH3</soho:hasProcedureName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole4 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole4">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Join"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-4"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20</soho:hasDuration>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+        <soho:hasGoal>hole4</soho:hasGoal>
+        <soho:hasProcedureName>ScrewH4</soho:hasProcedureName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole5 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole5">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Join"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-5"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20</soho:hasDuration>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+        <soho:hasGoal>hole5</soho:hasGoal>
+        <soho:hasProcedureName>ScrewH5</soho:hasProcedureName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole6 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole6">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Join"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-6"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20</soho:hasDuration>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+        <soho:hasGoal>hole6</soho:hasGoal>
+        <soho:hasProcedureName>ScrewH6</soho:hasProcedureName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole7 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole7">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Join"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-7"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20</soho:hasDuration>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+        <soho:hasGoal>hole7</soho:hasGoal>
+        <soho:hasProcedureName>ScrewH7</soho:hasProcedureName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole8 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#screw-hole8">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Join"/>
+        <soho:canBeAssignedTo rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:canBePerformedBy rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot"/>
+        <soho:hasTarget rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#hole-8"/>
+        <soho:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20</soho:hasDuration>
+        <soho:hasDurationUncertainty rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</soho:hasDurationUncertainty>
+        <soho:hasGoal>hole8</soho:hasGoal>
+        <soho:hasProcedureName>ScrewH8</soho:hasProcedureName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#table-assembly-method-1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#table-assembly-method-1">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionMethod"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#doRotaryTable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#task-assembly-goal -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#task-assembly-goal">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionGoal"/>
+        <DUL:hasConstituent rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#table-assembly-method-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#WorkOperator"/>
+        <soho:hasEmbodiment rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker-body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker-body -->
+
+    <owl:NamedIndividual rdf:about="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#worker-body">
+        <rdf:type rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#WorkerBodyPart"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
