@@ -47,14 +47,70 @@ public class HRCKnowledgeService : IHRCKnowledgeService
         return result.IsSuccess ? result.Value.Distinct() : [];
     }
 
-    public IEnumerable<IDictionary<INode, IEnumerable<ISet<INode>>>> GetDecompositionGraph(Uri pGoal)
+    public IEnumerable<IDictionary<INode, IList<ISet<INode>>>> GetDecompositionGraph(Uri prodGoal)
     {
-        throw new NotImplementedException();
+        if (!HasResourceType(prodGoal, UriPrefix.SOHO + "ProductionGoal"))
+        {
+            throw new HRCKnowledgeException($"Wrong parameter type, a resource/individual of type <{UriPrefix.SOHO}ProductionGoal> expected, received <{prodGoal}> of other type!");
+        }
+        List<IDictionary<INode, IList<ISet<INode>>>> graphs = [];
+        var methods = GetProperty(prodGoal, UriPrefix.DUL + "hasConstituent")
+            .Where(n => n.NodeType == NodeType.Uri).Cast<UriNode>();
+        foreach (var method in methods)
+        {
+            if (HasResourceType(method.Uri, UriPrefix.SOHO + "ProductionMethod"))
+            {
+                Dictionary<INode, IList<ISet<INode>>> methodGraph = [];
+                var tasks = GetProperty(method.Uri, UriPrefix.DUL + "hasConstituent")
+                    .Where(n => n.NodeType == NodeType.Uri).Cast<UriNode>();
+                foreach (var task in tasks)
+                {
+                    if (HasResourceType(task.Uri, UriPrefix.SOHO + "ProductionTask"))
+                    {
+                        if (!methodGraph.ContainsKey(task))
+                        {
+                            methodGraph.Add(task, []);
+                        }
+
+                        RetrieveProductionTaskDecomposition(task, methodGraph);
+                    }
+                }
+
+                graphs.Add(methodGraph);
+            }
+        }
+
+        return graphs;
     }
 
-    public IDictionary<INode, ISet<INode>> GetDependencyGraph(Uri resource)
+    public IDictionary<INode, ISet<INode>> GetDependencyGraph(Uri prodGoal)
     {
-        throw new NotImplementedException();
+        if (!HasResourceType(prodGoal, UriPrefix.SOHO + "ProductionGoal"))
+        {
+            throw new HRCKnowledgeException($"Wrong parameter type, a resource/individual of type <{UriPrefix.SOHO}ProductionGoal> expected, received <{prodGoal}> of other type!");
+        }
+        Dictionary<INode, ISet<INode>> depGraph = [];
+        var graphs = GetDecompositionGraph(prodGoal);
+
+        foreach (var graph in graphs)
+        {
+            foreach (INode key in graph.Keys.ToHashSet())
+            {
+                if (!depGraph.ContainsKey(key))
+                {
+                    depGraph.Add(key, new HashSet<INode>());
+                }
+                foreach (var subTasks in graph[key])
+                {
+                    foreach (var subTask in subTasks)
+                    {
+                        depGraph[key].Add(subTask);
+                    }
+                }
+            }
+        }
+
+        return depGraph;
     }
 
     public FunctionPropertyData GetFunctionDataProperties(Uri function)
@@ -103,7 +159,7 @@ public class HRCKnowledgeService : IHRCKnowledgeService
 
     public IEnumerable<INode> GetFunctionsByAgent(Uri agent)
     {
-        throw new NotImplementedException();
+        return GetProperty(agent, UriPrefix.SOHO + "canPerform");
     }
 
     public INode GetFunctionTarget(Uri function)
@@ -151,9 +207,52 @@ public class HRCKnowledgeService : IHRCKnowledgeService
         return result.IsSuccess ? result.Value.Distinct() : [];
     }
 
-    public IEnumerable<IEnumerable<INode>> GetProductionHierarchy(Uri pGoal)
+    public IEnumerable<IEnumerable<INode>> GetProductionHierarchy(Uri prodGoal)
     {
-        throw new NotImplementedException();
+        if (!HasResourceType(prodGoal, UriPrefix.SOHO + "ProductionGoal"))
+        {
+            throw new HRCKnowledgeException($"Wrong parameter type, a resource/individual of type <{UriPrefix.SOHO}ProductionGoal> expected, received <{prodGoal}> of other type!");
+        }
+        var graph = GetDependencyGraph(prodGoal);
+        Dictionary<INode, ISet<INode>> copy = new(graph);
+        foreach (UriNode task in copy.Keys.Where(k => k.NodeType == NodeType.Uri).Cast<UriNode>().ToHashSet())
+        {
+            if (HasResourceType(task.Uri, UriPrefix.SOHO + "Function") &&
+                    !copy[task].Any())
+            {
+                graph.Remove(task);
+                foreach (UriNode key in graph.Keys.Where(k => k.NodeType == NodeType.Uri).Cast<UriNode>().ToHashSet())
+                {
+                    graph[key].Remove(task);
+                }
+            }
+        }
+
+        Dictionary<INode, ISet<INode>> incidenceGraph = [];
+        HashSet<INode> visited = [];
+        foreach (INode from in graph.Keys.ToHashSet())
+        {
+            visited.Add(from);
+            foreach (INode to in graph[from])
+            {
+                visited.Add(to);
+                if (!incidenceGraph.ContainsKey(to))
+                {
+                    incidenceGraph.Add(to, new HashSet<INode>());
+                }
+                incidenceGraph[to].Add(from);
+            }
+        }
+
+        foreach (INode node in visited)
+        {
+            if (!incidenceGraph.ContainsKey(node))
+            {
+                incidenceGraph.Add(node, new HashSet<INode>());
+            }
+        }
+
+        return RunTopolicalSort(incidenceGraph);
     }
 
     public IEnumerable<INode> GetProductionSubgoals()
@@ -189,6 +288,113 @@ public class HRCKnowledgeService : IHRCKnowledgeService
 
     public IDictionary<INode, ISet<INode>> RetrieveResourceStructure(Uri resource)
     {
-        throw new NotImplementedException();
+        Dictionary<INode, ISet<INode>> structure = [];
+        RetrieveResourceStructure(resource, structure);
+        return structure;
+    }
+
+    private void RetrieveResourceStructure(Uri resource, Dictionary<INode, ISet<INode>> subTree)
+    {
+        var hasConstituent = GetProperty(resource, UriPrefix.DUL + "hasConstituent");
+        if (hasConstituent == null || !hasConstituent.Any())
+        {
+            subTree.Add(new UriNode(resource), new HashSet<INode>());
+        }
+        else
+        {
+            HashSet<INode> children = [];
+            foreach (var child in hasConstituent.Where(child => child.NodeType == NodeType.Uri).Cast<UriNode>())
+            {
+                children.Add(child);
+                RetrieveResourceStructure(child.Uri, subTree);
+            }
+            subTree.Add(new UriNode(resource), children);
+        }
+    }
+
+    // TODO Very expensive, maybe translate to SPARQL query eventually...
+    private void RetrieveProductionTaskDecomposition(UriNode task, Dictionary<INode, IList<ISet<INode>>> graph)
+    {
+        var prop = GetProperty(task.Uri, UriPrefix.DUL + "hasConstituent")
+            .Where(n => n.NodeType == NodeType.Uri).Cast<UriNode>();
+        if (HasResourceType(task.Uri, UriPrefix.SOHO + "DisjunctiveComplexTask"))
+        {
+            foreach (var subTask in prop)
+            {
+                if (HasResourceType(subTask.Uri, UriPrefix.SOHO + "ProductionTask"))
+                {
+                    HashSet<INode> disjunction = [];
+                    disjunction.Add(subTask);
+                    graph[task].Add(disjunction);
+
+                    if (!graph.ContainsKey(subTask))
+                    {
+                        graph.Add(subTask, []);
+                    }
+
+                    RetrieveProductionTaskDecomposition(subTask, graph);
+                }
+            }
+        }
+        else
+        {
+            HashSet<INode> subTasks = [];
+            foreach (var subTask in prop)
+            {
+                if (HasResourceType(subTask.Uri, UriPrefix.SOHO + "ProductionTask"))
+                {
+                    subTasks.Add(subTask);
+                    if (!graph.ContainsKey(subTask))
+                    {
+                        graph.Add(subTask, []);
+                    }
+                    if (!HasResourceType(subTask.Uri, UriPrefix.SOHO + "Function"))
+                    {
+                        RetrieveProductionTaskDecomposition(subTask, graph);
+                    }
+                }
+            }
+
+            graph[task].Add(subTasks);
+        }
+    }
+
+    private static List<IList<INode>> RunTopolicalSort(Dictionary<INode, ISet<INode>> dependencies)
+    {
+        Dictionary<INode, ISet<INode>> graph = new(dependencies);
+        List<INode> sorted = [];
+        foreach (INode key in graph.Keys.ToHashSet()) {
+            if (!graph[key].Any()) {
+                sorted.Add(key);
+            }
+        }
+
+        List<IList<INode>> hierarchy = [];
+        int topLevel = 0;
+        while (sorted.Count != 0)
+        {
+            foreach (var res in sorted)
+            {
+                if (hierarchy.Count <= topLevel) {
+                    hierarchy.Add([]);
+                }
+                hierarchy[topLevel].Add(res);
+                graph.Remove(res);
+                foreach (INode key in graph.Keys.ToHashSet()) {
+                    graph[key].Remove(res);
+                }
+            }
+
+            sorted.Clear();
+            topLevel++;
+
+            foreach (INode key in graph.Keys.ToHashSet()) {
+                if (!graph[key].Any()) {
+                    sorted.Add(key);
+                }
+            }
+        }
+
+        return hierarchy;
     }
 }

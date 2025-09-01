@@ -20,9 +20,9 @@ public interface IHRCKnowledgeService
     IEnumerable<INode> GetCobots();
     IEnumerable<INode> GetFunctions();
     IEnumerable<INode> GetFunctionsByAgent(Uri agent);
-    IEnumerable<IDictionary<INode, IEnumerable<ISet<INode>>>> GetDecompositionGraph(Uri pGoal);
-    IDictionary<INode, ISet<INode>> GetDependencyGraph(Uri resource);
-    IEnumerable<IEnumerable<INode>> GetProductionHierarchy(Uri pGoal);
+    IEnumerable<IDictionary<INode, IList<ISet<INode>>>> GetDecompositionGraph(Uri prodGoal);
+    IDictionary<INode, ISet<INode>> GetDependencyGraph(Uri prodGoal);
+    IEnumerable<IEnumerable<INode>> GetProductionHierarchy(Uri prodGoal);
     INode GetResourceType(Uri resource);
     INode GetFunctionTarget(Uri function);
     FunctionPropertyData GetFunctionDataProperties(Uri function);
