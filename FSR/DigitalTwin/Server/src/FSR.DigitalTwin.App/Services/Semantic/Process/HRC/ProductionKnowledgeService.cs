@@ -10,12 +10,12 @@ using VDS.RDF;
 
 namespace FSR.DigitalTwin.App.Services.Semantic.Process.HRC;
 
-public class HRCKnowledgeService : IHRCKnowledgeService
+public class ProductionKnowledgeService : IHRCKnowledgeService
 {
     private readonly IOntologyModelService _ontology;
-    private readonly ILogger<HRCKnowledgeService> _logger;
+    private readonly ILogger<ProductionKnowledgeService> _logger;
 
-    public HRCKnowledgeService(IOntologyModelService ontology, ILogger<HRCKnowledgeService> logger)
+    public ProductionKnowledgeService(IOntologyModelService ontology, ILogger<ProductionKnowledgeService> logger)
     {
         _ontology = ontology ?? throw new ArgumentNullException(nameof(ontology));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -172,17 +172,10 @@ public class HRCKnowledgeService : IHRCKnowledgeService
         return functionObjects.Target.First();
     }
 
-    public IEnumerable<INode> GetWorkerOperators()
-    {
-        var result = _ontology.RunSparqlQuery((server) =>
-            new GetInstancesQuery(UriPrefix.SOHO + "WorkerOperator") { SparqlServer = server });
-        return result.IsSuccess ? result.Value.Distinct() : [];
-    }
-
     public IEnumerable<INode> GetHumans()
     {
         var result = _ontology.RunSparqlQuery((server) =>
-            new GetInstancesQuery(UriPrefix.SOHO + "Human") { SparqlServer = server });
+            new GetInstancesQuery(UriPrefix.SOHO + "WorkerOperator") { SparqlServer = server });
         return result.IsSuccess ? result.Value.Distinct() : [];
     }
 
@@ -200,14 +193,14 @@ public class HRCKnowledgeService : IHRCKnowledgeService
         return result.IsSuccess ? result.Value.Distinct() : [];
     }
 
-    public IEnumerable<INode> GetProductionGoals()
+    public IEnumerable<INode> GetGoals()
     {
         var result = _ontology.RunSparqlQuery((server) =>
             new GetInstancesQuery(UriPrefix.SOHO + "ProductionGoal") { SparqlServer = server });
         return result.IsSuccess ? result.Value.Distinct() : [];
     }
 
-    public IEnumerable<IEnumerable<INode>> GetProductionHierarchy(Uri prodGoal)
+    public IEnumerable<IEnumerable<INode>> GetHierarchy(Uri prodGoal)
     {
         if (!HasResourceType(prodGoal, UriPrefix.SOHO + "ProductionGoal"))
         {
@@ -255,7 +248,7 @@ public class HRCKnowledgeService : IHRCKnowledgeService
         return RunTopolicalSort(incidenceGraph);
     }
 
-    public IEnumerable<INode> GetProductionSubgoals()
+    public IEnumerable<INode> GetSubgoals()
     {
         throw new NotImplementedException();
     }

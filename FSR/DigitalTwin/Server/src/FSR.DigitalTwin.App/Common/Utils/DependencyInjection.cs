@@ -20,6 +20,6 @@ public static class DependencyInjection {
         services.AddTransient<IDummyRosService, DummyRosService>();
         services.AddTransient<IDummySemanticDataService, DummySemanticDataService>();
         services.AddTransient<IOntologyModelService, OntologyModelService>();
-        services.AddTransient<IHRCKnowledgeService, HRCKnowledgeService>();
+        services.AddTransient<IHRCKnowledgeService, ProductionKnowledgeService>();
     }
 }
