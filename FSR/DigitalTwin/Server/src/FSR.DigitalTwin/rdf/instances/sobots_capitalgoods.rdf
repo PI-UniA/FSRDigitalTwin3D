@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/zebiscra/ontologies/2025/8/untitled-ontology-20/"
-     xml:base="http://www.semanticweb.org/zebiscra/ontologies/2025/8/untitled-ontology-20/"
+<rdf:RDF xmlns="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/ontologies/capital_goods"
+     xml:base="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/ontologies/capital_goods"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:DUL="http://www.loa-cnr.it/ontologies/DUL.owl#"
