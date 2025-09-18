@@ -31,7 +31,7 @@ Additional infrastructure may be required depending on what you want to do. The 
 #### ROS2 Humble COLCON workspace
 The ROS2 Humble workspace is located in ```/FSR/ROS/```. We recommend setting up a Docker image with ROS2 Humble. Installing ROS2 locally is pretty unpleasant after all!
 
-1. In your Docker image with ROS2 Humble, run ```export COLCON_WS=<path/to/repo>/FSR/ROS/```
+1. In your Docker image with ROS2 Humble, run ```export COLCON_WS=<path/to/repo>/FSR/DigitalTwin/Server/modules/Ros2Ws/```
 2. Navigate to the COLCON workspace ```cd $COLCON_WS```
 3. Run ```vcs import src --skip-existing --input src/Universal_Robots_ROS2_Driver/Universal_Robots_ROS2_Driver.humble.repos```
 4. Run ```rosdep install --ignore-src --from-paths src -y -r```

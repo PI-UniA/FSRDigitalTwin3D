@@ -1,9 +1,0 @@
-# ROS2 workspace
-build/
-.build/
-
-install/
-.install
-
-log/
-.log/
