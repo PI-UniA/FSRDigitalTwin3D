@@ -1,29 +1,29 @@
+using FSR.DigitalTwin.Domain.Model;
 using FSR.DigitalTwin.Domain.Model.Process.HRC.Task;
-using VDS.RDF;
 
 namespace FSR.DigitalTwin.App.Interfaces.Services.Semantic.Process.HRC;
 
 public interface IHRCKnowledgeService
 {
-    IEnumerable<INode> GetInstances(Uri classRes);
-    IEnumerable<INode> GetIndividuals(Uri classRes);
-    IEnumerable<INode> GetProperty(Uri individual, Uri property);
-    bool HasResourceType(Uri resource, Uri type);
-    IDictionary<INode, ISet<INode>> RetrieveResourceStructure(Uri resource);
-    IEnumerable<INode> GetGoals();
-    IEnumerable<INode> GetCompoundGoals();
-    IEnumerable<INode> GetSubgoals();
-    IEnumerable<INode> GetBinaryResources();
-    IEnumerable<INode> GetAgents();
-    IEnumerable<INode> GetHumans();
-    IEnumerable<INode> GetCobots();
-    IEnumerable<INode> GetFunctions();
-    IEnumerable<INode> GetFunctionsByAgent(Uri agent);
-    IEnumerable<IDictionary<INode, IList<ISet<INode>>>> GetDecompositionGraph(Uri goal);
-    IDictionary<INode, ISet<INode>> GetDependencyGraph(Uri goal);
-    IEnumerable<IEnumerable<INode>> GetHierarchy(Uri goal);
-    INode GetResourceType(Uri resource);
-    INode GetFunctionTarget(Uri function);
-    FunctionPropertyData GetFunctionDataProperties(Uri function);
-    FunctionObjectData GetFunctionObjectProperties(Uri function);
+    IEnumerable<Resource> GetInstances(Resource classRes);
+    IEnumerable<Resource> GetIndividuals(Resource classRes);
+    IEnumerable<Resource> GetProperty(Resource individual, Resource property);
+    bool HasResourceType(Resource resource, Resource type);
+    IDictionary<Resource, ISet<Resource>> RetrieveResourceStructure(Resource resource);
+    IEnumerable<Resource> GetGoals();
+    IEnumerable<Resource> GetCompoundGoals();
+    IEnumerable<Resource> GetSubgoals();
+    IEnumerable<Resource> GetBinaryResources();
+    IEnumerable<Resource> GetAgents();
+    IEnumerable<Resource> GetHumans();
+    IEnumerable<Resource> GetCobots();
+    IEnumerable<Resource> GetFunctions();
+    IEnumerable<Resource> GetFunctionsByAgent(Resource agent);
+    IEnumerable<IDictionary<Resource, IList<ISet<Resource>>>> GetDecompositionGraph(Resource goal);
+    IDictionary<Resource, ISet<Resource>> GetDependencyGraph(Resource goal);
+    IEnumerable<IEnumerable<Resource>> GetHierarchy(Resource goal);
+    Resource GetResourceType(Resource resource);
+    Resource GetFunctionTarget(Resource function);
+    FunctionPropertyData GetFunctionDataProperties(Resource function);
+    FunctionObjectData GetFunctionObjectProperties(Resource function);
 }

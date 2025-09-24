@@ -2,6 +2,7 @@ using System.Text.Json;
 using FSR.DigitalTwin.App.Common.Semantic;
 using FSR.DigitalTwin.App.Common.Utils.Semantic;
 using FSR.DigitalTwin.App.Interfaces.Queries.Semantic;
+using FSR.DigitalTwin.Domain.Model;
 using FSR.DigitalTwin.Domain.Model.Process.HRC.Task;
 using FSR.DigitalTwin.Domain.SharedKernel;
 using VDS.RDF;
@@ -12,20 +13,22 @@ namespace FSR.DigitalTwin.App.Queries.Semantic.Process.HRC;
 public class GetFunctionPropertyDataQuery : ISparqlQuery<FunctionPropertyData>
 {
     private readonly ISparqlServer? _sparqlServer;
-    private readonly Uri _functionUri;
+    private readonly Resource _function;
 
     // TODO Use config paths!
-    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Sparql/GetFunctionPropertyData.sparql", [_functionUri.ToString()]);
-    public ISparqlResponseParser Parser => new ResponseParser();
+    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Sparql/GetFunctionPropertyData.sparql", [_function]);
+    public ISparqlResponseParser Parser => new ResponseParser() { Function = _function };
     public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }
 
-    public GetFunctionPropertyDataQuery(Uri functionUri)
+    public GetFunctionPropertyDataQuery(Resource function)
     {
-        _functionUri = functionUri;
+        _function = function;
     }
 
     private class ResponseParser : ISparqlResponseParser
     {
+        public required Resource Function { init; get; }
+
         public IEnumerable<Triple> FromJson(string jsonResponse)
         {
             var json = JsonDocument.Parse(jsonResponse);
@@ -34,10 +37,7 @@ public class GetFunctionPropertyDataQuery : ISparqlQuery<FunctionPropertyData>
             var triples = new List<Triple>();
             foreach (var binding in bindings.EnumerateArray())
             {
-                if (!binding.TryGetProperty("task", out JsonElement task_))
-                    continue;
-
-                var task = RdfNodeFactory.CreateFromJson(task_);
+                var task = (BaseNode)Function;
                 triples.Add(new Triple(task, UriPrefix.RDF | "type", UriPrefix.SOHO | "ProductionTask"));
                 TripleHelper.AddOptionalTriple(binding, triples, task, UriPrefix.SOHO | "hasProcedureId", "id");
                 TripleHelper.AddOptionalTriple(binding, triples, task, UriPrefix.SOHO | "hasProcedureName", "name");
@@ -76,7 +76,7 @@ public class GetFunctionPropertyDataQuery : ISparqlQuery<FunctionPropertyData>
             .Max();
         return new FunctionPropertyData()
         {
-            Function = new UriNode(_functionUri),
+            Function = _function,
             ProcedureId = id,
             ProcedureName = name,
             ProcedureDescription = description,

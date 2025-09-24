@@ -1969,7 +1969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1161697520552972089, guid: 7dad9409f07fdad7b8f5b4bfdf3859d8, type: 3}
       propertyPath: m_ParentAnchorPosition.z
-      value: 0.11420013
+      value: 0.11419965
       objectReference: {fileID: 0}
     - target: {fileID: 1161697520552972089, guid: 7dad9409f07fdad7b8f5b4bfdf3859d8, type: 3}
       propertyPath: m_ParentAnchorRotation.w
@@ -1989,7 +1989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2415467554168907375, guid: 7dad9409f07fdad7b8f5b4bfdf3859d8, type: 3}
       propertyPath: m_ParentAnchorPosition.z
-      value: 0.11420013
+      value: 0.11419965
       objectReference: {fileID: 0}
     - target: {fileID: 2415467554168907375, guid: 7dad9409f07fdad7b8f5b4bfdf3859d8, type: 3}
       propertyPath: m_ParentAnchorRotation.w
@@ -2037,7 +2037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3969983225609868297, guid: 7dad9409f07fdad7b8f5b4bfdf3859d8, type: 3}
       propertyPath: m_ParentAnchorPosition.x
-      value: -0.00000077486044
+      value: -0.0000007748603
       objectReference: {fileID: 0}
     - target: {fileID: 3969983225609868297, guid: 7dad9409f07fdad7b8f5b4bfdf3859d8, type: 3}
       propertyPath: m_ParentAnchorPosition.y
@@ -2045,7 +2045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3969983225609868297, guid: 7dad9409f07fdad7b8f5b4bfdf3859d8, type: 3}
       propertyPath: m_ParentAnchorPosition.z
-      value: 0.0000001192094
+      value: 0.0000009536745
       objectReference: {fileID: 0}
     - target: {fileID: 3969983225609868297, guid: 7dad9409f07fdad7b8f5b4bfdf3859d8, type: 3}
       propertyPath: m_ParentAnchorRotation.w
@@ -3161,6 +3161,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216886326}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &235922132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235922134}
+  - component: {fileID: 235922133}
+  m_Layer: 0
+  m_Name: Simulation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &235922133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235922132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a051349e4849d49825cd1d2eb78871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &235922134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235922132}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 365743258}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &237060386
 GameObject:
   m_ObjectHideFlags: 0
@@ -5403,6 +5447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 365743258}
   - component: {fileID: 365743259}
+  - component: {fileID: 365743261}
   m_Layer: 0
   m_Name: WORKSPACE
   m_TagString: Untagged
@@ -5424,6 +5469,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 399024707}
+  - {fileID: 235922134}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &365743259
@@ -5440,6 +5486,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   digitalWorkspaceAddr: 127.0.0.1
   digitalWorkspacePort: 5001
+  digitalWorkspaceName: 0
+--- !u!114 &365743261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365743256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10332bd183b3e6b4c81fb21e69bf7354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simulationManager: {fileID: 235922133}
 --- !u!1 &384976192
 GameObject:
   m_ObjectHideFlags: 0
@@ -7734,7 +7794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ad498610bad734980a18df59369cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots#SM_UR5e_FWKinematics
+  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#SM_UR5e_FWKinematics
   _actor: {fileID: 5955250382980222833}
   _enableOperationModeOverride: 0
   _operationModeOverride: 0
@@ -22203,7 +22263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6c8f723e4eff0458e787277febaba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots#SM_UR5e_Controller
+  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#SM_UR5e_Controller
   _actor: {fileID: 5955250382980222833}
   _enableOperationModeOverride: 0
   _operationModeOverride: 0
@@ -27818,11 +27878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1494301493237945089, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlanAndRunIfValid
+      value: PickAndPlace
       objectReference: {fileID: 0}
     - target: {fileID: 1494301493237945089, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FSR.DigitalTwin.Client.Unity.Workspace.Virtual.Robot.Component.Controller.RosMoveitController,
+      value: FSR.DigitalTwin.Client.Features.Robotics.Controller.RosMoveitPickAndPlaceController,
         Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1494301493237945089, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
@@ -28030,7 +28090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2482333351545041685, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.x
-      value: -0.10000011
+      value: -0.10000095
       objectReference: {fileID: 0}
     - target: {fileID: 2482333351545041685, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.y
@@ -28110,7 +28170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5687382751953199603, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.x
-      value: -0.12700008
+      value: -0.12700056
       objectReference: {fileID: 0}
     - target: {fileID: 5687382751953199603, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.z
@@ -28126,7 +28186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6693825268117038528, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.x
-      value: -0.13800006
+      value: -0.13800052
       objectReference: {fileID: 0}
     - target: {fileID: 6693825268117038528, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.y
@@ -28134,7 +28194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6693825268117038528, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.z
-      value: 0
+      value: 0.000000029802322
       objectReference: {fileID: 0}
     - target: {fileID: 6693825268117038528, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorRotation.w
@@ -28146,7 +28206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6952871357986069541, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.x
-      value: -0.000000074505806
+      value: -0.00000055134296
       objectReference: {fileID: 0}
     - target: {fileID: 6952871357986069541, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.y
@@ -28154,7 +28214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6952871357986069541, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.z
-      value: -0.0000012665987
+      value: -0.0000007897615
       objectReference: {fileID: 0}
     - target: {fileID: 6952871357986069541, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorRotation.w
@@ -28206,11 +28266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7350662016126834070, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.x
-      value: 0.131
+      value: 0.13100015
       objectReference: {fileID: 0}
     - target: {fileID: 7350662016126834070, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.y
-      value: 0.4250005
+      value: 0.42500037
       objectReference: {fileID: 0}
     - target: {fileID: 7350662016126834070, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.z
@@ -28226,11 +28286,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7585880901261985077, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.x
-      value: -0.000000029802322
+      value: 0.0000002682209
       objectReference: {fileID: 0}
     - target: {fileID: 7585880901261985077, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.y
-      value: 0.39200118
+      value: 0.39200166
       objectReference: {fileID: 0}
     - target: {fileID: 7585880901261985077, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorRotation.w
@@ -28246,7 +28306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7953650055491845605, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.x
-      value: -0.10000011
+      value: -0.10000095
       objectReference: {fileID: 0}
     - target: {fileID: 7953650055491845605, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       propertyPath: m_ParentAnchorPosition.y
@@ -28311,6 +28371,9 @@ PrefabInstance:
       addedObject: {fileID: 579219119}
     - targetCorrespondingSourceObject: {fileID: 472273861288168908, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5955250382980222835}
+    - targetCorrespondingSourceObject: {fileID: 472273861288168908, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1741056423}
     - targetCorrespondingSourceObject: {fileID: 472273861288168908, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       insertIndex: -1
@@ -28367,7 +28430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff5cf8f9c5cdbe49ac219d68234b25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/projekte/forschung/forsocialrobots#AAS_UR5e
+  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#AAS_UR5e
   _components:
   - {fileID: 579219119}
 --- !u!114 &5955250382980222834
@@ -28384,6 +28447,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _articulationBody: {fileID: 5955250382980222832}
   _jointPrefix: joint_base
+--- !u!114 &5955250382980222835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603320903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bda8dfa6dc7dbf40948854d1cefeaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#SM_UR5e_Operational
+  _actor: {fileID: 5955250382980222833}
+  _enableOperationModeOverride: 0
+  _operationModeOverride: 0
+  operatorId: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot
 --- !u!224 &6740993857694528104 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7453539377829711679, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}

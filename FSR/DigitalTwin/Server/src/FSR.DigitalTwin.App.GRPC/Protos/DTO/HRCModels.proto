@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+option csharp_namespace = "FSR.DigitalTwin.App.GRPC.Process.HRC";
+
+package FSR.DigitalTwin.App.GRPC;
+
+message FunctionPropertyDataDTO {
+    string functionId = 1;
+    string procedureName = 2;
+    string procedureDescr = 3;
+    string procedureId = 4;
+    double duration = 5;
+    double durationUncertainty = 6;
+}
+
+message FunctionObjectDataDTO {
+    string functionId = 1;
+    string target = 2;
+    string startLocation = 3;
+    string endLocation = 4;
+    string location = 5; 
+}
+
+enum AgentType {
+    AGENT_TYPE_ANY = 0;
+    AGENT_TYPE_HUMAN = 1;
+    AGENT_TYPE_ROBOT = 2;
+}
+
+enum HRCAgentType {
+    HRC_AGENT_TYPE_UNDEFINED = 0;
+    HRC_AGENT_TYPE_HUMAN = 1;
+    HRC_AGENT_TYPE_ROBOT = 2;
+    HRC_AGENT_TYPE_WORKER_OPERATOR = 3;
+    HRC_AGENT_TYPE_COBOT = 4;
+}
+
+message HRCTaskDTO {
+    string id = 1;
+    string type = 2;
+    string target = 3;
+    string name = 4;
+    string description = 5;
+    string goal = 6;
+    AgentType agent = 7;
+    int64 minDuration = 8;
+    int64 maxDuration = 9;
+    int64 averageDuration  = 10;
+    int64 durationUncertainty = 11;
+    double successRate = 12;
+}
+
+message HRCModelDTO {
+    int64 horizon = 1;
+    repeated HRCTaskDTO tasks = 2;
+    repeated HRCTaskDTO robotTasks = 3;
+    repeated HRCTaskDTO humanTasks = 4;
+}
+
+message GoalDTO {
+    string goalId = 1;
+    repeated MethodDTO methods = 2;
+}
+
+enum TaskType {
+    TASK_TYPE_TASK = 0;
+    TASK_TYPE_GOAL = 1;
+    TASK_TYPE_METHOD = 2;
+    TASK_TYPE_COMPLEX = 3;
+    TASK_TYPE_CONJUCTION = 4;
+    TASK_TYPE_DISJUCTION = 5;
+    TASK_TYPE_FUNCTION = 6;
+}
+
+message TaskDTO {
+    string taskId = 1;
+    TaskType type = 2;
+    repeated TaskDTO subTasks = 3;
+}
+
+message MethodDTO {
+    string goalId = 1;
+    map<string, TaskDTO> graph = 2;
+}
+
+message AgentDTO {
+    string id = 1;
+    HRCAgentType type = 2;
+    string name = 3;
+}
