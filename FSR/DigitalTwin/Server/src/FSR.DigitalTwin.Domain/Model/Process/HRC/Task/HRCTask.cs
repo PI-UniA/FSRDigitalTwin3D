@@ -7,25 +7,28 @@ public class HRCTask
         Any = 0, Human = 1, Robot = 2
     }
 
-    private readonly long _horizon;
+    private readonly float _horizon;
     public Resource Resource { get; }
     public Resource Type { get; }
     public Resource? Target { set; get; }
 
     public string Name { set; get; }
+    public long Id { set; get; }
     public string? Description { set; get; }
     public string? Goal { set; get; }
-    public string? Start { set; get; }
+    public string? StartLocation { set; get; }
+    public string? EndLocation { set; get; }
+    public string? Location { set; get; }
     public EAgent Agent { set; get; } = EAgent.Any;
-    public Tuple<long, long> Duration => new(
+    public Tuple<float, float> Duration => new(
         Math.Max(1, AverageDuration - DurationUncertainty),
         Math.Min(AverageDuration + DurationUncertainty, _horizon)
     );
-    public long AverageDuration { set; get; } = 1;
-    public long DurationUncertainty { set; get; }
+    public float AverageDuration { set; get; } = 1;
+    public float DurationUncertainty { set; get; }
     public double SuccessRate { set; get; } = 0.99;
 
-    public HRCTask(Resource function, Resource type, long horizon)
+    public HRCTask(Resource function, Resource type, float horizon)
     {
         Name = function.ToString();
         Description = Name;

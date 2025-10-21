@@ -5,9 +5,9 @@ public record FunctionPropertyData
     public required Resource Function { init; get; }
     public string? ProcedureName { init; get; }
     public string? ProcedureDescription { init; get; }
-    public string? ProcedureId { init; get; }
-    public long Duration { init; get; }
-    public long DurationUncertainty { init; get; }
+    public long ProcedureId { init; get; }
+    public float Duration { init; get; }
+    public float DurationUncertainty { init; get; }
 }
 
 public record FunctionObjectData

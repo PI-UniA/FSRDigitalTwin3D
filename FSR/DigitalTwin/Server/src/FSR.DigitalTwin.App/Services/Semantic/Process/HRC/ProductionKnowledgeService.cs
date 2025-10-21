@@ -120,7 +120,7 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
             return new FunctionPropertyData()
             {
                 Function = function,
-                ProcedureId = null,
+                ProcedureId = -1,
                 ProcedureName = null,
                 ProcedureDescription = null,
                 Duration = 0,
@@ -189,6 +189,13 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
         var result = _ontology.RunSparqlQuery((server) =>
             new GetInstancesQuery(classRes) { SparqlServer = server });
         return result.IsSuccess ? result.Value.Distinct() : [];
+    }
+
+    public InteractionModality? GetInteractionModality(Resource task)
+    {
+        var result = _ontology.RunSparqlQuery((server) =>
+            new GetInteractionModality(task) { SparqlServer = server });
+        return result.IsSuccess ? result.Value : null;
     }
 
     public IEnumerable<Resource> GetGoals()

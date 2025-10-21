@@ -3190,6 +3190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a051349e4849d49825cd1d2eb78871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  realTimeScale: 1
+  virtualTimeSkipsEnabled: 1
 --- !u!4 &235922134
 Transform:
   m_ObjectHideFlags: 0
@@ -5447,7 +5449,6 @@ GameObject:
   m_Component:
   - component: {fileID: 365743258}
   - component: {fileID: 365743259}
-  - component: {fileID: 365743261}
   m_Layer: 0
   m_Name: WORKSPACE
   m_TagString: Untagged
@@ -5487,19 +5488,6 @@ MonoBehaviour:
   digitalWorkspaceAddr: 127.0.0.1
   digitalWorkspacePort: 5001
   digitalWorkspaceName: 0
---- !u!114 &365743261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365743256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10332bd183b3e6b4c81fb21e69bf7354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  simulationManager: {fileID: 235922133}
 --- !u!1 &384976192
 GameObject:
   m_ObjectHideFlags: 0
@@ -5758,8 +5746,10 @@ GameObject:
   m_Component:
   - component: {fileID: 399024707}
   - component: {fileID: 399024708}
+  - component: {fileID: 399024709}
+  - component: {fileID: 399024710}
   m_Layer: 0
-  m_Name: Tests
+  m_Name: Testing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5787,11 +5777,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399024706}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aafaa369e5d33142941fbda48777b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &399024709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399024706}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b8edb501d6ef1469748a5effbbdc51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &399024710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399024706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9076c35492d044eb27b97c8c66d4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simulationManager: {fileID: 235922133}
 --- !u!1 &399213439
 GameObject:
   m_ObjectHideFlags: 0
@@ -10751,6 +10766,86 @@ Transform:
   - {fileID: 290664316}
   m_Father: {fileID: 1593513608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &761682136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 761682137}
+  - component: {fileID: 761682138}
+  - component: {fileID: 761682140}
+  - component: {fileID: 761682139}
+  m_Layer: 0
+  m_Name: Skills
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &761682137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761682136}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.52295685, y: 0.23424995, z: -0.033024788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5955250382980222830}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761682138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761682136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee57b0c79796bea49a033a120a9c8014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: http://pst.istc.cnr.it/ontologies/2019/01/soho#PickPlace
+  _shortIds:
+  - pick_and_place
+  _controller: {fileID: 1741056423}
+--- !u!114 &761682139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761682136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7632049bc48d7344cb905c224c7c8761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: http://pst.istc.cnr.it/ontologies/2019/01/soho#Join
+  _shortIds:
+  - join
+--- !u!114 &761682140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761682136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7632049bc48d7344cb905c224c7c8761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: http://pst.istc.cnr.it/ontologies/2019/01/soho#Screw
+  _shortIds:
+  - screw
 --- !u!1 &764170675
 GameObject:
   m_ObjectHideFlags: 0
@@ -27981,6 +28076,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 119.42478
       objectReference: {fileID: 0}
+    - target: {fileID: 7529551079614223320, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 399024710}
+    - target: {fileID: 7529551079614223320, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RunDESSimulation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529551079614223320, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FSR.DigitalTwin.Client.Dummy.DESDummy, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7966997562750277670, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -28359,6 +28466,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7093268553647178222, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 761682137}
     - targetCorrespondingSourceObject: {fileID: 8827582383478794051, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 156031517}
@@ -28371,13 +28481,13 @@ PrefabInstance:
       addedObject: {fileID: 579219119}
     - targetCorrespondingSourceObject: {fileID: 472273861288168908, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5955250382980222835}
-    - targetCorrespondingSourceObject: {fileID: 472273861288168908, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1741056423}
     - targetCorrespondingSourceObject: {fileID: 472273861288168908, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 230070}
+    - targetCorrespondingSourceObject: {fileID: 472273861288168908, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5955250382980222842}
     - targetCorrespondingSourceObject: {fileID: 8272980315594807359, guid: b990ce72bcda62d4b871c5e92369120f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5955250382980222834}
@@ -28433,6 +28543,8 @@ MonoBehaviour:
   _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#AAS_UR5e
   _components:
   - {fileID: 579219119}
+  - {fileID: 1741056423}
+  - {fileID: 5955250382980222842}
 --- !u!114 &5955250382980222834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28447,7 +28559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _articulationBody: {fileID: 5955250382980222832}
   _jointPrefix: joint_base
---- !u!114 &5955250382980222835
+--- !u!114 &5955250382980222842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28456,7 +28568,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1603320903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bda8dfa6dc7dbf40948854d1cefeaed, type: 3}
+  m_Script: {fileID: 11500000, guid: b55d8ecc23b5bbc41bd78c6b7c8ba7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _id: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#SM_UR5e_Operational
@@ -28464,6 +28576,8 @@ MonoBehaviour:
   _enableOperationModeOverride: 0
   _operationModeOverride: 0
   operatorId: https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#robot
+  agentType: 2
+  _skillList: {fileID: 761682136}
 --- !u!224 &6740993857694528104 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7453539377829711679, guid: 378324f8659ffcece8daaedffe42d27e, type: 3}
