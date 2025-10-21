@@ -1,7 +1,11 @@
 # FSRDigitalTwin3D
-FSRDigitalTwin3D is a process-oriented simulation tool to simulate processes of social human-robot interaction/collaboration. The design philosophy is to provide a "playground" for virtual robotics simulations abiding to the standards of modern Industry 4.0 applications.
+FSRDigitalTwin3D is a process-oriented simulation environment with semantic reasoning for use cases of social human-robot interaction/collaboration. It consists of a knowledge server to provide semantic reasoning and connected infrastructure (digital layer), and a [Unity simulation tool](https://github.com/Neroware/FSRDigitalTwin3D-Simulation) (virtual layer) to simulate social human-robot collaboration in an interactive 3D-environment using an event-discrete and process-oriented approach.
 
-**Note:** This framework is developed as a sub-project for the research association FORSocialRobots, namely "Subproject 4: Simulation and validation of socially cognitive robots in the digital twin"
+The design philosophy is to provide a "playground" for virtual robotics simulations abiding to the standards of modern Industry 4.0 applications. Therefore, for external communication, the [AASv3.0/REST](https://industrialdigitaltwin.org/content-hub/standardisierter-digitaler-zwilling-reif-fuer-die-industrie-6208) standard is deployed. The server additionally features a AASv3.0/gRPC API.
+
+**Note:** This digital twin is developed as a sub-project for the research association FORSocialRobots, namely "Subproject 4: Simulation and validation of socially cognitive robots in the digital twin"
+
+*We believe, our digital twin wins the buzzword-bingo of 'Semantic Data Twin' or 'Process Data Twin'...*
 
 ## Requirements
 This project has OS support for Linux and Windows.
@@ -11,17 +15,18 @@ This project has OS support for Linux and Windows.
 
 ## Installation
 ### Unity Simulation Client (Virtualization Layer)
-The client is located at ```/FSR/DigitalTwin/Client/Unity/FSR.DigitalTwin.Client/```:
+The client is located at ```/FSR/DigitalTwin/Client/Unity/FSR.DigitalTwin.Client.Unity/```:
 
-1. Navigate to folder ```/FSR/Tools/```
-2. Run script ```install-client-plugins```
-3. Load Git submodules ```git submodule update --init --recursive```
-4. Import the Unity project into Unity Hub and open
+1. Navigate to folder ```/FSR/DigitalTwin/Client/Unity/```
+2. Load Git submodule ```git submodule update --init --recursive .```
+3. Navigate into Unity project ```cd FSR.DigitalTwin.Client.Unity/```
+4. Run script ```install-client-plugins```
+5. Import the Unity project into Unity Hub and open
 
 ### Semantic Data Server (Digitization Layer)
 The server solution is located at ```/FSR/DigitalTwin/Server/FSR.DigitalTwin.sln```
 
-1. Navigate to folder ```/FSR/Tools/```
+1. Navigate to folder ```/FSR/DigitalTwin/Server/tools/```
 2. Run script ```install-tools```
 3. Load Git submodules ```git submodule update --init --recursive```
 
