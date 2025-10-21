@@ -5,7 +5,7 @@ The design philosophy is to provide a "playground" for virtual robotics simulati
 
 **Note:** This digital twin is developed as a sub-project for the research association FORSocialRobots, namely "Subproject 4: Simulation and validation of socially cognitive robots in the digital twin"
 
-*We believe, our digital twin wins the buzzword-bingo of 'Semantic Data Twin' or 'Process Data Twin'...*
+*We believe, our digital twin wins the buzzword-bingo of 'Semantic Data Twin' and 'Process Data Twin'...*
 
 ## Requirements
 This project has OS support for Linux and Windows.
@@ -41,7 +41,7 @@ If you want to use robot control via ROS2 Humble, set up our [Colcon Workspace](
 The repo is linked as a submodule at path ```FSR/DigitalTwin/Server/modules/Ros2Ws```.
 
 ## More coming soon!
-We are currently working on integrating a discrete-event process simulator into the simulation client. This allows us to simulate a first selection of basic test cases of human-robot interaction...
+We have a selection of upcoming planned VR-experiments, which we want to conduct through this software. Stay tuned for more!
 
 **Note**: This project is maintained by the [Chair of Digital Manufacturing](https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/) of the University of Augsburg.
 
