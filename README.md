@@ -7,6 +7,9 @@ The design philosophy is to provide a "playground" for virtual robotics simulati
 
 *We believe, our digital twin wins the buzzword-bingo of 'Semantic Data Twin' and 'Process Data Twin'...*
 
+## Framework
+![image](./FSRDigitalTwin3D.png)
+
 ## Requirements
 This project has OS support for Linux and Windows.
 
@@ -23,7 +26,7 @@ The client is located at ```/FSR/DigitalTwin/Client/Unity/FSR.DigitalTwin.Client
 4. Run script ```install-client-plugins```
 5. Import the Unity project into Unity Hub and open
 
-### Semantic Data Server (Digitization Layer)
+### Knowledge Server (Digitization Layer)
 The server solution is located at ```/FSR/DigitalTwin/Server/FSR.DigitalTwin.sln```
 
 1. Navigate to folder ```/FSR/DigitalTwin/Server/tools/```
