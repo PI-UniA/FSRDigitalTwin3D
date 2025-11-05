@@ -16,7 +16,9 @@
         <owl:versionIRI rdf:resource="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/1.0.0"/>
         <owl:imports rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho/1.0.0"/>
         <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/ssn"/>
+        <owl:imports rdf:resource="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl"/>
         <owl:imports rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl"/>
+        <owl:imports rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl"/>
     </owl:Ontology>
     
 
