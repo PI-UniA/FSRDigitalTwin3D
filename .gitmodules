@@ -28,3 +28,6 @@
 [submodule "FSR/DigitalTwin/Client/Unity/FSR.DigitalTwin.Client.Unity"]
 	path = FSR/DigitalTwin/Client/Unity/FSR.DigitalTwin.Client.Unity
 	url = https://github.com/Neroware/FSRDigitalTwin3D-Simulation.git
+[submodule "FSR/DigitalTwin/Server/modules/Sobots"]
+	path = FSR/DigitalTwin/Server/modules/Sobots
+	url = https://github.com/Neroware/Sobots.git
