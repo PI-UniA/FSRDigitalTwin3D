@@ -19,9 +19,6 @@
 [submodule "FSR/DigitalTwin/Server/modules/Jena"]
 	path = FSR/DigitalTwin/Server/modules/Jena
 	url = https://github.com/apache/jena
-[submodule "FSR/DigitalTwin/Server/modules/SOHO"]
-	path = FSR/DigitalTwin/Server/modules/SOHO
-	url = https://github.com/pstlab/SOHO.git
 [submodule "FSR/DigitalTwin/Server/modules/ROS2"]
 	path = FSR/DigitalTwin/Server/modules/ROS2
 	url = https://github.com/Neroware/FSRDigitalTwin3D-ROS.git
