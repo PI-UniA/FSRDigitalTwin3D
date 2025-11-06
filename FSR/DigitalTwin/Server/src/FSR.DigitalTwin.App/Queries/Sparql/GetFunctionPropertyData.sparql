@@ -9,7 +9,7 @@ PREFIX sobots: <https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi/
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX pi: <https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#>
 
-SELECT DISTINCT ?id ?name ?description ?duration ?durationUncertainty
+SELECT DISTINCT ?id ?name ?description ?duration ?durationUncertainty ?goal
 WHERE {
     pi:tmp0 a soho:ProductionTask .
     OPTIONAL { pi:tmp0 soho:hasProcedureId ?id . }
@@ -17,4 +17,5 @@ WHERE {
   	OPTIONAL { pi:tmp0 soho:hasProcedureDescription ?description . }
   	OPTIONAL { pi:tmp0 soho:hasDuration ?duration . }
   	OPTIONAL { pi:tmp0 soho:hasDurationUncertainty ?durationUncertainty . }
+    OPTIONAL { pi:tmp0 soho:hasGoal ?goal . }
 }

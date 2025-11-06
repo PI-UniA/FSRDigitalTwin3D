@@ -8,6 +8,7 @@ public record FunctionPropertyData
     public long ProcedureId { init; get; }
     public float Duration { init; get; }
     public float DurationUncertainty { init; get; }
+    public string? Goal { init; get; }
 }
 
 public record FunctionObjectData

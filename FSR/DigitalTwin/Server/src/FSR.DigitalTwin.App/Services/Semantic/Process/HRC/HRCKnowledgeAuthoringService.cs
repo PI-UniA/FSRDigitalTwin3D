@@ -62,6 +62,7 @@ public class HRCKnowledgeAuthoringService : IHRCKnowledgeAuthoringService
             task.StartLocation = functionObjectData.StartLocation.Select(res => res.ToString()).FirstOrDefault();
             task.EndLocation = functionObjectData.EndLocation.Select(res => res.ToString()).FirstOrDefault();
             task.Location = functionObjectData.Location.Select(res => res.ToString()).FirstOrDefault();
+            task.Goal = functionPropertyData.Goal;
         }
     }
 }

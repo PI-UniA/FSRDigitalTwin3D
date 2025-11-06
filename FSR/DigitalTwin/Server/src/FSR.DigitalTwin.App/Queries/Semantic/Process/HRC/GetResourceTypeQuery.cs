@@ -16,7 +16,7 @@ public class GetResourceTypeQuery : ISparqlQuery<IEnumerable<Resource>>
     private readonly Resource _resource;
 
     // TODO Use config paths!
-    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Sparql/GetResourceType.sparql", [_resource]);
+    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Queries/Sparql/GetResourceType.sparql", [_resource]);
     public ISparqlResponseParser Parser => new ResponseParser() { Resource = _resource };
     public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }
 

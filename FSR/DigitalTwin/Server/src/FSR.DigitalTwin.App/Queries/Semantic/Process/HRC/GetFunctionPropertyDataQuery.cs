@@ -16,7 +16,7 @@ public class GetFunctionPropertyDataQuery : ISparqlQuery<FunctionPropertyData>
     private readonly Resource _function;
 
     // TODO Use config paths!
-    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Sparql/GetFunctionPropertyData.sparql", [_function]);
+    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Queries/Sparql/GetFunctionPropertyData.sparql", [_function]);
     public ISparqlResponseParser Parser => new ResponseParser() { Function = _function };
     public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }
 
@@ -44,6 +44,7 @@ public class GetFunctionPropertyDataQuery : ISparqlQuery<FunctionPropertyData>
                 TripleHelper.AddOptionalTriple(binding, triples, task, UriPrefix.SOHO | "hasProcedureDescription", "description");
                 TripleHelper.AddOptionalTriple(binding, triples, task, UriPrefix.SOHO | "hasDuration", "duration");
                 TripleHelper.AddOptionalTriple(binding, triples, task, UriPrefix.SOHO | "hasDurationUncertainty", "durationUncertainty");
+                TripleHelper.AddOptionalTriple(binding, triples, task, UriPrefix.SOHO | "hasGoal", "goal");
             }
 
             return triples;
@@ -74,6 +75,10 @@ public class GetFunctionPropertyDataQuery : ISparqlQuery<FunctionPropertyData>
             .Select(t => t.Object.AsValuedNode().AsFloat())
             .DefaultIfEmpty()
             .Max();
+        string? goal = triples
+            .Where(t => t.Predicate as BaseNode == (UriPrefix.SOHO | "hasGoal"))
+            .Select(t => t.Object.AsValuedNode().AsString())
+            .FirstOrDefault();
         return new FunctionPropertyData()
         {
             Function = _function,
@@ -81,7 +86,8 @@ public class GetFunctionPropertyDataQuery : ISparqlQuery<FunctionPropertyData>
             ProcedureName = name,
             ProcedureDescription = description,
             Duration = duration,
-            DurationUncertainty = durationUncertainty
+            DurationUncertainty = durationUncertainty,
+            Goal = goal
         };
     }
 

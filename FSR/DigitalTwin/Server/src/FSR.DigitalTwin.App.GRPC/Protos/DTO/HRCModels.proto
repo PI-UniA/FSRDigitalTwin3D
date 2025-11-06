@@ -11,6 +11,7 @@ message FunctionPropertyDataDTO {
     int64 procedureId = 4;
     double duration = 5;
     double durationUncertainty = 6;
+    string goal = 7;
 }
 
 message FunctionObjectDataDTO {

@@ -15,7 +15,7 @@ public class GetInstancesQuery : ISparqlQuery<IEnumerable<Resource>>
     private readonly ISparqlServer? _sparqlServer;
     private readonly Resource _type;
 
-    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Sparql/GetInstances.sparql", [_type]);
+    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Queries/Sparql/GetInstances.sparql", [_type]);
     public ISparqlResponseParser Parser => new ResponseParser() { Type = _type };
     public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }
 

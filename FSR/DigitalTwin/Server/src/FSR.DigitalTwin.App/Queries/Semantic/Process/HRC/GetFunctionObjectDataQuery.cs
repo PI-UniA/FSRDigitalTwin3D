@@ -15,7 +15,7 @@ public class GetFunctionObjectDataQuery : ISparqlQuery<FunctionObjectData>
     private readonly Resource _function;
 
     // TODO Use config paths!
-    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Sparql/GetFunctionObjectData.sparql", [_function]);
+    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Queries/Sparql/GetFunctionObjectData.sparql", [_function]);
     public ISparqlResponseParser Parser => new ResponseParser() { Function = _function };
     public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }
 

@@ -17,7 +17,7 @@ public class GetPropertyQuery : ISparqlQuery<IEnumerable<Resource>>
     private readonly Resource _individual;
 
     // TODO Use config paths!
-    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Sparql/GetProperty.sparql",
+    public string Query => SparqlHelper.LoadQuery("../FSR.DigitalTwin.App/Queries/Sparql/GetProperty.sparql",
         [_property, _individual]);
     public ISparqlResponseParser Parser => new ResponseParser() { Property = _property, Individual = _individual };
     public ISparqlServer SparqlServer { get => _sparqlServer ?? throw new NullReferenceException(); init => _sparqlServer = value; }
