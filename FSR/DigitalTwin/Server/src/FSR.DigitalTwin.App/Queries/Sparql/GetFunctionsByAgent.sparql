@@ -9,13 +9,13 @@ PREFIX sobots: <https://www.forsocialrobots.de/ontologies/sobots.owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX pi: <https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/pi#>
 
-SELECT DISTINCT ?type
+SELECT DISTINCT ?task ?function
 WHERE {
-    pi:tmp0 a ?type .
-    FILTER NOT EXISTS {
-        pi:tmp0 a ?otherType .
-        ?otherType rdfs:subClassOf+ ?type .
-        FILTER (?otherType != ?type)
+    pi:tmp0 soho:canPerform ?task .
+    ?task a ?function .
+    ?function rdfs:subClassOf+ soho:Function .
+  	FILTER NOT EXISTS {
+        ?task a ?other .
+    	?other rdfs:subClassOf ?function .
     }
-    FILTER(isUri(?type) && (STRSTARTS(STR(?type), STR(pi:)) || STRSTARTS(STR(?type), STR(soho:)) || STRSTARTS(STR(?type), STR(sobots:))))
 }

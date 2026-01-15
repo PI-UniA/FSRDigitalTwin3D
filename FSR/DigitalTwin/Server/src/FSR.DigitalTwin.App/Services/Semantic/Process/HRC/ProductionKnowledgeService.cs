@@ -51,16 +51,16 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
     {
         if (!HasResourceType(prodGoal, UriPrefix.SOHO + "ProductionGoal"))
         {
-            throw new HRCKnowledgeException($"Wrong parameter type, a resource/individual of type <{UriPrefix.SOHO}ProductionGoal> expected, received <{prodGoal}> of other type!");
+            throw new KnowledgeException($"Wrong parameter type, a resource/individual of type <{UriPrefix.SOHO}ProductionGoal> expected, received <{prodGoal}> of other type!");
         }
         List<IDictionary<Resource, IList<ISet<Resource>>>> graphs = [];
-        var methods = GetProperty(prodGoal, UriPrefix.DUL + "hasConstituent");
+        var methods = _ontology.GetProperty(prodGoal, UriPrefix.DUL + "hasConstituent");
         foreach (var method in methods)
         {
             if (HasResourceType(method, UriPrefix.SOHO + "ProductionMethod"))
             {
                 Dictionary<Resource, IList<ISet<Resource>>> methodGraph = [];
-                var tasks = GetProperty(method, UriPrefix.DUL + "hasConstituent");
+                var tasks = _ontology.GetProperty(method, UriPrefix.DUL + "hasConstituent");
                 foreach (var task in tasks)
                 {
                     if (HasResourceType(task, UriPrefix.SOHO + "ProductionTask"))
@@ -85,7 +85,7 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
     {
         if (!HasResourceType(prodGoal, UriPrefix.SOHO + "ProductionGoal"))
         {
-            throw new HRCKnowledgeException($"Wrong parameter type, a resource/individual of type <{UriPrefix.SOHO}ProductionGoal> expected, received <{prodGoal}> of other type!");
+            throw new KnowledgeException($"Wrong parameter type, a resource/individual of type <{UriPrefix.SOHO}ProductionGoal> expected, received <{prodGoal}> of other type!");
         }
         Dictionary<Resource, ISet<Resource>> depGraph = [];
         var graphs = GetDecompositionGraph(prodGoal);
@@ -155,9 +155,11 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
         return result.IsSuccess ? result.Value.Distinct() : [];
     }
 
-    public IEnumerable<Resource> GetFunctionsByAgent(Resource agent)
+    public IEnumerable<Individual> GetFunctionsByAgent(Resource agent)
     {
-        return GetProperty(agent, UriPrefix.SOHO + "canPerform");
+        var result = _ontology.RunSparqlQuery((server) =>
+            new GetFunctionsByAgentQuery(agent) { SparqlServer = server });
+        return result.IsSuccess ? result.Value.Distinct() : [];
     }
 
     public Resource GetFunctionTarget(Resource function)
@@ -165,7 +167,7 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
         var functionObjects = GetFunctionObjectProperties(function);
         if (functionObjects.Target.Count == 0)
         {
-            throw new HRCKnowledgeException($"Missing SOHO:hasTarget property for function: {function}");
+            throw new KnowledgeException($"Missing SOHO:hasTarget property for function: {function}");
         }
         return functionObjects.Target.First();
     }
@@ -174,20 +176,6 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
     {
         var result = _ontology.RunSparqlQuery((server) =>
             new GetInstancesQuery(UriPrefix.SOHO + "WorkOperator") { SparqlServer = server });
-        return result.IsSuccess ? result.Value.Distinct() : [];
-    }
-
-    public IEnumerable<Resource> GetIndividuals(Resource classRes)
-    {
-        var result = _ontology.RunSparqlQuery((server) =>
-            new GetIndividualsQuery(classRes) { SparqlServer = server });
-        return result.IsSuccess ? result.Value.Distinct() : [];
-    }
-
-    public IEnumerable<Resource> GetInstances(Resource classRes)
-    {
-        var result = _ontology.RunSparqlQuery((server) =>
-            new GetInstancesQuery(classRes) { SparqlServer = server });
         return result.IsSuccess ? result.Value.Distinct() : [];
     }
 
@@ -209,7 +197,7 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
     {
         if (!HasResourceType(prodGoal, UriPrefix.SOHO + "ProductionGoal"))
         {
-            throw new HRCKnowledgeException($"Wrong parameter type, a resource/individual of type <{UriPrefix.SOHO}ProductionGoal> expected, received <{prodGoal}> of other type!");
+            throw new KnowledgeException($"Wrong parameter type, a resource/individual of type <{UriPrefix.SOHO}ProductionGoal> expected, received <{prodGoal}> of other type!");
         }
         var graph = GetDependencyGraph(prodGoal);
         Dictionary<Resource, ISet<Resource>> copy = new(graph);
@@ -258,29 +246,10 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Resource> GetProperty(Resource individual, Resource property)
+    private bool HasResourceType(Resource resource, Resource type)
     {
-        var result = _ontology.RunSparqlQuery((server) =>
-            new GetPropertyQuery(property, individual) { SparqlServer = server });
-        return result.IsSuccess ? result.Value : [];
-    }
-
-    public Resource GetResourceType(Resource resource)
-    {
-        var result = _ontology.RunSparqlQuery((server) =>
-            new GetResourceTypeQuery(resource) { SparqlServer = server });
-        if (result.IsFailure || !result.Value.Any())
-        {
-            throw new HRCKnowledgeException($"Missing RDF:type property for resource: {resource}");
-        }
-        return result.Value.First();
-    }
-
-    public bool HasResourceType(Resource resource, Resource type)
-    {
-        var result = _ontology.RunSparqlQuery((server) =>
-            new GetInstancesQuery(type) { SparqlServer = server });
-        return result.IsSuccess && result.Value.Contains(resource);
+        var result = _ontology.GetInstances(type);
+        return result?.Contains(resource) ?? false;
     }
 
     public IDictionary<Resource, ISet<Resource>> RetrieveResourceStructure(Resource resource)
@@ -292,7 +261,7 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
 
     private void RetrieveResourceStructure(Resource resource, Dictionary<Resource, ISet<Resource>> subTree)
     {
-        var hasConstituent = GetProperty(resource, UriPrefix.DUL + "hasConstituent");
+        var hasConstituent = _ontology.GetProperty(resource, UriPrefix.DUL + "hasConstituent");
         if (hasConstituent == null || !hasConstituent.Any())
         {
             subTree.Add(resource, new HashSet<Resource>());
@@ -312,7 +281,7 @@ public class ProductionKnowledgeService : IHRCKnowledgeService
     // TODO Very expensive, maybe translate to SPARQL query eventually...
     private void RetrieveProductionTaskDecomposition(Resource task, Dictionary<Resource, IList<ISet<Resource>>> graph)
     {
-        var prop = GetProperty(task, UriPrefix.DUL + "hasConstituent");
+        var prop = _ontology.GetProperty(task, UriPrefix.DUL + "hasConstituent");
         if (HasResourceType(task, UriPrefix.SOHO + "DisjunctiveComplexTask"))
         {
             foreach (var subTask in prop)
